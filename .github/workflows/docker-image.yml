@@ -20,6 +20,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
@@ -54,3 +58,10 @@ jobs:
 #           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
 #           scribe-login-url: "https://scribesec-dev.us.auth0.com"
 #           scribe-audience: "api.dev.scribesecurity.com"
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: scribe-reports
+          path: |
+            ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
+            ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
