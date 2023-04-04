@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: npm_dir_inside_job
 
 on: 
     push:
@@ -35,7 +35,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
-          product-key: "0_npm_project"
+          product-key: "0 with space"
 #           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
 #           scribe-login-url: "https://scribesec-dev.us.auth0.com"
 #           scribe-audience: "api.dev.scribesecurity.com"
@@ -54,7 +54,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
-          product-key: "0_npm_project"
+          product-key: "0 with space"
 #           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
 #           scribe-login-url: "https://scribesec-dev.us.auth0.com"
 #           scribe-audience: "api.dev.scribesecurity.com"
