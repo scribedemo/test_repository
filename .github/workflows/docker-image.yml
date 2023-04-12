@@ -30,7 +30,8 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
           type: dir
-          target: ./
+#           target: ./
+          target: "test_npm_repository"
           verbose: 2
           scribe-enable: true
           scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
