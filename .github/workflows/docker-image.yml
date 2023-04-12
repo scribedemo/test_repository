@@ -4,10 +4,10 @@ on:
     push:
     workflow_dispatch:
 
-# env:
-#      SCRIBE_URL: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
-#      SCRIBE_LOGIN_URL: "https://scribesec-dev.us.auth0.com"
-#      SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
+env:
+     SCRIBE_URL: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
+     SCRIBE_LOGIN_URL: "https://scribesec-dev.us.auth0.com"
+     SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -33,12 +33,12 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
-          product-key: "0 with space"
-#           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
-#           scribe-login-url: "https://scribesec-dev.us.auth0.com"
-#           scribe-audience: "api.dev.scribesecurity.com"
+          scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
+          scribe-client-secret: 6O9HrT4Kg-vSqHOZlfOitLvpTG8pnm76AQXul1dHjcZNDe1ECTRB3aHQnBI1nekC
+          product-key: "000_some chnages in code"
+          scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
+          scribe-login-url: "https://scribesec-dev.us.auth0.com"
+          scribe-audience: "api.dev.scribesecurity.com"
 
       - name: build image
         run: |
@@ -52,12 +52,12 @@ jobs:
           target: my-image:latest
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
-          product-key: "0 with space"
-#           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
-#           scribe-login-url: "https://scribesec-dev.us.auth0.com"
-#           scribe-audience: "api.dev.scribesecurity.com"
+          scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
+          scribe-client-secret: 6O9HrT4Kg-vSqHOZlfOitLvpTG8pnm76AQXul1dHjcZNDe1ECTRB3aHQnBI1nekC
+          product-key: "000_some chnages in code"
+          scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
+          scribe-login-url: "https://scribesec-dev.us.auth0.com"
+          scribe-audience: "api.dev.scribesecurity.com"
 
       - uses: actions/upload-artifact@v2
         with:
@@ -65,3 +65,16 @@ jobs:
           path: |
             ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
             ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
+            
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+          target: mongo-express:1.0.0-alpha.4
+          format: statement-slsa
+          product-key: "000_some chnages in code"
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
