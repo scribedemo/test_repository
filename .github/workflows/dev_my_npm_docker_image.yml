@@ -35,8 +35,8 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
-          scribe-client-secret: 6O9HrT4Kg-vSqHOZlfOitLvpTG8pnm76AQXul1dHjcZNDe1ECTRB3aHQnBI1nekC
+          scribe-client-id: ${{ secrets.SCRIBE_DEV_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_DEV_CLIENT_SECRET }}
           product-key: "000_dev_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -54,8 +54,8 @@ jobs:
           target: my-image:latest
           verbose: 2
           scribe-enable: true
-          scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
-          scribe-client-secret: 6O9HrT4Kg-vSqHOZlfOitLvpTG8pnm76AQXul1dHjcZNDe1ECTRB3aHQnBI1nekC
+          scribe-client-id: ${{ secrets.SCRIBE_DEV_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_DEV_CLIENT_SECRET }}
           product-key: "000_dev_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
