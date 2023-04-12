@@ -1,4 +1,4 @@
-name: npm_dir_inside_job
+name: dev_my_npm_test
 
 on: 
 #     push:
