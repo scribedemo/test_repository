@@ -30,13 +30,12 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
           type: dir
-#           target: ./
-          target: test_npm_repository
+          target: ./
           verbose: 2
           scribe-enable: true
           scribe-client-id: 8tOb9YjkAax1HXpU2IHqMtx3WKcsMer9
           scribe-client-secret: 6O9HrT4Kg-vSqHOZlfOitLvpTG8pnm76AQXul1dHjcZNDe1ECTRB3aHQnBI1nekC
-          product-key: "000_some chnages in code"
+          product-key: "000_some chaages in code"
           scribe-url: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
           scribe-login-url: "https://scribesec-dev.us.auth0.com"
           scribe-audience: "api.dev.scribesecurity.com"
