@@ -2,7 +2,7 @@ name: npm_dir_inside_job
 
 on: 
     push:
-    workflow_dispatch:
+#     workflow_dispatch:
 
 env:
      SCRIBE_URL: "https://api.dev.hub.scribesecurity.com/scribe-proxy"
