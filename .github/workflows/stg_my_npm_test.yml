@@ -1,4 +1,4 @@
-name: dev_my_npm_test
+name: stg_my_npm_test
 
 on: 
 #     push:
