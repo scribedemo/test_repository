@@ -30,7 +30,7 @@ jobs:
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
 #         uses: scribe-security/action-bom@master
-        uses: sscribe-security/action-bom@dev
+        uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
