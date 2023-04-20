@@ -29,8 +29,8 @@ jobs:
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
+#         uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -49,13 +49,13 @@ jobs:
           
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
+#         uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
           verbose: 2
-          format: attest-cyclonedx-json
+          format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_CLIENT_SECRET }}
@@ -73,11 +73,12 @@ jobs:
             
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
+#         uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           target: mongo-express:1.0.0-alpha.4
-          format: statement-slsa
+#           format: statement-slsa
+          format: attest-slsa
           product-key: "000_dev_my_npm"
 
       - uses: actions/upload-artifact@v2
