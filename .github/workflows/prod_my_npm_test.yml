@@ -29,7 +29,7 @@ jobs:
           type: dir
           target: ./
           verbose: 2
-          format: attest
+          format: attest-cyclonedx-json
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
@@ -45,7 +45,7 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          format: attest
+          format: attest-cyclonedx-json
           verbose: 2
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
@@ -64,7 +64,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
           target: mongo-express:1.0.0-alpha.4
-          format: statement-slsa
+          format: attest-slsa
           product-key: "000_prod_my_npm"
 
       - uses: actions/upload-artifact@v2
