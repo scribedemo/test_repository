@@ -29,7 +29,7 @@ jobs:
           type: dir
           target: ./
           verbose: 2
-          format: statement-cyclonedx-json
+          format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_CLIENT_SECRET }}
@@ -45,7 +45,7 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          format: statement-cyclonedx-json
+          format: attest
           verbose: 2
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_CLIENT_ID }}
