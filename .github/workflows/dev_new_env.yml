@@ -1,4 +1,4 @@
-name: dev_new_my_npm_test
+name: dev_new_env_my_npm_test
 
 on: 
 #     push:
@@ -6,7 +6,7 @@ on:
 
 env:
      SCRIBE_URL: "https://airflow.dev.scribesecurity.com/scribe-proxy"
-     SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com
+     SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
      SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
