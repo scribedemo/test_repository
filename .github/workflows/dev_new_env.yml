@@ -63,7 +63,7 @@ jobs:
 #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_CLIENT_SECRET }}
           scribe-client-id: 5xIbFlIdJm8FTKa05pSZJpb2yo1FYoPP
           scribe-client-secret: 0HP_B-3SuTk46CZnpXXU5CApN0JPX1UZe3ielnP3utyd-18ZH6y8tqrUtMiXp-7E
-          product-key: "000_dev_my_npm"
+          product-key: "0_dev_new_env_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -83,7 +83,7 @@ jobs:
           target: mongo-express:1.0.0-alpha.4
 #           format: statement-slsa
           format: attest-slsa
-          product-key: "000_dev_my_npm"
+          product-key: "0_dev_new_env_my_npm"
 
       - uses: actions/upload-artifact@v2
         with:
