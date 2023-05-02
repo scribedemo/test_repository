@@ -29,8 +29,8 @@ jobs:
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-#         uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+#         uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -40,7 +40,7 @@ jobs:
 #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_CLIENT_SECRET }}
           scribe-client-id: 5xIbFlIdJm8FTKa05pSZJpb2yo1FYoPP
           scribe-client-secret: 0HP_B-3SuTk46CZnpXXU5CApN0JPX1UZe3ielnP3utyd-18ZH6y8tqrUtMiXp-7E
-          product-key: "000_dev_my_npm"
+          product-key: "0_dev_new_env_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -51,11 +51,12 @@ jobs:
           
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
-#         uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+#         uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
+#           target: my-image:latest
           verbose: 2
           format: attest
           scribe-enable: true
