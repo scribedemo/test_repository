@@ -1,28 +1,23 @@
 name: dev_new_env_my_npm
 
 on: 
-#     push:
     workflow_dispatch:
 
 env:
-     SCRIBE_URL: "https://airflow.dev.scribesecurity.com/scribe-proxy"
+     SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
      SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
      SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+
+ scribe-report-test:
     runs-on: ubuntu-latest
     permissions:
-     id-token: write
+      id-token: write
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    
     steps:
-#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#       - uses: actions/checkout@v3
-      
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -55,7 +50,7 @@ jobs:
           type: docker
           target: my-image:latest
           verbose: 2
-          format: attest
+#           format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
@@ -73,8 +68,8 @@ jobs:
             
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-#         uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+#         uses: scribe-security/action-bom@dev
         with:
           target: mongo-express:1.0.0-alpha.4
           format: statement-slsa
