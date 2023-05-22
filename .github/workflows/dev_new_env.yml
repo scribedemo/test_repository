@@ -20,8 +20,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#       - uses: actions/checkout@v3
       
       - uses: actions/checkout@v2
         with:
@@ -38,7 +38,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
-          product-key: "0_dev_new_env_my_npm"
+          product-key: "00_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -59,7 +59,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
-          product-key: "0_dev_new_env_my_npm"
+          product-key: "00_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -77,9 +77,9 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
           target: mongo-express:1.0.0-alpha.4
-#           format: statement-slsa
-          format: attest-slsa
-          product-key: "0_dev_new_env_my_npm"
+          format: statement-slsa
+#           format: attest-slsa
+          product-key: "00_my_npm"
 
       - uses: actions/upload-artifact@v2
         with:
