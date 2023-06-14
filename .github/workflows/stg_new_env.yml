@@ -79,7 +79,7 @@ jobs:
           format: attest-slsa
           product-key: "0_stg_en_my_npm"
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: provenance
-          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: provenance
+#           path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
