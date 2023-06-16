@@ -51,7 +51,8 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          format: attest-cyclonedx-json
+#           format: attest-cyclonedx-json
+          format: statement-cyclonedx-json
           verbose: 2
           scribe-enable: true
 #           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
