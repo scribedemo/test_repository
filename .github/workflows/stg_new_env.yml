@@ -39,6 +39,10 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          product-version: "stg product version"
+          pipeline-name: "stg pipeline name"
+          app-name: "stg app name"
+          app-version: "1.0.0 stg"
 
       - name: build image
         run: |
@@ -63,6 +67,10 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          product-version: "stg product version"
+          pipeline-name: "stg pipeline name"
+          app-name: "stg app name"
+          app-version: "1.0.0 stg"
 
       - uses: actions/upload-artifact@v2
         with:
@@ -80,7 +88,7 @@ jobs:
           format: attest-slsa
           product-key: "0_stg_en_my_npm"
 
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: provenance
-#           path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
