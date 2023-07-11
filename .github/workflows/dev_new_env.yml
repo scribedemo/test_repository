@@ -31,9 +31,11 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
-          product-key: "00_my_npm_12"
+#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
+#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
+          scribe-client-id: QrS7uJJe4oEVX7kYhiAsYRCGXypR4Xu7
+          scribe-client-secret: nBBDhjfrl3PrcmBzhBKm_bJzDlRsSTYD1nkh6-ikeY_fmaijlMXzyUnR3SRo_tVU
+          product-key: "00_my_npm_repos"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -52,9 +54,11 @@ jobs:
           verbose: 2
           format: attest
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
-          product-key: "00_my_npm_12"
+#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_ID }}
+#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_M2M_CLIENT_SECRET }}
+          scribe-client-id: QrS7uJJe4oEVX7kYhiAsYRCGXypR4Xu7
+          scribe-client-secret: nBBDhjfrl3PrcmBzhBKm_bJzDlRsSTYD1nkh6-ikeY_fmaijlMXzyUnR3SRo_tVU
+          product-key: "00_my_npm_repos"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
