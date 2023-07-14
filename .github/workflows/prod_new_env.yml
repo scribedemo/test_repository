@@ -6,7 +6,7 @@ on:
 
 env:
      SCRIBE_URL: https://airflow.scribesecurity.com
-     SCRIBE_LOGIN_URL: scribe-hub-production.us.auth0.com
+     SCRIBE_LOGIN_URL: https://scribe-hub-production.us.auth0.com
      SCRIBE_AUDIENCE: api.production.scribesecurity.com
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
