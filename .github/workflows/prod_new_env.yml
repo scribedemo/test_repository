@@ -4,10 +4,10 @@ on:
 #     push:
     workflow_dispatch:
 
-# env:
-#      SCRIBE_URL: "https://airflow.staging.scribesecurity.com/"
-#      SCRIBE_LOGIN_URL: "https://scribe-hub-staging.us.auth0.com"
-#      SCRIBE_AUDIENCE: "api.staging.scribesecurity.com"
+env:
+     SCRIBE_URL: https://airflow.scribesecurity.com
+     SCRIBE_LOGIN_URL: scribe-hub-production.us.auth0.com
+     SCRIBE_AUDIENCE: api.production.scribesecurity.com
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,9 +34,9 @@ jobs:
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
           product-key: "0_prod_new_my_npm"
-#           scribe-url: ${{ env.SCRIBE_URL }}
-#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version"
           pipeline-name: "prod pipeline name"
           app-name: "prod app name"
@@ -59,9 +59,9 @@ jobs:
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
           product-key: "0_prod_new_my_npm"
-#           scribe-url: ${{ env.SCRIBE_URL }}
-#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version"
           pipeline-name: "prod pipeline name"
           app-name: "prod app name"
