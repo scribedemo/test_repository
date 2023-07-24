@@ -16,4 +16,4 @@ jobs:
         run: echo "custom_env=$(cat my_metadata.json)" >> $GITHUB_ENV
 
       - name: Show custom_env value
-        run: echo "Custom environment variable: $custom_env"
+        run: echo "Custom environment variable:$custom_env"
