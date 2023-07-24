@@ -17,7 +17,8 @@ jobs:
       id-token: write
 
     
-    steps:
+    steps: 
+      - name: Checkout code
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -44,10 +45,9 @@ jobs:
         run: |
           docker build -t my-image:latest .
        
-      - id: read_file_env
-        name: Add file 
-        run: |
-          echo "custom_env=$(cat my_metdata.json)" >> "$GITHUB_OUTPUT"    
+      - name: Read JSON file and set custom_env
+        id: set_custom_env
+        run: echo "custom_env=$(cat my_metadata.json)" >> $GITHUB_ENV
           
           
       - name: Image generate bom, upload to scribe
@@ -68,6 +68,10 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          env: test_env
+          force: true
+        env:
+          test_env: ${{ steps.read_file_env.outputs.custom_env }}
 
       - uses: actions/upload-artifact@v2
         with:
