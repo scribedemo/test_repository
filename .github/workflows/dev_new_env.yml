@@ -22,23 +22,23 @@ jobs:
         with:
           fetch-depth: 0
          
-      - name: Scm generate bom, upload to scribe
-        id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
-        with:
-          type: dir
-          target: ./
-          verbose: 2
-          scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-#           scribe-client-id: iHAG3VjfnZQNECGCk0TBp8n4QBJBqiAr
-#           scribe-client-secret: VII1G3cWAw_GXSS7XDaT6i7VoFPLEkTQ0jtG8BvJdcxX6LOZJ7afzEYsSv3FKhfK
-          product-key: "000_my_npm_repos"
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+#       - name: Scm generate bom, upload to scribe
+#         id: valint_bom_scm
+#         uses: scribe-security/action-bom@master
+# #         uses: scribe-security/action-bom@dev
+#         with:
+#           type: dir
+#           target: ./
+#           verbose: 2
+#           scribe-enable: true
+#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+# #           scribe-client-id: iHAG3VjfnZQNECGCk0TBp8n4QBJBqiAr
+# #           scribe-client-secret: VII1G3cWAw_GXSS7XDaT6i7VoFPLEkTQ0jtG8BvJdcxX6LOZJ7afzEYsSv3FKhfK
+#           product-key: "000_my_npm_repos"
+#           scribe-url: ${{ env.SCRIBE_URL }}
+#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
       - name: build image
         run: |
