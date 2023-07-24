@@ -63,7 +63,7 @@ jobs:
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
 #           scribe-client-id: iHAG3VjfnZQNECGCk0TBp8n4QBJBqiAr
 #           scribe-client-secret: VII1G3cWAw_GXSS7XDaT6i7VoFPLEkTQ0jtG8BvJdcxX6LOZJ7afzEYsSv3FKhfK
-          product-key: "000_my_npm_repos"
+          product-key: "0000_my_npm_repos"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
