@@ -67,11 +67,11 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          env: test_env
-#           env: ${{ steps.read_file_env.outputs.custom_env }}
-          force: true
-        env:
-          test_env: ${{ steps.read_file_env.outputs.custom_env }}
+          env: $custom_env
+#           env: test_env
+#           force: true
+#         env:
+#           test_env: ${{ steps.read_file_env.outputs.custom_env }}
 
       - uses: actions/upload-artifact@v2
         with:
