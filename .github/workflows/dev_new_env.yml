@@ -47,12 +47,7 @@ jobs:
       - name: Read JSON file and set custom_env
         id: set_custom_env
         run: echo "custom_env=$(cat my_metadata.json)" >> $GITHUB_ENV
-        
-#         new part
-      - name: Set test_env to custom_env value
-        run: echo "test_env=${{ steps.set_custom_env.outputs.custom_env }}" >> $GITHUB_ENV
-          
-          
+      
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
         uses: scribe-security/action-bom@master
@@ -65,8 +60,6 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-#           scribe-client-id: iHAG3VjfnZQNECGCk0TBp8n4QBJBqiAr
-#           scribe-client-secret: VII1G3cWAw_GXSS7XDaT6i7VoFPLEkTQ0jtG8BvJdcxX6LOZJ7afzEYsSv3FKhfK
           product-key: "0000_my_npm_repos"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -74,7 +67,8 @@ jobs:
           env: test_env
           force: true
         env:
-          test_env: ${{ steps.read_file_env.outputs.custom_env }}
+          test_env: ${{ env.custom_env }}
+          DEBUG: true
 
       - uses: actions/upload-artifact@v2
         with:
