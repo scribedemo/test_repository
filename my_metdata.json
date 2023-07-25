@@ -1,10 +1,7 @@
 {
-  "alonas_metadata":
-  {
-    "product_id": "123",
-    "my_status": "not release",
+  "product_id": "123",
+    "my_status": "not_release",
     "my_arr": ["n1", 2, "n3"],
     "app-version": "123",
     "published": false
-    }
 }
