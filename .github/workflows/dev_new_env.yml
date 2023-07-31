@@ -46,7 +46,7 @@ jobs:
        
       - name: Read JSON file and set custom_env
         id: set_custom_env
-        run: echo "custom_env=$(cat my_metadata)" >> $GITHUB_ENV
+        run: echo "custom_env=$(cat my_metdata.json)" >> $GITHUB_ENV
       
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
@@ -64,10 +64,11 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          env: user_metadata
-          force: true
-        env:
-          user_metadata: ${{ env.custom_env }}
+          env: ${{ env.custom_env }}
+#           env: user_metadata
+#           force: true
+#         env:
+#           user_metadata: ${{ env.custom_env }}
 #           DEBUG: true
 
       - uses: actions/upload-artifact@v2
