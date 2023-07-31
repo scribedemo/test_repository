@@ -65,7 +65,7 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 #           env: ${{ env.custom_env }}
-# #           env: user_metadata
+#           env: user_metadata
 #           force: true
         env:
           user_metadata: ${{ env.custom_env }}
