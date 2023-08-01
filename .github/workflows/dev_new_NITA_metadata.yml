@@ -2,10 +2,10 @@ name: dev_new_env_NITA
 
 on: 
     workflow_dispatch:
-     inputs:
-      my_input_value:
-        description: 'Enter file'
-        required: true
+#      inputs:
+#       my_input_value:
+#         description: 'Enter file'
+#         required: true
 
 env:
      SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
@@ -57,9 +57,11 @@ jobs:
         id: valint_ntia
         uses: scribe-security/action-bom@dev
         with:
-          target: 'busybox:latest'
-          format: json
-          force: true
+          type: docker
+          target: my-image:latest
+          verbose: 2
+          format: attest
+          scribe-enable: true
           author-name: Alona
           author-email: alona@scibesecurity.com
           author-phone: 1234567890
@@ -74,6 +76,7 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           env: user_metadata
+          force: true
         env:
           user_metadata: ${{ env.custom_env }}
 #           DEBUG: true
