@@ -48,6 +48,10 @@ jobs:
         run: |
           docker build -t my-image:latest .
           
+      - name: Read JSON file and set custom_env
+        id: set_custom_env
+        run: echo "custom_env=$(cat my_metdata.json)" >> $GITHUB_ENV
+          
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
         uses: scribe-security/action-bom@master
@@ -71,6 +75,10 @@ jobs:
           pipeline-name: "stg pipeline name"
           app-name: "stg app name"
           app-version: "1.0.0 stg"
+          env: user_metadata
+          force: true
+        env:
+          user_metadata: ${{ env.custom_env }}
 
       - uses: actions/upload-artifact@v2
         with:
