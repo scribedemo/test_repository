@@ -1,4 +1,4 @@
-name: dev_new_env_my_npm
+name: dev_new_env_NITA
 
 on: 
     workflow_dispatch:
