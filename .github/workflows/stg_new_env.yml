@@ -43,6 +43,7 @@ jobs:
           pipeline-name: "stg pipeline name"
           app-name: "stg app name"
           app-version: "1.0.0 stg"
+          components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
         run: |
