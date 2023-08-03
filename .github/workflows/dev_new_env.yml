@@ -2,10 +2,10 @@ name: dev_new_env_my_npm
 
 on: 
     workflow_dispatch:
-     inputs:
-      my_input_value:
-        description: 'Enter file'
-        required: true
+#      inputs:
+#       my_input_value:
+#         description: 'Enter file'
+#         required: true
 
 env:
      SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
@@ -37,23 +37,21 @@ jobs:
         with:
           fetch-depth: 0
          
-#       - name: Scm generate bom, upload to scribe
-#         id: valint_bom_scm
-#         uses: scribe-security/action-bom@master
-# #         uses: scribe-security/action-bom@dev
-#         with:
-#           type: dir
-#           target: ./
-#           verbose: 2
-#           scribe-enable: true
-#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-# #           scribe-client-id: iHAG3VjfnZQNECGCk0TBp8n4QBJBqiAr
-# #           scribe-client-secret: VII1G3cWAw_GXSS7XDaT6i7VoFPLEkTQ0jtG8BvJdcxX6LOZJ7afzEYsSv3FKhfK
-#           product-key: "000_my_npm_repos"
-#           scribe-url: ${{ env.SCRIBE_URL }}
-#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      - name: Scm generate bom, upload to scribe
+        id: valint_bom_scm
+        uses: scribe-security/action-bom@master
+#         uses: scribe-security/action-bom@dev
+        with:
+          type: dir
+          target: ./
+          verbose: 2
+          scribe-enable: true
+          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+          product-key: "000_my_npm_repos"
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
       - name: build image
         run: |
@@ -95,12 +93,12 @@ jobs:
           user_metadata: ${{ env.custom_env }}
 #           DEBUG: true
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: scribe-reports
-          path: |
-            ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
-            ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: scribe-reports
+#           path: |
+#             ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
+#             ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
             
 #       - name: Generate SLSA provenance statement
 #         id: valint_slsa_statement
