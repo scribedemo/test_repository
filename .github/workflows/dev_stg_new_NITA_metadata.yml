@@ -48,8 +48,8 @@ jobs:
         
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
+        # uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -85,8 +85,8 @@ jobs:
       
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
+        # uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
