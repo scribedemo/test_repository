@@ -1,4 +1,4 @@
-name: dev_stg_new_env_my_npm
+name: dev_stg_metadata
 
 on: 
     workflow_dispatch:
