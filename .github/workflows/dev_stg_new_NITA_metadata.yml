@@ -57,7 +57,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "000_test_metadata"
+          product-key: "0000_test_metadata"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -95,7 +95,7 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "000_test_metadata"
+          product-key: "0000_test_metadata"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
