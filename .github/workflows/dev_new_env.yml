@@ -37,25 +37,25 @@ jobs:
         with:
           fetch-depth: 0
          
-      - name: Scm generate bom, upload to scribe
-        id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
-        with:
-          type: dir
-          target: ./
-          verbose: 2
-          scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "000_my_npm_repos"
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+#       - name: Scm generate bom, upload to scribe
+#         id: valint_bom_scm
+#         uses: scribe-security/action-bom@master
+# #         uses: scribe-security/action-bom@dev
+#         with:
+#           type: dir
+#           target: ./
+#           verbose: 2
+#           scribe-enable: true
+#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+#           product-key: "000_my_npm_repos"
+#           scribe-url: ${{ env.SCRIBE_URL }}
+#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
-      - name: build image
-        run: |
-          docker build -t my-image:latest .
+#       - name: build image
+#         run: |
+#           docker build -t my-image:latest .
        
       - name: Read JSON file and set custom_env
         id: set_custom_env
@@ -68,13 +68,15 @@ jobs:
 #         uses: scribe-security/action-bom@dev
         with:
           type: docker
-          target: my-image:latest
+          # target: my-image:latest
+          target: mongo-express:latest
           verbose: 2
           format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "0000_my_npm_repos"
+          # product-key: "0000_my_npm_repos"
+          product-key: "000000_Sprint35_mongo"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
