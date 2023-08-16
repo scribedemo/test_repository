@@ -46,38 +46,38 @@ jobs:
         id: set_custom_env
         run: echo "custom_env=$(cat my_metdata.json)" >> $GITHUB_ENV  
         
-      - name: Scm generate bom, upload to scribe
-        id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        # uses: scribe-security/action-bom@dev
-        with:
-          type: dir
-          target: ./
-          verbose: 2
-          scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "0000_test_metadata"
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          app-name: $LOGICAL_APP_NAME
-          app-version: $APP_VERSION
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
-          env: user_metadata
-          force: true
-        env:
-          user_metadata: ${{ env.custom_env }}
+      # - name: Scm generate bom, upload to scribe
+      #   id: valint_bom_scm
+      #   uses: scribe-security/action-bom@master
+      #   # uses: scribe-security/action-bom@dev
+      #   with:
+      #     type: dir
+      #     target: ./
+      #     verbose: 2
+      #     scribe-enable: true
+      #     scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+      #     scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+      #     product-key: "0000_test_metadata"
+      #     scribe-url: ${{ env.SCRIBE_URL }}
+      #     scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #     scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #     app-name: $LOGICAL_APP_NAME
+      #     app-version: $APP_VERSION
+      #     author-name: $AUTHOR_NAME
+      #     author-email: $AUTHOR_EMAIL
+      #     author-phone: $AUTHOR_PHONE
+      #     supplier-name: $SUPPLIER_NAME
+      #     supplier-url: $SUPPLIER_URL
+      #     supplier-email: $SUPPLIER_EMAIL 
+      #     supplier-phone: $SUPPLIER_PHONE
+      #     env: user_metadata
+      #     force: true
+      #   env:
+      #     user_metadata: ${{ env.custom_env }}
 
-      - name: build image
-        run: |
-          docker build -t my-image:latest .
+      # - name: build image
+      #   run: |
+      #     docker build -t my-image:latest .
        
       # - name: Read JSON file and set custom_env
       #   id: set_custom_env
@@ -89,13 +89,15 @@ jobs:
         # uses: scribe-security/action-bom@dev
         with:
           type: docker
-          target: my-image:latest
+          # target: my-image:latest
+          target: mongo-express:latest
           verbose: 2
           format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "0000_test_metadata"
+          # product-key: "0000_test_metadata"
+          product-key: "000_Sprint 35 mongo pipeline"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
