@@ -1,1 +1,1 @@
-test on dstg
+test on stg
