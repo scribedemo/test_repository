@@ -55,8 +55,8 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID}}
+          scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
           product-key: "000_metadata"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -94,8 +94,8 @@ jobs:
           verbose: 2
           format: attest
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
           product-key: "000_metadata"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
