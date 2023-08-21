@@ -41,7 +41,7 @@ jobs:
           pipeline-name: "prod pipeline name"
           app-name: "prod app name"
           app-version: "1.0.0 prod"
-          format: attest
+          # format: attest
 
       - name: build image
         run: |
@@ -55,7 +55,7 @@ jobs:
           type: docker
           target: my-image:latest
           # format: statement-cyclonedx-json
-          format: attest
+          # format: attest
           verbose: 2
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
