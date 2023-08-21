@@ -41,7 +41,7 @@ jobs:
           pipeline-name: "prod pipeline name"
           app-name: "prod app name"
           app-version: "1.0.0 prod"
-          # format: attest
+          format: statement-cyclonedx-json
 
       - name: build image
         run: |
@@ -54,7 +54,7 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          # format: statement-cyclonedx-json
+          format: statement-cyclonedx-json
           # format: attest
           verbose: 2
           scribe-enable: true
@@ -69,22 +69,22 @@ jobs:
           app-name: "prod app name"
           app-version: "1.0.0 prod"
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: scribe-reports
-          path: |
-            ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
-            ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: scribe-reports
+      #     path: |
+      #       ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
+      #       ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
             
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
-        with:
-          target: mongo-express:1.0.0-alpha.4
-          format: attest-slsa
-          product-key: "0_prod_new_my_npm"
+      # - name: Generate SLSA provenance statement
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     target: mongo-express:1.0.0-alpha.4
+      #     format: attest-slsa
+      #     product-key: "0_prod_new_my_npm"
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: provenance
-          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: provenance
+      #     path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
