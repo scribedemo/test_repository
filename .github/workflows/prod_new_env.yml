@@ -41,6 +41,7 @@ jobs:
           pipeline-name: "prod pipeline name"
           app-name: "prod app name"
           app-version: "1.0.0 prod"
+          format: attest
 
       - name: build image
         run: |
