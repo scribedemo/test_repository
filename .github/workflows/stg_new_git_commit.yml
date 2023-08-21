@@ -1,0 +1,44 @@
+name: stg_new_git_commit
+
+on: 
+#     push:
+    workflow_dispatch:
+
+env:
+     SCRIBE_URL: "https://airflow.staging.scribesecurity.com/"
+     SCRIBE_LOGIN_URL: "https://scribe-hub-staging.us.auth0.com"
+     SCRIBE_AUDIENCE: "api.staging.scribesecurity.com"
+
+jobs:
+
+ scribe-report-test:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+         
+          
+      - name: Generate signed SBOM for repo content
+        uses: scribe-security/action-bom@master
+        with:
+          target: 'git:.'
+          scribe-enable: true
+          verbose: 2
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          product-key: "0_stg_en_my_npm"
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          label: is_git_commit
+          format: attest
+          product-version: "stg product version"
+          pipeline-name: "stg pipeline name"
+          app-name: "stg app name"
+          app-version: "1.0.0 stg"
+
+      
