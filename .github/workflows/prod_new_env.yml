@@ -39,9 +39,9 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version"
           pipeline-name: "prod pipeline name"
-          app-name: "prod app name"
-          app-version: "1.0.0 prod"
-          format: statement-cyclonedx-json
+          aapp-name: "prod_npm"
+          app-version: "1.0.0"
+          format: statement
 
       - name: build image
         run: |
@@ -54,8 +54,8 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          format: statement-cyclonedx-json
-          # format: attest
+          format: statement statement-cyclonedx-json
+          # format: attest, statement-cyclonedx-json, statement
           verbose: 2
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
@@ -66,8 +66,8 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version"
           pipeline-name: "prod pipeline name"
-          app-name: "prod app name"
-          app-version: "1.0.0 prod"
+          app-name: "prod_npm"
+          app-version: "1.0.0"
 
       # - uses: actions/upload-artifact@v2
       #   with:
@@ -84,7 +84,7 @@ jobs:
       #     format: attest-slsa
       #     product-key: "0_prod_new_my_npm"
 
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: provenance
-      #     path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
