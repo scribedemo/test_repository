@@ -31,10 +31,11 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-#           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-          scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
-          scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
-#           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          format: attest
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
+          # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
           product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -60,14 +61,15 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-#           format: attest-cyclonedx-json
-          format: statement-cyclonedx-json
+          format: attest
+          # format: attest-cyclonedx-json
+          # format: statement-cyclonedx-json
           verbose: 2
           scribe-enable: true
-#           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-#           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
-          scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
+          # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
           product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
