@@ -92,3 +92,24 @@ jobs:
         env:
           user_metadata: ${{ env.custom_env }}
 #           DEBUG: true
+      
+      
+      
+      
+      # new code for provenance
+      - name: Generate slsa prov statement
+        id: gensbom_slsa
+        uses: scribe-security/action-bom@dev
+        with:
+          type: docker
+          target: my-image:latest
+          format: statement-slsa
+          product-key: "0000_my_npm_repos"
+          verbose: 2
+          scribe-enable: false
+          force: true
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.gensbom_slsa.outputs.OUTPUT_PATH }}
