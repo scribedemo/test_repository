@@ -103,7 +103,7 @@ jobs:
         with:
           type: docker
           target: my-image:latest
-          format: statement-slsa
+          format: attest-slsa
           product-key: "0000_my_npm_repos"
           verbose: 2
           scribe-enable: false
