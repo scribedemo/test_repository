@@ -93,17 +93,14 @@ jobs:
           user_metadata: ${{ env.custom_env }}
 #           DEBUG: true
       
-      
-      
-      
-      # new code for provenance
+      # new code for provenance, statement-slsa, attest-slsa
       - name: Generate slsa prov statement
         id: gensbom_slsa
         uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
-          # format: attest-slsa
+          format: attest-slsa
           product-key: "0000_my_npm_repos"
           verbose: 2
           scribe-enable: false
