@@ -34,7 +34,7 @@ jobs:
                 target: 'git:.'
                 scribe-enable: true
                 components: packages,files,dep
-                scribe-client-id: ${{ SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
                 app-name: $LOGICAL_APP_NAME
@@ -57,7 +57,7 @@ jobs:
                 target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 scribe-enable: true
                 product-key: ${{ github.repository }}:${{ github.sha }}
-                scribe-client-id: ${{ SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
                 app-name: $LOGICAL_APP_NAME
