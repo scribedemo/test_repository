@@ -89,8 +89,9 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: 'my-image:latest'
-                format: statement-slsa
+                target: my-image:latest
+                format: attest-slsa
+                
 
         - uses: actions/upload-artifact@v3
           with:
