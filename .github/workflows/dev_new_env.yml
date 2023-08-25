@@ -1,4 +1,4 @@
-name: Create signed git clone and image SBOMs
+name: dev new - Create signed git clone and image SBOMs
 
 on: workflow_dispatch
 
@@ -14,6 +14,9 @@ env:
         SUPPLIER_URL: www.scribesecurity.com 
         SUPPLIER_EMAIL: info@scribesecurity.com
         SUPPLIER_PHONE: 001-001-0011
+        SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
+        SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
+        SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
 jobs:
 
@@ -37,6 +40,9 @@ jobs:
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 app-name: $LOGICAL_APP_NAME
                 app-version: $APP_VERSION
                 author-name: $AUTHOR_NAME
@@ -60,6 +66,9 @@ jobs:
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 app-name: $LOGICAL_APP_NAME
                 app-version: $APP_VERSION
                 author-name: $AUTHOR_NAME
