@@ -67,7 +67,7 @@ jobs:
                 # type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
-                product-key: ${{ github.repository }}:${{ github.sha }}
+                product-key: "slsa_attest"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
