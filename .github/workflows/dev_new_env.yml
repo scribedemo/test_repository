@@ -54,13 +54,17 @@ jobs:
                 supplier-phone: $SUPPLIER_PHONE
 
         - name: Build the Docker image
-          run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+          run: docker build . -t my-image:latest .
+
 
         - name: Generate signed SBOM for docker image
             # Used after a docker image is built
           uses: scribe-security/action-bom@master
           with:
-                target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                # type: docker
+                target: 'my-image:latest'
                 scribe-enable: true
                 product-key: ${{ github.repository }}:${{ github.sha }}
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
@@ -83,7 +87,8 @@ jobs:
           id: valint_slsa_statement
           uses: scribe-security/action-bom@master
           with:
-                target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                target: 'my-image:latest'
                 format: statement-slsa
 
         - uses: actions/upload-artifact@v3
