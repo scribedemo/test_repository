@@ -55,7 +55,8 @@ jobs:
 
         - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
-          run: docker build . -t my-image:latest .
+          run: |
+            docker build -t my-image:latest .
 
 
         - name: Generate signed SBOM for docker image
