@@ -64,7 +64,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                # type: docker
+                type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
                 product-key: "slsa_attest"
@@ -89,6 +89,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
                 target: my-image:latest
                 format: attest-slsa
                 
