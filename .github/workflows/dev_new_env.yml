@@ -37,21 +37,21 @@ jobs:
         with:
           fetch-depth: 0
          
-      - name: Scm generate bom, upload to scribe
-        id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-#         uses: scribe-security/action-bom@dev
-        with:
-          type: dir
-          target: ./
-          verbose: 2
-          scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          product-key: "000_my_npm_repos"
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+#       - name: Scm generate bom, upload to scribe
+#         id: valint_bom_scm
+#         uses: scribe-security/action-bom@master
+# #         uses: scribe-security/action-bom@dev
+#         with:
+#           type: dir
+#           target: ./
+#           verbose: 2
+#           scribe-enable: true
+#           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+#           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+#           product-key: "000_my_npm_repos"
+#           scribe-url: ${{ env.SCRIBE_URL }}
+#           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+#           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
       - name: build image
         run: |
@@ -62,14 +62,14 @@ jobs:
         run: echo "custom_env=$(cat my_metdata.json)" >> $GITHUB_ENV
 #         run: echo "custom_env=$(cat ${{inputs.my_input_value)}}" >> $GITHUB_ENV
       
-      - name: Image generate bom, upload to scribe
+      - name: Generate signed SBOM for docker image
         id: valint_bom_image
         uses: scribe-security/action-bom@master
 #         uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
-          verbose: 2
+          # verbose: 2
           format: attest
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
@@ -95,18 +95,20 @@ jobs:
       
       # new code for provenance, statement-slsa, attest-slsa
       - name: Generate slsa prov statement
-        id: gensbom_slsa
-        uses: scribe-security/action-bom@dev
+        id: gvalint_slsa_statement
+        # uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
-          type: docker
+          # type: docker
           target: my-image:latest
           format: statement-slsa
-          product-key: "0000_my_npm_repos"
-          verbose: 2
-          scribe-enable: false
-          force: true
+          # product-key: "0000_my_npm_repos"
+          # verbose: 2
+          # scribe-enable: false
+          # force: true
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: provenance
-          path: ${{ steps.gensbom_slsa.outputs.OUTPUT_PATH }}
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+
