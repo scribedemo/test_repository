@@ -99,10 +99,10 @@ jobs:
         # uses: scribe-security/action-bom@dev
         uses: scribe-security/action-bom@master
         with:
-          # type: docker
+          type: docker
           target: my-image:latest
           format: statement-slsa
-          # product-key: "0000_my_npm_repos"
+          product-key: "0000_my_npm_repos"
           # verbose: 2
           # scribe-enable: false
           # force: true
