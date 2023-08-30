@@ -36,33 +36,39 @@ jobs:
       - name: Generate signed SBOM for repo content
         uses: scribe-security/action-bom@master
         with:
-          target: 'git:.'
-          format: attest
-          scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          app-name: $LOGICAL_APP_NAME
-          app-version: $APP_VERSION
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
+         target: 'git:.'
+         scribe-enable: true
+         scribe-login-url: https://$AUTH0_DOMAIN
+         scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
+         scribe-url: $SCRIBE_API_BASE_URI
+         product-key: "000_Dev_npm_lattest"
+         scribe-client-id: ${{ secrets.CLIENT_ID}}
+         scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+         format: attest
+         app-name: $LOGICAL_APP_NAME
+         app-version: $APP_VERSION
+         components: packages,files,dep
+         author-name: $AUTHOR_NAME
+         author-email: $AUTHOR_EMAIL
+         author-phone: $AUTHOR_PHONE
+         supplier-name: $SUPPLIER_NAME
+         supplier-url: $SUPPLIER_URL
+         supplier-email: $SUPPLIER_EMAIL 
+         supplier-phone: $SUPPLIER_PHONE
+
+      - name: Build the Docker image
+          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+        run: |
+            docker build -t my-image:latest .   
 
       - name: Generate signed SBOM for docker image
-            # Used after a docker image is built
         uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
-                product-key: "slsa_attest"
+                product-key: "000_Dev_npm_lattest"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
