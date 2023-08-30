@@ -45,8 +45,8 @@ jobs:
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 app-name: $LOGICAL_APP_NAME
-                # app-version: $APP_VERSION
-                # author-name: $AUTHOR_NAME
+                app-version: $APP_VERSION
+                author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -75,8 +75,8 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                # app-name: $LOGICAL_APP_NAME
-                # app-version: $APP_VERSION
+                app-name: $LOGICAL_APP_NAME
+                app-version: $APP_VERSION
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
