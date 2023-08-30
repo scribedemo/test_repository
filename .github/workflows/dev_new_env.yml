@@ -70,7 +70,7 @@ jobs:
                 product-key: "slsa_attest"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest-slsa
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -84,4 +84,24 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
 
+        - name: Generate SLSA provenance statement
+          id: valint_slsa_statement
+          uses: scribe-security/action-bom@master
+          with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: my-image:latest
+                format: attest-slsa
+                product-key: "slsa_attest"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                
+
+        - uses: actions/upload-artifact@v3
+          with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
