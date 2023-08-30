@@ -1,4 +1,4 @@
-name:  dev_new_last
+name:  dev_new_latest
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
