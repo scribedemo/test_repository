@@ -50,8 +50,8 @@ jobs:
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
          format: attest-cyclonedx-json
-         app-name: $LOGICAL_APP_NAME
-         app-version: $APP_VERSION
+         # app-name: $LOGICAL_APP_NAME
+         # app-version: $APP_VERSION
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -81,8 +81,8 @@ jobs:
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 app-name: $LOGICAL_APP_NAME
-                app-version: $APP_VERSION
-                author-name: $AUTHOR_NAME
+                # app-version: $APP_VERSION
+                # author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
