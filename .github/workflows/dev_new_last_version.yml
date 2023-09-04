@@ -97,8 +97,8 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
                 target: my-image:latest
-                # attest-slsa
-                format: statement-slsa
+                # attest-slsa, statement-slsa
+                format: attest-slsa
                 product-key: "000_Dev_npm_lattest"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
