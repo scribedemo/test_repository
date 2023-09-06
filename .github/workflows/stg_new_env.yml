@@ -36,14 +36,14 @@ jobs:
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
           # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
           # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
-          product-key: "0_stg_en_my_npm"
+          # product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "stg product version"
+          # product-version: "stg product version"
           pipeline-name: "stg pipeline name"
-          app-name: "stg app name"
-          app-version: "1.0.0 stg"
+          # app-name: "stg app name"
+          # app-version: "1.0.0 stg"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -70,14 +70,14 @@ jobs:
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
           # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
           # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
-          product-key: "0_stg_en_my_npm"
+          # product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "stg product version"
+          # product-version: "stg product version"
           pipeline-name: "stg pipeline name"
-          app-name: "stg app name"
-          app-version: "1.0.0 stg"
+          # app-name: "stg app name"
+          # app-version: "1.0.0 stg"
           env: user_metadata
           force: true
         env:
@@ -98,7 +98,7 @@ jobs:
           target: mongo-express:1.0.0-alpha.4
 #           format: statement-slsa
           format: attest-slsa
-          product-key: "0_stg_en_my_npm"
+          # product-key: "0_stg_en_my_npm"
 
       - uses: actions/upload-artifact@v2
         with:
