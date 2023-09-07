@@ -49,9 +49,10 @@ jobs:
          product-key: "000_Dev_npm_lattest"
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
-         format: attest-cyclonedx-json
+         format: statement-cyclonedx-json
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
+         product-version: "version_statement-cyclonedx-json"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -76,13 +77,14 @@ jobs:
                 product-key: "000_Dev_npm_lattest"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest-cyclonedx-json
+                format: statement-cyclonedx-json
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
+                product-version: "version_statement-cyclonedx-json"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
