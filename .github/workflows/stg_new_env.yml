@@ -34,16 +34,13 @@ jobs:
           format: attest
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
-          # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
-          # product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          # product-version: "stg product version"
           pipeline-name: "stg pipeline name"
-          # app-name: "stg app name"
-          # app-version: "1.0.0 stg"
+          app-name: "stg app name"
+          app-version: "1.0.0 stg"
+          product-version: "version1"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -68,16 +65,13 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          # scribe-client-id:   3EKiZa79EXHWJFJXB4xPxUaqrDae3M3l
-          # scribe-client-secret: Vc4nDKBMq60nIZpZnfqzvgvdWHmZQXcQkXeIUkXmrw0sFxtqm_oZuCa3mVgVLzyN
-          # product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          # product-version: "stg product version"
           pipeline-name: "stg pipeline name"
-          # app-name: "stg app name"
-          # app-version: "1.0.0 stg"
+          app-name: "stg app name"
+          app-version: "1.0.0 stg"
+          product-version: "version1"
           env: user_metadata
           force: true
         env:
