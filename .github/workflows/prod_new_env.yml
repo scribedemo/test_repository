@@ -37,9 +37,9 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "prod product version"
+          product-version: "prod product version1"
           pipeline-name: "prod pipeline name"
-          aapp-name: "prod_npm"
+          app-name: "prod_npm"
           app-version: "1.0.0"
           format: statement
 
@@ -53,7 +53,7 @@ jobs:
         # uses: scribe-security/action-bom@dev
         with:
           type: docker
-          target: my-image:latest
+          target: "my-image:latest"
           format: attest
           # format: attest, statement-cyclonedx-json, statement
           verbose: 2
@@ -64,7 +64,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "prod product version"
+          product-version: "prod product version1"
           pipeline-name: "prod pipeline name"
           app-name: "prod_npm"
           app-version: "1.0.0"
@@ -80,7 +80,7 @@ jobs:
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
         with:
-          target: mongo-express:1.0.0-alpha.4
+          target: "my-image:latest"
           format: attest-slsa
 
       - uses: actions/upload-artifact@v2
