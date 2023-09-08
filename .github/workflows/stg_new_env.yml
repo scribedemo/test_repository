@@ -70,7 +70,7 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
           # app-name: "stg app name"
-          app-version: "1.0.0 stg"
+          # app-version: "1.0.0 stg"
           product-version: "version1"
           env: user_metadata
           force: true
