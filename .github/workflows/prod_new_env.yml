@@ -24,8 +24,8 @@ jobs:
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-#         uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+        # uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -49,12 +49,12 @@ jobs:
           
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
-#         uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+        # uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: my-image:latest
-          format: statement statement-cyclonedx-json
+          format: attest
           # format: attest, statement-cyclonedx-json, statement
           verbose: 2
           scribe-enable: true
@@ -76,15 +76,14 @@ jobs:
       #       ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
       #       ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
             
-      # - name: Generate SLSA provenance statement
-      #   id: valint_slsa_statement
-      #   uses: scribe-security/action-bom@master
-      #   with:
-      #     target: mongo-express:1.0.0-alpha.4
-      #     format: attest-slsa
-      #     product-key: "0_prod_new_my_npm"
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+          target: mongo-express:1.0.0-alpha.4
+          format: attest-slsa
 
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: provenance
-      #     path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
