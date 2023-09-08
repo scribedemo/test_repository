@@ -39,8 +39,8 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version1"
           pipeline-name: "prod pipeline name"
-          app-name: "prod_npm"
-          app-version: "1.0.0"
+          # app-name: "prod_npm"
+          # app-version: "1.0.0"
           format: statement
 
       - name: build image
@@ -66,8 +66,8 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-version: "prod product version1"
           pipeline-name: "prod pipeline name"
-          app-name: "prod_npm"
-          app-version: "1.0.0"
+          # app-name: "prod_npm"
+          # app-version: "1.0.0"
 
       # - uses: actions/upload-artifact@v2
       #   with:
