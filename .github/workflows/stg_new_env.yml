@@ -22,26 +22,26 @@ jobs:
         with:
           fetch-depth: 0
          
-      - name: Scm generate bom, upload to scribe
-        id: valint_bom_scm
-        # uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
-        with:
-          type: dir
-          target: ./
-          verbose: 2
-          scribe-enable: true
-          format: attest
-          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          pipeline-name: "stg pipeline name"
-          app-name: "stg app name"
-          app-version: "1.0.0 stg"
-          product-version: "version1"
-          components: metadata,layers,packages,syft,dep,commits
+      # - name: Scm generate bom, upload to scribe
+      #   id: valint_bom_scm
+      #   # uses: scribe-security/action-bom@master
+      #   uses: scribe-security/action-bom@dev
+      #   with:
+      #     type: dir
+      #     target: ./
+      #     verbose: 2
+      #     scribe-enable: true
+      #     format: attest
+      #     scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+      #     scribe-url: ${{ env.SCRIBE_URL }}
+      #     scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #     scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #     pipeline-name: "stg pipeline name"
+      #     app-name: "stg app name"
+      #     app-version: "1.0.0 stg"
+      #     product-version: "version1"
+      #     components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
         run: |
@@ -69,7 +69,7 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
-          app-name: "stg app name"
+          # app-name: "stg app name"
           app-version: "1.0.0 stg"
           product-version: "version1"
           env: user_metadata
