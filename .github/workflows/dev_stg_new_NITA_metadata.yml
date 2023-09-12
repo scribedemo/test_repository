@@ -121,7 +121,7 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
                 target: my-image:latest
-                format: attest-slsa
+                format: statement-slsa
                 product-key: "000_metadata"
                 scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
