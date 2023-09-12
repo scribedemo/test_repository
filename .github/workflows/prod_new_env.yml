@@ -24,8 +24,8 @@ jobs:
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-        # uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+        # uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -37,7 +37,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_dev"
+          product-version: "sprint_36_master"
           pipeline-name: "prod pipeline name"
           app-name: "prod_npm"
           app-version: "1.0.0"
@@ -49,8 +49,8 @@ jobs:
           
       - name: Image generate bom, upload to scribe
         id: valint_bom_image
-        # uses: scribe-security/action-bom@master
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
+        # uses: scribe-security/action-bom@dev
         with:
           type: docker
           target: "my-image:latest"
@@ -64,7 +64,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_dev"
+          product-version: "sprint_36_master"
           pipeline-name: "prod pipeline name"
           app-name: "prod_npm"
           app-version: "1.0.0"
@@ -78,7 +78,7 @@ jobs:
             
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
           target: "my-image:latest"
           format: attest-slsa
