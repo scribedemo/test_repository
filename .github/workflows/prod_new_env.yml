@@ -24,8 +24,8 @@ jobs:
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        # uses: scribe-security/action-bom@dev
+        # uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: dir
           target: ./
@@ -37,7 +37,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36"
+          product-version: "sprint_36_dev"
           pipeline-name: "prod pipeline name"
           app-name: "prod_npm"
           app-version: "1.0.0"
@@ -64,7 +64,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36"
+          product-version: "sprint_36_dev"
           pipeline-name: "prod pipeline name"
           app-name: "prod_npm"
           app-version: "1.0.0"
