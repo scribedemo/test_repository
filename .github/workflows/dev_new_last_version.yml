@@ -46,13 +46,13 @@ jobs:
          scribe-login-url: https://$AUTH0_DOMAIN
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
          scribe-url: $SCRIBE_API_BASE_URI
-         product-key: "000_Dev_npm_lattest"
+         product-key: "Sprint_37_2510_github"
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
-         format: statement-cyclonedx-json
+         format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "version_statement-cyclonedx-json"
+         product-version: "version_attest"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -74,17 +74,17 @@ jobs:
                 type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
-                product-key: "000_Dev_npm_lattest"
+                product-key: "Sprint_37_2510_github"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_statement-cyclonedx-json"
+                product-version: "version_attest"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -99,16 +99,16 @@ jobs:
                 type: docker
                 target: 'busybox:1.35.0-glibc'
                 scribe-enable: true
-                product-key: "000_Dev_npm_lattest"
+                product-key: "Sprint_37_2510_github"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_statement-cyclonedx-json"
+                product-version: "version_attest"
       
       - name: Generate signed SBOM for docker image (mongo-express:latest)
         uses: scribe-security/action-bom@master
@@ -117,16 +117,16 @@ jobs:
                 type: docker
                 target: 'mongo-express:latest'
                 scribe-enable: true
-                product-key: "000_Dev_npm_lattest"
+                product-key: "Sprint_37_2510_github"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_statement-cyclonedx-json"
+                product-version: "version_attest"
                 
       
       - name: Generate signed SBOM for docker image (mongo-express:0.54.0)
@@ -136,16 +136,16 @@ jobs:
                 type: docker
                 target: 'mongo-express:0.54.0'
                 scribe-enable: true
-                product-key: "000_Dev_npm_lattest"
+                product-key: "Sprint_37_2510_github"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_statement-cyclonedx-json"
+                product-version: "version_attest"
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
@@ -156,7 +156,7 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa
                 format: attest-slsa
-                product-key: "000_Dev_npm_lattest"
+                product-key: "Sprint_37_2510_github"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
