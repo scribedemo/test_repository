@@ -81,7 +81,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                app-name: $LOGICAL_APP_NAME
+                # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
                 product-version: "version_statement-cyclonedx-json"
@@ -91,7 +91,62 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
-
+     
+      - name: Generate signed SBOM for docker image (bysybox)
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: 'busybox:1.35.0-glibc'
+                scribe-enable: true
+                product-key: "000_Dev_npm_lattest"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                format: statement-cyclonedx-json
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                # app-version: $APP_VERSION
+                # author-name: $AUTHOR_NAME
+                product-version: "version_statement-cyclonedx-json"
+      
+      - name: Generate signed SBOM for docker image (mongo-express:latest)
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: 'mongo-express:latest'
+                scribe-enable: true
+                product-key: "000_Dev_npm_lattest"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                format: statement-cyclonedx-json
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                # app-version: $APP_VERSION
+                # author-name: $AUTHOR_NAME
+                product-version: "version_statement-cyclonedx-json"
+                
+      
+      - name: Generate signed SBOM for docker image (mongo-express:0.54.0)
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: 'mongo-express:0.54.0'
+                scribe-enable: true
+                product-key: "000_Dev_npm_lattest"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                format: statement-cyclonedx-json
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                # app-version: $APP_VERSION
+                # author-name: $AUTHOR_NAME
+                product-version: "version_statement-cyclonedx-json"
+      
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
