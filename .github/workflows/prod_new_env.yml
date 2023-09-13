@@ -37,10 +37,10 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_master"
+          product-version: "sprint_36_master1"
           pipeline-name: "prod pipeline name"
-          app-name: "prod_npm"
-          app-version: "1.0.0"
+          # app-name: "prod_npm"
+          # app-version: "1.0.0"
           format: statement
 
       - name: build image
@@ -64,10 +64,10 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_master"
+          product-version: "sprint_36_master1"
           pipeline-name: "prod pipeline name"
-          app-name: "prod_npm"
-          app-version: "1.0.0"
+          # app-name: "prod_npm"
+          # app-version: "1.0.0"
 
       # - uses: actions/upload-artifact@v2
       #   with:
@@ -82,6 +82,9 @@ jobs:
         with:
           target: "my-image:latest"
           format: attest-slsa
+          product-key: "0_prod_new_my_npm"
+          scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
 
       - uses: actions/upload-artifact@v2
         with:
