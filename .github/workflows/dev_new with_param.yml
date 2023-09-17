@@ -39,7 +39,7 @@ jobs:
 
       - name: Read Configuration File
         run: |
-          CONFIG_FILE = "dev_config.yml"
+          CONFIG_FILE="dev_config.yml"
           while IFS= read -r line
           do
           export "$line"
