@@ -60,7 +60,7 @@ jobs:
           verbose: 2
           scribe-enable: true
           # scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-id: scribe-client-id
+          scribe-client-id: ${{ secrets.scribe-client-id}}
           scribe-client-secret: scribe-client-secret
           # scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
           product-key: "000_my_npm_repos"
