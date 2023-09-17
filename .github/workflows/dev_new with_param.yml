@@ -36,6 +36,22 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: Read Configuration File
+        run: |
+         # Read the configuration file (config.yml in this example)
+          CONFIG_FILE = "dev_config.yml"
+          while IFS= read -r line
+          do
+         # Parse the configuration and set environment variables
+          export "$line"
+          done < "$CONFIG_FILE"
+
+      - name: Display Environment Variables
+        run: |
+          # You can now access the environment variables in your workflow
+          echo "scribe-client-id = $scribe-client-id"
+          echo "scribe-client-secret = $scribe-client-secret"   
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
@@ -46,8 +62,10 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+          # scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
+          scribe-client-id: scribe-client-id
+          scribe-client-secret: scribe-client-secret
+          # scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
           product-key: "000_my_npm_repos"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
