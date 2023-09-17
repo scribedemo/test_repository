@@ -1,4 +1,0 @@
-{
-   "scribe-client-id": "${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}"
-   "scribe-client-secret": "${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}"
-}
