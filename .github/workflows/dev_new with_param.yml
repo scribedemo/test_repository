@@ -42,7 +42,9 @@ jobs:
           CONFIG_FILE="dev_config.yml"
           while IFS= read -r line
           do
-          export "$line"
+           key=$(echo "$line" | awk -F: '{print $1}')
+           value=$(echo "$line" | awk -F: '{print $2}')
+           export "$key=$value"
           done < "$CONFIG_FILE"
 
       - name: Display Environment Variables
