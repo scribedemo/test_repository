@@ -39,17 +39,14 @@ jobs:
 
       - name: Read Configuration File
         run: |
-         # Read the configuration file (config.yml in this example)
           CONFIG_FILE = "dev_config.yml"
           while IFS= read -r line
           do
-         # Parse the configuration and set environment variables
           export "$line"
           done < "$CONFIG_FILE"
 
       - name: Display Environment Variables
         run: |
-          # You can now access the environment variables in your workflow
           echo "scribe-client-id = $scribe-client-id"
           echo "scribe-client-secret = $scribe-client-secret"   
          
