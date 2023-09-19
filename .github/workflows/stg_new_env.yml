@@ -40,7 +40,7 @@ jobs:
           pipeline-name: "stg pipeline name"
           # app-name: "stg app name"
           # app-version: "1.0.0 stg"
-          product-version: "version_sprintt37_1"
+          product-version: "version_sprintt37_2"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -71,7 +71,7 @@ jobs:
           pipeline-name: "stg pipeline name"
           # app-name: "stg app name"
           # app-version: "1.0.0 stg"
-          product-version: "version_sprintt37_1"
+          product-version: "version_sprintt37_2"
           env: user_metadata
           force: true
         env:
