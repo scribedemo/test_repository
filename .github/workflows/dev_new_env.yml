@@ -36,7 +36,7 @@ jobs:
           with:
                 target: 'git:.'
                 scribe-enable: true
-                product-key: "slsa_attest"
+                product-key: "sanity_dev"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -53,6 +53,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
+                product-version: "test_dev1"
 
         - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -68,7 +69,7 @@ jobs:
                 type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
-                product-key: "slsa_attest"
+                product-key: "sanity_dev"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
@@ -84,6 +85,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
+                product-version: "test_dev1"
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
@@ -93,7 +95,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest-slsa
-                # product-key: "slsa_attest"
+                product-key: "sanity_dev"
                 # scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 # scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 # scribe-url: ${{ env.SCRIBE_URL }}
