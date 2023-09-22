@@ -1,2 +1,4 @@
-scribe-client-id:SCRIBE_DEV_NEW_CLIENT_ID
-scribe-client-secret:${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+{
+"scribe-client-id":"SCRIBE_DEV_NEW_CLIENT_ID"
+"scribe-client-secret":"secrets.SCRIBE_DEV_NEW_CLIENT_SECRET"
+}
