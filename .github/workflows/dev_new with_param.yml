@@ -2,10 +2,10 @@ name: dev_new_with_parametrs
 
 on: 
     workflow_dispatch:
-#      inputs:
-#       my_input_value:
-#         description: 'Enter file'
-#         required: true
+     inputs:
+      my_input_value:
+        description: 'Choose scribeurl env'
+        required: true
 
 env:
      SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
@@ -37,20 +37,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Read Configuration File
-        run: |
-          CONFIG_FILE="dev_config.yml"
-          while IFS= read -r line
-          do
-           key=$(echo "$line" | awk -F: '{print $1}')
-           value=$(echo "$line" | awk -F: '{print $2}')
-           export "$key=$value"
-          done < "$CONFIG_FILE"
+      # - name: Read Configuration File
+      #   run: |
+      #     CONFIG_FILE="dev_config.yml"
+      #     while IFS= read -r line
+      #     do
+      #      key=$(echo "$line" | awk -F: '{print $1}')
+      #      value=$(echo "$line" | awk -F: '{print $2}')
+      #      export "$key=$value"
+      #     done < "$CONFIG_FILE"
 
-      - name: Display Environment Variables
-        run: |
-          echo "scribe-client-id = $scribe-client-id"
-          echo "scribe-client-secret = $scribe-client-secret"   
+      # - name: Display Environment Variables
+      #   run: |
+      #     echo "scribe-client-id = $scribe-client-id"
+      #     echo "scribe-client-secret = $scribe-client-secret"   
          
       - name: Scm generate bom, upload to scribe
         id: valint_bom_scm
