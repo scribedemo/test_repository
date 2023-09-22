@@ -6,6 +6,7 @@ on:
       my_input_value:
         description: 'Choose scribeurl env'
         required: true
+        default: 'dev,stg,prod'
 
 env:
      SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
