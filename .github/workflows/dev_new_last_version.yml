@@ -52,7 +52,7 @@ jobs:
          format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "Version_sprint_38_1"
+         product-version: "Version_sprint_38_12"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -84,7 +84,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "Version_sprint_38_1_0"
+                product-version: "Version_sprint_38_12"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -92,60 +92,60 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
      
-      - name: Generate signed SBOM for docker image (bysybox)
-        uses: scribe-security/action-bom@master
-        with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: 'busybox:1.35.0-glibc'
-                scribe-enable: true
-                product-key: "Sprint_38"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                # app-version: $APP_VERSION
-                # author-name: $AUTHOR_NAME
-                product-version: "version_attest4_1"
+      # - name: Generate signed SBOM for docker image (bysybox)
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+      #           type: docker
+      #           target: 'busybox:1.35.0-glibc'
+      #           scribe-enable: true
+      #           product-key: "Sprint_38"
+      #           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+      #           format: attest
+      #           scribe-url: ${{ env.SCRIBE_URL }}
+      #           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #           # app-version: $APP_VERSION
+      #           # author-name: $AUTHOR_NAME
+      #           product-version: "version_attest4_1"
       
-      - name: Generate signed SBOM for docker image (mongo-express:latest)
-        uses: scribe-security/action-bom@master
-        with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: 'mongo-express:latest'
-                scribe-enable: true
-                product-key: "Sprint_38"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                # app-version: $APP_VERSION
-                # author-name: $AUTHOR_NAME
-                product-version: "version_attest_1"
+      # - name: Generate signed SBOM for docker image (mongo-express:latest)
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+      #           type: docker
+      #           target: 'mongo-express:latest'
+      #           scribe-enable: true
+      #           product-key: "Sprint_38"
+      #           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+      #           format: attest
+      #           scribe-url: ${{ env.SCRIBE_URL }}
+      #           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #           # app-version: $APP_VERSION
+      #           # author-name: $AUTHOR_NAME
+      #           product-version: "version_attest_1"
                 
       
-      - name: Generate signed SBOM for docker image (mongo-express:0.54.0)
-        uses: scribe-security/action-bom@master
-        with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: 'mongo-express:0.54.0'
-                scribe-enable: true
-                product-key: "Sprint_38"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                # app-version: $APP_VERSION
-                # author-name: $AUTHOR_NAME
-                product-version: "1"
+      # - name: Generate signed SBOM for docker image (mongo-express:0.54.0)
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+      #           type: docker
+      #           target: 'mongo-express:0.54.0'
+      #           scribe-enable: true
+      #           product-key: "Sprint_38"
+      #           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+      #           format: attest
+      #           scribe-url: ${{ env.SCRIBE_URL }}
+      #           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #           # app-version: $APP_VERSION
+      #           # author-name: $AUTHOR_NAME
+      #           product-version: "1"
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
