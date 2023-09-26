@@ -52,7 +52,7 @@ jobs:
          format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "Version_sprint_38"
+         product-version: "Version_sprint_38_1"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -84,7 +84,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "Version_sprint_38"
+                product-version: "Version_sprint_38_1_0"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -108,7 +108,7 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_attest4"
+                product-version: "version_attest4_1"
       
       - name: Generate signed SBOM for docker image (mongo-express:latest)
         uses: scribe-security/action-bom@master
@@ -126,7 +126,7 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "version_attest35554545"
+                product-version: "version_attest_1"
                 
       
       - name: Generate signed SBOM for docker image (mongo-express:0.54.0)
@@ -145,7 +145,7 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: ""
+                product-version: "1"
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
