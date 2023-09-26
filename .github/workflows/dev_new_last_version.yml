@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Generate signed SBOM for repo content
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
          target: 'git:.'
          scribe-enable: true
@@ -68,7 +68,7 @@ jobs:
             docker build -t my-image:latest .   
 
       - name: Generate signed SBOM for docker image
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
@@ -149,7 +149,7 @@ jobs:
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
