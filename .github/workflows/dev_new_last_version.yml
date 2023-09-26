@@ -52,7 +52,7 @@ jobs:
          format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "Version_sprint_38_12"
+         product-version: "test_null_licence_issue"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -84,7 +84,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "Version_sprint_38_12"
+                product-version: "test_null_licence_issue"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
