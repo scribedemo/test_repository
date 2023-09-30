@@ -53,7 +53,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
-                product-version: "test_dev1"
+                product-version: "test_dev_1"
 
         - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -85,7 +85,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
-                product-version: "test_dev1"
+                product-version: "test_dev_1"
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
@@ -95,7 +95,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest-slsa
-                product-key: "sprint_38"
+                product-key: "test_dev_1"
                 # scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 # scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 # scribe-url: ${{ env.SCRIBE_URL }}
