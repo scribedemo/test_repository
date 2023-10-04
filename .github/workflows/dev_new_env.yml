@@ -68,6 +68,11 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
 
+        - name: Build the Docker image
+          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+          run: |
+            docker build -t my-image:latest .
+
         - name: Sign Image using Sigstore
           uses: scribe-security/action-bom@master
           with:
@@ -136,10 +141,6 @@ jobs:
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
 
-        - name: Build the Docker image
-          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
-          run: |
-            docker build -t my-image:latest .
 
 
         - name: Generate signed SBOM for docker image
