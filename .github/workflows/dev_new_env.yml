@@ -46,7 +46,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-sigstore-github_A"
+                product-version: "2_test-sigstore-github_A"
 
         # - name: Sign Git using x509 keys
         #   uses: scribe-security/action-bom@master
@@ -126,7 +126,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-sigstore-github_A_2"
+                product-version: "2_test-sigstore-github_A_2"
 
         # - name: Verify Image using Sigstore
         #   uses: scribe-security/action-verify@master
@@ -184,7 +184,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-x509-github_A"
+                product-version: "2_test-x509-github_A"
 
         - uses: actions/upload-artifact@v3
           with:
