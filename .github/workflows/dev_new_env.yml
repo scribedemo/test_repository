@@ -1,4 +1,4 @@
-name: dev new - Create signed git clone and image SBOMs
+name: dev new - sigstore and x509-env
 
 on: 
   workflow_dispatch:
