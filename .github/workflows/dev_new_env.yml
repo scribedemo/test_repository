@@ -38,7 +38,7 @@ jobs:
           with:
                 target: 'git:.'
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -53,7 +53,7 @@ jobs:
           with:
                 target: 'git:.'
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -78,7 +78,7 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -99,7 +99,7 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -118,7 +118,7 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -133,7 +133,7 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "sprint_38"
+                product-key: "sprint_38_CA"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -178,7 +178,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest-slsa
-                product-key: "test-sigstore-github_A"
+                product-key: "sprint_38_CA"
                 # scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 # scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 # scribe-url: ${{ env.SCRIBE_URL }}
