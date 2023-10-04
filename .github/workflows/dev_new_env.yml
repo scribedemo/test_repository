@@ -73,36 +73,6 @@ jobs:
           run: |
             docker build -t my-image:latest .
 
-        - name: Sign Image using Sigstore
-          uses: scribe-security/action-bom@master
-          with:
-                target: my-image:latest
-                scribe-enable: true
-                product-key: "sprint_38"
-                components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "test-sigstore-github"
-
-        - name: Verify Image using Sigstore
-          uses: scribe-security/action-verify@master
-          with:
-                target: my-image:latest
-                scribe-enable: true
-                product-key: "sprint_38"
-                components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                input-format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "test-sigstore-github"
-
         - name: Sign Image using x509 keys
           uses: scribe-security/action-bom@master
           with:
@@ -141,7 +111,35 @@ jobs:
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
 
+        - name: Sign Image using Sigstore
+          uses: scribe-security/action-bom@master
+          with:
+                target: my-image:latest
+                scribe-enable: true
+                product-key: "sprint_38"
+                components: packages,files,dep
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                format: attest
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                product-version: "test-sigstore-github"
 
+        - name: Verify Image using Sigstore
+          uses: scribe-security/action-verify@master
+          with:
+                target: my-image:latest
+                scribe-enable: true
+                product-key: "sprint_38"
+                components: packages,files,dep
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                input-format: attest
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                product-version: "test-sigstore-github"
 
         - name: Generate signed SBOM for docker image
             # Used after a docker image is built
