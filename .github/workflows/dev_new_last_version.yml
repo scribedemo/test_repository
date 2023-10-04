@@ -52,7 +52,7 @@ jobs:
          format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "test_1_0"
+         product-version: "test_1_0_1"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -84,7 +84,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "test_1_0"
+                product-version: "test_1_0_1"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -156,7 +156,8 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa
                 format: attest-slsa
-                product-version: "test_1_0"
+                product-key: "Sprint_38"
+                product-version: "test_1_0_1"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
