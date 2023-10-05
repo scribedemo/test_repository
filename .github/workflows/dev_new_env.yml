@@ -72,7 +72,7 @@ jobs:
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
           run: |
             docker build -t my-image:latest .
-        valint bom busybox:latest -o attest --attest.default=x509 --ca <my_ca.pem> --key <my_key.pem> --cert <my_cert.pem>
+        # valint bom busybox:latest -o attest --attest.default=x509 --ca <my_ca.pem> --key <my_key.pem> --cert <my_cert.pem>
         - name: Sign Image using x509 keys
           uses: scribe-security/action-bom@master
           with:
@@ -93,7 +93,7 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
         
-        valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
+        # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         - name: Verify Image using x509 keys
           uses: scribe-security/action-verify@master
           with:
