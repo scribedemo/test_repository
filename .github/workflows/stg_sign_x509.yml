@@ -119,7 +119,7 @@ jobs:
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
   
 
         - uses: actions/upload-artifact@v3
