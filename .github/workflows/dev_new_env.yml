@@ -33,20 +33,20 @@ jobs:
     steps:
         - uses: actions/checkout@v3
 
-        - name: Sign Git using Sigstore
-          uses: scribe-security/action-bom@master
-          with:
-                target: 'git:.'
-                scribe-enable: true
-                product-key: "sprint_38_CA"
-                components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "2_test-sigstore-github_A"
+        # - name: Sign Git using Sigstore
+        #   uses: scribe-security/action-bom@master
+        #   with:
+        #         target: 'git:.'
+        #         scribe-enable: true
+        #         product-key: "sprint_38_CA"
+        #         components: packages,files,dep
+        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+        #         format: attest
+        #         scribe-url: ${{ env.SCRIBE_URL }}
+        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+        #         product-version: "2_test-sigstore-github_A"
 
         - name: Sign Git using x509 keys
           uses: scribe-security/action-bom@master
@@ -62,7 +62,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-x509-github_A_3"
+                product-version: "1_test-x509-github_A_4"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -87,7 +87,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-x509-github_A_3"
+                product-version: "1_test-x509-github_A_4"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -108,67 +108,67 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "1_test-x509-github_A_3"
+                product-version: "1_test-x509-github_A_4"
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
 
-        - name: Sign Image using Sigstore
-          uses: scribe-security/action-bom@master
-          with:
-                target: my-image:latest
-                scribe-enable: true
-                product-key: "sprint_38_CA"
-                components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "2_test-sigstore-github_A_2"
+        # - name: Sign Image using Sigstore
+        #   uses: scribe-security/action-bom@master
+        #   with:
+        #         target: my-image:latest
+        #         scribe-enable: true
+        #         product-key: "sprint_38_CA"
+        #         components: packages,files,dep
+        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+        #         format: attest
+        #         scribe-url: ${{ env.SCRIBE_URL }}
+        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+        #         product-version: "2_test-sigstore-github_A_2"
 
-        - name: Verify Image using Sigstore
-          uses: scribe-security/action-verify@master
-          with:
-                target: my-image:latest
-                scribe-enable: true
-                product-key: "sprint_38_CA"
-                components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                input-format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "test-sigstore-github_A_2"
+        # - name: Verify Image using Sigstore
+        #   uses: scribe-security/action-verify@master
+        #   with:
+        #         target: my-image:latest
+        #         scribe-enable: true
+        #         product-key: "sprint_38_CA"
+        #         components: packages,files,dep
+        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+        #         input-format: attest
+        #         scribe-url: ${{ env.SCRIBE_URL }}
+        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+        #         product-version: "test-sigstore-github_A_2"
 
-        - name: Generate signed SBOM for docker image
-            # Used after a docker image is built
-          uses: scribe-security/action-bom@master
-          with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: 'my-image:latest'
-                scribe-enable: true
-                product-key: "sprint_38"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                format: attest
-                attest-default: x509-env
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                # app-name: $LOGICAL_APP_NAME
-                # app-version: $APP_VERSION
-                author-name: $AUTHOR_NAME
-                author-email: $AUTHOR_EMAIL
-                author-phone: $AUTHOR_PHONE
-                supplier-name: $SUPPLIER_NAME
-                supplier-url: $SUPPLIER_URL
-                supplier-email: $SUPPLIER_EMAIL 
-                supplier-phone: $SUPPLIER_PHONE
-                product-version: "test_"
+        # - name: Generate signed SBOM for docker image
+        #     # Used after a docker image is built
+        #   uses: scribe-security/action-bom@master
+        #   with:
+        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+        #         type: docker
+        #         target: 'my-image:latest'
+        #         scribe-enable: true
+        #         product-key: "sprint_38"
+        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+        #         format: attest
+        #         attest-default: x509-env
+        #         scribe-url: ${{ env.SCRIBE_URL }}
+        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+        #         # app-name: $LOGICAL_APP_NAME
+        #         # app-version: $APP_VERSION
+        #         author-name: $AUTHOR_NAME
+        #         author-email: $AUTHOR_EMAIL
+        #         author-phone: $AUTHOR_PHONE
+        #         supplier-name: $SUPPLIER_NAME
+        #         supplier-url: $SUPPLIER_URL
+        #         supplier-email: $SUPPLIER_EMAIL 
+        #         supplier-phone: $SUPPLIER_PHONE
+        #         product-version: "test_"
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
@@ -178,13 +178,19 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest-slsa
+                attest-default: x509-env
                 product-key: "sprint_38_CA"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "2_test-x509-github_A"
+                product-version: "1_test-x509-github_A_4"
+                
+          env:
+            ATTEST_CA: ${{ secrets.ATTEST_CA }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+  
 
         - uses: actions/upload-artifact@v3
           with:
