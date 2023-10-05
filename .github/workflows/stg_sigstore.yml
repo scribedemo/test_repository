@@ -1,5 +1,4 @@
-name: dev new - sigstore and x509-env
-
+name: stg_sigstore
 on: 
   workflow_dispatch:
   # push:
