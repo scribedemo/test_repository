@@ -39,8 +39,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -61,8 +61,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -76,8 +76,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 input-format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
@@ -102,8 +102,8 @@ jobs:
                 format: attest-slsa
                 attest-default: x509-env
                 product-key: "Sigstore"
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
