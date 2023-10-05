@@ -49,9 +49,9 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 product-version: "stg_1_x509"
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_STG_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_STG_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_STG_CA }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
 
         - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -74,9 +74,9 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 product-version: "stg_1_x509"
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_STG_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_STG_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_STG_CA }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
         
         # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         - name: Verify Image using x509 keys
@@ -95,8 +95,8 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                 product-version: "stg_1_x509"
           env:
-            ATTEST_CA: ${{ secrets.ATTEST_STG_CA }}
-            ATTEST_CERT: ${{ secrets.ATTEST_STG_CERT }}
+            ATTEST_CA: ${{ secrets.ATTEST_CA }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
 
 
         - name: Generate SLSA provenance statement
@@ -117,9 +117,9 @@ jobs:
                 product-version: "stg_1_x509"
                 
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_STG_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_STG_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_STG_CA }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
         - uses: actions/upload-artifact@v3
