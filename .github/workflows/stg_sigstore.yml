@@ -45,7 +45,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_1_sigstore"
+                product-version: "stg_2_sigstore"
 
 
         - name: Build the Docker image
@@ -67,7 +67,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_1_sigstore"
+                product-version: "stg_2_sigstore"
 
         - name: Verify Image using Sigstore
           uses: scribe-security/action-verify@master
@@ -82,7 +82,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_1_sigstore"
+                product-version: "stg_2_sigstore"
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -106,7 +106,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_1_sigstore"
+                product-version: "stg_2_sigstore"
   
 
         - uses: actions/upload-artifact@v3
