@@ -65,8 +65,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Product_X509"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 format: attest
                 attest-default: x509-env
                 scribe-url: ${{ env.SCRIBE_URL }}
@@ -86,8 +86,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Product_X509"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 input-format: attest
                 attest-default: x509-env
                 scribe-url: ${{ env.SCRIBE_URL }}
@@ -109,8 +109,8 @@ jobs:
                 format: attest-slsa
                 attest-default: x509-env
                 product-key: "Product_X509"
-                scribe-client-id: ${{ secrets.SCRIBE_STG_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
