@@ -47,7 +47,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_an2_x509"
+                product-version: "stg_an3_x509"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -72,7 +72,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_an2_x509"
+                product-version: "stg_an3_x509"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -93,7 +93,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_an2_x509"
+                product-version: "stg_an3_x509"
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -114,7 +114,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_an2_x509"
+                product-version: "stg_an3_x509"
                 
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
