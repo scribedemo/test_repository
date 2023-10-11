@@ -47,7 +47,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_pass_x509"
+                product-version: "stg_pass1_x509"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
@@ -72,7 +72,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_pass_x509"
+                product-version: "stg_pass1_x509"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
@@ -114,16 +114,16 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_pass_x509"
-                ca: ${{ secrets.ATTEST_CA_EX }}
-                cert: ${{ secrets.ATTEST_CERT_EX}}
-                key: ${{ secrets.ATTEST_KEY_EX }}
+                product-version: "stg_pass1_x509"
+                # ca: ${{ secrets.ATTEST_CA_EX }}
+                # cert: ${{ secrets.ATTEST_CERT_EX}}
+                # key: ${{ secrets.ATTEST_KEY_EX }}
                 force: true
                 
-          # env:
-          #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-          #   ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-          #   ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA_EX }}
   
 
         - uses: actions/upload-artifact@v3
