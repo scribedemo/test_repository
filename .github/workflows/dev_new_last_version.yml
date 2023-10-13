@@ -74,7 +74,7 @@ jobs:
                 type: docker
                 target: 'my-image:latest'
                 scribe-enable: true
-                product-key: "Sprint_38"
+                product-key: "Sprint_38_SH_2714"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: attest
@@ -84,7 +84,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version: "test_1_0_2"
+                product-version:  "SPRINT38-SH2714_statement_slsa"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -156,8 +156,8 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa
                 format: statement-slsa
-                product-key: "Sprint_38"
-                product-version: "test_1_0_2"
+                product-key: "Sprint_38_SH_2714"
+                product-version: "SPRINT38-SH2714_statement_slsa"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
