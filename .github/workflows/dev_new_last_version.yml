@@ -46,13 +46,13 @@ jobs:
          scribe-login-url: https://$AUTH0_DOMAIN
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
          scribe-url: $SCRIBE_API_BASE_URI
-         product-key: "Sprint_38"
+         product-key: "Sprint_38_SH_2714"
+         product-version: "SPRINT38-SH2714_st_slsa"
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
          format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-         product-version: "test_1_0_2"
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -66,7 +66,34 @@ jobs:
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
         run: |
             docker build -t my-image:latest .   
-
+        
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@dev
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: my-image:latest
+                # attest-slsa, statement-slsa
+                format: statement-slsa
+                product-key: "Sprint_38_SH_2714"
+                product-version: "SPRINT38-SH2714_st_slsa"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                # author-name: $AUTHOR_NAME
+                # author-email: $AUTHOR_EMAIL
+                # author-phone: $AUTHOR_PHONE
+                # supplier-name: $SUPPLIER_NAME
+                # supplier-url: $SUPPLIER_URL
+                # supplier-email: $SUPPLIER_EMAIL
+                # supplier-phone: $SUPPLIER_PHONE
+                # ca: ${{ secrets.COMPANY_CA }}
+                # cert: ${{ secrets.SIGNER_CERT }}
+                # key: ${{ secrets.SIGNER_KEY }}
+     
       - name: Generate signed SBOM for docker image
         uses: scribe-security/action-bom@dev
         with:
@@ -84,7 +111,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version:  "SPRINT38-SH2714_attest_slsa"
+                product-version:  "SPRINT38-SH2714_st_slsa"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
@@ -147,22 +174,32 @@ jobs:
       #           # author-name: $AUTHOR_NAME
       #           product-version: "1"
       
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
-        with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: my-image:latest
-                # attest-slsa, statement-slsa
-                format: attest-slsa
-                product-key: "Sprint_38_SH_2714"
-                product-version: "SPRINT38-SH2714_attest_slsa"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      # - name: Generate SLSA provenance statement
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@dev
+      #   with:
+      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+      #           type: docker
+      #           target: my-image:latest
+      #           # attest-slsa, statement-slsa
+      #           format: attest-slsa
+      #           product-key: "Sprint_38_SH_2714"
+      #           product-version: "SPRINT38-SH2714_attest_slsa"
+      #           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+      #           scribe-url: ${{ env.SCRIBE_URL }}
+      #           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      #           # author-name: $AUTHOR_NAME
+      #           # author-email: $AUTHOR_EMAIL
+      #           # author-phone: $AUTHOR_PHONE
+      #           # supplier-name: $SUPPLIER_NAME
+      #           # supplier-url: $SUPPLIER_URL
+      #           # supplier-email: $SUPPLIER_EMAIL
+      #           # supplier-phone: $SUPPLIER_PHONE
+      #           # ca: ${{ secrets.COMPANY_CA }}
+      #           # cert: ${{ secrets.SIGNER_CERT }}
+      #           # key: ${{ secrets.SIGNER_KEY }}
                 
 
       - uses: actions/upload-artifact@v3
