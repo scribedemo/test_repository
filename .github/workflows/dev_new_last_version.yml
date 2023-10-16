@@ -73,7 +73,7 @@ jobs:
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
-                target: my-image:latest
+                target: 'my-image:latest'
                 # attest-slsa, statement-slsa
                 format: statement-slsa
                 product-key: "Sprint_38_SH_2714"
