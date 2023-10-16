@@ -47,7 +47,7 @@ jobs:
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
          scribe-url: $SCRIBE_API_BASE_URI
          product-key: "Sprint_38_SH_2714"
-         product-version: "SPRINT38-SH2714_st_slsa"
+         product-version: "SPRINT38_statement_slsa"
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
          format: attest
@@ -77,7 +77,7 @@ jobs:
                 # attest-slsa, statement-slsa
                 format: statement-slsa
                 product-key: "Sprint_38_SH_2714"
-                product-version: "SPRINT38-SH2714_st_slsa"
+                product-version: "SPRINT38_statement_slsa"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
@@ -111,7 +111,7 @@ jobs:
                 # app-name: $LOGICAL_APP_NAME
                 # app-version: $APP_VERSION
                 # author-name: $AUTHOR_NAME
-                product-version:  "SPRINT38-SH2714_st_slsa"
+                product-version: "SPRINT38_statement_slsa"
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
                 supplier-name: $SUPPLIER_NAME
