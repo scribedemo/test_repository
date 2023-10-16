@@ -74,7 +74,7 @@ jobs:
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
-                target: 'my-image:latest'
+                target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
                 format: attest-generic
                 product-key: "Sprint_38_SH_2714"
@@ -100,7 +100,7 @@ jobs:
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
-                target: 'my-image:latest'
+                target: my-image:latest
                 scribe-enable: true
                 product-key: "Sprint_38_SH_2714"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
