@@ -38,9 +38,8 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
-          # app-name: "stg app name"
-          # app-version: "1.0.0 stg"
-          product-version: "version_sprintt37_2"
+          product-key: "Sprint_39_stg"
+          product-version: "version_sprintt39_1"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -59,8 +58,7 @@ jobs:
           type: docker
           target: my-image:latest
           format: attest
-          # format: attest-cyclonedx-json
-          # format: statement-cyclonedx-json
+          # format: attest-cyclonedx-json, statement-cyclonedx-json
           verbose: 2
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
@@ -69,30 +67,29 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
-          # app-name: "stg app name"
-          # app-version: "1.0.0 stg"
-          product-version: "version_sprintt37_2"
+          product-key: "Sprint_39_stg"
+          product-version: "version_sprintt39_1"
           env: user_metadata
           force: true
         env:
           user_metadata: ${{ env.custom_env }}
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: scribe-reports
-          path: |
-            ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
-            ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
             
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        # uses: scribe-security/action-bom@master
         uses: scribe-security/action-bom@master
         with:
           target: mongo-express:1.0.0-alpha.4
-#           format: statement-slsa
           format: attest-slsa
-          # product-key: "0_stg_en_my_npm"
+          pipeline-name: "stg pipeline name"
+          product-key: "Sprint_39_stg"
+          product-version: "version_sprintt39_1"
+          scribe-enable: true
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
       - uses: actions/upload-artifact@v2
         with:
