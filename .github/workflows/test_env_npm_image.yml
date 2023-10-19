@@ -70,7 +70,7 @@ jobs:
         
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-slsa@dev
+        uses: scribe-security/action-slsa@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
@@ -97,7 +97,7 @@ jobs:
                 # key: ${{ secrets.SIGNER_KEY }}
      
       - name: Generate signed SBOM for docker image
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
