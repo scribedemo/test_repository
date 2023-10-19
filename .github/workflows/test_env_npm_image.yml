@@ -77,7 +77,7 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
                 format: attest-slsa
-                product-key: "Sprint_39_tets"
+                product-key: "Sprint_39_test_env"
                 product-version: "SPRINT9_test"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
@@ -103,7 +103,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Sprint_39_tets"
+                product-key: "Sprint_39_test_env"
                 product-version: "SPRINT9_test"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
