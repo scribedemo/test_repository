@@ -79,8 +79,8 @@ jobs:
                 format: attest-slsa
                 product-key: "Sprint_39_tets"
                 product-version: "SPRINT9_test"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -105,8 +105,8 @@ jobs:
                 scribe-enable: true
                 product-key: "Sprint_39_tets"
                 product-version: "SPRINT9_test"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
