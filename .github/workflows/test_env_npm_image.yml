@@ -76,7 +76,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
-                format: ttest-slsa
+                format: attest-slsa
                 product-key: "Sprint_39_tets"
                 product-version: "SPRINT9_test"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
