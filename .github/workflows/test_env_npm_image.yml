@@ -76,10 +76,10 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Sprint_39_test_env"
-                product-version: "SPRINT9_test1"
+                product-version: "SPRINT9_test_attest"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
@@ -131,7 +131,7 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 format: attest
                 product-key: "Sprint_39_test_env"
-                product-version: "SPRINT9_test1"
+                product-version: "SPRINT9_test_attest"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
