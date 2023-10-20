@@ -41,7 +41,12 @@ jobs:
       - name: Generate signed git SBOM for repo content
         uses: scribe-security/action-bom@dev
         with:
+        #   target: 'https://github.com/mongo-express/mongo-express.git'
+         type: git
          target: 'git:.'
+        # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+         format: json
+         force: true
          scribe-enable: true
          scribe-login-url: https://$AUTH0_DOMAIN
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
@@ -50,10 +55,6 @@ jobs:
          product-version: "differet_attestions"
          scribe-client-id: ${{ secrets.CLIENT_ID}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         format: attest
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -72,6 +73,7 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
+          force: true
           scribe-login-url: https://$AUTH0_DOMAIN
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
@@ -104,6 +106,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
+                force: true
                 product-key: "Sprint_39_a few attestion"
                 product-version: "differet_attestions"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
@@ -130,6 +133,7 @@ jobs:
           target: registry:busybox:latest
           verbose: 2
           scribe-enable: true
+          force: true
           scribe-login-url: https://$AUTH0_DOMAIN
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
@@ -143,26 +147,27 @@ jobs:
          # app-version: $APP_VERSION
           components: packages,files,dep
       
-      - name: Scm generate file sbom, upload to scribe
-        # id: valint_bom_scm
-        uses: scribe-security/action-bom@dev
-        with:
-          type: file
-          target: https://github.com/scribedemo/test_npm_repository/blob/master/package.json
-          verbose: 2
-          scribe-enable: true
-          scribe-login-url: https://$AUTH0_DOMAIN
-          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
-          scribe-url: $SCRIBE_API_BASE_URI
-          product-key: "Sprint_39_a few attestion"
-          product-version: "differet_attestions"
-          scribe-client-id: ${{ secrets.CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          format: attest
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
-          components: packages,files,dep
+      # - name: Scm generate file sbom, upload to scribe
+      #   # id: valint_bom_scm
+      #   uses: scribe-security/action-bom@dev
+      #   with:
+      #     type: file
+      #     target: https://github.com/scribedemo/test_npm_repository/blob/master/package.json
+      #     verbose: 2
+      #     scribe-enable: true
+      #     force: true
+      #     scribe-login-url: https://$AUTH0_DOMAIN
+      #     scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
+      #     scribe-url: $SCRIBE_API_BASE_URI
+      #     product-key: "Sprint_39_a few attestion"
+      #     product-version: "differet_attestions"
+      #     scribe-client-id: ${{ secrets.CLIENT_ID}}
+      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+      #     format: attest
+      #    # app-name: $LOGICAL_APP_NAME
+      #    # app-version: $APP_VERSION
+      #     components: packages,files,dep
           
       
       - name: Generate SLSA provenance statement
