@@ -42,11 +42,9 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
         #   target: 'https://github.com/mongo-express/mongo-express.git'
-         type: git
          target: 'git:.'
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         format: json
-         force: true
+         format: attest
          scribe-enable: true
          scribe-login-url: https://$AUTH0_DOMAIN
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
