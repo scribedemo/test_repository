@@ -1,49 +1,16 @@
 name: dev_new_with_parametrs
 
 on: 
-    workflow_dispatch:
-     inputs:
-      enviroment:
-        description: 'Choose Enviroment'
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Select the environment to deploy?
         required: true
-        default: 'dev'
-        
-jobs:
- set_environment:
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-
-    strategy:
-      matrix:
-        environment: ['dev', 'stg', 'prod']
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set Environment
-        run: echo "::set-env name=ENVIRONMENT::${{ matrix.environment }}"
-  
-  
- run_workflow:
-      needs: set_environment
-      runs-on: ubuntu-latest
-
-      steps:
-      - name: Run Workflow
-        run: |
-          if [[ ${{ env.ENVIRONMENT }} == 'dev' ]]; then
-            # Actions for the 'dev' environment
-          elif [[ ${{ env.ENVIRONMENT }} == 'stg' ]]; then
-            # Actions for the 'stg' environment
-          elif [[ ${{ env.ENVIRONMENT }} == 'prod' ]]; then
-            # Actions for the 'prod' environment
-          fi
-        env:
-          DEV_SECRET_KEY: ${{ secrets.DEV_SECRET_KEY }}
-          STG_SECRET_KEY: ${{ secrets.STG_SECRET_KEY }}
-          PROD_SECRET_KEY: ${{ secrets.PROD_SECRET_KEY }}
+        options:
+          - dev
+          - staging
+          - prod
 
    
     # steps: 
