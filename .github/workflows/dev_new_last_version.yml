@@ -104,7 +104,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Dev_npm"
-                product-version: "fix_SH-2992_2"
+                product-version: "fix_SH-2992_3"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
@@ -166,7 +166,7 @@ jobs:
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-slsa@dev
+        uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
@@ -175,7 +175,7 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 product-key: "Dev_npm"
-                product-version: "fix_SH-2992_2"
+                product-version: "fix_SH-2992_3"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
