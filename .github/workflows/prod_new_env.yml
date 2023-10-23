@@ -1,4 +1,4 @@
-name: prod_new_env_my_npm_test
+name: prod_new_env_my_npm
 
 on: 
 #     push:
@@ -9,7 +9,6 @@ env:
      SCRIBE_LOGIN_URL: https://scribe-hub-production.us.auth0.com
      SCRIBE_AUDIENCE: api.production.scribesecurity.com
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
  scribe-report-test:
@@ -22,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
          
-      - name: Scm generate bom, upload to scribe
+      - name: Generate dir SBOM abd upload to Scribe
         id: valint_bom_scm
         uses: scribe-security/action-bom@master
         # uses: scribe-security/action-bom@dev
@@ -31,50 +30,39 @@ jobs:
           target: ./
           verbose: 2
           scribe-enable: true
-          scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
-          product-key: "0_prod_new_my_npm"
+          format: attest
+          product-key: "Test_3093"
+          product-version: "tets:Test_3093"
+          pipeline-name: "prod_check_issue"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_master1"
-          pipeline-name: "prod pipeline name"
-          # app-name: "prod_npm"
-          # app-version: "1.0.0"
-          format: statement
-
+          scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
+       
       - name: build image
         run: |
           docker build -t my-image:latest .
           
-      - name: Image generate bom, upload to scribe
+      - name: Generate image bom, upload to scribe
         id: valint_bom_image
         uses: scribe-security/action-bom@master
         # uses: scribe-security/action-bom@dev
         with:
+         # format: attest, statement-cyclonedx-json, statement
+          # verbose: 2
           type: docker
           target: "my-image:latest"
           format: attest
-          # format: attest, statement-cyclonedx-json, statement
-          verbose: 2
           scribe-enable: true
+          product-key: "Test_3093"
+          product-version: "tets:Test_3093"
+          pipeline-name: "prod_check_issue"
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
-          product-key: "0_prod_new_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-version: "sprint_36_master1"
-          pipeline-name: "prod pipeline name"
-          # app-name: "prod_npm"
-          # app-version: "1.0.0"
-
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: scribe-reports
-      #     path: |
-      #       ${{ steps.valint_bom_scm.outputs.OUTPUT_PATH }}
-      #       ${{ steps.valint_bom_image.outputs.OUTPUT_PATH }}
             
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
@@ -82,9 +70,15 @@ jobs:
         with:
           target: "my-image:latest"
           format: attest-slsa
-          product-key: "0_prod_new_my_npm"
+          product-key: "Test_3093"
+          product-version: "tets:Test_3093"
+          pipeline-name: "prod_check_issue"
+          scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
 
       - uses: actions/upload-artifact@v2
         with:
