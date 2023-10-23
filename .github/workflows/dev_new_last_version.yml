@@ -104,7 +104,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Dev_npm"
-                product-version: "fix_SH-2992_3"
+                product-version: "fix_is_4"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
@@ -175,7 +175,7 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 product-key: "Dev_npm"
-                product-version: "fix_SH-2992_3"
+                product-version: "fix_is_4"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
