@@ -36,29 +36,29 @@ jobs:
 
       - uses: actions/checkout@v3
       
-      # - name: Generate signed git SBOM for repo content
-      #   uses: scribe-security/action-bom@dev
-      #   with:
-      #   #   target: 'https://github.com/mongo-express/mongo-express.git'
-      #    target: 'git:.'
-      #   # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-      #    format: attest
-      #    scribe-enable: true
-      #    scribe-login-url: https://$AUTH0_DOMAIN
-      #    scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
-      #    scribe-url: $SCRIBE_API_BASE_URI
-      #    product-key: "Dev_npm"
-      #    product-version: "fix_SH-2992"
-      #    scribe-client-id: ${{ secrets.CLIENT_ID}}
-      #    scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
-      #    components: packages,files,dep
-      #    author-name: $AUTHOR_NAME
-      #    author-email: $AUTHOR_EMAIL
-      #    author-phone: $AUTHOR_PHONE
-      #    supplier-name: $SUPPLIER_NAME
-      #    supplier-url: $SUPPLIER_URL
-      #    supplier-email: $SUPPLIER_EMAIL 
-      #    supplier-phone: $SUPPLIER_PHONE
+      - name: Generate signed git SBOM for repo content
+        uses: scribe-security/action-bom@dev
+        with:
+        #   target: 'https://github.com/mongo-express/mongo-express.git'
+         target: 'git:.'
+        # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+         format: attest
+         scribe-enable: true
+         scribe-login-url: https://$AUTH0_DOMAIN
+         scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
+         scribe-url: $SCRIBE_API_BASE_URI
+         product-key: "Dev_npm"
+         product-version: "fix_is_5"
+         scribe-client-id: ${{ secrets.CLIENT_ID}}
+         scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+         components: packages,files,dep
+         author-name: $AUTHOR_NAME
+         author-email: $AUTHOR_EMAIL
+         author-phone: $AUTHOR_PHONE
+         supplier-name: $SUPPLIER_NAME
+         supplier-url: $SUPPLIER_URL
+         supplier-email: $SUPPLIER_EMAIL 
+         supplier-phone: $SUPPLIER_PHONE
 
 
       # - name: Scm generate dir bom, upload to scribe
@@ -104,7 +104,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Dev_npm"
-                product-version: "fix_is_4"
+                product-version: "fix_is_5"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
