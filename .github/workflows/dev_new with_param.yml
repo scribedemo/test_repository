@@ -11,7 +11,29 @@ on:
           - dev
           - staging
           - prod
-
+jobs:
+  Stage-Setup:
+    if: ${{ github.event.inputs.Enforcement == 'true' }}
+    name: Stage Setup
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    env:
+      stage: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Generate signed SBOM for repo content
+        # Used after git clone at the begining of the pipeline
+        uses: scribe-security/action-bom@master
+        with:
+          target: 'git:.'
+          scribe-enable: true
+          components: packages,files,dep
+          product-key: lab-scribe-service2
+          product-version: $IMAGE_TAG
+          scribe-client-id: ${{ secrets.CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          format: attest
    
     # steps: 
     #   - uses: actions/checkout@v2
