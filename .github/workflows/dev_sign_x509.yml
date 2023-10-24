@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_common_name2"
+                product-version: "dev_common_name3"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -102,7 +102,7 @@ jobs:
                target: my-image:latest
                scribe-enable: true
                product-key: "sprint_39_CA_valid"
-               product-version: "dev_common_name2"
+               product-version: "dev_common_name3"
                components: packages,files,dep
                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
