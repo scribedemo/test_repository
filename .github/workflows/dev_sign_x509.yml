@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_common_name1"
+                product-version: "dev_common_name2"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -102,7 +102,7 @@ jobs:
                target: my-image:latest
                scribe-enable: true
                product-key: "sprint_39_CA_valid"
-               product-version: "dev_common_name1"
+               product-version: "dev_common_name2"
                components: packages,files,dep
                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -112,6 +112,7 @@ jobs:
                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                common-name: "Test alona1"
+               email: "noreply@scribesecutiry.com"
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
