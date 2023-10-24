@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_common_name4"
+                product-version: "dev_NO_CRL"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -91,9 +91,9 @@ jobs:
                 # common-name: "Test alona1"
                
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_NO_CRL}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_NO_CRL }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA_NO_CRL }}
         
         # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         - name: Verify Image using x509 keys
@@ -102,7 +102,7 @@ jobs:
                target: my-image:latest
                scribe-enable: true
                product-key: "sprint_39_CA_valid"
-               product-version: "dev_common_name4"
+               product-version: "dev_NO_CRL"
                components: packages,files,dep
                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -114,8 +114,8 @@ jobs:
                # common-name: "Scribe Security CA"
                email: "alona@scribesecutiry.com"
           env:
-            ATTEST_CA: ${{ secrets.ATTEST_CA }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA: ${{ secrets.ATTEST_CA_NO_CRL }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_NO_CRL }}
 
         # - name: Sign Image using Sigstore
         #   uses: scribe-security/action-bom@master
@@ -174,35 +174,35 @@ jobs:
         #         supplier-phone: $SUPPLIER_PHONE
         #         product-version: "test_"
 
-        # - name: Generate SLSA provenance statement
-        #   id: valint_slsa_statement
-        #   uses: scribe-security/action-bom@dev
-        #   with:
-        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-        #         type: docker
-        #         target: my-image:latest
-        #         scribe-enable: true
-        #         format: attest-slsa
-        #         attest-default: x509-env
-        #         product-key: "sprint_39_CA_valid"
-        #         product-version: "dev_revorked"
-        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-        #         scribe-url: ${{ env.SCRIBE_URL }}
-        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #         # ca: ${{ secrets.ATTEST_CA }}
-        #         # cert: ${{ secrets.ATTEST_CERT}}
-        #         # key: ${{ secrets.ATTEST_KEY }}
+        - name: Generate SLSA provenance statement
+          id: valint_slsa_statement
+          uses: scribe-security/action-bom@dev
+          with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: my-image:latest
+                scribe-enable: true
+                format: attest-slsa
+                attest-default: x509-env
+                product-key: "sprint_39_CA_valid"
+                product-version: "dev_NO_CRL"
+                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                scribe-url: ${{ env.SCRIBE_URL }}
+                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                # ca: ${{ secrets.ATTEST_CA }}
+                # cert: ${{ secrets.ATTEST_CERT}}
+                # key: ${{ secrets.ATTEST_KEY }}
                 
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_NO_CRL}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_NO_CRL }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA_NO_CRL }}
   
 
-        # - uses: actions/upload-artifact@v3
-        #   with:
-        #         name: provenance
-        #         path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+        - uses: actions/upload-artifact@v3
+          with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
