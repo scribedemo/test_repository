@@ -1,4 +1,4 @@
-name: dev new - sigstore and x509-env
+name: dev_sig_x509-env
 
 on: 
   workflow_dispatch:
