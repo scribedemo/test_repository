@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_REVORKED"
+                product-version: "dev_common_name"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -91,8 +91,8 @@ jobs:
                 common-name: "Test alona1"
                
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
