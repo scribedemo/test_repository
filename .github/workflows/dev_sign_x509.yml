@@ -74,7 +74,7 @@ jobs:
             docker build -t my-image:latest .
         # valint bom busybox:latest -o attest --attest.default=x509 --ca <my_ca.pem> --key <my_key.pem> --cert <my_cert.pem>
         - name: Sign Image using x509 keys
-          uses: scribe-security/action-bom@master
+          uses: scribe-security/action-bom@dev
           with:
                 target: my-image:latest
                 scribe-enable: true
@@ -173,7 +173,7 @@ jobs:
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
-          uses: scribe-security/action-bom@master
+          uses: scribe-security/action-bom@dev
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
