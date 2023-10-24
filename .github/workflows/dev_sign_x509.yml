@@ -111,8 +111,8 @@ jobs:
                scribe-url: ${{ env.SCRIBE_URL }}
                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-               common-name: "Test alona1"
-               email: "noreply@scribesecutiry.com"
+               common-name: "Scribe Security CA"
+               email: "alona@scribesecutiry.com"
           env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
