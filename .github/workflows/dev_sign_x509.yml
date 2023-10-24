@@ -78,7 +78,8 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "sprint_38_CA"
+                product-key: "sprint_39_CA"
+                product-version: "dev_expired"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -87,10 +88,10 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "dev_valid_x509_1"
+               
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
@@ -180,13 +181,13 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 attest-default: x509-env
-                product-key: "sprint_38_CA"
+                product-key: "sprint_39_CA"
+                product-version: "dev_expired"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "dev_valid_x509_1"
                 # ca: ${{ secrets.ATTEST_CA }}
                 # cert: ${{ secrets.ATTEST_CERT}}
                 # key: ${{ secrets.ATTEST_KEY }}
