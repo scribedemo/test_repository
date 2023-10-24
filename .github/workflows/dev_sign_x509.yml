@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA"
-                product-version: "dev_expired"
+                product-version: "dev_valid_1"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -90,8 +90,8 @@ jobs:
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
                
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
@@ -181,8 +181,7 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 attest-default: x509-env
-                product-key: "sprint_39_CA"
-                product-version: "dev_expired"
+                ATTEST_KEY: ${{ secrets.ATTEST_KE}}
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
@@ -193,8 +192,8 @@ jobs:
                 # key: ${{ secrets.ATTEST_KEY }}
                 
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
