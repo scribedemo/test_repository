@@ -48,9 +48,9 @@ jobs:
          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
          scribe-url: $SCRIBE_API_BASE_URI
          product-key: "Dev_npm"
-         product-version: "fix_is_7"
-         scribe-client-id: ${{ secrets.CLIENT_ID}}
-         scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+         product-version: "fix_is_8"
+         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -74,9 +74,9 @@ jobs:
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
           product-key: "Dev_npm"
-          product-version: "fix_is_7"
-          scribe-client-id: ${{ secrets.CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+          product-version: "fix_is_8"
+          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           format: attest
          # app-name: $LOGICAL_APP_NAME
@@ -104,7 +104,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Dev_npm"
-                product-version: "fix_is_7"
+                product-version: "fix_is_8"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
@@ -132,9 +132,9 @@ jobs:
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
           product-key: "Dev_npm"
-          product-version: "fix_is_7"
-          scribe-client-id: ${{ secrets.CLIENT_ID}}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET}}
+          product-version: "fix_is_8"
+          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           format: attest
          # app-name: $LOGICAL_APP_NAME
@@ -175,7 +175,7 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 product-key: "Dev_npm"
-                product-version: "fix_is_7"
+                product-version: "fix_is_8"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
