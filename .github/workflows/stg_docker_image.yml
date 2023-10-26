@@ -21,24 +21,24 @@ jobs:
         with:
           fetch-depth: 0
          
-          
-      - name: Generate signed SBOM for repo content
+      - name: Build the Docker image
+          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+        run: |
+            docker build -t my-image:latest .   
+
+      - name: signed docker SBOM for docker image
         uses: scribe-security/action-bom@master
         with:
-          target: 'git:.'
+          type: docker
+          target: my-image:latest    
           scribe-enable: true
-          verbose: 2
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
           product-key: "0_stg_en_my_npm"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          label: is_git_commit
           format: attest
-          product-version: "stg product version"
-          pipeline-name: "stg pipeline name"
-          app-name: "stg app name"
-          app-version: "1.0.0 stg"
+          product-version: "stg_1.1"
 
       
