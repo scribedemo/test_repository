@@ -34,12 +34,12 @@ jobs:
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          product-key: "0_stg_en_my_npm"
+          product-key: "stg_docker"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           format: statement-cyclonedx-json
-          product-version: "stg_1.3"
+          product-version: "stg_1.4"
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
@@ -48,12 +48,12 @@ jobs:
           target: mongo-express:1.0.0-alpha.4
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          product-key: "0_stg_en_my_npm"
-          product-version: "stg_1.3"
+          product-key: "stg_docker"
+          product-version: "stg_1.4"
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          format: statement-slsa
+          format: attest-slsa
         
 
       - uses: actions/upload-artifact@v2
