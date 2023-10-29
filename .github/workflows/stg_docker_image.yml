@@ -39,7 +39,7 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           format: attest-cyclonedx-json
-          product-version: "stg_1.7"
+          product-version: "stg_1.8"
       
       # - name: Generate SLSA provenance statement
       #   id: valint_slsa_statement
@@ -57,10 +57,10 @@ jobs:
       #     scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
          
         
-      - uses: actions/upload-artifact@v2
-        with:
-          name: provenance
-          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: provenance
+      #     path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
     
 
       
