@@ -39,6 +39,6 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           format: attest
-          product-version: "stg_1.1"
+          product-version: "stg_1.2"
 
       
