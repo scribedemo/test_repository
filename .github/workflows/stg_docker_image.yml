@@ -38,23 +38,23 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          format: statement-cyclonedx-json
+          format: attest-cyclonedx-json
           product-version: "stg_1.6"
       
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
-        with:
-          target: my-image:latest 
-          scribe-enable: true
-          format: statement-slsa
-          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-          product-key: "stg_docker"
-          product-version: "stg_1.6"
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+      # - name: Generate SLSA provenance statement
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     target: my-image:latest 
+      #     scribe-enable: true
+      #     format: statement-slsa
+      #     scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+      #     product-key: "stg_docker"
+      #     product-version: "stg_1.6"
+      #     scribe-url: ${{ env.SCRIBE_URL }}
+      #     scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+      #     scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
          
         
       - uses: actions/upload-artifact@v2
