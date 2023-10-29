@@ -40,5 +40,26 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           format: statement-cyclonedx-json
           product-version: "stg_1.3"
+      
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+          target: mongo-express:1.0.0-alpha.4
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          product-key: "0_stg_en_my_npm"
+          product-version: "stg_1.3"
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          format: statement-slsa
+        
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: provenance
+          path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+    
 
       
