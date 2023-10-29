@@ -38,7 +38,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          format: attest
-          product-version: "stg_1.2"
+          format: statement-cyclonedx-json
+          product-version: "stg_1.3"
 
       
