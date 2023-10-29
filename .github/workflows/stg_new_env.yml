@@ -39,7 +39,7 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_1"
+          product-version: "version_sprintt39_2"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -68,7 +68,7 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_1"
+          product-version: "version_sprintt39_2"
           env: user_metadata
           force: true
         env:
@@ -83,7 +83,7 @@ jobs:
           format: attest-slsa
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_1"
+          product-version: "version_sprintt39_2"
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
