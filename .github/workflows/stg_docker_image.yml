@@ -1,4 +1,4 @@
-name: stg_new_git_commit
+name: stg_new_docker
 
 on: 
 #     push:
