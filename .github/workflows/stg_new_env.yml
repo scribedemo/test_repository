@@ -39,7 +39,7 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_2"
+          product-version: "version_sprintt39_3"
           components: metadata,layers,packages,syft,dep,commits
 
       - name: build image
@@ -68,13 +68,33 @@ jobs:
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_2"
+          product-version: "version_sprintt39_3"
           env: user_metadata
           force: true
         env:
           user_metadata: ${{ env.custom_env }}
 
-            
+      - name: Image generate bom
+        # id: valint_bom_image
+        # uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@master
+        with:
+          type: docker
+          target: requarks/wiki:2.5.219
+          format: attest
+          # format: attest-cyclonedx-json, statement-cyclonedx-json
+          verbose: 2
+          scribe-enable: true
+          scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+          scribe-url: ${{ env.SCRIBE_URL }}
+          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
+          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+          pipeline-name: "stg pipeline name"
+          product-key: "Sprint_39_stg"
+          product-version: "requarks/wiki:2.5.2193"
+          env: user_metadata
+          force: true      
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
@@ -83,7 +103,7 @@ jobs:
           format: attest-slsa
           pipeline-name: "stg pipeline name"
           product-key: "Sprint_39_stg"
-          product-version: "version_sprintt39_2"
+          product-version: "version_sprintt39_3"
           scribe-enable: true
           scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
