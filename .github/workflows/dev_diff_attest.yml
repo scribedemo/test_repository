@@ -1,4 +1,4 @@
-name:  dev_npm_test
+name:  dev_diff_attest
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
@@ -48,7 +48,7 @@ jobs:
          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
          product-key: "Dev_npm"
-         product-version: "fix_is_9"
+         product-version: "fix_is_10"
          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          components: packages,files,dep
@@ -72,7 +72,7 @@ jobs:
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
           product-key: "Dev_npm"
-          product-version: "fix_is_9"
+          product-version: "fix_is_10"
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
@@ -102,7 +102,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "Dev_npm"
-                product-version: "fix_is_9"
+                product-version: "fix_is_10"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 format: statement-cyclonedx-json
@@ -130,7 +130,7 @@ jobs:
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
           product-key: "Dev_npm"
-          product-version: "fix_is_9"
+          product-version: "fix_is_10"
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
@@ -173,7 +173,7 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 product-key: "Dev_npm"
-                product-version: "fix_is_9"
+                product-version: "fix_is_10"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
@@ -189,34 +189,7 @@ jobs:
                 # ca: ${{ secrets.COMPANY_CA }}
                 # cert: ${{ secrets.SIGNER_CERT }}
                 # key: ${{ secrets.SIGNER_KEY }}
-      # - name: Generate SLSA provenance statement
-      #   id: valint_slsa_statement
-      #   uses: scribe-security/action-bom@dev
-      #   with:
-      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-      #           type: docker
-      #           target: my-image:latest
-      #           # attest-slsa, statement-slsa
-      #           format: attest-slsa
-      #           product-key: "Sprint_38_SH_2714"
-      #           product-version: "SPRINT38-SH2714_attest_slsa"
-      #           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-      #           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-      #           scribe-url: ${{ env.SCRIBE_URL }}
-      #           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-      #           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-      #           # author-name: $AUTHOR_NAME
-      #           # author-email: $AUTHOR_EMAIL
-      #           # author-phone: $AUTHOR_PHONE
-      #           # supplier-name: $SUPPLIER_NAME
-      #           # supplier-url: $SUPPLIER_URL
-      #           # supplier-email: $SUPPLIER_EMAIL
-      #           # supplier-phone: $SUPPLIER_PHONE
-      #           # ca: ${{ secrets.COMPANY_CA }}
-      #           # cert: ${{ secrets.SIGNER_CERT }}
-      #           # key: ${{ secrets.SIGNER_KEY }}
                 
-
       - uses: actions/upload-artifact@v3
         with:
                 name: provenance
