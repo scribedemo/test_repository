@@ -72,7 +72,7 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg3_x509"
+                product-version: "stg4_x509"
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -107,20 +107,19 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest
+                scribe-enable: true
                 attest-default: x509-env
                 product-key: "Product_X509"
+                product-version: "stg4_x509"
                 scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg3_x509"
-                # force: true
-                scribe-enable: true
                 
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
            
            
