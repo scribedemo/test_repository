@@ -9,8 +9,8 @@ on:
         required: true
         options:
           - dev
-          - staging
-          - production
+          - stg
+          - prod
 
 env:
   PRODUCT_NAME: test_product
