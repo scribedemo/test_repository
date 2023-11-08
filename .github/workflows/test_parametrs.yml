@@ -14,7 +14,7 @@ on:
 
 env:
   PRODUCT_NAME: test_product
-  PRODUCT_VERSION: "1.0.0"
+  PRODUCT_VERSION: "1.0.2"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
