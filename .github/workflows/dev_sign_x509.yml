@@ -79,7 +79,7 @@ jobs:
                 target: my-image:latest
                 scribe-enable: true
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_NO_CRL"
+                product-version: "dev_NO_CRL1"
                 components: packages,files,dep
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -102,7 +102,7 @@ jobs:
                target: my-image:latest
                scribe-enable: true
                product-key: "sprint_39_CA_valid"
-               product-version: "dev_NO_CRL"
+               product-version: "dev_NO_CRL1"
                components: packages,files,dep
                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -185,7 +185,7 @@ jobs:
                 format: attest-slsa
                 attest-default: x509-env
                 product-key: "sprint_39_CA_valid"
-                product-version: "dev_NO_CRL"
+                product-version: "dev_NO_CRL1"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
