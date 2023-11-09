@@ -47,7 +47,7 @@ jobs:
          scribe-url: ${{ env.SCRIBE_URL }}
          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-         product-key: "Dev_npm"
+         product-key: "Dev_npm1"
          product-version: "fix_is_11"
          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -71,7 +71,7 @@ jobs:
           scribe-url: ${{ env.SCRIBE_URL }}
           scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
           scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-key: "Dev_npm"
+          product-key: "Dev_npm1"
           product-version: "fix_is_11"
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -101,7 +101,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Dev_npm"
+                product-key: "Dev_npm1"
                 product-version: "fix_is_11"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -129,7 +129,7 @@ jobs:
           scribe-login-url: https://$AUTH0_DOMAIN
           scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
           scribe-url: $SCRIBE_API_BASE_URI
-          product-key: "Dev_npm"
+          product-key: "Dev_npm1"
           product-version: "fix_is_11"
           scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
           scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
@@ -172,7 +172,7 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
-                product-key: "Dev_npm"
+                product-key: "Dev_npm1"
                 product-version: "fix_is_11"
                 scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
