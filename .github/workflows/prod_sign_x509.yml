@@ -20,7 +20,7 @@ env:
         # SCRIBE_LOGIN_URL: "https://scribe-hub-staging.us.auth0.com"
         # SCRIBE_AUDIENCE: "api.staging.scribesecurity.com"
         PRODUCT_NAME: "Product_X509"
-        PRODUCT_VERSION: "1.0.1_valid_verify"
+        PRODUCT_VERSION: "1.0.2_valid_verify"
 
 jobs:
 
@@ -90,8 +90,8 @@ jobs:
                 scribe-enable: true
                 product-key: $PRODUCT_NAME
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
+                scribe-client-id: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.SCRIBE_PROD_NEW_CLIENT_SECRET }}
                 input-format: attest
                 attest-default: x509-env
                 scribe-url: ${{ env.SCRIBE_URL }}
