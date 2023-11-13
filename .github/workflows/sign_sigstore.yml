@@ -1,7 +1,23 @@
-name: stg_sigstore
+name: sign_sigstore
 on: 
   workflow_dispatch:
-  # push:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev
+          - stg
+          - prod
+      product_version:
+         description: 'Put product version'
+         required: false
+         default: '0.0.0'
+      product_name:
+         description: 'Put product name'
+         required: false
+         default: 'Sign_sigstore'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
@@ -15,13 +31,17 @@ env:
         SUPPLIER_URL: www.scribesecurity.com 
         SUPPLIER_EMAIL: info@scribesecurity.com
         SUPPLIER_PHONE: 001-001-0011
-        SCRIBE_URL: "https://airflow.staging.scribesecurity.com/"
-        SCRIBE_LOGIN_URL: "https://scribe-hub-staging.us.auth0.com"
-        SCRIBE_AUDIENCE: "api.staging.scribesecurity.com"
+        # URLs and product details
+        PRODUCT_NAME: ${{ github.event.inputs.product_name }}
+        PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+        SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+        SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+        SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
 
 jobs:
 
  build:
+    environment: ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -30,22 +50,22 @@ jobs:
         id-token: write
 
     steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
 
         - name: Sign Git using Sigstore
           uses: scribe-security/action-bom@master
           with:
                 target: 'git:.'
                 scribe-enable: true
-                product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_2_sigstore"
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
 
 
         - name: Build the Docker image
@@ -59,30 +79,30 @@ jobs:
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_2_sigstore"
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
 
         - name: Verify Image using Sigstore
           uses: scribe-security/action-verify@master
           with:
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Sigstore"
                 components: packages,files,dep
-                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
                 input-format: attest
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_2_sigstore"
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -100,13 +120,13 @@ jobs:
                 type: docker
                 target: my-image:latest
                 format: attest-slsa
-                product-key: "Sigstore"
-                scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                product-version: "stg_2_sigstore"
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
   
 
         - uses: actions/upload-artifact@v3
