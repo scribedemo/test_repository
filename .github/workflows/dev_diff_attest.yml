@@ -1,8 +1,7 @@
-name:  dev_diff_attest
+name:  different_attestations
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
-  APP_VERSION: 1.0.1 # The app version all these SBOMs will be assosiated with
   # SBOM Author meta data - Optional
   AUTHOR_NAME: Alona Dodukh
   AUTHOR_EMAIL: alona@thiscompany.com 
@@ -17,14 +16,30 @@ env:
   SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
   SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
-on: workflow_dispatch
-  # push:
-  #   tags:
-  #     - "*"
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev
+          - stg
+          - prod
+      product_version:
+         description: 'Put product version'
+         required: true
+         default: '0.0.0'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'Test_product'
   
 
 jobs:
   build:
+    environment: ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -34,7 +49,7 @@ jobs:
     
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Generate signed git SBOM for repo content
         uses: scribe-security/action-bom@dev
@@ -44,13 +59,13 @@ jobs:
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
          format: attest
          scribe-enable: true
-         scribe-url: ${{ env.SCRIBE_URL }}
-         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-         product-key: "Dev_npm1"
-         product-version: "fix_is_11"
-         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+         product-key: $PRODUCT_NAME
+         product-version: $PRODUCT_VERSION
+         scribe-client-id: ${{ secrets.CLIENT_ID }}
+         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+         scribe-url: $SCRIBE_URL
+         scribe-login-url: $SCRIBE_LOGIN_URL
+         scribe-audience: $SCRIBE_AUDIENCE
          components: packages,files,dep
          author-name: $AUTHOR_NAME
          author-email: $AUTHOR_EMAIL
@@ -68,13 +83,13 @@ jobs:
           type: dir
           target: ./
           scribe-enable: true
-          scribe-url: ${{ env.SCRIBE_URL }}
-          scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-          scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-          product-key: "Dev_npm1"
-          product-version: "fix_is_11"
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+          product-key: $PRODUCT_NAME
+          product-version: $PRODUCT_VERSION
+          scribe-client-id: ${{ secrets.CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          scribe-url: $SCRIBE_URL
+          scribe-login-url: $SCRIBE_LOGIN_URL
+          scribe-audience: $SCRIBE_AUDIENCE
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           format: attest
          # app-name: $LOGICAL_APP_NAME
@@ -101,14 +116,14 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Dev_npm1"
-                product-version: "fix_is_11"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
                 format: statement-cyclonedx-json
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 # author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -123,16 +138,14 @@ jobs:
         with:
           type: image
           target: registry:busybox:latest
-          # verbose: 2
           scribe-enable: true
-          # force: true
-          scribe-login-url: https://$AUTH0_DOMAIN
-          scribe-audience: $AUTH0_SCRIBE_SERVICE_AUDIENCE
-          scribe-url: $SCRIBE_API_BASE_URI
-          product-key: "Dev_npm1"
-          product-version: "fix_is_11"
-          scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
+          product-key: $PRODUCT_NAME
+          product-version: $PRODUCT_VERSION
+          scribe-client-id: ${{ secrets.CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          scribe-url: $SCRIBE_URL
+          scribe-login-url: $SCRIBE_LOGIN_URL
+          scribe-audience: $SCRIBE_AUDIENCE
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           format: attest
          # app-name: $LOGICAL_APP_NAME
@@ -172,13 +185,13 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
-                product-key: "Dev_npm1"
-                product-version: "fix_is_11"
-                scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-                scribe-url: ${{ env.SCRIBE_URL }}
-                scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-                scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 # author-name: $AUTHOR_NAME
                 # author-email: $AUTHOR_EMAIL
                 # author-phone: $AUTHOR_PHONE
@@ -198,19 +211,4 @@ jobs:
 
           
 
-        # uses: scribe-security/action-verify@master
-        # with:
-        #   target: [target]
-        #   format: [attest, statement, attest-slsa, statement-slsa, attest-generic, statement-generic]
-        #   scribe-enable: true
-        #   scribe-client-id: ${{ secrets.clientid }}
-        #   scribe-client-secret: ${{ secrets.clientsecret }}
-        #   app-name: $LOGICAL_APP_NAME
-        #   app-version: $APP_VERSION
-        #   author-name: $AUTHOR_NAME
-        #   author-email: $AUTHOR_EMAIL
-        #   author-phone: $AUTHOR_PHONE
-        #   supplier-name: $SUPPLIER_NAME
-        #   supplier-url: $SUPPLIER_URL
-        #   supplier-email: $SUPPLIER_EMAIL 
-        #   supplier-phone: $SUPPLIER_PHONE
+       
