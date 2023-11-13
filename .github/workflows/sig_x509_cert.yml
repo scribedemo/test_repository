@@ -2,7 +2,23 @@ name: dev_sig_x509-env
 
 on: 
   workflow_dispatch:
-  # push:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev
+          - stg
+          - prod
+      product_version:
+         description: 'Put product version'
+         required: true
+         default: '0.0.0'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'Test_product'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
