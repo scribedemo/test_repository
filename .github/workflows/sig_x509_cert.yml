@@ -18,7 +18,7 @@ on:
       product_name:
          description: 'Put product name'
          required: true
-         default: 'Test_product'
+         default: 'Sign_certificate_x509'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
