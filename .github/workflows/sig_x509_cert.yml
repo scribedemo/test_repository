@@ -51,22 +51,7 @@ jobs:
         id-token: write
 
     steps:
-        - uses: actions/checkout@v3
-
-        # - name: Sign Git using Sigstore
-        #   uses: scribe-security/action-bom@master
-        #   with:
-        #         target: 'git:.'
-        #         scribe-enable: true
-        #         product-key: "sprint_38_CA"
-        #         components: packages,files,dep
-        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-        #         format: attest
-        #         scribe-url: ${{ env.SCRIBE_URL }}
-        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #         product-version: "2_test-sigstore-github_A"
+        - uses: actions/checkout@v4
 
         - name: Sign Git using x509 keys
           uses: scribe-security/action-bom@master
@@ -108,9 +93,7 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                # common-name: "Test alona1"
-               
+                scribe-audience: $SCRIBE_AUDIENCE 
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED}}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
@@ -122,78 +105,21 @@ jobs:
         #   with:
         #        target: my-image:latest
         #        scribe-enable: true
-        #        product-key: "sprint_39_CA_valid"
-        #        product-version: "dev_NO_CRL1"
         #        components: packages,files,dep
-        #        scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #        scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
         #        format: attest
         #        attest-default: x509-env
-        #        scribe-url: ${{ env.SCRIBE_URL }}
-        #        scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #        scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #        # common-name: "Scribe Security CA"
+        #        product-key: $PRODUCT_NAME
+        #        product-version: $PRODUCT_VERSION
+        #        scribe-client-id: ${{ secrets.CLIENT_ID }}
+        #        scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+        #        scribe-url: $SCRIBE_URL
+        #        scribe-login-url: $SCRIBE_LOGIN_URL
+        #        scribe-audience: $SCRIBE_AUDIENCE 
+        #        # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
         #        email: "alona@scribesecutiry.com"
         #   env:
-        #     ATTEST_CA: ${{ secrets.ATTEST_CA_NO_CRL }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT_NO_CRL }}
-
-        # - name: Sign Image using Sigstore
-        #   uses: scribe-security/action-bom@master
-        #   with:
-        #         target: my-image:latest
-        #         scribe-enable: true
-        #         product-key: "sprint_38_CA"
-        #         components: packages,files,dep
-        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-        #         format: attest
-        #         scribe-url: ${{ env.SCRIBE_URL }}
-        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #         product-version: "2_test-sigstore-github_A_2"
-
-        # - name: Verify Image using Sigstore
-        #   uses: scribe-security/action-verify@master
-        #   with:
-        #         target: my-image:latest
-        #         scribe-enable: true
-        #         product-key: "sprint_38_CA"
-        #         components: packages,files,dep
-        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-        #         input-format: attest
-        #         scribe-url: ${{ env.SCRIBE_URL }}
-        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #         product-version: "test-sigstore-github_A_2"
-
-        # - name: Generate signed SBOM for docker image
-        #     # Used after a docker image is built
-        #   uses: scribe-security/action-bom@master
-        #   with:
-        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-        #         type: docker
-        #         target: 'my-image:latest'
-        #         scribe-enable: true
-        #         product-key: "sprint_38"
-        #         scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
-        #         format: attest
-        #         attest-default: x509-env
-        #         scribe-url: ${{ env.SCRIBE_URL }}
-        #         scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
-        #         scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-        #         # app-name: $LOGICAL_APP_NAME
-        #         # app-version: $APP_VERSION
-        #         author-name: $AUTHOR_NAME
-        #         author-email: $AUTHOR_EMAIL
-        #         author-phone: $AUTHOR_PHONE
-        #         supplier-name: $SUPPLIER_NAME
-        #         supplier-url: $SUPPLIER_URL
-        #         supplier-email: $SUPPLIER_EMAIL 
-        #         supplier-phone: $SUPPLIER_PHONE
-        #         product-version: "test_"
+        #     ATTEST_CA: ${{ secrets.ATTEST_CA }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
