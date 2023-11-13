@@ -94,9 +94,9 @@ jobs:
                 # common-name: "Test alona1"
                
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_NO_CRL}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_NO_CRL }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA_NO_CRL }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED}}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         # - name: Verify Image using x509 keys
@@ -199,9 +199,9 @@ jobs:
                 # key: ${{ secrets.ATTEST_KEY }}
                 
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED}}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA_REVORKED}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
         - uses: actions/upload-artifact@v3
