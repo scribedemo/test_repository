@@ -12,9 +12,9 @@ env:
   SUPPLIER_EMAIL: info@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
   # URL's for dev
-  SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
-  SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
-  SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
+  # SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
+  # SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
+  # SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
 
 on: 
   workflow_dispatch:
