@@ -13,11 +13,11 @@ on:
           - prod
       product_version:
          description: 'Put product version'
-         required: true
+         required: false
          default: '0.0.0'
       product_name:
          description: 'Put product name'
-         required: true
+         required: false
          default: 'Sign_certificate_x509'
 
 env:
