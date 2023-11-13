@@ -11,10 +11,11 @@ env:
   SUPPLIER_URL: www.scribesecurity.com 
   SUPPLIER_EMAIL: info@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
-  # URL's for dev
-  # SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
-  # SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
-  # SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
+  PRODUCT_NAME: ${{ github.event.inputs.product_name }}
+  PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+  SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
 
 on: 
   workflow_dispatch:
@@ -29,11 +30,11 @@ on:
           - prod
       product_version:
          description: 'Put product version'
-         required: true
+         # required: true
          default: '0.0.0'
       product_name:
          description: 'Put product name'
-         required: true
+         # required: true
          default: 'Test_product'
   
 
