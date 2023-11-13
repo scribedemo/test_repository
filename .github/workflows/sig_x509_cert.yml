@@ -212,9 +212,6 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                # ca: ${{ secrets.ATTEST_CA }}
-                # cert: ${{ secrets.ATTEST_CERT}}
-                # key: ${{ secrets.ATTEST_KEY }}
                 
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
