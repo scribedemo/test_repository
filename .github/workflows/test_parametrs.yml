@@ -65,11 +65,8 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                # type: docker
-                # target: my-image:latest
                 type: file
-                target: ./dev_config.yml
+                target: ./package.json
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
