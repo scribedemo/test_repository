@@ -33,7 +33,7 @@ env:
   SUPPLIER_URL: www.scribesecurity.com
   SUPPLIER_EMAIL: info@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
-  FILE_PATH: ""
+  
         
 
 jobs:
@@ -66,6 +66,8 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 # type: docker
                 # target: my-image:latest
+                env:
+                FILE_PATH: 
                 type: file
                 target: $FILE_PATH
                 scribe-enable: true
