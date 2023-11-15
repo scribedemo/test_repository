@@ -66,10 +66,8 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 # type: docker
                 # target: my-image:latest
-                env:
-                FILE_PATH: 
                 type: file
-                target: $FILE_PATH
+                target: ${{ env.FILE_PAT }}
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
