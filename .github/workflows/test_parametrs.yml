@@ -67,7 +67,7 @@ jobs:
                 # type: docker
                 # target: my-image:latest
                 type: file
-                target: ${{ env.FILE_PATР }}
+                target: ${{ env.FILE_PATH }}
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
