@@ -23,6 +23,7 @@ on:
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  FILE_PATH: ""
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
@@ -50,9 +51,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Read JSON file and set custom_env
-        id: set_custom_env
-        run: echo "FILE_PATH=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
+      # - name: Read JSON file and set custom_env
+      #   id: set_custom_env
+      #   run: echo "FILE_PATH=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
 
       - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
