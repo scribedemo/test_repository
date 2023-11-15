@@ -33,6 +33,8 @@ env:
   SUPPLIER_URL: www.scribesecurity.com
   SUPPLIER_EMAIL: info@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
+  FILE_PATH: ""
+        
 
 jobs:
   build:
@@ -50,7 +52,7 @@ jobs:
         
       - name: Read JSON file and set custom_env
         id: set_custom_env
-        run: echo "custom_env=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
+        run: echo "FILE_PATH=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
 
       - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -65,7 +67,7 @@ jobs:
                 # type: docker
                 # target: my-image:latest
                 type: file
-                target: "https://github.com/scribedemo/test_npm_repository/blob/master/package.json"
+                target: $FILE_PATH
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
