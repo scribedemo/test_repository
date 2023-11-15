@@ -58,8 +58,10 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: my-image:latest
+                # type: docker
+                # target: my-image:latest
+                type: file
+                target: "https://github.com/scribedemo/test_npm_repository/blob/master/package.json"
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
