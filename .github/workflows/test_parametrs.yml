@@ -23,7 +23,7 @@ on:
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
-  FILE_PATH: "/scribedemo/test_npm_repository/blob/master/package-lock.json"
+  # FILE_PATH: "/scribedemo/test_npm_repository/blob/master/package-lock.json"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
@@ -61,6 +61,7 @@ jobs:
             docker build -t my-image:latest .   
 
       - name: Generate signed docker SBOM for docker image
+        id: valint_attest_file
         uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
@@ -68,7 +69,7 @@ jobs:
                 # type: docker
                 # target: my-image:latest
                 type: file
-                target: $FILE_PATH
+                target: ./dev_config.yml
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
