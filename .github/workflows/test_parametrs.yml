@@ -65,8 +65,8 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
-                type: file
-                target: ./package.json
+                type: docker
+                target: my-image:latest
                 scribe-enable: true
                 format: statement-cyclonedx-json
                 product-key: $PRODUCT_NAME
@@ -82,4 +82,38 @@ jobs:
                 supplier-name: $SUPPLIER_NAME
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
-                supplier-phone: $SUPPLIER_PHONE    
+                supplier-phone: $SUPPLIER_PHONE 
+
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@dev
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: my-image:latest
+                # attest-slsa, statement-slsa, attest-generic
+                scribe-enable: true
+                format: statement-slsa
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
+                # author-name: $AUTHOR_NAME
+                # author-email: $AUTHOR_EMAIL
+                # author-phone: $AUTHOR_PHONE
+                # supplier-name: $SUPPLIER_NAME
+                # supplier-url: $SUPPLIER_URL
+                # supplier-email: $SUPPLIER_EMAIL
+                # supplier-phone: $SUPPLIER_PHONE
+                # ca: ${{ secrets.COMPANY_CA }}
+                # cert: ${{ secrets.SIGNER_CERT }}
+                # key: ${{ secrets.SIGNER_KEY }}
+                
+      - uses: actions/upload-artifact@v3
+        with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+                
