@@ -83,6 +83,10 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
 
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
@@ -111,6 +115,10 @@ jobs:
                 # ca: ${{ secrets.COMPANY_CA }}
                 # cert: ${{ secrets.SIGNER_CERT }}
                 # key: ${{ secrets.SIGNER_KEY }}
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
                 
       - uses: actions/upload-artifact@v3
         with:
