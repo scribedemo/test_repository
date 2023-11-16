@@ -68,7 +68,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                format: statement-cyclonedx-json
+                format: attest
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -93,7 +93,7 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
-                format: statement-slsa
+                format: attest-slsa
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
