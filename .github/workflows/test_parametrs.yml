@@ -68,7 +68,7 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                fformat: attest
+                format: attest
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
