@@ -68,7 +68,8 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                format: attest
+                fformat: attest
+                attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -98,6 +99,7 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
+                attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
