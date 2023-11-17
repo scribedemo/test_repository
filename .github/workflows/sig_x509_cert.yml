@@ -95,8 +95,8 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE 
           env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED}}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
