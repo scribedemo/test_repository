@@ -1,4 +1,4 @@
-name: new_envs_metadata
+name: ntia_metadata
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
