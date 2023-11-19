@@ -19,10 +19,17 @@ on:
          description: 'Put product name'
          required: true
          default: 'Test_product'
+      image_name:
+         description: 'Put your image name'
+         required: true
+         default: mongo-express:latest
+         
+       
 
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  IMAGE_NAME: ${{github.event.inputs.image_name}}
   # FILE_PATH: "/scribedemo/test_npm_repository/blob/master/package-lock.json"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
@@ -55,10 +62,10 @@ jobs:
       #   id: set_custom_env
       #   run: echo "FILE_PATH=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
 
-      - name: Build the Docker image
-          # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
-        run: |
-            docker build -t my-image:latest .   
+      # - name: Build the Docker image
+      #     # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+      #   run: |
+      #       docker build -t my-image:latest .   
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
@@ -66,7 +73,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
-                target: my-image:latest
+                target: IMAGE_NAME
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
