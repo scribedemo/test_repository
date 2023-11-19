@@ -24,6 +24,7 @@ on:
          required: true
          default: 'mongo-express:latest'
       valint_version:
+         type: choice
          description: 'Choose valint version'
          required: true
          options:
