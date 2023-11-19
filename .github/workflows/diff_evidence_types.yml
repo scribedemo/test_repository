@@ -52,10 +52,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v4
-
-      - name: Read JSON file and set custom_env
-        id: set_custom_env
-        run: echo "file=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
       
       - name: Generate signed git SBOM for repo content
         uses: scribe-security/action-bom@dev
