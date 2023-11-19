@@ -78,7 +78,7 @@ jobs:
 
 
       - name: Generate attest-cyclonedx-json+image
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -155,13 +155,14 @@ jobs:
           supplier-url: $SUPPLIER_URL
           supplier-email: $SUPPLIER_EMAIL 
           supplier-phone: $SUPPLIER_PHONE
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+     
+      
+      - name: Generate SLSA provenance attest
+        id: valint_attest_slsa
+        uses: scribe-security/action-bom@master
         with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
-                target: my-image:latest
+                target: mongo-express:latest
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
@@ -172,16 +173,23 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                # author-name: $AUTHOR_NAME
-                # author-email: $AUTHOR_EMAIL
-                # author-phone: $AUTHOR_PHONE
-                # supplier-name: $SUPPLIER_NAME
-                # supplier-url: $SUPPLIER_URL
-                # supplier-email: $SUPPLIER_EMAIL
-                # supplier-phone: $SUPPLIER_PHONE
-                # ca: ${{ secrets.COMPANY_CA }}
-                # cert: ${{ secrets.SIGNER_CERT }}
-                # key: ${{ secrets.SIGNER_KEY }}
+        
+      - name: Generate SLSA provenance statement 
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+                type: docker
+                target: mongo-express:latest
+                # attest-slsa, statement-slsa, attest-generic
+                scribe-enable: true
+                format: statement-slsa
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE          
                 
       - uses: actions/upload-artifact@v3
         with:
@@ -189,6 +197,8 @@ jobs:
                 path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
 
-          
 
+
+
+     
        
