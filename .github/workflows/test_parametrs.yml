@@ -22,14 +22,14 @@ on:
       image_name:
          description: 'Put your image name'
          required: true
-         default: mongo-express:latest
+         default: 'mongo-express:latest'
          
        
 
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
-  IMAGE_NAME: ${{github.event.inputs.image_name}}
+  IMAGE_NAME: ${{ github.event.inputs.image_name}}
   # FILE_PATH: "/scribedemo/test_npm_repository/blob/master/package-lock.json"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
