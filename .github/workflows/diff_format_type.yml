@@ -1,4 +1,4 @@
-name:  different_type_evidence
+name:  different_format_type
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
