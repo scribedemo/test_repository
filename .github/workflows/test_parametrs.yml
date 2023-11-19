@@ -56,15 +56,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      # - name: Read JSON file and set custom_env
-      #   id: set_custom_env
-      #   run: echo "FILE_PATH=$(cat my_metdata_base.json)" >> $GITHUB_ENV  
 
-      # - name: Build the Docker image
-      #     # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
-      #   run: |
-      #       docker build -t my-image:latest .   
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
@@ -101,7 +93,7 @@ jobs:
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
-                target: my-image:latest
+                target: $IMAGE_NAME
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
@@ -113,16 +105,6 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                # author-name: $AUTHOR_NAME
-                # author-email: $AUTHOR_EMAIL
-                # author-phone: $AUTHOR_PHONE
-                # supplier-name: $SUPPLIER_NAME
-                # supplier-url: $SUPPLIER_URL
-                # supplier-email: $SUPPLIER_EMAIL
-                # supplier-phone: $SUPPLIER_PHONE
-                # ca: ${{ secrets.COMPANY_CA }}
-                # cert: ${{ secrets.SIGNER_CERT }}
-                # key: ${{ secrets.SIGNER_KEY }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
