@@ -197,16 +197,6 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                # author-name: $AUTHOR_NAME
-                # author-email: $AUTHOR_EMAIL
-                # author-phone: $AUTHOR_PHONE
-                # supplier-name: $SUPPLIER_NAME
-                # supplier-url: $SUPPLIER_URL
-                # supplier-email: $SUPPLIER_EMAIL
-                # supplier-phone: $SUPPLIER_PHONE
-                # ca: ${{ secrets.COMPANY_CA }}
-                # cert: ${{ secrets.SIGNER_CERT }}
-                # key: ${{ secrets.SIGNER_KEY }}
                 
       - uses: actions/upload-artifact@v3
         with:
