@@ -30,7 +30,6 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
-  # FILE_PATH: "/scribedemo/test_npm_repository/blob/master/package-lock.json"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
@@ -73,7 +72,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
-                target: IMAGE_NAME
+                target: $IMAGE_NAME
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
