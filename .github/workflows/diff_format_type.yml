@@ -77,119 +77,119 @@ jobs:
          supplier-phone: $SUPPLIER_PHONE
 
 
-      - name: Generate attest-cyclonedx-json+image
-        uses: scribe-security/action-bom@master
-        with:
-                # statement-cyclonedx-json, attest, 
-                type: docker
-                target: mongo-express:1.0.0-20-alpine3.17
-                format: attest-cyclonedx-json
-                scribe-enable: true
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                # author-name: $AUTHOR_NAME
-                author-email: $AUTHOR_EMAIL
-                author-phone: $AUTHOR_PHONE
-                supplier-name: $SUPPLIER_NAME
-                supplier-url: $SUPPLIER_URL
-                supplier-email: $SUPPLIER_EMAIL 
-                supplier-phone: $SUPPLIER_PHONE   
+      # - name: Generate attest-cyclonedx-json+image
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # statement-cyclonedx-json, attest, 
+      #           type: docker
+      #           target: mongo-express:1.0.0-20-alpine3.17
+      #           format: attest-cyclonedx-json
+      #           scribe-enable: true
+      #           product-key: $PRODUCT_NAME
+      #           product-version: $PRODUCT_VERSION
+      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #           scribe-url: $SCRIBE_URL
+      #           scribe-login-url: $SCRIBE_LOGIN_URL
+      #           scribe-audience: $SCRIBE_AUDIENCE
+      #           # author-name: $AUTHOR_NAME
+      #           author-email: $AUTHOR_EMAIL
+      #           author-phone: $AUTHOR_PHONE
+      #           supplier-name: $SUPPLIER_NAME
+      #           supplier-url: $SUPPLIER_URL
+      #           supplier-email: $SUPPLIER_EMAIL 
+      #           supplier-phone: $SUPPLIER_PHONE   
 
 
-      - name: Scm generate statement-cyclonedx-json+mongo
-        # id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        with:
-          type: docker
-          target: mongo-express:1.0.0-20-alpine3.18
-          format: statement-cyclonedx-json
-          scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
-          components: packages,files,dep
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
+      # - name: Scm generate statement-cyclonedx-json+mongo
+      #   # id: valint_bom_scm
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     type: docker
+      #     target: mongo-express:1.0.0-20-alpine3.18
+      #     format: statement-cyclonedx-json
+      #     scribe-enable: true
+      #     product-key: $PRODUCT_NAME
+      #     product-version: $PRODUCT_VERSION
+      #     scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #     scribe-url: $SCRIBE_URL
+      #     scribe-login-url: $SCRIBE_LOGIN_URL
+      #     scribe-audience: $SCRIBE_AUDIENCE
+      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+      #    # app-name: $LOGICAL_APP_NAME
+      #    # app-version: $APP_VERSION
+      #     components: packages,files,dep
+      #     author-name: $AUTHOR_NAME
+      #     author-email: $AUTHOR_EMAIL
+      #     author-phone: $AUTHOR_PHONE
+      #     supplier-name: $SUPPLIER_NAME
+      #     supplier-url: $SUPPLIER_URL
+      #     supplier-email: $SUPPLIER_EMAIL 
+      #     supplier-phone: $SUPPLIER_PHONE
  
           
-      - name: Scm generate statement+mongo
-        # id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        with:
-          type: docker
-          target: mongo-express:1.0.0-20
-          format: statement
-          scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
-          components: packages,files,dep
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
+      # - name: Scm generate statement+mongo
+      #   # id: valint_bom_scm
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     type: docker
+      #     target: mongo-express:1.0.0-20
+      #     format: statement
+      #     scribe-enable: true
+      #     product-key: $PRODUCT_NAME
+      #     product-version: $PRODUCT_VERSION
+      #     scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #     scribe-url: $SCRIBE_URL
+      #     scribe-login-url: $SCRIBE_LOGIN_URL
+      #     scribe-audience: $SCRIBE_AUDIENCE
+      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+      #    # app-name: $LOGICAL_APP_NAME
+      #    # app-version: $APP_VERSION
+      #     components: packages,files,dep
+      #     author-name: $AUTHOR_NAME
+      #     author-email: $AUTHOR_EMAIL
+      #     author-phone: $AUTHOR_PHONE
+      #     supplier-name: $SUPPLIER_NAME
+      #     supplier-url: $SUPPLIER_URL
+      #     supplier-email: $SUPPLIER_EMAIL 
+      #     supplier-phone: $SUPPLIER_PHONE
      
       
-      - name: Generate SLSA provenance attest
-        id: valint_attest_slsa
-        uses: scribe-security/action-bom@master
-        with:
-                type: docker
-                target: mongo-express:latest
-                # attest-slsa, statement-slsa, attest-generic
-                scribe-enable: true
-                format: attest-slsa
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+      # - name: Generate SLSA provenance attest
+      #   id: valint_attest_slsa
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           type: docker
+      #           target: mongo-express:latest
+      #           # attest-slsa, statement-slsa, attest-generic
+      #           scribe-enable: true
+      #           format: attest-slsa
+      #           product-key: $PRODUCT_NAME
+      #           product-version: $PRODUCT_VERSION
+      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #           scribe-url: $SCRIBE_URL
+      #           scribe-login-url: $SCRIBE_LOGIN_URL
+      #           scribe-audience: $SCRIBE_AUDIENCE
         
-      - name: Generate SLSA provenance statement 
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
-        with:
-                type: docker
-                target: mongo-express:latest
-                # attest-slsa, statement-slsa, attest-generic
-                scribe-enable: true
-                format: statement-slsa
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE          
+      # - name: Generate SLSA provenance statement 
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           type: docker
+      #           target: mongo-express:latest
+      #           # attest-slsa, statement-slsa, attest-generic
+      #           scribe-enable: true
+      #           format: statement-slsa
+      #           product-key: $PRODUCT_NAME
+      #           product-version: $PRODUCT_VERSION
+      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #           scribe-url: $SCRIBE_URL
+      #           scribe-login-url: $SCRIBE_LOGIN_URL
+      #           scribe-audience: $SCRIBE_AUDIENCE          
                 
       - uses: actions/upload-artifact@v3
         with:
