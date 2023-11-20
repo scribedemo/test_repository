@@ -75,8 +75,8 @@ jobs:
                 type: docker
                 target: my-image:latest
                 scribe-enable: true
-                product-key: "Sprint_39_test_env"
-                product-version: "SPRINT9_1"
+                product-key: "Sprint_41_upgrade"
+                product-version: "1.1.1"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
                 format: attest
@@ -130,24 +130,14 @@ jobs:
                 target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
                 format: attest
-                product-key: "Sprint_39_test_env"
-                product-version: "SPRINT9_1"
+                product-key: "Sprint_41_upgrade"
+                product-version: "1.1.1"
                 scribe-client-id: ${{ secrets.SCRIBE_TEST_CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.SCRIBE_TEST_CLIENT_SECRET }}
                 scribe-url: ${{ env.SCRIBE_URL }}
                 scribe-login-url: ${{ env.SCRIBE_LOGIN_URL }}
                 scribe-audience: ${{ env.SCRIBE_AUDIENCE }}
-                scribe-enable: true
-                # author-name: $AUTHOR_NAME
-                # author-email: $AUTHOR_EMAIL
-                # author-phone: $AUTHOR_PHONE
-                # supplier-name: $SUPPLIER_NAME
-                # supplier-url: $SUPPLIER_URL
-                # supplier-email: $SUPPLIER_EMAIL
-                # supplier-phone: $SUPPLIER_PHONE
-                # ca: ${{ secrets.COMPANY_CA }}
-                # cert: ${{ secrets.SIGNER_CERT }}
-                # key: ${{ secrets.SIGNER_KEY }}      
+                scribe-enable: true    
 
       - uses: actions/upload-artifact@v3
         with:
@@ -155,21 +145,4 @@ jobs:
                 path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
 
-          
-
-        # uses: scribe-security/action-verify@master
-        # with:
-        #   target: [target]
-        #   format: [attest, statement, attest-slsa, statement-slsa, attest-generic, statement-generic]
-        #   scribe-enable: true
-        #   scribe-client-id: ${{ secrets.clientid }}
-        #   scribe-client-secret: ${{ secrets.clientsecret }}
-        #   app-name: $LOGICAL_APP_NAME
-        #   app-version: $APP_VERSION
-        #   author-name: $AUTHOR_NAME
-        #   author-email: $AUTHOR_EMAIL
-        #   author-phone: $AUTHOR_PHONE
-        #   supplier-name: $SUPPLIER_NAME
-        #   supplier-url: $SUPPLIER_URL
-        #   supplier-email: $SUPPLIER_EMAIL 
-        #   supplier-phone: $SUPPLIER_PHONE
+        
