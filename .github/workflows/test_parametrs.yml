@@ -23,13 +23,13 @@ on:
          description: 'Put your image name'
          required: true
          default: 'mongo-express:latest'
-      valint_version:
-         type: choice
-         description: 'Choose valint version'
-         required: true
-         options:
-          - dev
-          - master 
+      # valint_version:
+      #    type: choice
+      #    description: 'Choose valint version'
+      #    required: true
+      #    options:
+      #     - dev
+      #     - master 
          
        
 
@@ -68,7 +68,8 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
+        # uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
+        uses: "scribe-security/action-bom@master"
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -97,7 +98,7 @@ jobs:
 
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
