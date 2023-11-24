@@ -1,5 +1,0 @@
-SCRIBE_URL: "https://airflow.dev.scribesecurity.com/"
-SCRIBE_LOGIN_URL: "https://scribe-hub-dev.us.auth0.com"
-SCRIBE_AUDIENCE: "api.dev.scribesecurity.com"
-scribe-client-id: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_ID}}
-scribe-client-secret: ${{ secrets.SCRIBE_DEV_NEW_CLIENT_SECRET }}
