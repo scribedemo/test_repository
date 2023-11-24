@@ -1,5 +1,0 @@
-SCRIBE_URL: "https://airflow.staging.scribesecurity.com/"
-SCRIBE_LOGIN_URL: "https://scribe-hub-staging.us.auth0.com"
-SCRIBE_AUDIENCE: "api.staging.scribesecurity.com"
-scribe-client-id: ${{ secrets.SCRIBE_STG_NEW_CLIENT_ID }}
-scribe-client-secret: ${{ secrets.SCRIBE_STG_NEW_CLIENT_SECRET }}
