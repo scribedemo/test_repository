@@ -98,31 +98,31 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
 
-      # - name: Generate SLSA provenance statement
-      #   id: valint_slsa_statement
-      #   uses: scribe-security/action-bom@master
-      #   with:
-      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-      #           type: docker
-      #           target: $IMAGE_NAME
-      #           # attest-slsa, statement-slsa, attest-generic
-      #           scribe-enable: true
-      #           format: attest-slsa
-      #           attest-default: x509-env
-      #           product-key: $PRODUCT_NAME
-      #           product-version: $PRODUCT_VERSION
-      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
-      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-      #           scribe-url: $SCRIBE_URL
-      #           scribe-login-url: $SCRIBE_LOGIN_URL
-      #           scribe-audience: $SCRIBE_AUDIENCE
-      #   env:
-      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX  }}
-      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX}}
-      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: $IMAGE_NAME
+                # attest-slsa, statement-slsa, attest-generic
+                scribe-enable: true
+                format: attest-slsa
+                attest-default: x509-env
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX  }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
                 
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #           name: provenance
-      #           path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      - uses: actions/upload-artifact@v3
+        with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
                 
