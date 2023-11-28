@@ -121,7 +121,8 @@ jobs:
                supplier-email: $SUPPLIER_EMAIL
                supplier-phone: $SUPPLIER_PHONE 
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
-               email: "alonavbvcbvcbcvbcvb@scribesecutiry.com"
+               common-name: "Scribe Security CA" 
+               email: "alodfdgdnavbvcbvcbcvbcvb@scribefdgdfgsecutiry.com"
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
