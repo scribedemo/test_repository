@@ -94,8 +94,8 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
         env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX  }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX}}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
 
       - name: Generate SLSA provenance statement
@@ -117,8 +117,8 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
         env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY_EX  }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT_EX}}
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY_REVORKED  }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT_REVORKED }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
                 
       - uses: actions/upload-artifact@v3
