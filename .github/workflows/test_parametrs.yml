@@ -94,7 +94,7 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
                 email: "alona@scribesecurity.com"
-                deliverable: true
+                deliverable: false
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
