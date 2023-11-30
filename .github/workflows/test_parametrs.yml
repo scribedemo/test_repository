@@ -94,7 +94,7 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
                 email: "alona@scribesecurity.com"
-                deliverable: false
+                # deliverable: false
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -146,7 +146,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                deliverable: true
+                # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
