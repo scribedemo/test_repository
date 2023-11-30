@@ -77,7 +77,7 @@ jobs:
                 type: git
                 target: 'https://github.com/sxydh/m-demo.git'
                 scribe-enable: true
-                format: attest
+                format: json
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
