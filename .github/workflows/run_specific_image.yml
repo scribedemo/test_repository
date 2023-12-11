@@ -69,7 +69,7 @@ jobs:
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
         # uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -91,6 +91,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
+                deliverable: false
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -98,7 +99,7 @@ jobs:
 
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
