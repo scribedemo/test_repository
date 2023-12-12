@@ -12,6 +12,7 @@ on:
           - test
           - stg
           - prod
+          - dev_eks
       product_version:
          description: 'Put product version'
          required: false
