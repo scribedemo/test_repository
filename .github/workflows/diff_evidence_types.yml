@@ -76,7 +76,7 @@ jobs:
          supplier-url: $SUPPLIER_URL
          supplier-email: $SUPPLIER_EMAIL 
          supplier-phone: $SUPPLIER_PHONE
-         deliverable: "false"
+         deliverable: true
 
 
       - name: Scm generate dir bom, upload to scribe
@@ -105,7 +105,7 @@ jobs:
           supplier-url: $SUPPLIER_URL
           supplier-email: $SUPPLIER_EMAIL 
           supplier-phone: $SUPPLIER_PHONE
-          deliverable: "true"
+          deliverable: true
 
       - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -135,7 +135,7 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
                 supplier-phone: $SUPPLIER_PHONE
-                deliverable: "false"
+                deliverable: true
 
           
       # - name: Scm generate registry:busybox:latest bom, upload to scribe
@@ -178,7 +178,7 @@ jobs:
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
           components: packages,files,dep
-          deliverable: "false"
+          deliverable: true
           
       
       - name: Generate SLSA provenance statement
@@ -198,7 +198,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                deliverable: "true"
+                deliverable: true
                 
       - uses: actions/upload-artifact@v3
         with:
