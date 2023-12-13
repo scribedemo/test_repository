@@ -107,7 +107,7 @@ jobs:
                 target: $IMAGE_NAME
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
-                format: statement-slsa
+                format: attest-slsa
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
