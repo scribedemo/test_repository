@@ -55,7 +55,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Generate signed git SBOM for repo content
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
         #   target: 'https://github.com/mongo-express/mongo-express.git'
          target: 'git:.'
@@ -80,33 +80,33 @@ jobs:
          deliverable: true
 
 
-      - name: Scm generate dir bom, upload to scribe
-        # id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        with:
-          type: dir
-          target: ./
-          scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          format: attest
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
-          components: packages,files,dep
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
-          deliverable: true
+      # - name: Scm generate dir bom, upload to scribe
+      #   # id: valint_bom_scm
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     type: dir
+      #     target: ./
+      #     scribe-enable: true
+      #     product-key: $PRODUCT_NAME
+      #     product-version: $PRODUCT_VERSION
+      #     scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #     scribe-url: $SCRIBE_URL
+      #     scribe-login-url: $SCRIBE_LOGIN_URL
+      #     scribe-audience: $SCRIBE_AUDIENCE
+      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+      #     format: attest
+      #    # app-name: $LOGICAL_APP_NAME
+      #    # app-version: $APP_VERSION
+      #     components: packages,files,dep
+      #     author-name: $AUTHOR_NAME
+      #     author-email: $AUTHOR_EMAIL
+      #     author-phone: $AUTHOR_PHONE
+      #     supplier-name: $SUPPLIER_NAME
+      #     supplier-url: $SUPPLIER_URL
+      #     supplier-email: $SUPPLIER_EMAIL 
+      #     supplier-phone: $SUPPLIER_PHONE
+      #     deliverable: true
 
       - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
@@ -114,7 +114,7 @@ jobs:
             docker build -t my-image:latest .   
      
       - name: Generate signed docker SBOM for docker image
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
@@ -160,46 +160,46 @@ jobs:
       #     components: packages,files,dep
       #     deliverable: false
       
-      - name: Scm generate file sbom, upload to scribe
-        # id: valint_bom_scm
-        uses: scribe-security/action-bom@master
-        with:
-          type: file
-          target: ./package.json
-          scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          format: attest
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
-          components: packages,files,dep
-          deliverable: true
+      # - name: Scm generate file sbom, upload to scribe
+      #   # id: valint_bom_scm
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #     type: file
+      #     target: ./package.json
+      #     scribe-enable: true
+      #     product-key: $PRODUCT_NAME
+      #     product-version: $PRODUCT_VERSION
+      #     scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #     scribe-url: $SCRIBE_URL
+      #     scribe-login-url: $SCRIBE_LOGIN_URL
+      #     scribe-audience: $SCRIBE_AUDIENCE
+      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+      #     format: attest
+      #    # app-name: $LOGICAL_APP_NAME
+      #    # app-version: $APP_VERSION
+      #     components: packages,files,dep
+      #     deliverable: true
           
       
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
-        with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: my-image:latest
-                # attest-slsa, statement-slsa, attest-generic
-                scribe-enable: true
-                format: attest-slsa
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                deliverable: true
+      # - name: Generate SLSA provenance statement
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+      #           type: docker
+      #           target: my-image:latest
+      #           # attest-slsa, statement-slsa, attest-generic
+      #           scribe-enable: true
+      #           format: attest-slsa
+      #           product-key: $PRODUCT_NAME
+      #           product-version: $PRODUCT_VERSION
+      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+      #           scribe-url: $SCRIBE_URL
+      #           scribe-login-url: $SCRIBE_LOGIN_URL
+      #           scribe-audience: $SCRIBE_AUDIENCE
+      #           deliverable: true
                 
       - uses: actions/upload-artifact@v3
         with:
