@@ -182,23 +182,23 @@ jobs:
       #     deliverable: true
           
       
-      # - name: Generate SLSA provenance statement
-      #   id: valint_slsa_statement
-      #   uses: scribe-security/action-bom@master
-      #   with:
-      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-      #           type: docker
-      #           target: my-image:latest
-      #           # attest-slsa, statement-slsa, attest-generic
-      #           scribe-enable: true
-      #           format: attest-slsa
-      #           product-key: $PRODUCT_NAME
-      #           product-version: $PRODUCT_VERSION
-      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
-      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-      #           scribe-url: $SCRIBE_URL
-      #           scribe-login-url: $SCRIBE_LOGIN_URL
-      #           scribe-audience: $SCRIBE_AUDIENCE
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: my-image:latest
+                # attest-slsa, statement-slsa, attest-generic
+                scribe-enable: true
+                format: attest-slsa
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
       #           deliverable: true
                 
       - uses: actions/upload-artifact@v3
