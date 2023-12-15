@@ -82,7 +82,7 @@ jobs:
         
         # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         - name: Verify Image using x509 keys
-          uses: scribe-security/action-verify@master
+          uses: scribe-security/action-verify@dev
           with:
                target: my-image:latest
                scribe-enable: true
