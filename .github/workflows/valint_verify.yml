@@ -1,4 +1,4 @@
-name: valint_verifysig_x509_cert
+name: valint_verify_sig_x509_cert
 
 on: 
   workflow_dispatch:
