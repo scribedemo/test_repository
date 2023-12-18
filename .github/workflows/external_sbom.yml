@@ -58,11 +58,13 @@ jobs:
         - name: Sign Image using x509 keys
           uses: scribe-security/action-bom@dev
           with:
-                target: my-image:latest
+                type: file
+                target: ./opshub.json
+                predicate-type: https://cyclonedx.org/bom
+                format: attest-generic
+                attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
-                format: attest
-                attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
