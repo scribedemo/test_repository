@@ -165,7 +165,7 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
           type: file
-          target: ./package.json
+          target: "./package.json"
           scribe-enable: true
           product-key: $PRODUCT_NAME
           product-version: $PRODUCT_VERSION
