@@ -24,13 +24,13 @@ on:
          description: 'Put your image name'
          required: true
          default: 'mongo-express:latest'
-      # valint_version:
-      #    type: choice
-      #    description: 'Choose valint version'
-      #    required: true
-      #    options:
-      #     - dev
-      #     - master 
+      valint_version:
+         type: choice
+         description: 'Choose valint version'
+         required: true
+         options:
+          - dev
+          - master 
          
        
 
@@ -70,7 +70,7 @@ jobs:
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
         # uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@$VALINT_VERSION
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
