@@ -55,7 +55,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Generate attest + mongo
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
          type: docker
          target: mongo-express:latest
@@ -79,7 +79,7 @@ jobs:
 
 
       - name: Generate attest-cyclonedx-json+image
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -104,7 +104,7 @@ jobs:
 
       - name: Scm generate statement-cyclonedx-json+mongo
         # id: valint_bom_scm
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
           type: docker
           target: mongo-express:1.0.0-20-alpine3.18
@@ -132,7 +132,7 @@ jobs:
           
       - name: Scm generate statement+mongo
         # id: valint_bom_scm
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
           type: docker
           target: mongo-express:1.0.0-20
@@ -160,7 +160,7 @@ jobs:
       
       - name: Generate SLSA provenance attest
         id: valint_attest_slsa
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 type: docker
                 target: mongo-express:latest
@@ -177,7 +177,7 @@ jobs:
         
       - name: Generate SLSA provenance statement 
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 type: docker
                 target: mongo-express:latest
