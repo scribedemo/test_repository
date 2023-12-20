@@ -68,14 +68,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set Action Version
-        id: set_valint_version
-        run: echo "::set-output name=version::${{ github.event.inputs.valint_version }}"   
+        id: set_version
+        run: echo "::set-env name=VALINT_VERSION::${{ github.event.inputs.valint_version }}" 
 
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
         # uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
-        uses: scribe-security/action-bom@${{ steps.set_version.outputs.version }}
+        uses: scribe-security/action-bom@${{ env.VALINT_VERSION }}
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
