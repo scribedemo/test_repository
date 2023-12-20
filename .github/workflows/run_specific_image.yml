@@ -26,12 +26,9 @@ on:
          required: true
          default: 'mongo-express:latest'
       valint_version:
-         type: choice
-         description: 'Choose valint version'
+         description: 'Put valint version'
          required: true
-         options:
-          - dev
-          - master 
+         default: 'dev'
          
        
 
@@ -39,7 +36,7 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
-  VALINT_VERSION: scribe-security/action-bom@${{ github.event.inputs.valint_version}}
+  VALINT_VERSION: ${{ github.event.inputs.valint_version}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
@@ -71,8 +68,7 @@ jobs:
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
         # uses: "scribe-security/action-bom@${{ env.VALINT_VERSION }}"
-        # uses: scribe-security/action-bom@$VALINT_VERSION
-        uses: ${{env.VALINT_VERSION}}
+        uses: scribe-security/action-bom@$VALINT_VERSION
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
