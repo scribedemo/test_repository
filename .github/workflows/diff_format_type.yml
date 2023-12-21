@@ -30,6 +30,7 @@ on:
           - stg
           - prod
           - dev_eks
+          - test_eks
       product_version:
          description: 'Put product version'
          # required: true
