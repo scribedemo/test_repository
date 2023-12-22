@@ -38,7 +38,7 @@ on:
       product_name:
          description: 'Put product name'
          # required: true
-         default: 'Sprint_41_diff_format_types'
+         default: 'diff_format_types'
   
 
 jobs:
