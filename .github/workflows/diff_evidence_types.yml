@@ -38,7 +38,7 @@ on:
       product_name:
          description: 'Put product name'
          # required: true
-         default: 'Sprint_41_diff_evidence_types'
+         default: "diff_evidence_types'
   
 
 jobs:
