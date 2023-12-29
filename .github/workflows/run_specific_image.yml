@@ -69,7 +69,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -99,7 +99,7 @@ jobs:
 
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
