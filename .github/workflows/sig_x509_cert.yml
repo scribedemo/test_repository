@@ -14,6 +14,7 @@ on:
           - prod
           - dev_eks
           - test_eks
+          - prod_eks
       product_version:
          description: 'Put product version'
          required: false
