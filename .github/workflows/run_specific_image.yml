@@ -51,6 +51,7 @@ env:
   SUPPLIER_URL: www.scribesecurity.com
   SUPPLIER_EMAIL: info@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
+  LABEL: github
   
         
 
@@ -93,6 +94,7 @@ jobs:
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
                 deliverable: true
+                label: $LABEL
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -116,6 +118,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
+                label: $LABEL
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
