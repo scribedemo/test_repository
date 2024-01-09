@@ -16,7 +16,6 @@ env:
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
-  VALINT_VERSION: master
 
 on: 
   workflow_dispatch:
@@ -58,7 +57,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Generate signed git SBOM for repo content
-        uses: scribe-security/action-bom@$VALINT_VERSION
+        uses: scribe-security/action-bom@master
         with:
         #   target: 'https://github.com/mongo-express/mongo-express.git'
          target: 'git:.'
