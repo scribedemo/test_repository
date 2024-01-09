@@ -101,7 +101,8 @@ jobs:
                 supplier-name: $SUPPLIER_NAME
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL 
-                supplier-phone: $SUPPLIER_PHONE   
+                supplier-phone: $SUPPLIER_PHONE 
+                label: $LABEL
 
 
       - name: Scm generate statement-cyclonedx-json+mongo
@@ -130,6 +131,7 @@ jobs:
           supplier-url: $SUPPLIER_URL
           supplier-email: $SUPPLIER_EMAIL 
           supplier-phone: $SUPPLIER_PHONE
+          label: $LABEL
  
           
       - name: Scm generate statement+mongo
@@ -158,6 +160,7 @@ jobs:
           supplier-url: $SUPPLIER_URL
           supplier-email: $SUPPLIER_EMAIL 
           supplier-phone: $SUPPLIER_PHONE
+          label: $LABEL
      
       
       - name: Generate SLSA provenance attest
@@ -177,6 +180,7 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 deliverable: true
+                label: $LABEL
         
       - name: Generate SLSA provenance statement 
         id: valint_slsa_statement
@@ -195,6 +199,7 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE   
                 deliverable: true
+                label: $LABEL
                 
       - uses: actions/upload-artifact@v3
         with:
