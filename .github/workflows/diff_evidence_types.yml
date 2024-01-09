@@ -125,7 +125,7 @@ jobs:
                 scribe-enable: true
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
-                format: statement-cyclonedx-json
+                format: attest
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
