@@ -176,6 +176,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
+                deliverable: true
         
       - name: Generate SLSA provenance statement 
         id: valint_slsa_statement
@@ -192,7 +193,8 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE          
+                scribe-audience: $SCRIBE_AUDIENCE   
+                deliverable: true
                 
       - uses: actions/upload-artifact@v3
         with:
