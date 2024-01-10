@@ -58,7 +58,7 @@ jobs:
         - uses: actions/checkout@v4
 
         - name: Sign Image using x509 keys
-          uses: scribe-security/action-bom@dev
+          uses: scribe-security/action-bom@master
           with:
                 type: file
                 target: ./opshub.json
@@ -103,7 +103,7 @@ jobs:
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
-          uses: scribe-security/action-bom@dev
+          uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 target: ./opshub.json
