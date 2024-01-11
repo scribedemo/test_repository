@@ -164,7 +164,7 @@ jobs:
       
       - name: Scm generate file sbom, upload to scribe
         # id: valint_bom_scm
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
           type: file
           target: "./package.json"
