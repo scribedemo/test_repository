@@ -220,7 +220,7 @@ jobs:
           target: my-image:latest
           # attest-slsa, statement-slsa, attest-generic
           scribe-enable: false
-          format: attest-slsa
+          format: attest
           product-key: $PRODUCT_NAME
           product-version: $PRODUCT_VERSION
           scribe-client-id: ${{ secrets.CLIENT_ID }}
