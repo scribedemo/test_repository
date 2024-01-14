@@ -167,6 +167,7 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
           type: file
+          verbose: 2
           target: "./package.json"
           scribe-enable: true
           product-key: $PRODUCT_NAME
@@ -182,7 +183,8 @@ jobs:
          # app-version: $APP_VERSION
           components: packages,files,dep
           deliverable: true
-          
+        env:
+          DEBUG: true
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
