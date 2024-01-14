@@ -182,6 +182,7 @@ jobs:
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
           components: packages,files,dep
+          filter-regex: "*.txt"
           deliverable: true
         env:
           DEBUG: true
