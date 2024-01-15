@@ -186,30 +186,30 @@ jobs:
       #   env:
       #     DEBUG: true
 
-      # - name: Scm generate file sbom, upload to scribe
-      #   # id: valint_bom_scm
-      #   uses: scribe-security/action-bom@dev
-      #   with:
-      #     type: file
-      #     verbose: 2
-      #     target: "./package.json"
-      #     scribe-enable: false
-      #     product-key: $PRODUCT_NAME
-      #     product-version: $PRODUCT_VERSION
-      #     scribe-client-id: ${{ secrets.CLIENT_ID }}
-      #     scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-      #     scribe-url: $SCRIBE_URL
-      #     scribe-login-url: $SCRIBE_LOGIN_URL
-      #     scribe-audience: $SCRIBE_AUDIENCE
-      #    # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-      #     format: attest
-      #    # app-name: $LOGICAL_APP_NAME
-      #    # app-version: $APP_VERSION
-      #     components: packages,files,dep
-      #     filter-regex: "**/*.txt"
-      #     deliverable: true
-      #   env:
-      #     DEBUG: true
+      - name: Scm generate file sbom, upload to scribe
+        # id: valint_bom_scm
+        uses: scribe-security/action-bom@dev
+        with:
+          type: file
+          verbose: 2
+          target: "./package.json"
+          scribe-enable: false
+          product-key: $PRODUCT_NAME
+          product-version: $PRODUCT_VERSION
+          scribe-client-id: ${{ secrets.CLIENT_ID }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          scribe-url: $SCRIBE_URL
+          scribe-login-url: $SCRIBE_LOGIN_URL
+          scribe-audience: $SCRIBE_AUDIENCE
+         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
+          format: attest
+         # app-name: $LOGICAL_APP_NAME
+         # app-version: $APP_VERSION
+          components: packages,files,dep
+          filter-regex: "**/*.txt"
+          deliverable: true
+        env:
+          DEBUG: true
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
