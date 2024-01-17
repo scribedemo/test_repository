@@ -25,12 +25,11 @@ on:
         description: Environment
         required: true
         options:
-          - dev
-          - test
           - stg
           - prod
           - dev_eks
           - test_eks
+          - ci_eks
           - prod_eks
       product_version:
          description: 'Put product version'
