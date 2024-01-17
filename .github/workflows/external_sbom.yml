@@ -56,16 +56,14 @@ jobs:
     steps:
         - uses: actions/checkout@v4
 
-        - name: Sign Image using x509 keys
-          uses: scribe-security/action-bom@master
+        - name: Sign Generic evidence using x509 keys
+          uses: scribe-security/action-evidence@dev # NOTE!!!! THIS IS ON DEV, change to master once command is released
           with:
-                type: file
                 target: ./opshub.json
                 predicate-type: https://cyclonedx.org/bom
-                format: attest-generic
+                format: attest
                 attest-default: x509-env
                 scribe-enable: true
-                components: packages,files,dep
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
