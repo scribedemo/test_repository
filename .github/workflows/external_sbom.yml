@@ -60,7 +60,7 @@ jobs:
           uses: scribe-security/action-evidence@dev # NOTE!!!! THIS IS ON DEV, change to master once command is released
           with:
                 target: ./opshub.json
-                predicate-type: https://cyclonedx.org/bom
+                # predicate-type: https://cyclonedx.org/bom # Allow valint to auto-detect the predicate type - expected result https://cyclonedx.org/bom/v1.5
                 format: attest
                 attest-default: x509-env
                 scribe-enable: true
