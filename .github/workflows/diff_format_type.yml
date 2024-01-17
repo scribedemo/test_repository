@@ -25,11 +25,10 @@ on:
         description: Environment
         required: true
         options:
-          - dev
-          - test
           - stg
           - prod
           - dev_eks
+          - ci_eks
           - test_eks
           - prod_eks
       product_version:
