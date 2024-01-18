@@ -116,7 +116,7 @@ jobs:
                 tool-vendor: Vendor_Alona
                 verbose: 2
                 scribe-enable: true
-                format: attest-slsa
+                # format: attest-slsa
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
