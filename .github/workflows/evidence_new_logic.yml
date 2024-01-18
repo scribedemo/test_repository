@@ -77,6 +77,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -104,32 +105,32 @@ jobs:
         #     ATTEST_CA: ${{ secrets.ATTEST_CA }}
         #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
 
-        - name: Generate SLSA provenance statement
-          id: valint_evidence_custom_slsa
-          uses: scribe-security/action-evidence@dev
-          with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: ./opshub.json
-                # predicate-type: https://cyclonedx.org/bom
-                tool: my_tool
-                tool-version: Alona_tool_version
-                tool-vendor: Vendor_Alona
-                verbose: 2
-                scribe-enable: true
-                # format: attest-slsa
-                attest-default: x509-env
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+        # - name: Generate SLSA provenance statement
+        #   id: valint_evidence_custom_slsa
+        #   uses: scribe-security/action-evidence@dev
+        #   with:
+        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+        #         target: ./opshub.json
+        #         # predicate-type: https://cyclonedx.org/bom
+        #         tool: my_tool
+        #         tool-version: Alona_tool_version
+        #         tool-vendor: Vendor_Alona
+        #         verbose: 2
+        #         scribe-enable: true
+        #         # format: attest-slsa
+        #         attest-default: x509-env
+        #         product-key: $PRODUCT_NAME
+        #         product-version: $PRODUCT_VERSION
+        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+        #         scribe-url: $SCRIBE_URL
+        #         scribe-login-url: $SCRIBE_LOGIN_URL
+        #         scribe-audience: $SCRIBE_AUDIENCE
                 
-          env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
         - uses: actions/upload-artifact@v4
