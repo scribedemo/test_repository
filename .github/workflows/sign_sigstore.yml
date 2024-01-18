@@ -12,6 +12,7 @@ on:
           - dev_eks
           - ci_eks
           - test_eks
+          - stg_eks
           - prod_eks
       product_version:
          description: 'Put product version'
