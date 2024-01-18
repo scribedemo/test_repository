@@ -116,7 +116,7 @@ jobs:
             docker build -t my-image:latest .   
      
       - name: Generate signed docker SBOM for docker image
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
@@ -164,7 +164,7 @@ jobs:
       
       - name: Scm generate file sbom, upload to scribe
         # id: valint_bom_scm
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
           type: file
           target: "./package.json"
@@ -186,7 +186,7 @@ jobs:
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
