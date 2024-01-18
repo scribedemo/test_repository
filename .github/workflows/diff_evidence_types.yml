@@ -29,6 +29,7 @@ on:
           - prod
           - dev_eks
           - test_eks
+          - stg_eks
           - ci_eks
           - prod_eks
       product_version:
