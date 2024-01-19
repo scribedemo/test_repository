@@ -57,14 +57,42 @@ jobs:
     steps:
         - uses: actions/checkout@v4
 
+        # - name: Evidence custom tools
+        #   id: valint_evidence_custom
+        #   uses: scribe-security/action-evidence@dev
+        #   with:
+        #         target: 'opshub.json'
+        #         tool: my_tool
+        #         tool-version: Alona_tool_version
+        #         tool-vendor: Vendor_Alona
+        #         verbose: 2
+        #         format: attest
+        #         attest-default: x509-env
+        #         scribe-enable: true
+        #         # components: packages,files,dep
+        #         product-key: $PRODUCT_NAME
+        #         product-version: $PRODUCT_VERSION
+        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+        #         scribe-url: $SCRIBE_URL
+        #         scribe-login-url: $SCRIBE_LOGIN_URL
+        #         scribe-audience: $SCRIBE_AUDIENCE 
+        #         deliverable: true
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+        
         - name: Evidence custom tools
-          id: valint_evidence_custom
-          uses: scribe-security/action-evidence@dev
+          id: valint_evidence_cli_custom
+          uses: scribe-security/action-evidence-cli@dev
           with:
                 target: 'opshub.json'
-                tool: my_tool
-                tool-version: Alona_tool_version
+                tool: alona_tool
+                tool-version: v.1.1
                 tool-vendor: Vendor_Alona
+                format-version: v.2.2
+                format-encoding: xml
                 verbose: 2
                 format: attest
                 attest-default: x509-env
@@ -78,42 +106,9 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE 
                 deliverable: true
+                platform: linux/arm64
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
-        
-
-        - name: Generate SLSA provenance statement
-          id: valint_evidence_custom_slsa
-          uses: scribe-security/action-slsa@dev
-          with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: ./opshub.json
-                # predicate-type: https://cyclonedx.org/bom
-                tool: my_tool
-                tool-version: Alona_tool_version
-                tool-vendor: Vendor_Alona
-                verbose: 2
-                scribe-enable: true
-                # format: attest-slsa
-                attest-default: x509-env
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                
-          env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-  
-
-        - uses: actions/upload-artifact@v3
-          with:
-                name: provenance
-                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
