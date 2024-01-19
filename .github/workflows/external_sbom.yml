@@ -106,7 +106,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: ./opshub.json
+                target: './opshub.json'
                 predicate-type: https://cyclonedx.org/bom
                 scribe-enable: true
                 format: attest-slsa
@@ -125,7 +125,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
-        - uses: actions/upload-artifact@v3
+        - uses: actions/upload-artifact@v4
           with:
                 name: provenance
                 path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
