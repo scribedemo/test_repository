@@ -101,7 +101,7 @@ jobs:
       - name: Verify Image using x509 keys
         uses: scribe-security/action-verify-cli@dev
         with:
-               target: my-image:latest
+               target: $IMAGE_NAME
                scribe-enable: true
                components: packages,files,dep
                format: attest
