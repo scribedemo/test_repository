@@ -22,7 +22,7 @@ on:
       product_name:
          description: 'Put product name'
          required: false
-         default: 'External_sign_certificate_x509'
+         default: 'External_attest_new_valint_command'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
