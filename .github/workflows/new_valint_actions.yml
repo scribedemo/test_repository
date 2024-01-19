@@ -15,6 +15,16 @@ on:
           - test_eks
           - stg_eks
           - prod_eks
+      platform:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - linux/amd64
+          - linux/arm64
+          - linux/arm
+          - windows/amd64
+          
       product_version:
          description: 'Put product version'
          # required: true
@@ -35,6 +45,7 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
+  PLATFORM: $${{github.event.inputs.platform }}
   # VALINT_VERSION: "scribe-security/action-bom@${{ github.event.inputs.valint_version}}"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
@@ -90,7 +101,7 @@ jobs:
                 supplier-phone: $SUPPLIER_PHONE 
                 deliverable: true
                 label: $LABEL
-                platform: linux/amd64
+                platform: $PLATFORM
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -116,7 +127,7 @@ jobs:
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
                push: true
-               platform: linux/amd64
+               platform: $PLATFORM
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -141,7 +152,7 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 label: $LABEL
-                platform: linux/amd64
+                platform: $PLATFORM
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
