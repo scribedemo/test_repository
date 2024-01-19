@@ -86,7 +86,7 @@ jobs:
 
         - name: Generate SLSA provenance statement
           id: valint_evidence_custom_slsa
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-slsa@dev
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 target: ./opshub.json
