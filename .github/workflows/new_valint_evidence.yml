@@ -1,4 +1,4 @@
-name: evidence_new_logic_in_valint
+name: new_valint_evidence
 
 on: 
   workflow_dispatch:
@@ -83,54 +83,33 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
-        # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
-        # - name: Verify Image using x509 keys
-        #   uses: scribe-security/action-verify@master
-        #   with:
-        #        target: my-image:latest
-        #        scribe-enable: true
-        #        components: packages,files,dep
-        #        format: attest
-        #        attest-default: x509-env
-        #        product-key: $PRODUCT_NAME
-        #        product-version: $PRODUCT_VERSION
-        #        scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #        scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #        scribe-url: $SCRIBE_URL
-        #        scribe-login-url: $SCRIBE_LOGIN_URL
-        #        scribe-audience: $SCRIBE_AUDIENCE 
-        #        # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
-        #        email: "alona@scribesecutiry.com"
-        #   env:
-        #     ATTEST_CA: ${{ secrets.ATTEST_CA }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
 
-        # - name: Generate SLSA provenance statement
-        #   id: valint_evidence_custom_slsa
-        #   uses: scribe-security/action-evidence@dev
-        #   with:
-        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-        #         target: ./opshub.json
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         tool: my_tool
-        #         tool-version: Alona_tool_version
-        #         tool-vendor: Vendor_Alona
-        #         verbose: 2
-        #         scribe-enable: true
-        #         # format: attest-slsa
-        #         attest-default: x509-env
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE
+        - name: Generate SLSA provenance statement
+          id: valint_evidence_custom_slsa
+          uses: scribe-security/action-evidence@dev
+          with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                target: ./opshub.json
+                # predicate-type: https://cyclonedx.org/bom
+                tool: my_tool
+                tool-version: Alona_tool_version
+                tool-vendor: Vendor_Alona
+                verbose: 2
+                scribe-enable: true
+                # format: attest-slsa
+                attest-default: x509-env
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
         - uses: actions/upload-artifact@v3
