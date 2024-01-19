@@ -26,6 +26,7 @@ on:
           - windows/amd64
           - darwin/amd64
           - windows-latest
+          - ubuntu-latest
           
       product_version:
          description: 'Put product version'
@@ -103,7 +104,7 @@ jobs:
                 supplier-phone: $SUPPLIER_PHONE 
                 deliverable: true
                 label: $LABEL
-                platform: windows-latest
+                platform: ubuntu-latest
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -129,7 +130,7 @@ jobs:
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
                push: true
-               platform: windows-latest
+               platform: ubuntu-latest
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -154,7 +155,7 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 label: $LABEL
-                platform: windows-latest
+                platform: ubuntu-latest
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
