@@ -39,7 +39,7 @@ on:
       image_name:
          description: 'Put your image name'
          required: true
-         default: 'mongo-express:latest'
+         default: 'hello-world:latest'
     
          
        
@@ -83,7 +83,7 @@ jobs:
         uses: scribe-security/action-bom-cli@dev
         with:
                 # statement-cyclonedx-json, attest, 
-                type: docker
+                type: registry
                 target: $IMAGE_NAME
                 scribe-enable: true
                 format: attest
