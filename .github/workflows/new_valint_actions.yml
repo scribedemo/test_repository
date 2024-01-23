@@ -104,7 +104,7 @@ jobs:
                 supplier-phone: $SUPPLIER_PHONE 
                 deliverable: true
                 label: $LABEL
-                platform: ubuntu-latest
+                platform: $PLATFORM
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
