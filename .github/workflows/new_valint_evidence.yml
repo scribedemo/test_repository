@@ -91,7 +91,7 @@ jobs:
                 tool: alona_tool
                 tool-version: v.1.1
                 tool-vendor: Vendor_Alona
-                format-version: v.2.2
+                format-version: v.1.1
                 format-encoding: xml
                 verbose: 2
                 format: attest
@@ -111,4 +111,36 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+
+
+        - name: Evidence custom tools statement
+          id: valint_evidence_cli_custom_statement
+          uses: scribe-security/action-evidence-cli@dev
+          with:
+                target: 'opshub.json'
+                tool: trivy_ex
+                tool-version: v.1.1
+                tool-vendor: Vendor_Alona
+                format-version: v.2.2
+                format-encoding: xml
+                verbose: 2
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                # components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION_statement
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+                platform: linux/arm64
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+        
+      
         
