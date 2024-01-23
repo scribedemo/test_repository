@@ -15,19 +15,6 @@ on:
           - test_eks
           - stg_eks
           - prod_eks
-      platform:
-        type: choice
-        description: Environment
-        required: true
-        options:
-          - linux/amd64
-          - linux/arm64
-          - linux/arm
-          - windows/amd64
-          - darwin/amd64
-          - windows-latest
-          - ubuntu-latest
-          
       product_version:
          description: 'Put product version'
          # required: true
@@ -48,7 +35,6 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
-  PLATFORM: $${{github.event.inputs.platform }}
   # VALINT_VERSION: "scribe-security/action-bom@${{ github.event.inputs.valint_version}}"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
@@ -78,6 +64,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+     
+      - name: Generate signed docker SBOM for docker image windows
+        id: valint_attest_file_windows
+        uses: scribe-security/action-bom-cli@dev
+        with:
+                # statement-cyclonedx-json, attest, 
+                type: registry
+                target: $IMAGE_NAME
+                scribe-enable: true
+                format: attest
+                attest-default: x509-env
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
+                author-name: $AUTHOR_NAME
+                author-email: $AUTHOR_EMAIL
+                author-phone: $AUTHOR_PHONE
+                supplier-name: $SUPPLIER_NAME
+                supplier-url: $SUPPLIER_URL
+                supplier-email: $SUPPLIER_EMAIL
+                supplier-phone: $SUPPLIER_PHONE 
+                deliverable: true
+                label: $LABEL
+                platform: windows/amd64
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
+
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
         uses: scribe-security/action-bom-cli@dev
@@ -104,7 +123,7 @@ jobs:
                 supplier-phone: $SUPPLIER_PHONE 
                 deliverable: true
                 label: $LABEL
-                platform: $PLATFORM
+                platform: linux/amd64
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -130,7 +149,7 @@ jobs:
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
                push: true
-               platform: $PLATFORM
+               platform: linux/amd64
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -155,7 +174,7 @@ jobs:
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 label: $LABEL
-                platform: $PLATFORM
+                platform: linux/amd64
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
