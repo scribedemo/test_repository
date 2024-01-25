@@ -59,8 +59,10 @@ jobs:
       - name: Generate attest + mongo
         uses: scribe-security/action-bom@master
         with:
-         type: docker
-         target: mongo-express:latest
+         # type: docker
+         # target: mongo-express:latest
+         type: git
+         target: https://github.com/mongo-express/mongo-express.git
          format: attest
          scribe-enable: true
          product-key: $PRODUCT_NAME
@@ -84,8 +86,10 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
-                type: docker
-                target: mongo-express:1.0.0-20-alpine3.17
+                # type: docker
+                # target: mongo-express:1.0.0-20-alpine3.17
+                type: git
+                target: https://github.com/mongo-express/mongo-express.git
                 format: attest-cyclonedx-json
                 scribe-enable: true
                 product-key: $PRODUCT_NAME
@@ -109,8 +113,10 @@ jobs:
         # id: valint_bom_scm
         uses: scribe-security/action-bom@master
         with:
-          type: docker
-          target: mongo-express:1.0.0-20-alpine3.18
+          # type: docker
+          type: git
+          # target: mongo-express:1.0.0-20-alpine3.18
+          target: https://github.com/mongo-express/mongo-express.git
           format: statement-cyclonedx-json
           scribe-enable: true
           product-key: $PRODUCT_NAME
@@ -138,8 +144,9 @@ jobs:
         # id: valint_bom_scm
         uses: scribe-security/action-bom@master
         with:
-          type: docker
-          target: mongo-express:1.0.0-20
+          type: git
+          # target: mongo-express:1.0.0-20
+          target: https://github.com/mongo-express/mongo-express.git
           format: statement
           scribe-enable: true
           product-key: $PRODUCT_NAME
@@ -167,8 +174,8 @@ jobs:
         id: valint_attest_slsa
         uses: scribe-security/action-bom@master
         with:
-                type: docker
-                target: mongo-express:latest
+                type: git
+                target: https://github.com/mongo-express/mongo-express.git
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
@@ -186,8 +193,9 @@ jobs:
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
         with:
-                type: docker
-                target: mongo-express:latest
+                type: git
+                # target: mongo-express:latest
+                target: https://github.com/mongo-express/mongo-express.git
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: statement-slsa
