@@ -57,7 +57,7 @@ jobs:
         - uses: actions/checkout@v4
 
         - name: Sign Git using Sigstore
-          uses: scribe-security/action-bom@master
+          uses: scribe-security/action-bom@dev
           with:
                 target: 'git:.'
                 scribe-enable: true
@@ -79,7 +79,7 @@ jobs:
         
 
         - name: Sign Image using Sigstore
-          uses: scribe-security/action-bom@master
+          uses: scribe-security/action-bom@dev
           with:
                 target: my-image:latest
                 scribe-enable: true
@@ -94,7 +94,7 @@ jobs:
                 scribe-audience: $SCRIBE_AUDIENCE
 
         - name: Verify Image using Sigstore
-          uses: scribe-security/action-verify@master
+          uses: scribe-security/action-verify@dev
           with:
                 target: my-image:latest
                 scribe-enable: true
@@ -118,7 +118,7 @@ jobs:
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
-          uses: scribe-security/action-bom@master
+          uses: scribe-security/action-bom@dev
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
