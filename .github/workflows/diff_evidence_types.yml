@@ -145,8 +145,8 @@ jobs:
         # id: valint_bom_scm
         uses: scribe-security/action-bom@master
         with:
-          type: image
-          target: registry:busybox:latest
+          type: registry
+          target: busybox:latest
           scribe-enable: true
           product-key: $PRODUCT_NAME
           product-version: $PRODUCT_VERSION
