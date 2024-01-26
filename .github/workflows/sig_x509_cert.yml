@@ -127,7 +127,7 @@ jobs:
 
         - name: Generate SLSA provenance statement
           id: valint_slsa_statement
-          uses: scribe-security/action-bom@mster
+          uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
