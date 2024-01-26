@@ -180,7 +180,7 @@ jobs:
           format: attest
          # app-name: $LOGICAL_APP_NAME
          # app-version: $APP_VERSION
-          components: packages,files,dep
+          # components: packages,files,dep
           deliverable: true
           
       
