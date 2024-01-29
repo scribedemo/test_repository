@@ -62,7 +62,7 @@ jobs:
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: ./opshub.json
+                target: ./cyclonedx.json
                 # predicate-type: https://cyclonedx.org/bom
                 format: attest-generic
                 attest-default: x509-env
@@ -108,7 +108,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: './opshub.json'
+                target: './cyclonedx.json'
                 # predicate-type: https://cyclonedx.org/bom
                 scribe-enable: true
                 format: attest-slsa
