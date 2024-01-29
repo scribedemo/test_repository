@@ -65,7 +65,7 @@ jobs:
                 # type: file
                 target: './codeql.sarif.json'
                 # predicate-type: https://cyclonedx.org/bom
-                format: attest-generic
+                format: attest
                 attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
