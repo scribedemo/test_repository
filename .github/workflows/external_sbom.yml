@@ -75,7 +75,7 @@ jobs:
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: './$FILE'
+                target: './codeql.sarif.json'
                 # predicate-type: https://cyclonedx.org/bom
                 format: attest-generic
                 attest-default: x509-env
@@ -88,11 +88,157 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE 
-                # deliverable: true
+                deliverable: true
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+         
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './cyclonedx.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './opshub.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.sarif.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+
+
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.cdx.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './trivy.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+
+
+        - name: Sign Image using x509 keys
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './trivy.sarif.json '
+                # predicate-type: https://cyclonedx.org/bom
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}      
         
         # # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
         # - name: Verify Image using x509 keys
