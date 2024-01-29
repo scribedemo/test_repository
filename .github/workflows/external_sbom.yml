@@ -23,6 +23,18 @@ on:
          description: 'Put product name'
          required: false
          default: 'External_sign_certificate_x509'
+      file:
+        type: choice
+        description: Choose file
+        required: true
+        options:
+          - codeql.sarif.json
+          - cyclonedx.json
+          - opshub.json
+          - snyk.sarif.json
+          - snyk.cdx.json
+          - trivy.json
+          - trivy.sarif.json  
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
@@ -39,6 +51,7 @@ env:
         # URLs and product details
         PRODUCT_NAME: ${{ github.event.inputs.product_name }}
         PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+        FILE: ${{ github.events.inputs.file }}
         SCRIBE_URL: ${{ vars.SCRIBE_URL }}
         SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
         SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
@@ -62,7 +75,7 @@ jobs:
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: ./cyclonedx.json
+                target: ./$FILE
                 # predicate-type: https://cyclonedx.org/bom
                 format: attest-generic
                 attest-default: x509-env
@@ -108,7 +121,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: './cyclonedx.json'
+                target: './$FILE'
                 # predicate-type: https://cyclonedx.org/bom
                 scribe-enable: true
                 format: attest-slsa
