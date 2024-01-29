@@ -267,7 +267,7 @@ jobs:
           uses: scribe-security/action-bom@master
           with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                target: './$FILE'
+                target: './snyk.cdx.json'
                 # predicate-type: https://cyclonedx.org/bom
                 scribe-enable: true
                 format: attest-slsa
