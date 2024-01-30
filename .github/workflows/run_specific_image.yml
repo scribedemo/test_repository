@@ -86,7 +86,7 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+                # scribe-audience: $SCRIBE_AUDIENCE
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -118,7 +118,7 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
                 scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+                # scribe-audience: $SCRIBE_AUDIENCE
                 label: $LABEL
                 # deliverable: true
         env:
