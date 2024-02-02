@@ -85,8 +85,8 @@ jobs:
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                # scribe-audience: $SCRIBE_AUDIENCE
+                # scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -116,7 +116,7 @@ jobs:
                scribe-client-id: ${{ secrets.CLIENT_ID }}
                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                scribe-url: $SCRIBE_URL
-               scribe-login-url: $SCRIBE_LOGIN_URL
+               # scribe-login-url: $SCRIBE_LOGIN_URL
                scribe-audience: $SCRIBE_AUDIENCE 
                author-name: $AUTHOR_NAME
                author-email: $AUTHOR_EMAIL
@@ -148,9 +148,8 @@ jobs:
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                # scribe-audience: $SCRIBE_AUDIENCE
-                label: $LABEL
+                # scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
