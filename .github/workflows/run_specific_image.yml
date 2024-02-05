@@ -127,10 +127,11 @@ jobs:
                supplier-phone: $SUPPLIER_PHONE
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
-               push: true
+               verbose: true
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            DEBUG: true
 
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
