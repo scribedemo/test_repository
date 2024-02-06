@@ -175,8 +175,8 @@ jobs:
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-bom@master
           with:
-                # type: file
                 type: docker
+                target: busybox:latest
                 # predicate-type: https://cyclonedx.org/bom
                 format: attest
                 attest-default: x509-env
@@ -194,6 +194,7 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+            
         - name: trivy.json with attest
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
@@ -204,7 +205,7 @@ jobs:
                 format: attest
                 attest-default: x509-env
                 scribe-enable: true
-                components: packages,files,dep
+                # components: packages,files,dep
                 product-key: $PRODUCT_NAME
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
