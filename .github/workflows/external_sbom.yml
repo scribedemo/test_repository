@@ -56,28 +56,28 @@ jobs:
     steps:
         - uses: actions/checkout@v4
 
-        # - name: odeql.sarif.json with attest
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './codeql.sarif.json'
-        #         format: attest
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+        - name: odeql.sarif.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './codeql.sarif.json'
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
          
         - name: cyclonedx.json with statement
           # uses: scribe-security/action-bom@master
@@ -98,114 +98,90 @@ jobs:
                 scribe-audience: $SCRIBE_AUDIENCE 
                 # deliverable: true 
 
-        # - name: opshub.json with statement
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './opshub.json'
-        #         format: statement
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+        - name: opshub.json with statement
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './opshub.json'
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
-        # - name: snyk.sarif.json with attest
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './snyk.sarif.json'
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         format: attest
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+        - name: snyk.sarif.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.sarif.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
 
-        # - name: snyk.cdx.json with attest
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './snyk.cdx.json'
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         format: attest
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+        - name: snyk.cdx.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.cdx.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
        
-        # # - name: busybox:latest image
-        # #   # uses: scribe-security/action-bom@master
-        # #   uses: scribe-security/action-bom@master
-        # #   with:
-        # #         type: docker
-        # #         target: busybox:latest
-        # #         # predicate-type: https://cyclonedx.org/bom
-        # #         format: attest
-        # #         attest-default: x509-env
-        # #         scribe-enable: true
-        # #         components: packages,files,dep
-        # #         product-key: $PRODUCT_NAME
-        # #         product-version: $PRODUCT_VERSION
-        # #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        # #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        # #         scribe-url: $SCRIBE_URL
-        # #         scribe-login-url: $SCRIBE_LOGIN_URL
-        # #         scribe-audience: $SCRIBE_AUDIENCE 
-        # #         deliverable: true
-        # #   env:
-        # #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        # #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        # #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
-            
-        # - name: trivy.json with attest
+        # - name: busybox:latest image
         #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
+        #   uses: scribe-security/action-bom@master
         #   with:
-        #         # type: file
-        #         target: './trivy.json'
+        #         type: docker
+        #         target: busybox:latest
         #         # predicate-type: https://cyclonedx.org/bom
         #         format: attest
         #         attest-default: x509-env
         #         scribe-enable: true
-        #         # components: packages,files,dep
+        #         components: packages,files,dep
         #         product-key: $PRODUCT_NAME
         #         product-version: $PRODUCT_VERSION
         #         scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -213,64 +189,88 @@ jobs:
         #         scribe-url: $SCRIBE_URL
         #         scribe-login-url: $SCRIBE_LOGIN_URL
         #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
+        #         deliverable: true
         #   env:
         #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
         #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
         #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+            
+        - name: trivy.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './trivy.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                # components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
 
 
-        # - name: trivy.sarif.json with statement
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './trivy.sarif.json '
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         format: statement
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE 
-        #         # deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}      
+        - name: trivy.sarif.json with statement
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './trivy.sarif.json '
+                # predicate-type: https://cyclonedx.org/bom
+                format: statement
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE 
+                # deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}      
         
 
-        # - name: Generate SLSA provenance statement
-        #   id: valint_slsa_statement
-        #   uses: scribe-security/action-bom@master
-        #   with:
-        #         # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-        #         target: './snyk.cdx.json'
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         scribe-enable: true
-        #         format: attest-slsa
-        #         attest-default: x509-env
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-audience: $SCRIBE_AUDIENCE
+        - name: Generate SLSA provenance statement
+          id: valint_slsa_statement
+          uses: scribe-security/action-bom@master
+          with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                target: './snyk.cdx.json'
+                # predicate-type: https://cyclonedx.org/bom
+                scribe-enable: true
+                format: attest-slsa
+                attest-default: x509-env
+                product-key: $PRODUCT_NAME
+                product-version: $PRODUCT_VERSION
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: $SCRIBE_URL
+                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: $SCRIBE_AUDIENCE
                 
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
   
 
-        # - uses: actions/upload-artifact@v4
-        #   with:
-        #         name: provenance
-        #         path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+        - uses: actions/upload-artifact@v4
+          with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
