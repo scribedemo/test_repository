@@ -86,7 +86,7 @@ jobs:
                 # type: file
                 target: './cyclonedx.json'
                 format: attest
-                attest-default: x509-env
+                # attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
                 product-key: $PRODUCT_NAME
