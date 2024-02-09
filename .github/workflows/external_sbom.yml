@@ -105,7 +105,7 @@ jobs:
                 # type: file
                 target: './opshub.json'
                 format: statement
-                attest-default: x509-env
+                # attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
                 product-key: $PRODUCT_NAME
@@ -228,7 +228,7 @@ jobs:
                 target: './trivy.sarif.json '
                 # predicate-type: https://cyclonedx.org/bom
                 format: statement
-                attest-default: x509-env
+                # attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
                 product-key: $PRODUCT_NAME
