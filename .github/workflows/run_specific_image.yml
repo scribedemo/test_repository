@@ -22,7 +22,7 @@ on:
       product_name:
          description: 'Put product name'
          required: true
-         default: 'Sprint_image'
+         default: 'Run_specific_image'
       image_name:
          description: 'Put your image name'
          required: true
