@@ -94,8 +94,10 @@ jobs:
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
                 supplier-phone: $SUPPLIER_PHONE 
-                deliverable: true
+                # deliverable: true
                 label: $LABEL
+                gate: github_alona
+                
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -130,6 +132,7 @@ jobs:
                push: true
                verbose: 2
                DEBUG: true
+               gate: github_alona
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
@@ -152,6 +155,7 @@ jobs:
                 scribe-url: $SCRIBE_URL
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
+                gate: github_alona
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
