@@ -105,7 +105,7 @@ jobs:
                 type: registry
                 target: $IMAGE_NAME
                 scribe-enable: true
-                format: attest
+                format: attest-cyclonedx-json
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
                 product-version: test2_$PRODUCT_VERSION
