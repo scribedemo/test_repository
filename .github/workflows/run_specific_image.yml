@@ -132,6 +132,8 @@ jobs:
                push: true
                verbose: 2
                DEBUG: true
+               label: $LABEL
+               gate: github_alona
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
