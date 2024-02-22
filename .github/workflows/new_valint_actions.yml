@@ -201,9 +201,11 @@ jobs:
            product-version: test_3_$PRODUCT_VERSION
            scribe-client-id: ${{ secrets.CLIENT_ID }}
            scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-           scribe-url: $SCRIBE_URL
+           # scribe-url: $SCRIBE_URL
+           scribe-url: https://api.test.scribesecurity.com
+           scribe-audience: api.test.scribesecurity.com
            # scribe-login-url: $SCRIBE_LOGIN_URL
-           scribe-audience: $SCRIBE_AUDIENCE
+           # scribe-audience: $SCRIBE_AUDIENCE
      
       - name: Generate SLSA provenance statement action-slsa-cli@dev
         id: valint_slsa_statement
