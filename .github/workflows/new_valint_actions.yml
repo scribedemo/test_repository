@@ -141,7 +141,7 @@ jobs:
                 format: attest
                 attest-default: x509-env
                 product-key: $PRODUCT_NAME
-                product-version: test_3_$PRODUCT_VERSION
+                product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: $SCRIBE_URL
@@ -173,7 +173,7 @@ jobs:
                format: attest
                attest-default: x509-env
                product-key: $PRODUCT_NAME
-               product-version: test_3_$PRODUCT_VERSION
+               product-version: $PRODUCT_VERSION
                scribe-client-id: ${{ secrets.CLIENT_ID }}
                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                scribe-url: $SCRIBE_URL
@@ -196,9 +196,9 @@ jobs:
            type: docker
            target: $IMAGE_NAME
            scribe-enable: true
-           format: attest
+           # format: attest
            product-key: $PRODUCT_NAME
-           product-version: test_3_$PRODUCT_VERSION
+           product-version: test_4_$PRODUCT_VERSION
            scribe-client-id: ${{ secrets.CLIENT_ID }}
            scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
            # scribe-url: $SCRIBE_URL
