@@ -72,7 +72,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
