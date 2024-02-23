@@ -69,7 +69,7 @@ jobs:
          scribe-client-id: ${{ secrets.CLIENT_ID }}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
          scribe-url: $SCRIBE_URL
-         scribe-login-url: $SCRIBE_LOGIN_URL
+         # scribe-login-url: $SCRIBE_LOGIN_URL
          scribe-audience: $SCRIBE_AUDIENCE
          components: packages,files,dep
          author-name: $AUTHOR_NAME
