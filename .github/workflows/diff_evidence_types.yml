@@ -14,7 +14,7 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
-  SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+  # SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
 
 on: 
