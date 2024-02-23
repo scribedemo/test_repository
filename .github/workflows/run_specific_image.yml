@@ -81,7 +81,7 @@ jobs:
                 format: attest
                 attest-default: x509-env
                 # product-key: $PRODUCT_NAME
-                 product-key: "test SH-1572"
+                product-key: "test SH-1572"
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
