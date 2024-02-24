@@ -80,6 +80,7 @@ jobs:
          supplier-email: $SUPPLIER_EMAIL 
          supplier-phone: $SUPPLIER_PHONE
          deliverable: true
+         gate: github_action
 
 
       - name: Scm generate dir bom, upload to scribe
@@ -109,6 +110,7 @@ jobs:
           supplier-email: $SUPPLIER_EMAIL 
           supplier-phone: $SUPPLIER_PHONE
           deliverable: true
+          gate: github_action
 
       - name: Build the Docker image
           # run: docker build . -t ${{ github.repository }}:${{ github.sha }}
