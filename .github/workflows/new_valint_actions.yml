@@ -66,7 +66,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image action-bom@dev
         id: valint_docker
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -78,10 +78,10 @@ jobs:
                 product-version: test1_$PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-auth-audience: $SCRIBE_AUDIENCE
-                # scribe-url: https://api.test.scribesecurity.com
-                # scribe-auth-audience: api.test.scribesecurity.com
+                # scribe-url: $SCRIBE_URL
+                # scribe-auth-audience: $SCRIBE_AUDIENCE
+                scribe-url: "https://api.test.scribesecurity.com"
+                scribe-auth-audience: "api.test.scribesecurity.com"
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
@@ -203,9 +203,8 @@ jobs:
            scribe-client-id: ${{ secrets.CLIENT_ID }}
            scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
            # scribe-url: $SCRIBE_URL
-           scribe-url: https://api.test.scribesecurity.com
-           scribe-audience: api.test.scribesecurity.com
-           # scribe-login-url: $SCRIBE_LOGIN_URL
+           scribe-url: "https://api.test.scribesecurity.com"
+           scribe-auth-audience: "api.test.scribesecurity.com"
            # scribe-audience: $SCRIBE_AUDIENCE
      
       - name: Generate SLSA provenance statement action-slsa-cli@dev
