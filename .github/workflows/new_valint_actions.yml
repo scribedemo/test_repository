@@ -78,9 +78,10 @@ jobs:
                 product-version: test1_$PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+                # scribe-url: $SCRIBE_URL
+                # scribe-audience: $SCRIBE_AUDIENCE
+                scribe-url: https://api.test.scribesecurity.com
+                scribe-audience: api.test.scribesecurity.com
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
