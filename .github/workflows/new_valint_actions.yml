@@ -69,7 +69,7 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
-                type: docker
+                # type: docker
                 target: $IMAGE_NAME
                 scribe-enable: true
                 format: attest
@@ -81,7 +81,7 @@ jobs:
                 # scribe-url: $SCRIBE_URL
                 # scribe-audience: $SCRIBE_AUDIENCE
                 scribe-url: https://api.test.scribesecurity.com
-                scribe-audience: api.test.scribesecurity.com
+                scribe-auth-audience: api.test.scribesecurity.com
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
                 author-phone: $AUTHOR_PHONE
