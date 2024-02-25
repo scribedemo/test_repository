@@ -76,7 +76,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
-                target: $IMAGE_NAME
+                target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
