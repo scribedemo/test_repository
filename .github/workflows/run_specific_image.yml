@@ -72,7 +72,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -85,7 +85,7 @@ jobs:
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
+                scribe-url: ${{ env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 author-name: $AUTHOR_NAME
