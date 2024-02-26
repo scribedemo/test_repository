@@ -45,12 +45,12 @@ env:
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
-  AUTHOR_NAME: McCoy
-  AUTHOR_EMAIL: info@scribesecurity.com
-  AUTHOR_PHONE: 111-1111-11
+  AUTHOR_NAME: ALONA DODUKH
+  AUTHOR_EMAIL: author@scribesecurity.com
+  AUTHOR_PHONE: 999-1111-11
   SUPPLIER_NAME: Scribe-Security
   SUPPLIER_URL: www.scribesecurity.com
-  SUPPLIER_EMAIL: info@scribesecurity.com
+  SUPPLIER_EMAIL: supplier@scribesecurity.com
   SUPPLIER_PHONE: 001-001-0011
   LABEL: github
   
@@ -89,13 +89,13 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
-                author-name: $AUTHOR_NAME
-                author-email: $AUTHOR_EMAIL
-                author-phone: $AUTHOR_PHONE
+                author-name: ${{env.AUTHOR_NAME}}
+                author-email: ${{env.AUTHOR_EMAIL}}
+                author-phone: ${{envAUTHOR_PHONE}}
                 supplier-name: $SUPPLIER_NAME
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
-                supplier-phone: $SUPPLIER_PHONE 
+                supplier-phone: ${{env.SUPPLIER_PHONE }}
                 # deliverable: true
                 label: $LABEL
                 gate: github_alona
