@@ -154,6 +154,7 @@ jobs:
            scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
            scribe-url: ${{ env.SCRIBE_URL}}
            scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+           silent: true
   
            
       - name: Generate signed docker SBOM for docker image
