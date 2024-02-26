@@ -63,21 +63,21 @@ jobs:
          target: mongo-express:latest
          format: attest
          scribe-enable: true
-         product-key: $PRODUCT_NAME
-         product-version: $PRODUCT_VERSION
+         product-key: ${{env.PRODUCT_NAME}}
+         product-version: ${{env.PRODUCT_VERSION}}
          scribe-client-id: ${{ secrets.CLIENT_ID }}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-         scribe-url: $SCRIBE_URL
-         scribe-login-url: $SCRIBE_LOGIN_URL
-         scribe-audience: $SCRIBE_AUDIENCE
+         scribe-url: ${{env.SCRIBE_URL}}
+         # scribe-login-url: $SCRIBE_LOGIN_URL
+         scribe-audience: ${{env.SCRIBE_AUDIENCE}}
          components: packages,files,dep
-         author-name: $AUTHOR_NAME
-         author-email: $AUTHOR_EMAIL
-         author-phone: $AUTHOR_PHONE
-         supplier-name: $SUPPLIER_NAME
-         supplier-url: $SUPPLIER_URL
-         supplier-email: $SUPPLIER_EMAIL 
-         supplier-phone: $SUPPLIER_PHONE
+         author-name: ${{env.AUTHOR_NAME}}
+         author-email: ${{env.AUTHOR_EMAIL}}
+         author-phone: ${{env.AUTHOR_PHONE}}
+         supplier-name: ${{env.SUPPLIER_NAME}}
+         supplier-url: ${{env.SUPPLIER_URL}}
+         supplier-email: ${{env.SUPPLIER_EMAIL}} 
+         supplier-phone: ${{env.SUPPLIER_PHONE}}
 
 
       - name: Generate attest-cyclonedx-json+image
@@ -88,20 +88,21 @@ jobs:
                 target: mongo-express:1.0.0-20-alpine3.17
                 format: attest-cyclonedx-json
                 scribe-enable: true
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                # author-name: $AUTHOR_NAME
-                author-email: $AUTHOR_EMAIL
-                author-phone: $AUTHOR_PHONE
-                supplier-name: $SUPPLIER_NAME
-                supplier-url: $SUPPLIER_URL
-                supplier-email: $SUPPLIER_EMAIL 
-                supplier-phone: $SUPPLIER_PHONE 
+                scribe-url: ${{env.SCRIBE_URL}}
+         # scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+                components: packages,files,dep
+                author-name: ${{env.AUTHOR_NAME}}
+                author-email: ${{env.AUTHOR_EMAIL}}
+                author-phone: ${{env.AUTHOR_PHONE}}
+                supplier-name: ${{env.SUPPLIER_NAME}}
+                supplier-url: ${{env.SUPPLIER_URL}}
+                supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 label: $LABEL
 
 
@@ -113,24 +114,21 @@ jobs:
           target: mongo-express:1.0.0-20-alpine3.18
           format: statement-cyclonedx-json
           scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
+          product-key: ${{env.PRODUCT_NAME}}
+          product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-id: ${{ secrets.CLIENT_ID }}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
+          scribe-url: ${{env.SCRIBE_URL}}
+          scribe-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
+          author-name: ${{env.AUTHOR_NAME}}
+          author-email: ${{env.AUTHOR_EMAIL}}
+          author-phone: ${{env.AUTHOR_PHONE}}
+          supplier-name: ${{env.SUPPLIER_NAME}}
+          supplier-url: ${{env.SUPPLIER_URL}}
+          supplier-email: ${{env.SUPPLIER_EMAIL}} 
+          supplier-phone: ${{env.SUPPLIER_PHONE}}
+         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: $LABEL
  
           
@@ -141,24 +139,21 @@ jobs:
           target: mongo-express:1.0.0-20
           format: statement
           scribe-enable: true
-          product-key: $PRODUCT_NAME
-          product-version: $PRODUCT_VERSION
+          product-key: ${{env.PRODUCT_NAME}}
+          product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-id: ${{ secrets.CLIENT_ID }}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-          scribe-url: $SCRIBE_URL
-          scribe-login-url: $SCRIBE_LOGIN_URL
-          scribe-audience: $SCRIBE_AUDIENCE
-         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-         # app-name: $LOGICAL_APP_NAME
-         # app-version: $APP_VERSION
+          scribe-url: ${{env.SCRIBE_URL}}
+          scribe-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
-          author-name: $AUTHOR_NAME
-          author-email: $AUTHOR_EMAIL
-          author-phone: $AUTHOR_PHONE
-          supplier-name: $SUPPLIER_NAME
-          supplier-url: $SUPPLIER_URL
-          supplier-email: $SUPPLIER_EMAIL 
-          supplier-phone: $SUPPLIER_PHONE
+          author-name: ${{env.AUTHOR_NAME}}
+          author-email: ${{env.AUTHOR_EMAIL}}
+          author-phone: ${{env.AUTHOR_PHONE}}
+          supplier-name: ${{env.SUPPLIER_NAME}}
+          supplier-url: ${{env.SUPPLIER_URL}}
+          supplier-email: ${{env.SUPPLIER_EMAIL}} 
+          supplier-phone: ${{env.SUPPLIER_PHONE}}
+         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: $LABEL
      
       
@@ -171,14 +166,12 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
-                deliverable: true
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                 label: $LABEL
         
       - name: Generate SLSA provenance statement 
@@ -190,15 +183,19 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: statement-slsa
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE   
-                deliverable: true
-                label: $LABEL
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+                author-name: ${{env.AUTHOR_NAME}}_slsa
+                author-email: ${{env.AUTHOR_EMAIL}}_slsa
+                author-phone: ${{env.AUTHOR_PHONE}}_slsa
+                supplier-name: ${{env.SUPPLIER_NAME}}_slsa
+                supplier-url: ${{env.SUPPLIER_URL}}_slsa
+                supplier-email: ${{env.SUPPLIER_EMAIL}}_slsa
+                supplier-phone: ${{env.SUPPLIER_PHONE}}_slsa
                 
       - uses: actions/upload-artifact@v3
         with:
