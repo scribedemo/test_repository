@@ -76,8 +76,8 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
-                # target: ${{env.IMAGE_NAME}}
-                target: $IMAGE_NAME
+                target: ${{env.IMAGE_NAME}}
+                # target: $IMAGE_NAME
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
@@ -86,8 +86,8 @@ jobs:
                 product-version: $PRODUCT_VERSION
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                # scribe-url: ${{ env.SCRIBE_URL}}
-                scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-url: ${{ env.SCRIBE_URL}}
+                # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: $SCRIBE_AUDIENCE
                 author-name: $AUTHOR_NAME
                 author-email: $AUTHOR_EMAIL
