@@ -69,7 +69,7 @@ jobs:
          scribe-client-id: ${{ secrets.CLIENT_ID }}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
          scribe-url: ${{env.SCRIBE_URL}}
-         scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+         scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          components: packages,files,dep
          author-name: ${{env.AUTHOR_NAME}}
          author-email: ${{env.AUTHOR_EMAIL}}
@@ -95,7 +95,7 @@ jobs:
           scribe-client-id: ${{ secrets.CLIENT_ID }}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
           author-name: ${{env.AUTHOR_NAME}}
           author-email: ${{env.AUTHOR_EMAIL}}
@@ -125,7 +125,7 @@ jobs:
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
@@ -150,7 +150,7 @@ jobs:
           scribe-client-id: ${{ secrets.CLIENT_ID }}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
           author-name: ${{env.AUTHOR_NAME}}
           author-email: ${{env.AUTHOR_EMAIL}}
@@ -174,7 +174,7 @@ jobs:
           scribe-client-id: ${{ secrets.CLIENT_ID }}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           author-name: ${{env.AUTHOR_NAME}}
           author-email: ${{env.AUTHOR_EMAIL}}
           author-phone: ${{env.AUTHOR_PHONE}}
@@ -201,7 +201,7 @@ jobs:
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
                 author-phone: ${{env.AUTHOR_PHONE}}
