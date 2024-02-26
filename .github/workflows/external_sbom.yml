@@ -78,7 +78,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
                 # deliverable: true
@@ -109,7 +109,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action 
                 # deliverable: true 
@@ -136,7 +136,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action 
                 # deliverable: true
@@ -168,7 +168,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -200,7 +200,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${env.{SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -256,7 +256,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -288,7 +288,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -320,7 +320,7 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{SUPPLIER_PHONE}}
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
