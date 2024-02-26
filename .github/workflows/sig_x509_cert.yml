@@ -65,13 +65,12 @@ jobs:
                 components: packages,files,dep
                 format: attest
                 attest-default: x509-env
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                 
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
@@ -91,13 +90,12 @@ jobs:
                 components: packages,files,dep
                 format: attest
                 attest-default: x509-env
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE 
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
@@ -135,13 +133,12 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 attest-default: x509-env
-                product-key: $PRODUCT_NAME
-                product-version: $PRODUCT_VERSION
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-url: $SCRIBE_URL
-                scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-audience: $SCRIBE_AUDIENCE
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                 
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
