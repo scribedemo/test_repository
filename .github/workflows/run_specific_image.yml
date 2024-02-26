@@ -91,7 +91,7 @@ jobs:
                 scribe-audience: $SCRIBE_AUDIENCE
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{envAUTHOR_PHONE}}
+                author-phone: ${{env.AUTHOR_PHONE}}
                 supplier-name: $SUPPLIER_NAME
                 supplier-url: $SUPPLIER_URL
                 supplier-email: $SUPPLIER_EMAIL
