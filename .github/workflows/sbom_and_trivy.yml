@@ -92,10 +92,8 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
-
-
      
-      - name: trivy.json with attest
+      - name: upload trivy.json with attest
           # uses: scribe-security/action-bom@master
         uses: scribe-security/action-evidence@master
         with:
@@ -118,8 +116,6 @@ jobs:
                 supplier-name: ${{env.SUPPLIER_NAME}}
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
