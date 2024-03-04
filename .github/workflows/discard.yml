@@ -113,7 +113,7 @@ jobs:
                 supplier-email: ${{env.SUPPLIER_EMAIL}}
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
                 label: $LABEL
-                # gate: github_alona
+                gate: github_alona
 
 
       - name: Discard evidence  mongo-express:1.0-18-alpine3.19
@@ -160,7 +160,7 @@ jobs:
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
                 # deliverable: true
                 label: $LABEL
-                # gate: github_alona
+                gate: github_alona
                 
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
@@ -195,7 +195,7 @@ jobs:
                verbose: 2
                DEBUG: true
                label: $LABEL
-               # gate: github_alona
+               gate: github_alona
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
@@ -219,7 +219,7 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: ${{env.SCRIBE_AUDIENCE}}
-                # gate: github_alona
+                gate: github_alona
                 # deliverable: true
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
