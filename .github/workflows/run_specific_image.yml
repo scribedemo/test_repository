@@ -82,7 +82,8 @@ jobs:
                 format: attest
                 attest-default: x509-env
                 # product-key: $PRODUCT_NAME
-                product-key: ${{env.PRODUCT_NAME}}
+                # product-key: ${{env.PRODUCT_NAME}}
+                product-key: "test product from githun"
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
@@ -114,7 +115,8 @@ jobs:
                components: packages,files,dep
                format: attest
                attest-default: x509-env
-               product-key: ${{env.PRODUCT_NAME}}
+               # product-key: ${{env.PRODUCT_NAME}}
+               product-key: "test product from githun"
                product-version: ${{env.PRODUCT_VERSION}}
                scribe-client-id: ${{ secrets.CLIENT_ID }}
                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
@@ -149,7 +151,8 @@ jobs:
                 scribe-enable: true
                 format: attest-slsa
                 attest-default: x509-env
-                product-key: ${{env.PRODUCT_NAME}}
+                # product-key: ${{env.PRODUCT_NAME}}
+                product-key: "test product from githun"
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
