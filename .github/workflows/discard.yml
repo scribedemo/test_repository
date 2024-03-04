@@ -91,7 +91,7 @@ jobs:
 
       - name: Generate not signed docker SBOM for docker image
         id: signed_docker_image_mongo2
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -118,7 +118,7 @@ jobs:
 
       - name: Discard evidence  mongo-express:1.0-18-alpine3.19
         id: valint_discard
-        uses: scribe-security/action-discard@dev
+        uses: scribe-security/action-discard@master
         with:
            verbose: 2
            type: docker
