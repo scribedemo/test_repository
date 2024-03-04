@@ -72,7 +72,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: signed_docker_image
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -106,7 +106,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: signed_docker_image_mongo2
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -141,7 +141,7 @@ jobs:
 
       - name: Discard evidence
         id: valint_discard
-        uses: scribe-security/action-discard@dev
+        uses: scribe-security/action-discard@master
         with:
            verbose: 2
            type: docker
@@ -159,7 +159,7 @@ jobs:
            
       - name: Generate signed docker SBOM for docker image
         id: signed_docker_image_mysql
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
@@ -193,7 +193,7 @@ jobs:
        # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
      
       - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@dev
+        uses: scribe-security/action-verify@master
         with:
                target: mysql:latest
                scribe-enable: true
@@ -224,9 +224,6 @@ jobs:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
 
-      
-      
-      
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
