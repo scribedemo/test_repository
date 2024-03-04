@@ -27,16 +27,8 @@ on:
          description: 'Put your image name'
          required: true
          default: 'mongo-express:latest'
-      # valint_version:
-      #    type: choice
-      #    description: Valint version
-      #    required: true
-      #    options:
-      #     - dev
-      #     - master
-         
-       
 
+         
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
@@ -70,18 +62,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate signed docker SBOM for docker image
+      - name: Generate not signed docker SBOM for docker image
         id: signed_docker_image
         uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 type: docker
                 target: ${{env.IMAGE_NAME}}
-                # target: $IMAGE_NAME
                 scribe-enable: true
-                format: attest
-                attest-default: x509-env
-                # product-key: $PRODUCT_NAME
+                format: statement-cyclonedx-json
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}_mongo-express:latest
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -98,13 +87,9 @@ jobs:
                 # deliverable: true
                 label: $LABEL
                 gate: github_alona
-                
-        env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+              
 
-      - name: Generate signed docker SBOM for docker image
+      - name: Generate not signed docker SBOM for docker image
         id: signed_docker_image_mongo2
         uses: scribe-security/action-bom@master
         with:
@@ -113,9 +98,7 @@ jobs:
                 target: mongo-express:1.0-18-alpine3.19
                 # target: $IMAGE_NAME
                 scribe-enable: true
-                format: attest
-                attest-default: x509-env
-                # product-key: $PRODUCT_NAME
+                format: statement-cyclonedx-json
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}_mongo-express:1.0-18-alpine3.19
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -129,17 +112,11 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}}
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
-                # deliverable: true
                 label: $LABEL
                 gate: github_alona
-                
-        env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
 
 
-      - name: Discard evidence
+      - name: Discard evidence  mongo-express:1.0-18-alpine3.19
         id: valint_discard
         uses: scribe-security/action-discard@master
         with:
@@ -147,7 +124,6 @@ jobs:
            type: docker
            target: mongo-express:1.0-18-alpine3.19
            scribe-enable: true
-           # format: attest
            product-key: ${{env.PRODUCT_NAME}}
            product-version: ${{env.PRODUCT_VERSION}}_mongo-express:1.0-18-alpine3.19
            scribe-client-id: ${{ secrets.CLIENT_ID }}
