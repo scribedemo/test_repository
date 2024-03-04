@@ -206,8 +206,8 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: $IMAGE_NAME
+                # type: docker
+                target: ${{env.IMAGE_NAME}}
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
