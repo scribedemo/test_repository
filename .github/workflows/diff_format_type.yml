@@ -104,6 +104,7 @@ jobs:
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
                 label: $LABEL
+                gate: github_action
 
 
       - name: Scm generate statement-cyclonedx-json+mongo
@@ -130,6 +131,7 @@ jobs:
           supplier-phone: ${{env.SUPPLIER_PHONE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: $LABEL
+          gate: github_action
  
           
       - name: Scm generate statement+mongo
@@ -155,6 +157,7 @@ jobs:
           supplier-phone: ${{env.SUPPLIER_PHONE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: $LABEL
+          gate: github_action
      
       
       - name: Generate SLSA provenance attest
@@ -173,6 +176,7 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 label: $LABEL
+                gate: github_action
         
       - name: Generate SLSA provenance statement 
         id: valint_slsa_statement
@@ -196,6 +200,7 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}_slsa
                 supplier-email: ${{env.SUPPLIER_EMAIL}}_slsa
                 supplier-phone: ${{env.SUPPLIER_PHONE}}_slsa
+                gate: github_action
                 
       - uses: actions/upload-artifact@v3
         with:
