@@ -86,7 +86,7 @@ jobs:
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
                 # deliverable: true
                 label: $LABEL
-                # gate: github_alona
+                gate: github_alona
                 
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
@@ -122,30 +122,30 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
 
-      # - name: Generate SLSA provenance statement
-      #   id: valint_slsa_statement
-      #   uses: scribe-security/action-bom@master
-      #   with:
-      #           # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-      #           # type: docker
-      #           target: ${{env.IMAGE_NAME}}
-      #           # attest-slsa, statement-slsa, attest-generic
-      #           scribe-enable: true
-      #           format: attest-slsa
-      #           attest-default: x509-env
-      #           product-key: ${{env.PRODUCT_NAME}}
-      #           product-version: ${{env.PRODUCT_VERSION}}
-      #           scribe-client-id: ${{ secrets.CLIENT_ID }}
-      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-      #           scribe-url: ${{env.SCRIBE_URL}}
-      #           # scribe-login-url: $SCRIBE_LOGIN_URL
-      #           scribe-audience: ${{env.SCRIBE_AUDIENCE}}
-      #           gate: github_alona
-      #           # deliverable: true
-      #   env:
-      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                type: docker
+                target: ${{env.IMAGE_NAME}}
+                # attest-slsa, statement-slsa, attest-generic
+                scribe-enable: true
+                format: attest-slsa
+                attest-default: x509-env
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: ${{env.SCRIBE_URL}}
+                # scribe-login-url: $SCRIBE_LOGIN_URL
+                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
+                gate: github_alona
+                # deliverable: true
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
                 
       - uses: actions/upload-artifact@v3
         with:
