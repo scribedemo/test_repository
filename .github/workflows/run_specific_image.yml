@@ -27,16 +27,7 @@ on:
          description: 'Put your image name'
          required: true
          default: 'mongo-express:latest'
-      # valint_version:
-      #    type: choice
-      #    description: Valint version
-      #    required: true
-      #    options:
-      #     - dev
-      #     - master
          
-       
-
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
@@ -75,13 +66,11 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
-                type: docker
+                # type: docker
                 target: ${{env.IMAGE_NAME}}
-                # target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
-                # product-key: $PRODUCT_NAME
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
