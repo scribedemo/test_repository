@@ -126,9 +126,9 @@ jobs:
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
         with:
-                # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                type: docker
-                target: ${{env.IMAGE_NAME}}
+                target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                # type: docker
+                # target: ${{env.IMAGE_NAME}}
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
