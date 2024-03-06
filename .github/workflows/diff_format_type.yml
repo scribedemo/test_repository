@@ -103,7 +103,7 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                label: $LABEL
+                label: ${{env.LABEL}}
                 gate: github_action
 
 
@@ -130,7 +130,7 @@ jobs:
           supplier-email: ${{env.SUPPLIER_EMAIL}} 
           supplier-phone: ${{env.SUPPLIER_PHONE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          label: $LABEL
+          label: ${{env.LABEL}}
           gate: github_action
  
           
@@ -156,7 +156,7 @@ jobs:
           supplier-email: ${{env.SUPPLIER_EMAIL}} 
           supplier-phone: ${{env.SUPPLIER_PHONE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          label: $LABEL
+          label: ${{env.LABEL}}
           gate: github_action
      
       
@@ -175,7 +175,7 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                label: $LABEL
+                label: ${{env.LABEL}}
                 gate: github_action
         
       - name: Generate SLSA provenance statement 
