@@ -85,7 +85,7 @@ jobs:
       #           supplier-email: ${{env.SUPPLIER_EMAIL}}
       #           supplier-phone: ${{env.SUPPLIER_PHONE }}
       #           # deliverable: true
-      #           label: $LABEL
+      #           label: ${{env.LABEL}}
       #           gate: github_alona
               
 
@@ -112,7 +112,7 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}}
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
-                label: $LABEL
+                label: ${{env.LABEL}}
                 gate: github_alona
 
 
@@ -159,7 +159,7 @@ jobs:
                 supplier-email: ${{env.SUPPLIER_EMAIL}}
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
                 # deliverable: true
-                label: $LABEL
+                label: ${{env.LABEL}}
                 gate: github_alona
                 
         env:
@@ -194,7 +194,7 @@ jobs:
                push: true
                verbose: 2
                DEBUG: true
-               label: $LABEL
+               label: ${{env.LABEL}}
                gate: github_alona
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
