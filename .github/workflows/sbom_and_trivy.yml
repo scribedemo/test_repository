@@ -85,7 +85,7 @@ jobs:
                 supplier-email: ${{env.SUPPLIER_EMAIL}}
                 supplier-phone: ${{env.SUPPLIER_PHONE }}
                 # deliverable: true
-                label: $LABEL
+                label: ${{env.LABEL}}
                 gate: github_alona
                 
         env:
