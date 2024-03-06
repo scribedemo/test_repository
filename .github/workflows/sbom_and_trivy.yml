@@ -22,11 +22,11 @@ on:
       product_name:
          description: 'Put product name'
          required: true
-         default: 'sbom_and_trivy.'
+         default: 'sbom_and_trivy'
       image_name:
          description: 'Put your image name'
          required: true
-         default: 'mongo-express:latest'
+         default: 'busybox:latest'
          
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
