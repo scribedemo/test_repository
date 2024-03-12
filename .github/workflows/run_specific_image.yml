@@ -107,18 +107,9 @@ jobs:
                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                scribe-url: ${{ env.SCRIBE_URL}}
                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
-               author-name: ${{env.AUTHOR_NAME}}
-               author-email: ${{env.AUTHOR_EMAIL}}
-               author-phone: ${{env.AUTHOR_PHONE}}
-               supplier-name: ${{env.SUPPLIER_NAME}}
-               supplier-url: ${{env.SUPPLIER_URL}}
-               supplier-email: ${{env.SUPPLIER_EMAIL}}
-               supplier-phone: ${{env.SUPPLIER_PHONE }}
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
-               push: true
                verbose: 2
-               DEBUG: true
                label: ${{env.LABEL}}
                gate: github_alona
         env:
