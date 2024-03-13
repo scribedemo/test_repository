@@ -114,10 +114,10 @@ jobs:
                 gate: github_alona
                            
      
-      - uses: actions/upload-artifact@v3
-        with:
-                name: provenance
-                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #           name: provenance
+      #           path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
           
                 
                 
