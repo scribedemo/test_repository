@@ -113,7 +113,34 @@ jobs:
                 deliverable: true
                 gate: github_action 
                 # deliverable: true 
-
+                
+        - name: SolarWinds 3rd
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './solarWinds_3d.json'
+                format: attest
+                # attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-id: ${{ secrets.CLIENT_ID }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-url: ${{env.SCRIBE_URL}}
+                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
+                author-name: ${{env.AUTHOR_NAME}}
+                author-email: ${{env.AUTHOR_EMAIL}}
+                author-phone: ${{env.AUTHOR_PHONE}}
+                supplier-name: ${{env.SUPPLIER_NAME}}
+                supplier-url: ${{env.SUPPLIER_URL}}
+                supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                supplier-phone: ${{env.SUPPLIER_PHONE}}
+                deliverable: true
+                gate: github_action 
+                # deliverable: true 
+      
         - name: opshub.json with statement
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
