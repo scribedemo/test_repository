@@ -1,0 +1,3570 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "author": "",
+      "bom-ref": "023ce16b-21ef-44d0-ab23-67cb70872f23",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "49ad6388ae028defbbe5da874389393d"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "cfa1bc5ae9597dd8c56cbd0bbb29923ba15f0ee6"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "987906d83832cd3869b00db0e6b46b22980c12132952009159f575e466591b2f"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "082c6ac8-fbe1-4d1d-87f6-627019188122",
+      "cpe": "",
+      "description": "zlib data compression library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "9c8330f7d26fcbd763fd1e8da848cba2"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "1006c77640ecc04c956b0ee38b3e0414a5737bf4"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b630a237365c3cab06b9c573467f83e901fe4668b8ebe9869964c7e8268e0ec5"
+        }
+      ],
+      "licenses": [],
+      "name": "zlib",
+      "publisher": "Solarwinds Worldwide, LLC",
+      "purl": "",
+      "type": "application",
+      "version": "1.2.13"
+    },
+    {
+      "author": "",
+      "bom-ref": "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+      "cpe": "",
+      "description": "Microsoft C Runtime Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Software License)"
+          }
+        }
+      ],
+      "name": "vcruntime140",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+      "cpe": "",
+      "description": "Windows NT BASE API Client Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "kernel32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "5072caa1-45c8-48bb-b7f7-95530c2ffb94",
+      "cpe": "cpe:2.3:a:zlib:zlib:-:*:*:*:*:*:*:*",
+      "description": "Zlib is a free general purpose lossless compression library available under a permissive license, which implements the DEFLATE algorithm.",
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (Zlib)"
+          }
+        }
+      ],
+      "name": "zlib",
+      "publisher": "Jean-loup Gailly and Mark Adler",
+      "purl": "",
+      "type": "library",
+      "version": "1.2.13"
+    },
+    {
+      "author": "",
+      "bom-ref": "51af944f-52e8-451f-8926-f8804f920b9a",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-heap-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "8823f4ac-05b4-4409-8ffe-379987efe6db",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-runtime-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-convert-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-stdio-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "102c31e8-8fef-4b46-b068-6214f4381e72",
+      "cpe": "",
+      "description": "Microsoft® C Runtime Library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "ab03551e4ef279abed2d8c4b25f35bb8"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "09bc7e4e1a8d79ee23c0c9c26b1ea39de12a550e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f8bc270449ca6bb6345e88be3632d465c0a7595197c7954357dc5066ed50ae44"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-string-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "11f54b18-886c-4ac7-8e2d-920dc35ab3b2",
+      "cpe": "",
+      "description": "Serv-U Setup",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "7d61ad305b22c031e8bb91f37c6007e9"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "9af73fc79bc3d6cd349af47521257779fc4e2a24"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "4059d406dd347bf0b24f6fca7a753bfd78956393afd5debc44787639e9f903b2"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U",
+      "publisher": "SolarWinds Worldwide LLC",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+      "cpe": "",
+      "description": "Object Linking and Embedding Automation Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "oleaut32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+      "cpe": "",
+      "description": "Common Controls Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "comctl32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+      "cpe": "",
+      "description": "Multi-User Windows USER API Client Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "user32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "647527dc-b8d4-4902-9600-fcb64939f672",
+      "cpe": "",
+      "description": "Advanced Windows 32 Base API Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "advapi32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "128fcd13-4fcd-4c2a-bd3f-fa11b318c809",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "124ca29b456c7efd979a4746a2f284c7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b076c5912ef109664d03fcb6dd090688fee2ee44"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "acbb8b348bb72c6cd0c617a9f6b6117f8c7e2f50ac864ab748970efdabe0196e"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "1b074e04-299d-4ab8-a29a-01df0084ad25",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "35ecbf832f3a0af5401b1d37ab4aed4c"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "1eab8537ce249fc625dd275fd7af902e4743e1c0"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "4064295b56e8fbb836efc8c1d81aaae89cb2ed1a69c9ac41418fb8bb6f2c79f4"
+        }
+      ],
+      "licenses": [],
+      "name": "FTP_Voyager_JV.jar",
+      "publisher": "",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "1e085141-fa1b-4c85-9cb4-983d1f142d45",
+      "cpe": "",
+      "description": "OpenSSL library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "3d2a71e090e223ed0bf4dd6634a3ecb9"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "30dd6885721e151f468594cda320202236e7c267"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "875f04a60d3dc59bb80ba61dd90b17f628251a187ae3c9ac6430fb061a8d39cf"
+        }
+      ],
+      "licenses": [],
+      "name": "The OpenSSL Toolkit",
+      "publisher": "The OpenSSL Project, https://www.openssl.org/",
+      "purl": "",
+      "type": "application",
+      "version": "3.0.8"
+    },
+    {
+      "author": "",
+      "bom-ref": "08966495-e309-4d0a-8215-806434be1372",
+      "cpe": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+      "description": "OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS), Secure Sockets Layer (SSL) protocols and crypto protocols.",
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "OpenSSL",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-utility-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "c7d1f63f-08d0-48db-81f9-5f315781e220",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-time-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "1f15ac98-8c23-44e2-b1d5-af4153c08a06",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "448cbc08474a3ddff2e65ec84437d6d7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "864d1b10a3577bb87bdf7c93cb2294a16be99174"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "26368db061aba9ed3d151806745a931d58308ad8f9f5c3fbef9120c4e84df779"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "1fc2220e-fe0e-4034-bc1d-1bf98848c706",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "40ff6105226d511fe2bfb8c26fa612bf"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "51b55d10019ff468f0f1081be22558b9fdb14187"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "13b02310f661e1d9542d09a6e99a421d9facb715d2b9367629208a3afcdd3dd4"
+        }
+      ],
+      "licenses": [],
+      "name": "jide-common.jar",
+      "publisher": "",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "251fb4a5-4957-4277-9101-6e4bee5e317c",
+      "cpe": "",
+      "description": "RhinoRES Dynamic Link Library - SolarWinds General Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4e10ae5c40d2ea7856345bc1b7069814"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "bb06e3c8f7e3f9e1951df74e9535030c0a0e49e2"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e0f03d41c82550487e31670dcc2e86e6c1a8d19edfd46ab04437d3d45e8777a5"
+        }
+      ],
+      "licenses": [],
+      "name": "SolarWinds Resource DLL",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "2.0.0.5"
+    },
+    {
+      "author": "",
+      "bom-ref": "32cba344-a51e-4af2-946c-39f705326dc2",
+      "cpe": "",
+      "description": "MFCDLL Shared Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Software License)"
+          }
+        }
+      ],
+      "name": "mfc140u",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "2bde9e2c-b54a-4e1c-bd91-a42dd41d7ab7",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "d254944490608c45802fefffd2b4d040"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "1ed479029f0a9baf181e539f3fd43b0aca6f512e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "73cb743920ba3124022233b196968fae784b59f8222f23dcbf1a439233ee61cd"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "468c053f-4a59-422b-ab58-154e305f4b58",
+      "cpe": "",
+      "description": "MFCDLL Shared Library - Retail Version",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4b6bf219bb98bccfff4a5ab2b24b5144"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8d33d3cf31beac4bb3b8fa5af3feee62c2d3ecd3"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "472b3ed1fb1503e3071e1f64c0eccf48b50b95deff560e24515f1c73819c5134"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-filesystem-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "185a7ef9-d311-4de0-9562-93ab2323b0f9",
+      "cpe": "",
+      "description": "OLE32 Extensions for Win32",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "urlmon",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+      "cpe": "",
+      "description": "Crypto API32 Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "crypt32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-math-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "2de125b9-f02a-4674-85ab-78756a200ec1",
+      "cpe": "",
+      "description": "Object Linking and Embedding User Interface Support",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "oledlg",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "31f970bc-2268-4f26-a420-ff6f56bf0162",
+      "cpe": "",
+      "description": "Media Control Interface API Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "winmm",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "3ed891a4-64c8-47f3-a278-00b9942e1036",
+      "cpe": "",
+      "description": "GDIEXT Client Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "msimg32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "3f59cc40-638e-4814-b752-866586ff5476",
+      "cpe": "",
+      "description": "Shell Light-weight Utility Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "shlwapi",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "4e721379-c4da-4ad7-8d0c-0659a875181a",
+      "cpe": "",
+      "description": "ODBC Driver Manager",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "odbc32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+      "cpe": "",
+      "description": "Library which contains Windows Shell API functions",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "shell32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+      "cpe": "",
+      "description": "GDI Client Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "gdi32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+      "cpe": "",
+      "description": "Windows Socket 2.0 32-Bit Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "ws2_32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+      "cpe": "",
+      "description": "Microsoft Object Linking and Embedding for Windows",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "ole32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "a1f8c375-49a1-4cb6-b952-21ffdbb75795",
+      "cpe": "",
+      "description": "Windows Spooler Driver",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "winspool",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "a414fe82-acf0-4360-ada5-405223e17333",
+      "cpe": "",
+      "description": "Multi-User Windows IMM32 API Client Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "imm32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "b1aa9bd7-9702-4579-a1a7-93436effe936",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-multibyte-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "ca5fcf47-159b-4f33-b7ca-67b56159696f",
+      "cpe": "",
+      "description": "Microsoft GDI+ Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "gdiplus",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "cdf4e8bd-2545-4f7c-ae46-abf2bcc49545",
+      "cpe": "",
+      "description": "Microsoft UxTheme Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "uxtheme",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "eba1d31b-dcc1-434b-8431-ad97c6a20ee1",
+      "cpe": "",
+      "description": "Active Accessibility Core Component",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "oleacc",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "f28c84e8-539b-4a09-b559-22d81497bdf4",
+      "cpe": "",
+      "description": "Internet Extensions for Win32",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "wininet",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "JIDE Software, Inc.",
+      "bom-ref": "470672db-5bb3-45ee-b9af-8633a81b8ac3",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "ff13e33c2c2a979c491f43453c3527d0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "58413589a4adb3de9197c38d8e9a49f7cdfe8fdf"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "5fbacd626766c060f949b74d34ac3d4f3f1976e362d2fc579334558c612594a4"
+        }
+      ],
+      "licenses": [],
+      "name": "com.jidesoft:docking",
+      "publisher": "JIDE Software, Inc.",
+      "purl": "pkg:maven/com.jidesoft/docking@3.5.6",
+      "type": "application",
+      "version": "3.5.6"
+    },
+    {
+      "author": "",
+      "bom-ref": "53cc581e-0bcb-47fe-be25-8c61cf411688",
+      "cpe": "",
+      "description": "Serv-U® File Server EXE",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "53f843a14ee3201a30b2f8389133d70c"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c3d636bb0fbd639d93bf5de46c69557e136b5fc4"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "207e59b23cb8bb02386da5ffd36f4e8c77a4455159532c2200df1656855aca87"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "020d1d29-1192-4659-af6e-3d104f877d40",
+      "cpe": "",
+      "description": "Microsoft C Runtime Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Software License)"
+          }
+        }
+      ],
+      "name": "msvcp140",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "03468408-019f-40ce-b1e7-31561674caaf",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-locale-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+      "cpe": "",
+      "description": "Version Checking and File Installation Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "version",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "b3b1c573-e8be-430a-b83f-e2da56acadd8",
+      "cpe": "",
+      "description": "",
+      "licenses": [],
+      "name": "Serv-U.dll",
+      "publisher": "",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "5c6dbde3-4925-4a1b-bbcc-3c7fac56f6b0",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "a545ced75d8a4f81263bc0005b3ce0fb"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c0efce502224205213fcedc4d884b32dc86dadef"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "03b566b35c385e7a47e91a7614ce743bd72ad4797d7d7275602df60c69db6028"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "5fab98ec-ccb5-4ccf-91df-881c939d4e75",
+      "cpe": "",
+      "description": "Serv-U® FTP Server Setup Utility",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8a5d52214c3dbe5563f5de5cecf18705"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b37e811701ff3f9f005439075fc9b9661f5bc4c2"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6bea266f85a6c3d2c7bc377620e0f6c09f66f57be9ceffc477a0016122f36337"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "fbea34df-868d-4d4d-a347-f73c5581f788",
+      "cpe": "",
+      "description": "Microsoft C Runtime Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Software License)"
+          }
+        }
+      ],
+      "name": "vcruntime140_1",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "67b435d2-f867-486a-ad76-74970acd10c6",
+      "cpe": "",
+      "description": "SolarWinds UPnP \u0026 Network Functions",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "1c61aeff1a412952e6c1d63e8d830904"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "70139d00d44dc320cfca0ebadd4f145e48108392"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "a001bc86bd3c6299506f572ca59761a0b8615bb2ccd776e2b1c05e2f64e725a2"
+        }
+      ],
+      "licenses": [],
+      "name": "SolarWinds UPnP \u0026 Network Functions",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "3.0.0.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "0635b16a-67db-46cd-b097-0e3e1ac0b6ba",
+      "cpe": "",
+      "description": "Windows Socket 32-Bit Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "wsock32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "3437f66e-3965-49c8-8d88-55cbc35e3f5c",
+      "cpe": "",
+      "description": "Windows cryptographic Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "ncrypt",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "68028362-ac1a-426d-b676-706cda8649ae",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "62c4e453c646ce30863be39a57aaa5c8"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "3847ca4b6e63aeaffc48586d83a0796042b00fc0"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1c94963a4ae99522d6b1c47748eac2de2f4cb3b9465d64008d2a3d116be02a0e"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "6829e399-93f6-4e6e-9da8-95779f0472c0",
+      "cpe": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+      "description": "The Libssl library is part of OpenSSL project that provides support for SSL and TLS protocols, and it depends on Libcrypto library.",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "af72474ed4f6cd42a5984c7ca0882fc0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8cbfb9de8e09c8fca005f4a198076de8f8a7a883"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b20d0c95e94b4595661220e6d90bc2ea636c1a5b170aa60d2d81cd89d6377a68"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "Libssl",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "e04d61b1-5eb7-437f-86c5-bdff86759a8f",
+      "cpe": "",
+      "description": "",
+      "licenses": [],
+      "name": "libcrypto-3.dll",
+      "publisher": "",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "e9cb8acf-619b-44c3-acd9-c938e2b37cbf",
+      "cpe": "",
+      "description": "OpenSSL Cryptographic Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "libcrypto",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "6e4ac469-ab20-4d33-9d5a-90d1fea45d30",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "11870965b53f9a59e564bf956dcf70fd"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "a8caa57d5f08cad82a30fe01c0f29a09936438a5"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "83d49cd1738d04b007330c593160002df21d421d352d5476390b8320b17dc5b2"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "7a73cac0-da72-4ef5-9e6d-6f80fcdbc4a1",
+      "cpe": "",
+      "description": "Microsoft® C Runtime Library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "5cde3aed10412762e83b7fe43694a22b"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "4ffcdf063eafc901105836c27a634530ea614755"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "10ddff48d704c6007e4c2d53fb4856b5e5e79479503366236246a323aaa76e9d"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "01d7a25e-992e-4561-b645-ce79835df796",
+      "cpe": "",
+      "description": "Microsoft Concurrency Runtime Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Software License)"
+          }
+        }
+      ],
+      "name": "concrt140",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "7a9725d3-dbde-4769-80c9-77a5eef81c92",
+      "cpe": "",
+      "description": "ApiSet Stub Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "api-ms-win-crt-environment-l1-1-0",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "84050329-131e-44b4-81e5-a3585d0579e3",
+      "cpe": "",
+      "description": "Microsoft® C Runtime Library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "e0dd94aada0b034b212de071c33054da"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6c4f1b3f66d07bbcdcf41eb39b1480bb335efcc8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "08442853f19ce4ff3acae37d87eab33ef81c4c6da62a3432d43253ba79842b64"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "85970034-5cae-4cdc-b37b-6b7a5c26c4dc",
+      "cpe": "",
+      "description": "Serv-U® File Server Tray Application",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "fc3a078513681579f0c18f197d7170f2"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8597ed6b7509961e9c7f1d0e04c62e6f3fc28a3c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "145fff74dfd05efe53aff3c0161f859d11a4f88302b0e26e2d717dd52a1671e7"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "d5061280-1a0e-4419-8317-47421f52c4c4",
+      "cpe": "",
+      "description": "",
+      "licenses": [],
+      "name": "RhinoNET.dll",
+      "publisher": "",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "85cce35e-c14e-436a-b776-5fcc5d1896d8",
+      "cpe": "",
+      "description": "SolarWinds UPnP \u0026 Network Functions",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f6ccd3af789c173d28c59decd918722f"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "5fadeb212bd08305460b7377984fb775ce052350"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "a7e0dbe86d76c9cdca750810217587a6b2c2dcca2c4af8ed2cb43bb27ecb7c46"
+        }
+      ],
+      "licenses": [],
+      "name": "SolarWinds UPnP \u0026 Network Functions",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "3.0.0.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "8876f25a-f298-4e3c-875a-fc39da6a00c1",
+      "cpe": "",
+      "description": "Microsoft® C Runtime Library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "7942be5474a095f673582997ae3054f1"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "e982f6ebc74d31153ba9738741a7eec03a9fa5e8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "8ee6b49830436ff3bec9ba89213395427b5535813930489f118721fd3d2d942c"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "8e5cc7bd-df56-45a7-9c76-2c56f395221d",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "105fad9c8985de87fc20a4c6096e7177"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "a147c1037ca091ea12abf9bb7d7cc64e7f75aa76"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "cdc1708074577730f28d02274fdbaa34c27122605ffeafc53d036d0a05e52247"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "9ac0cdfe-e0fb-4bdc-8663-f6a01c4a8aa1",
+      "cpe": "",
+      "description": "OpenSSL library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "b33d4a812461856153fb30bf7047eb16"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "599245ef3785cf66a68714d7c254e590c19b360c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "eea99a406dec04ac4662d83da2775569179caf6be8d4911f7cd6761d9e36af64"
+        }
+      ],
+      "licenses": [],
+      "name": "The OpenSSL Toolkit",
+      "publisher": "The OpenSSL Project, https://www.openssl.org/",
+      "purl": "",
+      "type": "application",
+      "version": "3.0.8"
+    },
+    {
+      "author": "",
+      "bom-ref": "9d5470bf-66a7-49c0-bcc1-64ed80d974cd",
+      "cpe": "",
+      "description": "MFCDLL Shared Library - Retail Version",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4d723c7efb1676c45024f651177ac6f3"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "96dd9d116f1b8953982b94b42c815b57d891de0c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f358d209ba98cfd01abe5092cce70b86b762932c483291fd04524576678bb2d1"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "9f488158-b68b-4cc6-a510-3ccb830cd19b",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "6c8cd4ebf36b86af4e8eb5ed8f2b43ca"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "4a502f2156093159797d2175fd7f2094fb51d9a6"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "dc778b62ea6d4b4c06519761b80e22f597e70cc8096b42acf78cb97975796e05"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a0a5e4e5-1914-417d-ac9c-0663e83d9594",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "912fd2ae192e743fce5fc976b72ed97d"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "28d1d9a7eca5ae2791772e981c1e33247d913f7b"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "86bbbc5b25b84589376e5f168a6ac923d892d441d4c8be42783cab8168d09efc"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a187c1a6-ec4d-459c-be4a-81d604ff6979",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "6258be949ac8fa87ccdbd2397b8e4748"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8a38cc00bed72ad574af5722cbff5c6973a576ad"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "12a328a83d02b65fc59e51036c8bd0f4aa4ccd4f6ddc28d63511bd43d281017a"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a3a8b32b-ffe9-4b1d-a592-c9bb6292b563",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4f234f932f29ebe8d07c107c58b3f4ba"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "892ef04e79ae6c177898ba984bfcbe57e8e6c50d"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6f048831d8297083fcd624359deaa68f40acd59f4da9bcfd28387f3fc04338c7"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a4279f43-e970-4c82-b52e-284254d9d753",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "702104b0607b2452f44ff126d44232be"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "9e0234303d709b0f4a868ac21831c954b90b9395"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "ec3e94050dd3d2f0d14d4fc4fbf19ae3b6c1bceec84f7e85306fe9383c500ca7"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "a49ad5e8-037b-437b-84a9-3da302451556",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "058a5adaa351bd39757479f3bfa77dc6"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6c7cb34458a13c75682c4094092628de6ea82e53"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "5ce273e6ccf07b6801c64fd462f52eb6fa49df82afbbed00447e920910cf49bc"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "JIDE Software, Inc.",
+      "bom-ref": "aa44f904-0d5c-4ecb-8c26-97e06ffcc762",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "bb198c36041ce734f67d34dcaef96c6e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "f53552dc1f56427cd96fd9f60e91ca1e56e938f4"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6978d4d14811d8ac1684d46daa8f62c9ebdd3ab203bf2bde59e1db0eb5aacc35"
+        }
+      ],
+      "licenses": [],
+      "name": "com.jidesoft:action",
+      "publisher": "JIDE Software, Inc.",
+      "purl": "pkg:maven/com.jidesoft/action@3.5.6",
+      "type": "application",
+      "version": "3.5.6"
+    },
+    {
+      "author": "",
+      "bom-ref": "ae1cd437-07b9-4aae-b03d-7dcc17f8d376",
+      "cpe": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+      "description": "The Libcrypto library is part of OpenSSL project that provides fundamental cryptographic routines. Libcrypto is mainly used by Libssl library, but it can be used without Libssl.",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "bc72e7fff4b5512f258767a589329c19"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "81f66f4f24bacc9d9c77c544e3baa19fade5aae6"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "832d6ea0eb968ca526958fe19ae0123f2e00e39249c858d5d45cde9812701a14"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "Libcrypto",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d",
+      "cpe": "cpe:2.3:a:openssl:openssl:3.0.8:*:*:*:*:*:*:*",
+      "description": "OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS), Secure Sockets Layer (SSL) protocols and crypto protocols.",
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (Apache-2.0)"
+          }
+        }
+      ],
+      "name": "OpenSSL",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "library",
+      "version": "3.0.8"
+    },
+    {
+      "author": "",
+      "bom-ref": "8e33de64-c701-438a-aba0-c1f45fc19135",
+      "cpe": "",
+      "description": "Windows Cryptographic Primitives Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "bcrypt",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "b6b25926-4283-4663-9156-a25ff19bb397",
+      "cpe": "",
+      "description": "Serv-U® File Server Tray Application",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "1c904b41af333d009df90beb8173a328"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "a81afd5a7fa9ad368b28baa21f9317b22012a5be"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "9264ca0590bacbe2b3a40504ab966fb306c13c0f77eb9305b462c48ed102a4a6"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "b8d42df2-c72a-41b9-8cd4-ef87c91983f7",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "2f54f73e51e5d7d3022ef39c8cf911dd"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "e40766a017df17468f4f4ecd6fe9c09cb98e5d33"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "243ceddd1437fd914156c640db27d0e76e0df8c76244285db339296c2042246b"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "bcc07de5-ce7a-4413-9c6a-720b3c097bcf",
+      "cpe": "",
+      "description": "Serv-U® File Server DLL",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "c35ab52369c4ba88c621628d1ca15a2f"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "d406637efbaa58d58b74d871a59cc4478d7a46c5"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "049633818d5e9345d61393a57bfbbec6953f707b4c744a2962e39619342641bb"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "110edb55-bec0-4d12-b9cb-694e2d1e182b",
+      "cpe": "",
+      "description": "Security Support Provider Interface",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "secur32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "16a9d6b4-ae25-455f-afc7-90a508e2ca6a",
+      "cpe": "",
+      "description": "ADs Router Layer Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "activeds",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "60436551-2eec-4d47-94ed-147bd3b80080",
+      "cpe": "",
+      "description": "Network Win32 API Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "netapi32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "a1be248b-7414-4db9-acb8-28b4e1121cd3",
+      "cpe": "",
+      "description": "Win32 LDAP API Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "wldap32",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "f5b7ca26-324a-40b0-870d-98fb359a902b",
+      "cpe": "",
+      "description": "Userenv Library",
+      "licenses": [
+        {
+          "license": {
+            "name": "Proprietary (Microsoft Windows Operating System License)"
+          }
+        }
+      ],
+      "name": "userenv",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "c1c1f69a-05bf-458c-a759-a1d95508f82b",
+      "cpe": "",
+      "description": "RhinoRES Dynamic Link Library - SolarWinds General Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "bd02bf520c33219cbf568c46b9d34ec0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "99b53bd07e4b1dd5134a120646a40a1d65d8da48"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "387db459c28f6c275f26131be4060ba96b725de3abaf321be15d11c4df0f5d24"
+        }
+      ],
+      "licenses": [],
+      "name": "SolarWinds Resource DLL",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "2.0.0.5"
+    },
+    {
+      "author": "",
+      "bom-ref": "c353ba99-b554-4446-90c4-c0f0b15988e7",
+      "cpe": "",
+      "description": "Serv-U® File Server DLL",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "7c286ebb4cdd16e8ecb211d4d8503173"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6e18e410d51730df1c939b6a9372bb171064695c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6029f650f73eb29329284525e39730ef00b9c979c892e62c9eced21291167dc1"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "6d1da772-6a1c-4add-85f9-cc266b0a2c13",
+      "cpe": "",
+      "description": "",
+      "licenses": [],
+      "name": "libcrypto-3-x64.dll",
+      "publisher": "",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "c6003129-cd4e-4c3a-8dd1-f7674e249035",
+      "cpe": "",
+      "description": "Serv-U® FTP Server Setup Utility",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "57b780d99003b6894710c0b3d2bf9f31"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8e170d889ecbb3fd970c5d55ec78e0695643baff"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e2d3a6ed84b0db56cd0cea138778722f2fb6b41393bfea809073c56f818be4b7"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "cab208e3-78f1-409d-b0fa-61eb7d2d5be7",
+      "cpe": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+      "description": "The Libcrypto library is part of OpenSSL project that provides fundamental cryptographic routines. Libcrypto is mainly used by Libssl library, but it can be used without Libssl.",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f584ee1297381a40f12fbf3c9e1b572f"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "80bcf92bb2b7cb05c31a1934965f4b56403fa840"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "8a630607eef25c0a1f405ba603b497a286c24e0810e19cbe8638f0a8012764ab"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "Libcrypto",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10",
+      "cpe": "cpe:2.3:a:openssl:openssl:3.0.8:*:*:*:*:*:*:*",
+      "description": "OpenSSL is a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS), Secure Sockets Layer (SSL) protocols and crypto protocols.",
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (Apache-2.0)"
+          }
+        }
+      ],
+      "name": "OpenSSL",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "library",
+      "version": "3.0.8"
+    },
+    {
+      "author": "",
+      "bom-ref": "cfb27d74-e653-4401-bcb9-8d7573219890",
+      "cpe": "",
+      "description": "Serv-U® File Server EXE",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "62e9d1393210a12d1d7cbcc40ca1aec7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "998c682ac782f2914c3f605ce59be1065dc9f64e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "25d9df3da3d2c99f40abdf99d97e945fbae71c80f9648661f7a1c3116db66965"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "d1a80ed3-7c02-4ad5-9aa3-6fa89e23f386",
+      "cpe": "",
+      "description": "Serv-U® Resource DLL",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "a0eaf12947777d1b3e5d2f7df8645b82"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "ae44e9e47857811e8dbedb7c88a671f5cb63f623"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "8aa1fed16af14e7933cdc89f3f36706531cff3eeb8bf3f0c9a7880cfe0986dfc"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "d4add82a-c41c-4aa4-9986-4b274e923fc9",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f50e505c03cc5d49983c7656b7ff993e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "ef88e5becc2c0d621ca60ea28a357ebe688933cd"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e7d3a6362c14b99fc9f5555a10e1df04deec1716ce8a2dce771bdf3e18b58414"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "d5b1cc93-fb6e-420b-bf3f-f90c2a291b2d",
+      "cpe": "",
+      "description": "Serv-U® Resource DLL",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "fce9d3de8d91edbd7fbd1bdc7c633760"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "079eebe1e6ca529bf8ff54d013d661f2ed0d4233"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f332276ac6ed692e38d50a43e10fe4f35370a7e3335d72f236de2ac095c81155"
+        }
+      ],
+      "licenses": [],
+      "name": "Serv-U® File Server",
+      "publisher": "SolarWinds Worldwide, LLC.  +1(866) 530-8100",
+      "purl": "",
+      "type": "application",
+      "version": "15.4.0.147"
+    },
+    {
+      "author": "",
+      "bom-ref": "d82910eb-946e-4087-a31f-4253f0361541",
+      "cpe": "cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*",
+      "description": "The Libssl library is part of OpenSSL project that provides support for SSL and TLS protocols, and it depends on Libcrypto library.",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "0ba525a02948121f391dc580d96edd39"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c294d31b264c282705282aa8beb7e97ae7abad8e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "fb9998591fb396d18257a98d677b339ea421f3d887a3491e88f2da5f7a9a637b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Permissive (OpenSSL)"
+          }
+        }
+      ],
+      "name": "Libssl",
+      "publisher": "The OpenSSL Project",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "d9e76fc6-c0ef-43f5-a8cb-ecb2da0fcdbe",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "e3122f04fc53190fe8077c90d1afb9f4"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "e29a59ba47050d704a13ef6bdd3b19033f5b29b2"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "82db9ba4780d5d88523d3926368699683ec5d7cba3161f6bed0b01a1c3d83d31"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "e034018e-713c-4e2e-914d-fe9c5a67e2fe",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "fd2714381aeebb4041e78615d9481d8d"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "4391c6c4b1e88aefa4d68620c237d39a5b1ade30"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "3b7ddf5e5fbb90537cecc5d2d876c13109a357c712a04c6f003abae4752d7948"
+        }
+      ],
+      "licenses": [],
+      "name": "SQLite",
+      "publisher": "Solarwinds Worldwide, LLC",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "6c433130-ca5b-4317-b68e-ce1848dc81bd",
+      "cpe": "cpe:2.3:a:sqlite:sqlite:*:*:*:*:*:*:*:*",
+      "description": "SQLite is an in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine.",
+      "licenses": [
+        {
+          "license": {
+            "name": "Public domain (blessing)"
+          }
+        }
+      ],
+      "name": "sqlite",
+      "publisher": "D. Richard Hipp",
+      "purl": "",
+      "type": "library",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "e3b845b3-9609-4249-bb0b-fbf583f25aca",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "9dac9c0e8ac5ac6591aaa3b209d14914"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "61e5bc906460b358f52092fd50832208e8f345f8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "3ec2fa71d731a6030ac8c8ff9cf5ca78ce32ed85a97292c6a1a716056966cf76"
+        }
+      ],
+      "licenses": [],
+      "name": "RhinoJavaCore.jar",
+      "publisher": "",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "e45484b1-a547-4e87-8498-b718270141dd",
+      "cpe": "",
+      "description": "Microsoft® C Runtime Library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "87dd91c56be82866bf96ef1666f30a99"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "3b78cb150110166ded8ea51fbde8ea506f72aeaf"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "49b0fd1751342c253cac588dda82ec08e4ef43cebc5a9d80deb7928109b90c4f"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    },
+    {
+      "author": "",
+      "bom-ref": "e7694b7d-6a20-4640-9416-09c1fdb91aab",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "86408eb72b8b08da4692853be1d549c9"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b88af8ef84edfc6e2402af2b9af021f580ca98ef"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "bf06addc5f7370a51370752e517e2e5f8179a9497f75d53b5c7cef50bd6399f6"
+        }
+      ],
+      "licenses": [],
+      "name": "WebClientPro.jar",
+      "publisher": "",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "ed3b4b1e-ce9c-465b-a6b0-8badbfff5639",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4499d1d5ade23e3c43ebe671bcb633e7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6c0d5a7ace26b7439c525d9da9cf70af4319a7a1"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "c8d85c374d8a26d7e864e473cdc193e84b1f2fd0d16c38686f0c86078fafb4a3"
+        }
+      ],
+      "licenses": [],
+      "name": "SQLite",
+      "publisher": "Solarwinds Worldwide, LLC",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    {
+      "author": "",
+      "bom-ref": "edbd5587-66fa-4836-bc29-64b42c4fba79",
+      "cpe": "",
+      "description": "zlib data compression library",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "10a2a3c5665a59d5cf9aebbcb75ad11b"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "23abb5dd15135deb1926c854cb49bc849f60ab08"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "28064720ec38b516eeaf8f912af29fe1a7143e828bbee1366ac4206e2e34a7ca"
+        }
+      ],
+      "licenses": [],
+      "name": "zlib",
+      "publisher": "Solarwinds Worldwide, LLC",
+      "purl": "",
+      "type": "application",
+      "version": "1.2.13"
+    },
+    {
+      "author": "",
+      "bom-ref": "f6df5cd7-912c-40c0-bff8-5f3726afed8c",
+      "cpe": "",
+      "description": "MFC Language Specific Resources",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "d160515cae7093ac2e4a7968c23367ad"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c930be272db87756016fd1530e9addee4561120e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "685fdaf9406227872aa3282ee600a02df2d9becfcaebc261d895ae8d8640cf63"
+        }
+      ],
+      "licenses": [],
+      "name": "Microsoft® Visual Studio®",
+      "publisher": "Microsoft Corporation",
+      "purl": "",
+      "type": "application",
+      "version": "14.28.29334.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "023ce16b-21ef-44d0-ab23-67cb70872f23"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "5072caa1-45c8-48bb-b7f7-95530c2ffb94",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370"
+      ],
+      "ref": "082c6ac8-fbe1-4d1d-87f6-627019188122"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb"
+      ],
+      "ref": "102c31e8-8fef-4b46-b068-6214f4381e72"
+    },
+    {
+      "dependsOn": [
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "647527dc-b8d4-4902-9600-fcb64939f672"
+      ],
+      "ref": "11f54b18-886c-4ac7-8e2d-920dc35ab3b2"
+    },
+    {
+      "dependsOn": [],
+      "ref": "128fcd13-4fcd-4c2a-bd3f-fa11b318c809"
+    },
+    {
+      "dependsOn": [],
+      "ref": "1b074e04-299d-4ab8-a29a-01df0084ad25"
+    },
+    {
+      "dependsOn": [
+        "08966495-e309-4d0a-8215-806434be1372",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "1e085141-fa1b-4c85-9cb4-983d1f142d45"
+    },
+    {
+      "dependsOn": [],
+      "ref": "1f15ac98-8c23-44e2-b1d5-af4153c08a06"
+    },
+    {
+      "dependsOn": [],
+      "ref": "1fc2220e-fe0e-4034-bc1d-1bf98848c706"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db"
+      ],
+      "ref": "251fb4a5-4957-4277-9101-6e4bee5e317c"
+    },
+    {
+      "dependsOn": [],
+      "ref": "2bde9e2c-b54a-4e1c-bd91-a42dd41d7ab7"
+    },
+    {
+      "dependsOn": [
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "185a7ef9-d311-4de0-9562-93ab2323b0f9",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2de125b9-f02a-4674-85ab-78756a200ec1",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "31f970bc-2268-4f26-a420-ff6f56bf0162",
+        "3ed891a4-64c8-47f3-a278-00b9942e1036",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "4e721379-c4da-4ad7-8d0c-0659a875181a",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a1f8c375-49a1-4cb6-b952-21ffdbb75795",
+        "a414fe82-acf0-4360-ada5-405223e17333",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1aa9bd7-9702-4579-a1a7-93436effe936",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "ca5fcf47-159b-4f33-b7ca-67b56159696f",
+        "cdf4e8bd-2545-4f7c-ae46-abf2bcc49545",
+        "eba1d31b-dcc1-434b-8431-ad97c6a20ee1",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4"
+      ],
+      "ref": "468c053f-4a59-422b-ab58-154e305f4b58"
+    },
+    {
+      "dependsOn": [],
+      "ref": "470672db-5bb3-45ee-b9af-8633a81b8ac3"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b3b1c573-e8be-430a-b83f-e2da56acadd8",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "53cc581e-0bcb-47fe-be25-8c61cf411688"
+    },
+    {
+      "dependsOn": [],
+      "ref": "5c6dbde3-4925-4a1b-bbcc-3c7fac56f6b0"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b3b1c573-e8be-430a-b83f-e2da56acadd8",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "5fab98ec-ccb5-4ccf-91df-881c939d4e75"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "0635b16a-67db-46cd-b097-0e3e1ac0b6ba",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3437f66e-3965-49c8-8d88-55cbc35e3f5c",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "67b435d2-f867-486a-ad76-74970acd10c6"
+    },
+    {
+      "dependsOn": [],
+      "ref": "68028362-ac1a-426d-b676-706cda8649ae"
+    },
+    {
+      "dependsOn": [
+        "08966495-e309-4d0a-8215-806434be1372",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "e04d61b1-5eb7-437f-86c5-bdff86759a8f",
+        "e9cb8acf-619b-44c3-acd9-c938e2b37cbf"
+      ],
+      "ref": "6829e399-93f6-4e6e-9da8-95779f0472c0"
+    },
+    {
+      "dependsOn": [],
+      "ref": "6e4ac469-ab20-4d33-9d5a-90d1fea45d30"
+    },
+    {
+      "dependsOn": [
+        "01d7a25e-992e-4561-b645-ce79835df796",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "7a9725d3-dbde-4769-80c9-77a5eef81c92",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "7a73cac0-da72-4ef5-9e6d-6f80fcdbc4a1"
+    },
+    {
+      "dependsOn": [
+        "01d7a25e-992e-4561-b645-ce79835df796",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "7a9725d3-dbde-4769-80c9-77a5eef81c92",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "84050329-131e-44b4-81e5-a3585d0579e3"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "d5061280-1a0e-4419-8317-47421f52c4c4",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4"
+      ],
+      "ref": "85970034-5cae-4cdc-b37b-6b7a5c26c4dc"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "0635b16a-67db-46cd-b097-0e3e1ac0b6ba",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3437f66e-3965-49c8-8d88-55cbc35e3f5c",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370"
+      ],
+      "ref": "85cce35e-c14e-436a-b776-5fcc5d1896d8"
+    },
+    {
+      "dependsOn": [
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370"
+      ],
+      "ref": "8876f25a-f298-4e3c-875a-fc39da6a00c1"
+    },
+    {
+      "dependsOn": [],
+      "ref": "8e5cc7bd-df56-45a7-9c76-2c56f395221d"
+    },
+    {
+      "dependsOn": [
+        "08966495-e309-4d0a-8215-806434be1372",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "9ac0cdfe-e0fb-4bdc-8663-f6a01c4a8aa1"
+    },
+    {
+      "dependsOn": [
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "185a7ef9-d311-4de0-9562-93ab2323b0f9",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2de125b9-f02a-4674-85ab-78756a200ec1",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "31f970bc-2268-4f26-a420-ff6f56bf0162",
+        "3ed891a4-64c8-47f3-a278-00b9942e1036",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "4e721379-c4da-4ad7-8d0c-0659a875181a",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a1f8c375-49a1-4cb6-b952-21ffdbb75795",
+        "a414fe82-acf0-4360-ada5-405223e17333",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1aa9bd7-9702-4579-a1a7-93436effe936",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "ca5fcf47-159b-4f33-b7ca-67b56159696f",
+        "cdf4e8bd-2545-4f7c-ae46-abf2bcc49545",
+        "eba1d31b-dcc1-434b-8431-ad97c6a20ee1",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "9d5470bf-66a7-49c0-bcc1-64ed80d974cd"
+    },
+    {
+      "dependsOn": [],
+      "ref": "9f488158-b68b-4cc6-a510-3ccb830cd19b"
+    },
+    {
+      "dependsOn": [],
+      "ref": "a0a5e4e5-1914-417d-ac9c-0663e83d9594"
+    },
+    {
+      "dependsOn": [],
+      "ref": "a187c1a6-ec4d-459c-be4a-81d604ff6979"
+    },
+    {
+      "dependsOn": [],
+      "ref": "a3a8b32b-ffe9-4b1d-a592-c9bb6292b563"
+    },
+    {
+      "dependsOn": [],
+      "ref": "a4279f43-e970-4c82-b52e-284254d9d753"
+    },
+    {
+      "dependsOn": [],
+      "ref": "a49ad5e8-037b-437b-84a9-3da302451556"
+    },
+    {
+      "dependsOn": [],
+      "ref": "aa44f904-0d5c-4ecb-8c26-97e06ffcc762"
+    },
+    {
+      "dependsOn": [
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "75daea61-f040-444f-b4ae-9f7b424cfc0d",
+        "7a9725d3-dbde-4769-80c9-77a5eef81c92",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "8e33de64-c701-438a-aba0-c1f45fc19135",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "ae1cd437-07b9-4aae-b03d-7dcc17f8d376"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "d5061280-1a0e-4419-8317-47421f52c4c4",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "b6b25926-4283-4663-9156-a25ff19bb397"
+    },
+    {
+      "dependsOn": [],
+      "ref": "b8d42df2-c72a-41b9-8cd4-ef87c91983f7"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "110edb55-bec0-4d12-b9cb-694e2d1e182b",
+        "16a9d6b4-ae25-455f-afc7-90a508e2ca6a",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3437f66e-3965-49c8-8d88-55cbc35e3f5c",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "60436551-2eec-4d47-94ed-147bd3b80080",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a1be248b-7414-4db9-acb8-28b4e1121cd3",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1aa9bd7-9702-4579-a1a7-93436effe936",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "d5061280-1a0e-4419-8317-47421f52c4c4",
+        "e04d61b1-5eb7-437f-86c5-bdff86759a8f",
+        "e9cb8acf-619b-44c3-acd9-c938e2b37cbf",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4",
+        "f5b7ca26-324a-40b0-870d-98fb359a902b"
+      ],
+      "ref": "bcc07de5-ce7a-4413-9c6a-720b3c097bcf"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db"
+      ],
+      "ref": "c1c1f69a-05bf-458c-a759-a1d95508f82b"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "110edb55-bec0-4d12-b9cb-694e2d1e182b",
+        "16a9d6b4-ae25-455f-afc7-90a508e2ca6a",
+        "1c4ad966-a9dd-43a1-8801-868481a6d48a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3437f66e-3965-49c8-8d88-55cbc35e3f5c",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "60436551-2eec-4d47-94ed-147bd3b80080",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "6d1da772-6a1c-4add-85f9-cc266b0a2c13",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a1be248b-7414-4db9-acb8-28b4e1121cd3",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1aa9bd7-9702-4579-a1a7-93436effe936",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "d5061280-1a0e-4419-8317-47421f52c4c4",
+        "f28c84e8-539b-4a09-b559-22d81497bdf4",
+        "f5b7ca26-324a-40b0-870d-98fb359a902b",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "c353ba99-b554-4446-90c4-c0f0b15988e7"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b3b1c573-e8be-430a-b83f-e2da56acadd8",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "c6003129-cd4e-4c3a-8dd1-f7674e249035"
+    },
+    {
+      "dependsOn": [
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "7a9725d3-dbde-4769-80c9-77a5eef81c92",
+        "84d1e0ca-d1c0-4afe-9add-7140e459c11a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "8e33de64-c701-438a-aba0-c1f45fc19135",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "cab208e3-78f1-409d-b0fa-61eb7d2d5be7"
+    },
+    {
+      "dependsOn": [
+        "020d1d29-1192-4659-af6e-3d104f877d40",
+        "03468408-019f-40ce-b1e7-31561674caaf",
+        "0b1d8cf4-6200-4ecb-be39-11bba9e32d08",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "1dcba500-a2cc-4343-8d71-bd2d782660b0",
+        "2b3d93eb-cf89-4933-9d7c-7ca51d8d1206",
+        "2c5c880d-fba7-4b1c-95fa-32f652ebff59",
+        "2f4e3632-41d8-405f-96f7-d7dcb58d2acd",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "3f59cc40-638e-4814-b752-866586ff5476",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "5527fb7c-def7-4fe2-b10d-9ac040d1b33b",
+        "5644e62a-1832-4e9b-bf39-6fc8d41a38ae",
+        "5c509383-e5dc-4b36-95a1-329f2b44d56c",
+        "647527dc-b8d4-4902-9600-fcb64939f672",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "9520be3f-f235-4d4d-8da7-bd06e79c5136",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b3b1c573-e8be-430a-b83f-e2da56acadd8",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220",
+        "fbea34df-868d-4d4d-a347-f73c5581f788"
+      ],
+      "ref": "cfb27d74-e653-4401-bcb9-8d7573219890"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db"
+      ],
+      "ref": "d1a80ed3-7c02-4ad5-9aa3-6fa89e23f386"
+    },
+    {
+      "dependsOn": [],
+      "ref": "d4add82a-c41c-4aa4-9986-4b274e923fc9"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "32cba344-a51e-4af2-946c-39f705326dc2",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db"
+      ],
+      "ref": "d5b1cc93-fb6e-420b-bf3f-f90c2a291b2d"
+    },
+    {
+      "dependsOn": [
+        "08966495-e309-4d0a-8215-806434be1372",
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "6d1da772-6a1c-4add-85f9-cc266b0a2c13",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "ac7d7c4f-be7f-4b52-a7a7-d0f9bd3eb8da",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "d82910eb-946e-4087-a31f-4253f0361541"
+    },
+    {
+      "dependsOn": [],
+      "ref": "d9e76fc6-c0ef-43f5-a8cb-ecb2da0fcdbe"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "6c433130-ca5b-4317-b68e-ce1848dc81bd",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "e034018e-713c-4e2e-914d-fe9c5a67e2fe"
+    },
+    {
+      "dependsOn": [],
+      "ref": "e3b845b3-9609-4249-bb0b-fbf583f25aca"
+    },
+    {
+      "dependsOn": [
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370"
+      ],
+      "ref": "e45484b1-a547-4e87-8498-b718270141dd"
+    },
+    {
+      "dependsOn": [],
+      "ref": "e7694b7d-6a20-4640-9416-09c1fdb91aab"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "6c433130-ca5b-4317-b68e-ce1848dc81bd",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "a8ecc825-a884-42e6-b436-c5ac15b68efb",
+        "c7d1f63f-08d0-48db-81f9-5f315781e220"
+      ],
+      "ref": "ed3b4b1e-ce9c-465b-a6b0-8badbfff5639"
+    },
+    {
+      "dependsOn": [
+        "10d80e46-5da7-405c-9983-4c46dd7f6b9a",
+        "2f92f379-7d22-4f10-bdca-32b6f3759db1",
+        "5072caa1-45c8-48bb-b7f7-95530c2ffb94",
+        "51af944f-52e8-451f-8926-f8804f920b9a",
+        "8823f4ac-05b4-4409-8ffe-379987efe6db",
+        "b1ff5920-a3d0-4e6c-8abe-c85117c6add6",
+        "b7f0ef55-2e77-438e-bc2e-524a09d7a370"
+      ],
+      "ref": "edbd5587-66fa-4836-bc29-64b42c4fba79"
+    },
+    {
+      "dependsOn": [],
+      "ref": "f6df5cd7-912c-40c0-bff8-5f3726afed8c"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "author": "",
+      "bom-ref": "6da1dd51-ccb0-4ea1-b3d7-d5758f480667",
+      "cpe": "",
+      "description": "",
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "95f4d089e82acc09021da69b16184429"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "5432d7ad18b113893f7736b8f93d32d2affc398e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "dd2835614fe5c0a63f41ffddf2923c073c7a57724fa7c8e4333cec8944846d82"
+        }
+      ],
+      "licenses": [],
+      "name": "SolarWinds-SERVU-FTP-Server-v15.4.0.147-Windows.zip",
+      "publisher": "",
+      "purl": "",
+      "type": "application",
+      "version": "Generic"
+    },
+    "licenses": [],
+    "timestamp": "2023-11-30T15:36:53Z",
+    "tools": [
+      {
+        "name": "ReversingLabs secure.software CLI",
+        "vendor": "ReversingLabs",
+        "version": "5.0.0.2"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:636bcdd1-6b5b-4e75-9e18-5853325bbb7e",
+  "specVersion": "1.4",
+  "version": 1,
+  "vulnerabilities": [
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-0464",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 7.5,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0464"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-0465",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0465"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-0466",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0466"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-1255",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.900000095367432,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1255"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-2650",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 6.5,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2650"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-2975",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2975"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-3446",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3446"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-3817",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3817"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-4807",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 7.800000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4807"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-5363",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 7.5,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-5363"
+      }
+    },
+    {
+      "affects": [
+        {
+          "ref": "75daea61-f040-444f-b4ae-9f7b424cfc0d"
+        },
+        {
+          "ref": "c42d2bcb-a48c-4db0-85f9-a5a835c1cf10"
+        }
+      ],
+      "id": "CVE-2023-5678",
+      "ratings": [
+        {
+          "method": "CVSSv3",
+          "score": 5.300000190734863,
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator"
+          }
+        }
+      ],
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-5678"
+      }
+    }
+  ]
+}
