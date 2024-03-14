@@ -550,7 +550,7 @@
       "Type": "debian",
       "Vulnerabilities": [
         {
-          "VulnerabilityID": "CVE-2022-007",
+          "VulnerabilityID": "CVE-2024-0007",
           "PkgID": "apt@2.6.1",
           "PkgName": "apt",
           "InstalledVersion": "2.6.1",
@@ -589,8 +589,8 @@
             "https://snyk.io/vuln/SNYK-LINUX-APT-116518",
             "https://ubuntu.com/security/CVE-2011-3374"
           ],
-          "PublishedDate": "2024-02-16T00:15:11.03Z",
-          "LastModifiedDate": "2024-02-17T16:08:18.683Z"
+          "PublishedDate": "2024-02-14T00:15:11.03Z",
+          "LastModifiedDate": "2024-02-16T16:08:18.683Z"
         },
         {
           "VulnerabilityID": "CVE-2011-3374",
