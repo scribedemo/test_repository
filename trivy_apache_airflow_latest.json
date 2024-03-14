@@ -550,6 +550,49 @@
       "Type": "debian",
       "Vulnerabilities": [
         {
+          "VulnerabilityID": "CVE-2022-007",
+          "PkgID": "apt@2.6.1",
+          "PkgName": "apt",
+          "InstalledVersion": "2.6.1",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:e1caac4eb9d2ec24aa3618e5992208321a92492aef5fef5eb9e470895f771c56",
+            "DiffID": "sha256:ceb365432eec83dafc777cac5ee87737b093095035c89dd2eae01970c57b1d15"
+          },
+          "SeveritySource": "debian",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/2024/cve-2024-0007/",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "It was added by ALONA",
+          "Description": "it was added by Alona",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-347"
+          ],
+          "CVSS": {
+            "nvd": {
+              "V2Vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V2Score": 5.3,
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/cve-2011-3374",
+            "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480",
+            "https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html",
+            "https://seclists.org/fulldisclosure/2011/Sep/221",
+            "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+            "https://snyk.io/vuln/SNYK-LINUX-APT-116518",
+            "https://ubuntu.com/security/CVE-2011-3374"
+          ],
+          "PublishedDate": "2024-02-16T00:15:11.03Z",
+          "LastModifiedDate": "2024-02-17T16:08:18.683Z"
+        },
+        {
           "VulnerabilityID": "CVE-2011-3374",
           "PkgID": "apt@2.6.1",
           "PkgName": "apt",
