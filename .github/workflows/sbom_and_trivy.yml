@@ -67,8 +67,9 @@ jobs:
                 type: docker
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
-                format: attest
-                attest-default: x509-env
+                #format: attest
+                format: cyclonedx-json
+                #attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
