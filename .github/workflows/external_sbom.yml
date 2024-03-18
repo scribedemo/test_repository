@@ -119,7 +119,7 @@ jobs:
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: './solarWinds_3d.json'
+                target: './solarWinds_3rd.json'
                 format: attest
                 # attest-default: x509-env
                 scribe-enable: true
