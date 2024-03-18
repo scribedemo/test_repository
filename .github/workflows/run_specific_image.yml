@@ -61,7 +61,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
@@ -94,7 +94,7 @@ jobs:
 
        # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
       - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@dev
+        uses: scribe-security/action-verify@master
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
@@ -117,7 +117,7 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
 
       - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@dev
+        uses: scribe-security/action-verify@master
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
@@ -141,7 +141,7 @@ jobs:
      
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
