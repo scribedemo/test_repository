@@ -62,8 +62,9 @@ jobs:
           with:
                 # type: file
                 target: './codeql.sarif.json'
-                format: attest
-                attest-default: x509-env
+                # format: attest
+                # attest-default: x509-env
+                format: attest-generic
                 scribe-enable: true
                 components: packages,files,dep
                 product-key: ${{env.PRODUCT_NAME}}
@@ -82,10 +83,10 @@ jobs:
                 deliverable: true
                 gate: github_action
                 # deliverable: true
-          env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+          # env:
+          #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+          #   ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+          #   ATTEST_CA:  ${{ secrets.ATTEST_CA}}
          
         - name: cyclonedx.json with statement
           # uses: scribe-security/action-bom@master
@@ -178,9 +179,10 @@ jobs:
           with:
                 # type: file
                 target: './snyk.sarif.json'
+                format: attest-generic
                 # predicate-type: https://cyclonedx.org/bom
-                format: attest
-                attest-default: x509-env
+                # format: attest
+                # attest-default: x509-env
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
@@ -198,10 +200,10 @@ jobs:
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
-          env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+          # env:
+          #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+          #   ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+          #   ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
 
         - name: snyk.cdx.json with attest
