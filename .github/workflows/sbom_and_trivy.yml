@@ -24,7 +24,7 @@ on:
       image_name:
          description: 'Put your image name'
          required: true
-         default: 'busybox:latest'
+         default: 'apache/airflow:latest'
          
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
