@@ -98,8 +98,8 @@ jobs:
         with:
                 target: './trivy_apache_airflow_latest.json'
                 # format: attest
-                # attest-default: x509-env
-                format: statement-generic
+                attest-default: x509-env
+                format: attest-generic
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
