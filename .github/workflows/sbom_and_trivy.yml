@@ -97,8 +97,9 @@ jobs:
         uses: scribe-security/action-evidence@master
         with:
                 target: './trivy_apache_airflow_latest.json'
-                format: attest
-                attest-default: x509-env
+                # format: attest
+                # attest-default: x509-env
+                format: cyclonedx-json
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
