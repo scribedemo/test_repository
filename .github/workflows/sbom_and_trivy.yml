@@ -99,7 +99,7 @@ jobs:
                 target: './trivy_apache_airflow_latest.json'
                 # format: attest
                 # attest-default: x509-env
-                format: cyclonedx-json
+                format: statement-generic
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
@@ -108,13 +108,6 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                gate: github_action
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
