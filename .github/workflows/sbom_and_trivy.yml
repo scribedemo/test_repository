@@ -68,7 +68,7 @@ jobs:
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
                 #format: attest
-                format: cyclonedx-json
+                format: statement-cyclonedx-json
                 #attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
@@ -98,8 +98,8 @@ jobs:
         with:
                 target: './trivy_apache_airflow_latest.json'
                 # format: attest
-                attest-default: x509-env
-                format: attest-generic
+                # attest-default: x509-env
+                format: statement-generic
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
