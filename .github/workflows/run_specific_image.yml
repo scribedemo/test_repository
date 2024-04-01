@@ -68,9 +68,9 @@ jobs:
                 # type: docker
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
-                # format: attest
-                # attest-default: x509-env
-                format: statement-cyclonedx-json
+                format: attest
+                attest-default: x509-env
+                # format: statement-cyclonedx-json
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -88,10 +88,10 @@ jobs:
                 label: ${{env.LABEL}}
                 gate: github_alona
                 
-        # env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
 
 
        # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
@@ -101,9 +101,9 @@ jobs:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                components: packages,files,dep
-               # format: attest
-               # attest-default: x509-env
-               format: statement-cyclonedx-json
+               format: attest
+               attest-default: x509-env
+               # format: statement-cyclonedx-json
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
                scribe-client-id: ${{ secrets.CLIENT_ID }}
@@ -115,9 +115,9 @@ jobs:
                verbose: 2
                label: ${{env.LABEL}}
                gate: github_alona
-        # env:
-        #     ATTEST_CA: ${{ secrets.ATTEST_CA }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
+        env:
+            ATTEST_CA: ${{ secrets.ATTEST_CA }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
 
       # - name: Verify Image using x509 keys
       #   uses: scribe-security/action-verify@master
