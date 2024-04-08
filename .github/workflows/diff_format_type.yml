@@ -25,6 +25,7 @@ on:
         description: Environment
         required: true
         options:
+          - dev-demo
           - dev_eks
           - dev2_eks
           - ci_eks
