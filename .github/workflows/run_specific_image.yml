@@ -67,6 +67,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
+                login: authentik
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
                 format: attest
@@ -74,8 +75,9 @@ jobs:
                 # format: statement-cyclonedx-json
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                # scribe-client-id: ${{ secrets.CLIENT_ID }}
+                # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOjBnOUJLMW44YlRCeHRRc3pHYVlya005TE9hTDRTaUdzUkhEakQyaDZGVjYyVWlET09KVEtBdlFObXQwUw==
                 scribe-url: ${{ env.SCRIBE_URL}}
                 scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -99,6 +101,7 @@ jobs:
       - name: Verify Image using x509 keys
         uses: scribe-security/action-verify@master
         with:
+               login: authentik
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                components: packages,files,dep
@@ -107,8 +110,9 @@ jobs:
                # format: statement-cyclonedx-json
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
-               scribe-client-id: ${{ secrets.CLIENT_ID }}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+               # scribe-client-id: ${{ secrets.CLIENT_ID }}
+               # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+               scribe-client-secret: c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOjBnOUJLMW44YlRCeHRRc3pHYVlya005TE9hTDRTaUdzUkhEakQyaDZGVjYyVWlET09KVEtBdlFObXQwUw==
                scribe-url: ${{ env.SCRIBE_URL}}
                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
@@ -148,6 +152,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                login: authentik
                 type: docker
                 target: ${{env.IMAGE_NAME}}
                 # attest-slsa, statement-slsa, attest-generic
@@ -156,8 +161,9 @@ jobs:
                 # attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                # scribe-client-id: ${{ secrets.CLIENT_ID }}
+                # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOjBnOUJLMW44YlRCeHRRc3pHYVlya005TE9hTDRTaUdzUkhEakQyaDZGVjYyVWlET09KVEtBdlFObXQwUw==
                 scribe-url: ${{env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
