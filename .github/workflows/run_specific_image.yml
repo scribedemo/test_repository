@@ -67,7 +67,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
-                login: authentik
+                # login: authentik
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
                 format: attest
@@ -101,7 +101,7 @@ jobs:
       - name: Verify Image using x509 keys
         uses: scribe-security/action-verify@dev
         with:
-               login: authentik
+               # login: authentik
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                components: packages,files,dep
@@ -152,7 +152,7 @@ jobs:
         uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
-                login: authentik
+                # login: authentik
                 type: docker
                 target: ${{env.IMAGE_NAME}}
                 # attest-slsa, statement-slsa, attest-generic
