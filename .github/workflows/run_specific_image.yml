@@ -77,7 +77,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 # scribe-client-id: ${{ secrets.CLIENT_ID }}
                 # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_EXP}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
                 scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -112,7 +112,7 @@ jobs:
                product-version: ${{env.PRODUCT_VERSION}}
                # scribe-client-id: ${{ secrets.CLIENT_ID }}
                # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET_EXP}}
+               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                scribe-url: ${{ env.SCRIBE_URL}}
                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
@@ -163,7 +163,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 # scribe-client-id: ${{ secrets.CLIENT_ID }}
                 # scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_EXP}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
