@@ -18,7 +18,7 @@ on:
       product_version:
          description: 'Put product version'
          # required: true
-         default: '0.0.0'
+         default: '0.0'
       product_name:
          description: 'Put product name'
          required: true
