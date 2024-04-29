@@ -168,7 +168,7 @@ jobs:
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 gate: github_alona_slsa
-                deliverable: true
+                # deliverable: true
         # env:
         #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
         #     ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
