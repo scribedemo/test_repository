@@ -209,7 +209,7 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
+                # deliverable: true
                 gate: github_action
                 
       - uses: actions/upload-artifact@v3
