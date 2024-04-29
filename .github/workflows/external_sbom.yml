@@ -352,7 +352,7 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
+                # deliverable: true
                 gate: github_action
           env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
