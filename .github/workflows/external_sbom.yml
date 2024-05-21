@@ -96,7 +96,7 @@ jobs:
           with:
                 # type: file
                 target: './cyclonedx.json'
-                format: attest
+                format: attest-generic
                 # attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
@@ -123,7 +123,7 @@ jobs:
           with:
                 # type: file
                 target: './solarWinds_3rd.json'
-                format: attest
+                format: attest-generic
                 # attest-default: x509-env
                 scribe-enable: true
                 components: packages,files,dep
