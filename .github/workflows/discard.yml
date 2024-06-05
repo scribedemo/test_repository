@@ -100,8 +100,7 @@ jobs:
                 format: statement-cyclonedx-json
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}_mongo-express:1.0-18-alpine3.19
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
                 scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -125,8 +124,7 @@ jobs:
            scribe-enable: true
            product-key: ${{env.PRODUCT_NAME}}
            product-version: ${{env.PRODUCT_VERSION}}_mongo-express:1.0-18-alpine3.19
-           scribe-client-id: ${{ secrets.CLIENT_ID }}
-           scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
            scribe-url: ${{ env.SCRIBE_URL}}
            scribe-audience: ${{env.SCRIBE_AUDIENCE}}
            silent: true
@@ -146,8 +144,7 @@ jobs:
                 # product-key: $PRODUCT_NAME
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}_mysql:latest
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
                 scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -177,8 +174,7 @@ jobs:
                attest-default: x509-env
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}_mysql:latest
-               scribe-client-id: ${{ secrets.CLIENT_ID }}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                scribe-url: ${{ env.SCRIBE_URL}}
                scribe-audience: ${{env.SCRIBE_AUDIENCE}}
                author-name: ${{env.AUTHOR_NAME}}
@@ -213,8 +209,7 @@ jobs:
                 attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-audience: ${{env.SCRIBE_AUDIENCE}}
