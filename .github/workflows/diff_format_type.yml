@@ -65,8 +65,7 @@ jobs:
          scribe-enable: true
          product-key: ${{env.PRODUCT_NAME}}
          product-version: ${{env.PRODUCT_VERSION}}
-         scribe-client-id: ${{ secrets.CLIENT_ID }}
-         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
          scribe-url: ${{env.SCRIBE_URL}}
          # scribe-login-url: $SCRIBE_LOGIN_URL
          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
@@ -90,8 +89,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
          # scribe-login-url: $SCRIBE_LOGIN_URL
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
@@ -117,8 +115,7 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
           scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
@@ -143,8 +140,7 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-id: ${{ secrets.CLIENT_ID }}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
           scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
@@ -189,8 +185,7 @@ jobs:
                 format: statement-slsa
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}_slsa
