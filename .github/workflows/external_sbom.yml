@@ -71,8 +71,7 @@ jobs:
                 components: packages,files,dep
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -102,8 +101,7 @@ jobs:
                 components: packages,files,dep
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -129,8 +127,7 @@ jobs:
                 components: packages,files,dep
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
@@ -155,8 +152,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
@@ -188,8 +184,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
@@ -220,8 +215,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
@@ -276,8 +270,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
@@ -308,8 +301,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
@@ -340,8 +332,7 @@ jobs:
                 attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
