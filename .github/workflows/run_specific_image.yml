@@ -63,7 +63,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker image
         id: valint_attest_file
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
@@ -99,7 +99,7 @@ jobs:
 
        # valint verify busybox:latest -i attest --attest.default=x509 --ca <my_ca.pem>
       - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@master
+        uses: scribe-security/action-verify@dev
         with:
                # login: authentik
                target: ${{env.IMAGE_NAME}}
@@ -122,10 +122,26 @@ jobs:
                gate: github_alona
         env:
             ATTEST_CA: ${{ secrets.ATTEST_CA }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}     
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}  
 
+      - name: Generate valint evidence
+        uses: scribe-security/action-evidence@dev
+        with:
+                target: './aqua_apline.json'
+                scribe-enable: true
+                format: attest
+                parser: aqua 
+                tool: aqua
+                tool-version: 0.0.1
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{ env.SCRIBE_URL}}
+                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                gate: github_alona     
+     
       # - name: Verify Image using x509 keys
-      #   uses: scribe-security/action-verify@master
+      #   uses: scribe-security/action-verify@dev
         # with:
         #        target: ${{env.IMAGE_NAME}}
         #        scribe-enable: true
@@ -149,7 +165,7 @@ jobs:
      
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 # login: authentik
