@@ -97,7 +97,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
-                target: ${{env.IMAGE_NAME}}
+                target: test-mongo
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
