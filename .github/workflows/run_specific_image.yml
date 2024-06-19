@@ -91,7 +91,36 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
-
+      - name: Generate signed docker SBOM for docker image
+        id: upload second att
+        uses: scribe-security/action-bom@master
+        with:
+                # statement-cyclonedx-json, attest, 
+                # type: docker
+                target: atttestDoc
+                scribe-enable: true
+                format: attest
+                attest-default: x509-env
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{ env.SCRIBE_URL}}
+                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                author-name: ${{env.AUTHOR_NAME}}
+                author-email: ${{env.AUTHOR_EMAIL}}
+                author-phone: ${{env.AUTHOR_PHONE}}
+                supplier-name: ${{env.SUPPLIER_NAME}}
+                supplier-url: ${{env.SUPPLIER_URL}}
+                supplier-email: ${{env.SUPPLIER_EMAIL}}
+                supplier-phone: ${{env.SUPPLIER_PHONE }}
+                # deliverable: true
+                label: ${{env.LABEL}}
+                gate: github_alona
+                
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
       # - name: Generate valint evidence with aqua
       #   uses: scribe-security/action-evidence@dev
       #   with:
