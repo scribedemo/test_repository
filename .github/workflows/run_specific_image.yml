@@ -114,7 +114,7 @@ jobs:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                components: packages,files,dep
-               format: attest
+               format: statement
                attest-default: x509-env
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
