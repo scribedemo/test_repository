@@ -123,7 +123,7 @@ jobs:
       #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
       #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}     
       - name: Generate valint evidence with aqua
-        uses: scribe-security/action-evidence@dev
+        uses: scribe-security/action-evidence@master
         with:
                 target: './aqua_apline.json'
                 scribe-enable: true
@@ -135,7 +135,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
-                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 gate: github_alona     
      
       - name: Verify Image using x509 keys
