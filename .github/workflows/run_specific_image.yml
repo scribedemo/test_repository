@@ -34,7 +34,7 @@ env:
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
   # VALINT_VERSION: "scribe-security/action-bom@${{ github.event.inputs.valint_version}}"
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
-  SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
+  # SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
   AUTHOR_NAME: ALONA DODUKH
   AUTHOR_EMAIL: author@scribesecurity.com
   AUTHOR_PHONE: 999-1111-11
@@ -73,9 +73,9 @@ jobs:
                 attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                # scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
+                scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
-                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
                 author-phone: ${{env.AUTHOR_PHONE}}
@@ -104,7 +104,7 @@ jobs:
                 attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                # scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{ env.SCRIBE_URL}}
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
@@ -147,9 +147,9 @@ jobs:
                attest-default: x509-env
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
-               # scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                scribe-url: ${{env.SCRIBE_URL}}
-               scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+               # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
                email: "alona@scribesecutiry.com"
                verbose: 2
@@ -171,9 +171,9 @@ jobs:
                 # attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                # scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 gate: github_alona_slsa
         # env:
         #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
