@@ -73,7 +73,7 @@ jobs:
                 attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
+                # scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
                 # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
