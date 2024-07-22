@@ -16,6 +16,7 @@ env:
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
+  CLIENT_SECRET_AUTH: ${{vars.CLIENT_SECRET_AUTH}}
 
 on: 
   workflow_dispatch:
@@ -67,8 +68,8 @@ jobs:
          product-version: ${{env.PRODUCT_VERSION}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
          scribe-url: ${{env.SCRIBE_URL}}
-         # scribe-login-url: $SCRIBE_LOGIN_URL
-         scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
+         # # scribe-login-url: $SCRIBE_LOGIN_URL
+         # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          components: packages,files,dep
          author-name: ${{env.AUTHOR_NAME}}
          author-email: ${{env.AUTHOR_EMAIL}}
@@ -92,7 +93,7 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
          # scribe-login-url: $SCRIBE_LOGIN_URL
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
+                # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
@@ -115,17 +116,9 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+          scribe-client-secret: ${{ env.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-          components: packages,files,dep
-          author-name: ${{env.AUTHOR_NAME}}
-          author-email: ${{env.AUTHOR_EMAIL}}
-          author-phone: ${{env.AUTHOR_PHONE}}
-          supplier-name: ${{env.SUPPLIER_NAME}}
-          supplier-url: ${{env.SUPPLIER_URL}}
-          supplier-email: ${{env.SUPPLIER_EMAIL}} 
-          supplier-phone: ${{env.SUPPLIER_PHONE}}
+          # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: ${{env.LABEL}}
           gate: github_action
@@ -140,17 +133,8 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+          scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-          components: packages,files,dep
-          author-name: ${{env.AUTHOR_NAME}}
-          author-email: ${{env.AUTHOR_EMAIL}}
-          author-phone: ${{env.AUTHOR_PHONE}}
-          supplier-name: ${{env.SUPPLIER_NAME}}
-          supplier-url: ${{env.SUPPLIER_URL}}
-          supplier-email: ${{env.SUPPLIER_EMAIL}} 
-          supplier-phone: ${{env.SUPPLIER_PHONE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: ${{env.LABEL}}
           gate: github_action
@@ -170,7 +154,6 @@ jobs:
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 label: ${{env.LABEL}}
                 gate: github_action
         
@@ -187,7 +170,6 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}_slsa
                 author-email: ${{env.AUTHOR_EMAIL}}_slsa
                 author-phone: ${{env.AUTHOR_PHONE}}_slsa
