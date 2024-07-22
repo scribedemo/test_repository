@@ -16,7 +16,7 @@ env:
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
   SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
-  CLIENT_SECRET_AUTH: ${{vars.CLIENT_SECRET_AUTH}}
+  SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
 
 on: 
   workflow_dispatch:
@@ -66,7 +66,7 @@ jobs:
          scribe-enable: true
          product-key: ${{env.PRODUCT_NAME}}
          product-version: ${{env.PRODUCT_VERSION}}
-         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+         scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
          scribe-url: ${{env.SCRIBE_URL}}
          # # scribe-login-url: $SCRIBE_LOGIN_URL
          # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
@@ -90,7 +90,7 @@ jobs:
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
          # scribe-login-url: $SCRIBE_LOGIN_URL
                 # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
@@ -116,7 +116,7 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-secret: ${{ env.CLIENT_SECRET_AUTH}}
+          scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
           # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
@@ -133,7 +133,7 @@ jobs:
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
-          scribe-client-secret: ${{env.CLIENT_SECRET_AUTH}}
+          scribe-client-secret: ${{env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: ${{env.LABEL}}
@@ -152,7 +152,7 @@ jobs:
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
+                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 label: ${{env.LABEL}}
                 gate: github_action
@@ -168,7 +168,7 @@ jobs:
                 format: statement-slsa
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 author-name: ${{env.AUTHOR_NAME}}_slsa
                 author-email: ${{env.AUTHOR_EMAIL}}_slsa
