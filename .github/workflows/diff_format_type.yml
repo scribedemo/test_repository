@@ -171,13 +171,6 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                author-name: ${{env.AUTHOR_NAME}}_slsa
-                author-email: ${{env.AUTHOR_EMAIL}}_slsa
-                author-phone: ${{env.AUTHOR_PHONE}}_slsa
-                supplier-name: ${{env.SUPPLIER_NAME}}_slsa
-                supplier-url: ${{env.SUPPLIER_URL}}_slsa
-                supplier-email: ${{env.SUPPLIER_EMAIL}}_slsa
-                supplier-phone: ${{env.SUPPLIER_PHONE}}_slsa
                 gate: github_action
                 
       - uses: actions/upload-artifact@v3
