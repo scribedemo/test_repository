@@ -151,8 +151,9 @@ jobs:
                 format: attest-slsa
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-id: ${{ secrets.CLIENT_ID }}
-                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+                # scribe-client-id: ${{ secrets.CLIENT_ID }}
+                # scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 label: ${{env.LABEL}}
                 gate: github_action
