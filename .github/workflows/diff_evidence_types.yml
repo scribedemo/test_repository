@@ -61,7 +61,7 @@ jobs:
          target: 'git:.'
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
          format: attest
-         scribe-enable: true
+         scribe.disable: false
          product-key: ${{env.PRODUCT_NAME}}
          product-version: ${{env.PRODUCT_VERSION}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -77,8 +77,6 @@ jobs:
         with:
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           target: 'dir:./'
-          # target: ./
-          scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -99,7 +97,7 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
                 target: my-image:latest
-                scribe-enable: true
+                scribe.disable: false
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -115,7 +113,6 @@ jobs:
         with:
           type: registry
           target: busybox:latest
-          scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -136,7 +133,7 @@ jobs:
         with:
           type: file
           target: './package.json'
-          scribe-enable: true
+          scribe.disable: false
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -152,7 +149,6 @@ jobs:
                 type: docker
                 target: my-image:latest
                 # attest-slsa, statement-slsa, attest-generic
-                scribe-enable: true
                 format: attest-slsa
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
