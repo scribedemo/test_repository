@@ -76,8 +76,8 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-          type: dir
-          target: ./
+          type: dir:
+          # target: ./
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
