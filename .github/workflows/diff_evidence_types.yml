@@ -14,8 +14,6 @@ env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
-  # SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
-  SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
 
 on: 
   workflow_dispatch:
@@ -68,15 +66,7 @@ jobs:
          product-version: ${{env.PRODUCT_VERSION}}
          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
          scribe-url: ${{env.SCRIBE_URL}}
-         scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          components: packages,files,dep
-         author-name: ${{env.AUTHOR_NAME}}
-         author-email: ${{env.AUTHOR_EMAIL}}
-         author-phone: ${{env.AUTHOR_PHONE}}
-         supplier-name: ${{env.SUPPLIER_NAME}}
-         supplier-url: ${{env.SUPPLIER_URL}}
-         supplier-email: ${{env.SUPPLIER_EMAIL}} 
-         supplier-phone: ${{env.SUPPLIER_PHONE}}
          deliverable: true
          gate: github_action
 
@@ -93,15 +83,7 @@ jobs:
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
-          author-name: ${{env.AUTHOR_NAME}}
-          author-email: ${{env.AUTHOR_EMAIL}}
-          author-phone: ${{env.AUTHOR_PHONE}}
-          supplier-name: ${{env.SUPPLIER_NAME}}
-          supplier-url: ${{env.SUPPLIER_URL}}
-          supplier-email: ${{env.SUPPLIER_EMAIL}} 
-          supplier-phone: ${{env.SUPPLIER_PHONE}}
           deliverable: true
           gate: github_action
       
@@ -122,15 +104,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
 
@@ -146,7 +120,6 @@ jobs:
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
           components: packages,files,dep
           author-name: ${{env.AUTHOR_NAME}}
           author-email: ${{env.AUTHOR_EMAIL}}
@@ -155,7 +128,6 @@ jobs:
           supplier-url: ${{env.SUPPLIER_URL}}
           supplier-email: ${{env.SUPPLIER_EMAIL}} 
           supplier-phone: ${{env.SUPPLIER_PHONE}}
-          deliverable: true
           gate: github_action
       
       - name: Scm generate file sbom, upload to scribe
@@ -163,21 +135,12 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
           type: file
-          target: "./package.json"
+          target: './package.json'
           scribe-enable: true
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-          author-name: ${{env.AUTHOR_NAME}}
-          author-email: ${{env.AUTHOR_EMAIL}}
-          author-phone: ${{env.AUTHOR_PHONE}}
-          supplier-name: ${{env.SUPPLIER_NAME}}
-          supplier-url: ${{env.SUPPLIER_URL}}
-          supplier-email: ${{env.SUPPLIER_EMAIL}} 
-          supplier-phone: ${{env.SUPPLIER_PHONE}}
-          deliverable: false
           gate: github_action
           
       
@@ -195,15 +158,6 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
-                # deliverable: true
                 gate: github_action
                 
       - uses: actions/upload-artifact@v3
