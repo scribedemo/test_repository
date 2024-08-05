@@ -156,7 +156,7 @@ jobs:
       - name: Generate valint git
         uses: scribe-security/action-evidence@master
         with:
-                target: 'https://github.com/mongo-express/mongo-express-docker.git '
+                target: 'git:https://github.com/mongo-express/mongo-express-docker.git'
                 scribe-enable: true
                 format: attest
                 product-key: ${{env.PRODUCT_NAME}}
