@@ -74,14 +74,6 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action
                 # deliverable: true
           # env:
@@ -111,7 +103,6 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action 
                 # deliverable: true 
                 
@@ -137,7 +128,6 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action 
                 # deliverable: true 
       
@@ -163,7 +153,6 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action 
                 # deliverable: true
           env:
@@ -195,7 +184,6 @@ jobs:
                 supplier-url: ${{env.SUPPLIER_URL}}
                 supplier-email: ${{env.SUPPLIER_EMAIL}} 
                 supplier-phone: ${{env.SUPPLIER_PHONE}}
-                deliverable: true
                 gate: github_action
           # env:
           #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
