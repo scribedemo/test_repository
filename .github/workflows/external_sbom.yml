@@ -76,10 +76,10 @@ jobs:
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 gate: github_action
                 # deliverable: true
-          # env:
-          #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-          #   ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-          #   ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
          
         - name: cyclonedx.json with statement
           # uses: scribe-security/action-bom@master
@@ -95,7 +95,6 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
                 author-phone: ${{env.AUTHOR_PHONE}}
@@ -115,19 +114,11 @@ jobs:
                 format: attest-generic
                 # attest-default: x509-env
                 scribe-enable: true
-                components: packages,files,dep
+                # components: packages,files,dep
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 gate: github_action 
                 # deliverable: true 
       
@@ -145,14 +136,6 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
                 gate: github_action 
                 # deliverable: true
           env:
@@ -176,14 +159,14 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
+                # components: packages,files,dep
+                # author-name: ${{env.AUTHOR_NAME}}
+                # author-email: ${{env.AUTHOR_EMAIL}}
+                # author-phone: ${{env.AUTHOR_PHONE}}
+                # supplier-name: ${{env.SUPPLIER_NAME}}
+                # supplier-url: ${{env.SUPPLIER_URL}}
+                # supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                # supplier-phone: ${{env.SUPPLIER_PHONE}}
                 gate: github_action
           # env:
           #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
@@ -206,14 +189,14 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${env.{SUPPLIER_PHONE}}
+                # components: packages,files,dep
+                # author-name: ${{env.AUTHOR_NAME}}
+                # author-email: ${{env.AUTHOR_EMAIL}}
+                # author-phone: ${{env.AUTHOR_PHONE}}
+                # supplier-name: ${{env.SUPPLIER_NAME}}
+                # supplier-url: ${{env.SUPPLIER_URL}}
+                # supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                # supplier-phone: ${env.{SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -260,15 +243,14 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
+                # components: packages,files,dep
+                # author-name: ${{env.AUTHOR_NAME}}
+                # author-email: ${{env.AUTHOR_EMAIL}}
+                # author-phone: ${{env.AUTHOR_PHONE}}
+                # supplier-name: ${{env.SUPPLIER_NAME}}
+                # supplier-url: ${{env.SUPPLIER_URL}}
+                # supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                # supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -291,15 +273,14 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
+                # components: packages,files,dep
+                # author-name: ${{env.AUTHOR_NAME}}
+                # author-email: ${{env.AUTHOR_EMAIL}}
+                # author-phone: ${{env.AUTHOR_PHONE}}
+                # supplier-name: ${{env.SUPPLIER_NAME}}
+                # supplier-url: ${{env.SUPPLIER_URL}}
+                # supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                # supplier-phone: ${{env.SUPPLIER_PHONE}}
                 deliverable: true
                 gate: github_action
           env:
@@ -323,14 +304,14 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
-                author-name: ${{env.AUTHOR_NAME}}
-                author-email: ${{env.AUTHOR_EMAIL}}
-                author-phone: ${{env.AUTHOR_PHONE}}
-                supplier-name: ${{env.SUPPLIER_NAME}}
-                supplier-url: ${{env.SUPPLIER_URL}}
-                supplier-email: ${{env.SUPPLIER_EMAIL}} 
-                supplier-phone: ${{env.SUPPLIER_PHONE}}
+                # components: packages,files,dep
+                # author-name: ${{env.AUTHOR_NAME}}
+                # author-email: ${{env.AUTHOR_EMAIL}}
+                # author-phone: ${{env.AUTHOR_PHONE}}
+                # supplier-name: ${{env.SUPPLIER_NAME}}
+                # supplier-url: ${{env.SUPPLIER_URL}}
+                # supplier-email: ${{env.SUPPLIER_EMAIL}} 
+                # supplier-phone: ${{env.SUPPLIER_PHONE}}
                 # deliverable: true
                 gate: github_action
           env:
