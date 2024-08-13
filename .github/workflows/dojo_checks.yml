@@ -22,7 +22,7 @@ on:
       product_name:
          description: 'Put product name'
          required: false
-         default: 'External_files_sign_certificate_x509'
+         default: 'dojo_extract'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
@@ -206,8 +206,8 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
 
-        - uses: actions/upload-artifact@v4
-          with:
-                name: provenance
-                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+        # - uses: actions/upload-artifact@v4
+        #   with:
+        #         name: provenance
+        #         path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
         
