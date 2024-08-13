@@ -58,6 +58,26 @@ jobs:
     steps:
         - uses: actions/checkout@v4
 
+
+        - name: busybox:latest image
+          uses: scribe-security/action-bom@master
+          with:
+                type: docker
+                target: busybox:latest
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+
         - name: run dojo for aqua
           uses: scribe-security/action-evidence@master
           with:
@@ -111,7 +131,7 @@ jobs:
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: 'sonatype_many_bulns.json'
+                target: 'sonatype_many_vulns'
                 parser: sonatype
                 tool: sonatype
                 tool-version: 1.0.1
@@ -162,30 +182,6 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
-       
-        # - name: busybox:latest image
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-bom@master
-        #   with:
-        #         type: docker
-        #         target: busybox:latest
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         format: attest
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         components: packages,files,dep
-        #         product-key: $PRODUCT_NAME
-        #         product-version: $PRODUCT_VERSION
-        #         scribe-client-id: ${{ secrets.CLIENT_ID }}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET }}
-        #         scribe-url: $SCRIBE_URL
-        #         scribe-login-url: $SCRIBE_LOGIN_URL
-        #         scribe-auth-audience: $SCRIBE_AUDIENCE 
-        #         deliverable: true
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
             
         - name: run dojo for trivy.json with attest
           # uses: scribe-security/action-bom@master
