@@ -107,8 +107,23 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action 
       
-
-        - name: rin dojo for snyk.sarif.json with attest
+        - name: run dojo for sonatype
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: 'sonatype_many_bulns.json'
+                parser: sonatype
+                tool: sonatype
+                tool-version: 1.0.1
+                scribe-enable: true
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action 
+        
+        
+        - name: run dojo for snyk.sarif.json with attest
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
           with:
