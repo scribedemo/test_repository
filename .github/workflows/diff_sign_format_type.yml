@@ -1,4 +1,4 @@
-name:  different_sign_formast
+name:  different_sign_format
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
