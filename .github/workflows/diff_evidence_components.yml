@@ -1,4 +1,4 @@
-name:  different_evidence_types
+name:  different_evidence_component
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
@@ -37,7 +37,7 @@ on:
       product_name:
          description: 'Put product name'
          # required: true
-         default: 'diff_evidence_types'
+         default: 'diff_evidence_component'
   
 
 jobs:
