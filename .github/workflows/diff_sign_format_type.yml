@@ -40,7 +40,7 @@ on:
       product_name:
          description: 'Put product name'
          # required: true
-         default: 'diff_format_types'
+         default: 'diff_sign_format_types'
   
 
 jobs:
