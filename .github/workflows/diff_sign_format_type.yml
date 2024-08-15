@@ -68,17 +68,26 @@ jobs:
          product-version: ${{env.PRODUCT_VERSION}}
          scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
          scribe-url: ${{env.SCRIBE_URL}}
-         # # scribe-login-url: $SCRIBE_LOGIN_URL
-         # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-         components: packages,files,dep
-         author-name: ${{env.AUTHOR_NAME}}
-         author-email: ${{env.AUTHOR_EMAIL}}
-         author-phone: ${{env.AUTHOR_PHONE}}
-         supplier-name: ${{env.SUPPLIER_NAME}}
-         supplier-url: ${{env.SUPPLIER_URL}}
-         supplier-email: ${{env.SUPPLIER_EMAIL}} 
-         supplier-phone: ${{env.SUPPLIER_PHONE}}
 
+
+      - name: Generate attest_x509-env + mongo
+        uses: scribe-security/action-bom@master
+        with:
+         type: docker
+         target: mongo-express:1-18-alpine3.19
+         format: attest
+         attest-default: x509-env
+         product-key: ${{env.PRODUCT_NAME}}
+         product-version: ${{env.PRODUCT_VERSION}}
+         scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+         scribe-url: ${{ env.SCRIBE_URL}}
+         label: ${{env.LABEL}}
+         gate: github_alona
+                
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
 
       - name: Generate attest-cyclonedx-json+image
         uses: scribe-security/action-bom@master
@@ -92,9 +101,6 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
-         # scribe-login-url: $SCRIBE_LOGIN_URL
-                # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
-                components: packages,files,dep
                 author-name: ${{env.AUTHOR_NAME}}
                 author-email: ${{env.AUTHOR_EMAIL}}
                 author-phone: ${{env.AUTHOR_PHONE}}
@@ -118,7 +124,6 @@ jobs:
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
-          # scribe-auth-audience: ${{env.SCRIBE_AUDIENCE}}
          # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           label: ${{env.LABEL}}
           gate: github_action
@@ -157,6 +162,7 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 label: ${{env.LABEL}}
                 gate: github_action
+                deliverable: true
         
       - name: Generate SLSA provenance statement 
         id: valint_slsa_statement
@@ -172,6 +178,7 @@ jobs:
                 scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action
+                deliverable: true
                 
       - uses: actions/upload-artifact@v3
         with:
