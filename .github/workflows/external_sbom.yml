@@ -60,7 +60,7 @@ jobs:
 
         - name: odeql.sarif.json with attest
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './codeql.sarif.json'
@@ -83,7 +83,7 @@ jobs:
          
         - name: cyclonedx.json with statement
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './cyclonedx.json'
@@ -107,7 +107,7 @@ jobs:
                 
         - name: SolarWinds 3rd
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './solarWinds_3rd.json'
@@ -124,7 +124,7 @@ jobs:
       
         - name: opshub.json with statement
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './opshub.json'
@@ -145,7 +145,7 @@ jobs:
 
         - name: snyk.sarif.json with attest
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './snyk.sarif.json'
@@ -176,7 +176,7 @@ jobs:
 
         - name: snyk.cdx.json with attest
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './snyk.cdx.json'
@@ -231,7 +231,7 @@ jobs:
             
         - name: trivy.json with attest
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './trivy.json'
@@ -261,7 +261,7 @@ jobs:
 
         - name: trivy.sarif.json with statement
           # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@dev
+          uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './trivy.sarif.json'
