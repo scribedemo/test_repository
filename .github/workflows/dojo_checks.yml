@@ -91,10 +91,10 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action
-          # env:
-          #   ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-          #   ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-          #   ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
          
         - name: run dojo for blackduck in cvs format
           uses: scribe-security/action-evidence@master
@@ -111,6 +111,10 @@ jobs:
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action 
                 # deliverable: true 
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}    
                 
         - name: run dojo for checkmarx_oaasa
           uses: scribe-security/action-evidence@master
@@ -126,7 +130,11 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action 
-      
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+            
         - name: run dojo for sonatype
           uses: scribe-security/action-evidence@master
           with:
@@ -141,7 +149,10 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action 
-        
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
         - name: run dojo for snyk.sarif.json with attest
           # uses: scribe-security/action-bom@master
@@ -158,6 +169,11 @@ jobs:
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
                 gate: github_action
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+                
 
         - name: run dojo for snyk.cdx.json with attest
           # uses: scribe-security/action-bom@master
