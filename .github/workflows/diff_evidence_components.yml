@@ -74,7 +74,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
         #   target: 'https://github.com/mongo-express/mongo-express.git'
-         target: 'git@github.com:scribe-public/sample-policies.git'
+         target: 'scribe-public/sample-policies.git'
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
          format: attest
          # scribe.disable: false
