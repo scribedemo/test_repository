@@ -1,0 +1,229 @@
+name: evidence_predicate_type
+
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev-demo
+          - dev2_eks
+          - ci_eks
+          - dev_eks
+          - test_eks
+          - stg_eks
+          - prod_eks
+      product_version:
+         description: 'Put product version'
+         required: false
+         default: 'v1'
+      product_name:
+         description: 'Put product name'
+         required: false
+         default: 'dojo_extract'
+
+env:
+        LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
+        APP_VERSION: 1.0.1 # The app version all these SBOMs will be assosiated with
+        # SBOM Author meta data - Optional
+        AUTHOR_NAME: Alona Dodukh
+        AUTHOR_EMAIL: alonadodukh@tetsemail.com
+        AUTHOR_PHONE: 123-123-123-12345
+        # SBOM Supplier meta data - Optional
+        SUPPLIER_NAME: Scribe-Security 
+        SUPPLIER_URL: www.scribesecurity.com 
+        SUPPLIER_EMAIL: info@scribesecurity.com
+        SUPPLIER_PHONE: 001-001-0011
+        # URLs and product details
+        PRODUCT_NAME: ${{ github.event.inputs.product_name }}
+        PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+        FILE: ${{ github.events.inputs.file }}
+        SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+        SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+        SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
+
+jobs:
+
+ build:
+    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+
+    permissions:
+        contents: read
+        packages: write
+        id-token: write
+
+    steps:
+        - uses: actions/checkout@v4
+
+
+        - name: busybox:latest image
+          uses: scribe-security/action-bom@master
+          with:
+                type: docker
+                target: busybox:latest
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                components: packages,files,dep
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                deliverable: true
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+
+        # - name: run dojo for aqua
+        #   uses: scribe-security/action-evidence@master
+        #   with:
+        #         target: './aqua_apline.json'
+        #         # format: attest-generic
+        #         parser: aqua
+        #         tool: aqua
+        #         tool-version: 1.0.1
+        #         scribe-enable: true
+        #         product-key: ${{env.PRODUCT_NAME}}
+        #         product-version: ${{env.PRODUCT_VERSION}}
+        #         scribe-url: ${{env.SCRIBE_URL}}
+        #         gate: github_action
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+         
+        # - name: run dojo for blackduck in cvs format
+        #   uses: scribe-security/action-evidence@master
+        #   with:
+        #         # type: file
+        #         target: './blackduck_vulns_sh_5666.csv'
+        #         parser: blackduck
+        #         tool: blackduck
+        #         tool-version: 1.0.1
+        #         scribe-enable: true
+        #         product-key: ${{env.PRODUCT_NAME}}
+        #         product-version: ${{env.PRODUCT_VERSION}}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+        #         scribe-url: ${{env.SCRIBE_URL}}
+        #         gate: github_action 
+        #         # deliverable: true 
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}    
+                
+        # - name: run dojo for CheckmarxOsa
+        #   uses: scribe-security/action-evidence@master
+        #   with:
+        #         # type: file
+        #         target: './multiple_findings_osa_sh_5666.json'
+        #         parser: checkmarx
+        #         tool: checkmarx
+        #         tool-version: 1.0.1
+        #         scribe-enable: true
+        #         product-key: ${{env.PRODUCT_NAME}}
+        #         product-version: ${{env.PRODUCT_VERSION}}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+        #         scribe-url: ${{env.SCRIBE_URL}}
+        #         gate: github_action 
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+            
+        - name: run dojo for sonatype
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: 'sonatype_many_vulns.json'
+                predicate-type: 'https://help.sonatype.com/docs'
+                tool: sonatype
+                tool-version: 1.0.1
+                scribe-enable: true
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action 
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+        
+        - name: run dojo for snyk.sarif.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.sarif.json'
+                scribe-enable: true
+                predicate-type: 'https://docs.snyk.io'
+                tool: snyk
+                tool-version: 1.0.1
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+                
+
+        - name: run dojo for snyk.cdx.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                # type: file
+                target: './snyk.cdx.json'
+                predicate-type: 'https://docs.snyk.io'
+                tool: snyk
+                tool-version: 1.0.1
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                attest-default: x509-env
+                scribe-enable: true
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+
+            
+        # - name: run dojo for trivy.json with attest
+        #   # uses: scribe-security/action-bom@master
+        #   uses: scribe-security/action-evidence@master
+        #   with:
+        #         # type: file
+        #         target: './trivy.json'
+        #         # predicate-type: https://cyclonedx.org/bom
+        #         format: attest
+        #         parser: trivy
+        #         tool: trivy
+        #         tool-version: 1.0.1
+        #         attest-default: x509-env
+        #         scribe-enable: true
+        #         product-key: ${{env.PRODUCT_NAME}}
+        #         product-version: ${{env.PRODUCT_VERSION}}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+        #         scribe-url: ${{env.SCRIBE_URL}}
+        #         gate: github_action
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+
+        # - uses: actions/upload-artifact@v4
+        #   with:
+        #         name: provenance
+        #         path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+        
