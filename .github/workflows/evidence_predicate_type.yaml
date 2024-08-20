@@ -135,7 +135,7 @@ jobs:
         #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
         #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}
             
-        - name: run dojo for sonatype
+        - name: run evidence for sonatype
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
@@ -153,8 +153,26 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
+            
+        - name: run evidence for syft
+          uses: scribe-security/action-evidence@master
+          with:
+                target: 'syft_appache_airflow.json'
+                predicate-type: 'https://cyclonedx.org/bom'
+                tool: syft
+                tool-version: 1.0.1
+                scribe-enable: true
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action 
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
-        - name: run dojo for snyk.sarif.json with attest
+        - name: run evidence for snyk.sarif.json with attest
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
           with:
@@ -175,7 +193,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
                 
 
-        - name: run dojo for snyk.cdx.json with attest
+        - name: run evidence for snyk.cdx.json with attest
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
           with:
@@ -199,28 +217,27 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
             
-        # - name: run dojo for trivy.json with attest
-        #   # uses: scribe-security/action-bom@master
-        #   uses: scribe-security/action-evidence@master
-        #   with:
-        #         # type: file
-        #         target: './trivy.json'
-        #         # predicate-type: https://cyclonedx.org/bom
-        #         format: attest
-        #         parser: trivy
-        #         tool: trivy
-        #         tool-version: 1.0.1
-        #         attest-default: x509-env
-        #         scribe-enable: true
-        #         product-key: ${{env.PRODUCT_NAME}}
-        #         product-version: ${{env.PRODUCT_VERSION}}
-        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-        #         scribe-url: ${{env.SCRIBE_URL}}
-        #         gate: github_action
-        #   env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
+        - name: run dojo for trivy.json with attest
+          # uses: scribe-security/action-bom@master
+          uses: scribe-security/action-evidence@master
+          with:
+                target: './trivy.json'
+                # predicate-type: https://cyclonedx.org/bom
+                format: attest
+                predicate-type: 'https://aquasecurity.github.io/trivy/v0.42/docs/configuration/reporting/#json'
+                tool: trivy
+                tool-version: 1.0.1
+                attest-default: x509-env
+                scribe-enable: true
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{env.SCRIBE_URL}}
+                gate: github_action
+          env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA}}   
 
         # - uses: actions/upload-artifact@v4
         #   with:
