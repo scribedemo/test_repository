@@ -77,6 +77,7 @@ jobs:
         with:
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
           target: 'dir:./'
+          format: statement-cyclonedx-json
           product-key: ${{env.PRODUCT_NAME}}
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -97,6 +98,7 @@ jobs:
                 # target: 'docker:${{ github.repository }}:${{ github.sha }}'
                 type: docker
                 target: my-image:latest
+                format: attest-cyclonedx-json
                 scribe.disable: false
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
