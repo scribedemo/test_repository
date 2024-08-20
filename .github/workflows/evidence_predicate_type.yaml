@@ -22,7 +22,7 @@ on:
       product_name:
          description: 'Put product name'
          required: false
-         default: 'dojo_extract'
+         default: 'evidence_predicate_type'
 
 env:
         LOGICAL_APP_NAME: demo-project # The app name all these SBOMs will be assosiated with
