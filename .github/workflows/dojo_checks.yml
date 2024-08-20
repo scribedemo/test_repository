@@ -116,13 +116,13 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}    
                 
-        - name: run dojo for checkmarx_oaasa
+        - name: run dojo for CheckmarxOsa
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
                 target: './multiple_findings_osa_sh_5666.json'
-                parser: osa
-                tool: osa
+                parser: checkmarx
+                tool: checkmarx
                 tool-version: 1.0.1
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
