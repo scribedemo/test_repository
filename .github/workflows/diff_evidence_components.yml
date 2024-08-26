@@ -97,7 +97,7 @@ jobs:
           product-version: ${{env.PRODUCT_VERSION}}
           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
           scribe-url: ${{env.SCRIBE_URL}}
-          components: packages,files,dep
+          components: metadata,layers,packages,syft,files,dep,commits
           deliverable: true
           gate: github_action
       
