@@ -100,87 +100,23 @@ jobs:
                 # deliverable: true
                 label: ${{env.LABEL}}
                 gate: github_alona
-
-
-      - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@dev
-        with:
-               scribe-enable: true
-               target: busybox:uclibc
-               # components: packages,files,dep
-               format: statement
-               rule: api/scribe-api-cve@v
-               product-key: ${{env.PRODUCT_NAME}}
-               product-version: ${{env.PRODUCT_VERSION}}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-               scribe-url: ${{env.SCRIBE_URL}}
-      
-      
-      - name: Generate signed docker SBOM for docker image
-        id: valint_mysql_innovation_oraclelinux9
-        uses: scribe-security/action-bom@dev
-        with:
-                # statement-cyclonedx-json, attest, 
-                # type: docker
-                target: mysql:innovation-oraclelinux9
-                scribe-enable: true
-                format: statement
-                # attest-default: x509-env
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
-                scribe-url: ${{ env.SCRIBE_URL}}
-                # deliverable: true
-                label: ${{env.LABEL}}
-                gate: github_alona          
-                
-      
-      - name: Verify Image using x509 keys
-        uses: scribe-security/action-verify@dev
-        with:
-               scribe-enable: true
-               target: mysql:innovation-oraclelinux9
-               components: packages,files,dep
-               format: statement
-               rule: api/scribe-api-cve@v
-               product-key: ${{env.PRODUCT_NAME}}
-               product-version: ${{env.PRODUCT_VERSION}}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-               scribe-url: ${{env.SCRIBE_URL}}
-      
-      - name: Generate signed docker SBOM for docker image
-        id: valint_r-base_4_4_1
-        uses: scribe-security/action-bom@dev
-        with:
-                # statement-cyclonedx-json, attest, 
-                # type: docker
-                target: r-base:4.4.1
-                scribe-enable: true
-                format: statement
-                # attest-default: x509-env
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
-                scribe-url: ${{ env.SCRIBE_URL}}
-                # deliverable: true
-                label: ${{env.LABEL}}
-                gate: github_alona   
+    
      
-      # - name: Generate valint evidence with aqua
-      #   uses: scribe-security/action-evidence@master
-      #   with:
-      #           target: './aqua_apline.json'
-      #           scribe-enable: true
-      #           format: attest
-      #           parser: aqua 
-      #           tool: aqua
-      #           tool-version: 0.0.1
-      #           product-key: ${{env.PRODUCT_NAME}}
-      #           product-version: ${{env.PRODUCT_VERSION}}
-      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-      #           scribe-url: ${{ env.SCRIBE_URL}}
-      #           # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
-      #           gate: github_alona     
+      - name: Generate valint evidence with aqua
+        uses: scribe-security/action-evidence@master
+        with:
+                target: './aqua_apline.json'
+                scribe-enable: true
+                format: attest
+                parser: aqua 
+                tool: aqua
+                tool-version: 0.0.1
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                scribe-url: ${{ env.SCRIBE_URL}}
+                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
+                gate: github_alona     
      
       - name: Verify Image using x509 keys
         uses: scribe-security/action-verify@master
@@ -206,17 +142,17 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}    
      
      
-      - name: Generate valint git
-        uses: scribe-security/action-bom@dev
-        with:
-                target: 'git:https://github.com/mongo-express/mongo-express-docker.git'
-                scribe-enable: true
-                format: attest
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-                scribe-url: ${{ env.SCRIBE_URL}}
-                gate: github_alona     
+      # - name: Generate valint git
+      #   uses: scribe-security/action-bom@dev
+      #   with:
+      #           target: 'git:https://github.com/mongo-express/mongo-express-docker.git'
+      #           scribe-enable: true
+      #           format: attest
+      #           product-key: ${{env.PRODUCT_NAME}}
+      #           product-version: ${{env.PRODUCT_VERSION}}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+      #           scribe-url: ${{ env.SCRIBE_URL}}
+      #           gate: github_alona     
      
       
       - name: Generate SLSA provenance statement
