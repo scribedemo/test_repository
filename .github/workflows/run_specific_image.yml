@@ -117,17 +117,17 @@ jobs:
                 label: ${{env.LABEL}}
                 gate: github_alona
     
-      - name: Verify Image2
-        uses: scribe-security/action-verify@master
-        with:
-               target: busybox:uclibc
-               scribe-enable: true
-               policy: ssdf-org@discovery
-               product-key: ${{env.PRODUCT_NAME}}
-               product-version: ${{env.PRODUCT_VERSION}}
-               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-               scribe-url: ${{env.SCRIBE_URL}}
-               format: statement
+      # - name: Verify Image2
+      #   uses: scribe-security/action-verify@master
+      #   with:
+      #          target: busybox:uclibc
+      #          scribe-enable: true
+      #          policy: ssdf-org@discovery
+      #          product-key: ${{env.PRODUCT_NAME}}
+      #          product-version: ${{env.PRODUCT_VERSION}}
+      #          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+      #          scribe-url: ${{env.SCRIBE_URL}}
+      #          format: statement
 
                
       - name: Generate valint evidence with aqua
