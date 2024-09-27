@@ -1,0 +1,138 @@
+name: Create signed git clone and image SBOMs
+
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev-demo
+          - dev2_eks
+          - dev_eks
+          - ci_eks
+          - test_eks
+          - stg_eks
+          - prod_eks
+      product_version:
+         description: 'Put product version'
+         # required: true
+         default: 'v.XX.XX'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'workflow_push'
+      # image_name:
+      #    description: 'Put your image name'
+      #    required: true
+      #    default: 'mongo-express:latest'
+         
+env:
+  PRODUCT_NAME: ${{ github.event.inputs.product_name }}
+  PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  IMAGE_NAME: ${{ github.event.inputs.image_name}}
+  # VALINT_VERSION: "scribe-security/action-bom@${{ github.event.inputs.valint_version}}"
+  SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  # SCRIBE_AUDIENCE: ${{ vars.SCRIBE_AUDIENCE }}
+  AUTHOR_NAME: ALONA DODUKH
+  AUTHOR_EMAIL: author@scribesecurity.com
+  AUTHOR_PHONE: 999-1111-11
+  SUPPLIER_NAME: Scribe-Security
+  SUPPLIER_URL: www.scribesecurity.com
+  SUPPLIER_EMAIL: alona+supplier@scribesecurity.com
+  SUPPLIER_PHONE: 00-111-2222
+  LABEL: github
+  SCRIBE_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET_AUTH }}
+  SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
+  
+      
+jobs:
+  build:
+    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+        # uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+
+      - name: Generate signed SBOM for repo content
+        # Used after git clone at the begining of the pipeline
+        uses: scribe-security/action-bom@master
+        with:
+            target: 'git:.'
+            components: packages,files,dep
+            format: attest
+            product-key: ${{env.PRODUCT_NAME}}
+            product-version: ${{env.PRODUCT_VERSION}}
+            scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+            scribe-url: ${{ env.SCRIBE_URL}}
+
+      - name: Build the Docker image
+        # This is a stand in step for whatever needs to happen in your pipeline culminating with building a docker image from the repository
+        run: docker build . -t ${{ github.repository }}:${{ github.sha }}
+
+      - name: Generate signed docker SBOM for docker image
+        id: valint_attest_file
+        uses: scribe-security/action-bom@dev
+        with:
+                target: 'docker:scribe-demo-product:${{ github.sha }}'
+                format: attest
+                attest-default: x509-env
+                product-key: ${{env.PRODUCT_NAME}}
+                product-version: ${{env.PRODUCT_VERSION}}
+                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
+                scribe-url: ${{ env.SCRIBE_URL}}
+                label: ${{env.LABEL}}
+                gate: github_alona
+                
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+
+      - name: Verify Image1
+        uses: scribe-security/action-verify@master
+        with:
+               target: ${{env.IMAGE_NAME}}
+               scribe-enable: true
+               policy: ssdf-image@discovery
+               # policy: ssdf-org@discovery
+               # policy: ssdf-repo@discovery
+               product-key: ${{env.PRODUCT_NAME}}
+               product-version: ${{env.PRODUCT_VERSION}}
+               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+               scribe-url: ${{env.SCRIBE_URL}}
+               format: attest
+               attest-default: x509-env
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+            
+                 
+  
+      - name: Generate SLSA provenance statement
+        id: valint_slsa_statement
+        uses: scribe-security/action-bom@master
+        with:
+                target: 'docker:${{ github.repository }}:${{ github.sha }}'
+                # attest-slsa, statement-slsa, attest-generic
+                format: statement-slsa
+                # product-key: ${{env.PRODUCT_NAME}}
+                # product-version: ${{env.PRODUCT_VERSION}}
+                # scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+                # scribe-url: ${{env.SCRIBE_URL}}
+                
+      - uses: actions/upload-artifact@v4
+        with:
+                name: provenance
+                path: ${{ steps.valint_slsa_statement.outputs.OUTPUT_PATH }}
+          
+                
+                
