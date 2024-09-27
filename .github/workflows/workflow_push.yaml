@@ -100,7 +100,7 @@ jobs:
       - name: Verify Image1
         uses: scribe-security/action-verify@master
         with:
-               target: 'docker:scribedemo:${{ github.sha }'
+               target: 'docker:scribedemo:${{ github.sha }}'
                scribe-enable: true
                policy: ssdf-image@discovery
                # policy: ssdf-org@discovery
@@ -122,7 +122,7 @@ jobs:
         id: valint_slsa_statement
         uses: scribe-security/action-bom@master
         with:
-                target: 'docker:scribedemo:${{ github.sha }'
+                target: 'docker:scribedemo:${{ github.sha }}'
                 # attest-slsa, statement-slsa, attest-generic
                 format: statement-slsa
                 # product-key: ${{env.PRODUCT_NAME}}
