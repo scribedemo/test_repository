@@ -88,9 +88,9 @@ jobs:
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
-               # policy: ssdf-image@discovery
+               policy: ssdf-image@discovery
                # policy: ssdf-org@discovery
-               policy: ssdf-repo@discovery
+               # policy: ssdf-repo@discovery
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -122,7 +122,7 @@ jobs:
         with:
                target: busybox:uclibc
                scribe-enable: true
-               policy: ssdf-image@discovery
+               policy: ssdf-org@discovery
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
@@ -143,34 +143,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{ env.SCRIBE_URL}}
-                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
-                gate: github_alona     
-     
-      # - name: Verify Image using x509 keys
-      #   uses: scribe-security/action-verify@master
-      #   with:
-      #          target: ${{env.IMAGE_NAME}}
-      #          scribe-enable: true
-      #          components: packages,files,dep
-      #          format: attest
-      #          attest-default: x509-env
-      #          product-key: ${{env.PRODUCT_NAME}}
-      #          product-version: ${{env.PRODUCT_VERSION}}
-      #          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-      #          scribe-url: ${{env.SCRIBE_URL}}
-      #          # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
-      #          # common-name: "Scribe Security CA" - right now we have Githun issue to take only character before space
-      #          email: "alona@scribesecutiry.com"
-      #          verbose: 2
-      #          label: ${{env.LABEL}}
-      #          gate: github_alona
-      #   env:
-      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}    
-      
-   
-     
+                gate: github_alona      
       
       - name: Generate SLSA provenance statement
         id: valint_slsa_statement
@@ -181,17 +154,11 @@ jobs:
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: statement-slsa
-                # attest-default: x509-env
                 product-key: ${{env.PRODUCT_NAME}}
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
                 scribe-url: ${{env.SCRIBE_URL}}
-                # scribe-auth-audience : ${{env.SCRIBE_AUDIENCE}}
                 gate: github_alona_slsa
-        # env:
-        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-        #     ATTEST_CA:  ${{ secrets.ATTEST_CA }}  
                 
       - uses: actions/upload-artifact@v3
         with:
