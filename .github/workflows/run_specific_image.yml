@@ -98,7 +98,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
       
       - name: Verify Image1
-        uses: scribe-security/action-verify@main
+        uses: scribe-security/action-verify@master
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
