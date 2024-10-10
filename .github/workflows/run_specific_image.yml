@@ -98,13 +98,13 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
       
       - name: Verify Image1
-        uses: scribe-security/action-verify@master
+        uses: scribe-security/action-verify@main
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                bundle-branch: main
-               rule: slsa/l2-provenance-authenticated@v1
-               # rule: slsa/l1-provenance-exists@v1
+               # slsa/l1-provenance-exists@v1"
+               rule: slsa/l2-provenance-authenticated@v1 
                policy: ssdf-image@discovery
                # policy: ssdf-org@discovery
                # policy: ssdf-repo@discovery
@@ -162,20 +162,20 @@ jobs:
                 scribe-url: ${{ env.SCRIBE_URL}}
                 gate: github_alona      
       
-      - name: Generate SLSA provenance statement
-        id: valint_slsa_statement
-        uses: scribe-security/action-bom@dev
-        with:
-                type: docker
-                target: ${{env.IMAGE_NAME}}
-                # attest-slsa, statement-slsa, attest-generic
-                scribe-enable: true
-                format: statement-slsa
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-                scribe-url: ${{env.SCRIBE_URL}}
-                gate: github_alona_slsa
+      # - name: Generate SLSA provenance statement
+      #   id: valint_slsa_statement
+      #   uses: scribe-security/action-bom@dev
+      #   with:
+      #           type: docker
+      #           target: ${{env.IMAGE_NAME}}
+      #           # attest-slsa, statement-slsa, attest-generic
+      #           scribe-enable: true
+      #           format: statement-slsa
+      #           product-key: ${{env.PRODUCT_NAME}}
+      #           product-version: ${{env.PRODUCT_VERSION}}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+      #           scribe-url: ${{env.SCRIBE_URL}}
+      #           gate: github_alona_slsa
                 
       - uses: actions/upload-artifact@v3
         with:
