@@ -147,20 +147,20 @@ jobs:
       #          format: statement
 
                
-      - name: Generate valint evidence with aqua
-        uses: scribe-security/action-evidence@master
-        with:
-                target: './aqua_apline.json'
-                scribe-enable: true
-                format: attest
-                parser: aqua 
-                tool: aqua
-                tool-version: 0.0.1
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-                scribe-url: ${{ env.SCRIBE_URL}}
-                gate: github_alona      
+      # - name: Generate valint evidence with aqua
+      #   uses: scribe-security/action-evidence@master
+      #   with:
+      #           target: './aqua_apline.json'
+      #           scribe-enable: true
+      #           format: attest
+      #           parser: aqua 
+      #           tool: aqua
+      #           tool-version: 0.0.1
+      #           product-key: ${{env.PRODUCT_NAME}}
+      #           product-version: ${{env.PRODUCT_VERSION}}
+      #           scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+      #           scribe-url: ${{ env.SCRIBE_URL}}
+      #           gate: github_alona      
       
       # - name: Generate SLSA provenance statement
       #   id: valint_slsa_statement
