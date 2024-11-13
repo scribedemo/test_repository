@@ -134,17 +134,32 @@ jobs:
                 label: ${{env.LABEL}}
                 gate: github_alona
     
-      # - name: Verify Image2
-      #   uses: scribe-security/action-verify@master
-      #   with:
-      #          target: busybox:uclibc
-      #          scribe-enable: true
-      #          policy: ssdf-org@discovery
-      #          product-key: ${{env.PRODUCT_NAME}}
-      #          product-version: ${{env.PRODUCT_VERSION}}
-      #          scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-      #          scribe-url: ${{env.SCRIBE_URL}}
-      #          format: statement
+     
+      - name: Create sign slsa for image2
+        uses: scribe-security/action-slsa@master
+        with:
+               target:  busybox:uclibc
+               product-key: ${{env.PRODUCT_NAME}}
+               product-version: ${{env.PRODUCT_VERSION}}
+               format: attest
+               attest-default: x509-env
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+            
+      - name: Verify Image2
+        uses: scribe-security/action-verify@master
+        with:
+               target: busybox:uclibc
+               scribe-enable: true
+               # policy: ssdf-org@discovery
+               rule: slsa/l1-provenance-exists@v1
+               product-key: ${{env.PRODUCT_NAME}}
+               product-version: ${{env.PRODUCT_VERSION}}
+               scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+               scribe-url: ${{env.SCRIBE_URL}}
+               format: statement
 
                
       # - name: Generate valint evidence with aqua
