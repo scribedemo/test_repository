@@ -61,7 +61,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate signed docker SBOM for docker image
+      - name: Generate signed docker SBOM for docker mongo-express image
         id: valint_attest_file
         uses: scribe-security/action-bom@dev
         with:
@@ -97,14 +97,14 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
       
-      - name: Verify Image1
+      - name: Verify Image1 (both slsa levels are passed)
         uses: scribe-security/action-verify@master
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                bundle-branch: main
                # rule: slsa/l1-provenance-exists@v1
-               rule: "slsa/l2-provenance-authenticated@v1, slsa/l1-provenance-exists@v1"
+               rule: slsa/l2-provenance-authenticated@v1
                policy: ssdf-image@discovery
                # policy: ssdf-org@discovery
                # policy: ssdf-repo@discovery
@@ -148,7 +148,7 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
             
-      - name: Verify Image2
+      - name: Verify Image2 (level 2 is failed, level 1 is passed)
         uses: scribe-security/action-verify@master
         with:
                target: busybox:uclibc
