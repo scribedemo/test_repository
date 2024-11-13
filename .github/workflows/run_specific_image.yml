@@ -103,8 +103,8 @@ jobs:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
                bundle-branch: main
-               # slsa/l1-provenance-exists@v1"
-               rule: slsa/l2-provenance-authenticated@v1 
+               # rule: slsa/l1-provenance-exists@v1
+               rule: "slsa/l2-provenance-authenticated@v1, slsa/l1-provenance-exists@v1"
                policy: ssdf-image@discovery
                # policy: ssdf-org@discovery
                # policy: ssdf-repo@discovery
