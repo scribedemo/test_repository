@@ -150,7 +150,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 type: docker
-                target: mongo-express:1.0.0-20
+                target: mongo-express:1.0.2-18
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: attest-slsa
@@ -169,7 +169,7 @@ jobs:
         uses: scribe-security/action-bom@master
         with:
                 type: docker
-                target: mongo-express:latest
+                target: mongo-express:1.0.2
                 # attest-slsa, statement-slsa, attest-generic
                 scribe-enable: true
                 format: statement-slsa
