@@ -48,25 +48,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
      
-      - name: Generate signed docker SBOM for docker mongo-express image
-        id: valint_attest_file
-        uses: scribe-security/action-bom@master
-        with:
-                # statement-cyclonedx-json, attest, 
-                # type: docker
-                target: busybox:latest
-                # scribe-enable: true
-                format: attest
-                attest-default: x509-env
-                product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.SCRIBE_PRODUCT_VERSION }}
-                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
-                scribe-url: ${{env.SCRIBE_URL }}
+      # - name: Generate signed docker SBOM for docker mongo-express image
+      #   id: valint_attest_file
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # statement-cyclonedx-json, attest, 
+      #           # type: docker
+      #           target: busybox:latest
+      #           # scribe-enable: true
+      #           format: attest
+      #           attest-default: x509-env
+      #           product-key: ${{ env.PRODUCT_NAME}}
+      #           product-version: ${{env.SCRIBE_PRODUCT_VERSION }}
+      #           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+      #           scribe-url: ${{env.SCRIBE_URL }}
                 
-        env:
-            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
-            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+      #   env:
+      #       ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+      #       ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{secrets.ATTEST_CA}} 
 
             
       - name: Discovery Publish Evidence Github
@@ -78,14 +78,14 @@ jobs:
           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
           args: >-
-            # --scope.organization=scribe-security
-            # --scope.repository *mongo* *scribe-training-vue-project
             --scope.organization=scribe-demo
             --token ${{secrets.GH_TOKEN}}
             --scope.repository=scribedemo/test_repository
             --workflow.skip --commit.skip --scope.branch=main
             --organization.mapping=scribe-security::test::${{env.SCRIBE_PRODUCT_VERSION}}
             --repository.mapping=scribe-security*scribe-training-vue-project::test::${{env.SCRIBE_PRODUCT_VERSION}}
+            # --scope.organization=scribe-security
+            # --scope.repository *mongo* *scribe-training-vue-project
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
