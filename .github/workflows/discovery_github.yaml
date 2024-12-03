@@ -27,13 +27,11 @@ on:
 env:
   PRODUCT_NAME: ${{ github.event.inputs.product_name }}
   SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
-  IMAGE_NAME: ${{ github.event.inputs.image_name}}
+  # IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
-  # SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
-  SCRIBE_TOKEN: ${{ vars.CLIENT_SECRET_AUTH}}
+  SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
   AUTHOR_NAME: ALONA DODUKH
   AUTHOR_EMAIL: author@scribesecurity.com
-  LABEL: github_cve
   
         
 jobs:
@@ -52,23 +50,23 @@ jobs:
      
       - name: Generate signed docker SBOM for docker mongo-express image
         id: valint_attest_file
-        uses: scribe-security/action-bom@dev
+        uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
                 target: busybox:latest
-                scribe-enable: true
+                # scribe-enable: true
                 format: attest
                 attest-default: x509-env
-                product-key: ${{env.PRODUCT_NAME}}
+                product-key: ${{ env.PRODUCT_NAME}}
                 product-version: ${{env.SCRIBE_PRODUCT_VERSION }}
-                scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
-                scribe-url: ${{ env.SCRIBE_URL}}
+                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+                scribe-url: ${{env.SCRIBE_URL }}
                 
         env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
+            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
 
             
       - name: Discovery Publish Evidence Github
@@ -77,14 +75,14 @@ jobs:
           command: discover
           platform: github
           evidence: true
-          scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
-          scribe-url: ${{ env.SCRIBE_URL}}
+          scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+          scribe-url: ${{env.SCRIBE_URL}}
           args: >-
             --scope.organization=scribe-security
             --scope.repository *mongo* *scribe-training-vue-project
             --workflow.skip --commit.skip --scope.branch=main
-            --organization.mapping=scribe-security::${{ env.PRODUCT_NAME }}::${{ env.SCRIBE_PRODUCT_VERSION }}
-            --repository.mapping=scribe-security*scribe-training-vue-project::${{ env.PRODUCT_NAME }}::${{ env.SCRIBE_PRODUCT_VERSION }}
+            --organization.mapping=scribe-security::${{env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
+            --repository.mapping=scribe-security*scribe-training-vue-project::${{env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
             # --valint.scribe.client-secret c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOks4eU1wa1dTMUhkbkgzMXlqS1hmUE93am0yQkh4TVlGTmRHbzhmdFhmQ28zZmRBYVJFUlUxRExrWmZHSg==
             # --valint.scribe.enable
         env:
