@@ -55,7 +55,7 @@ jobs:
         with:
                 # statement-cyclonedx-json, attest, 
                 # type: docker
-                target: ${{env.IMAGE_NAME}}
+                target: busybox:latest
                 scribe-enable: true
                 format: attest
                 attest-default: x509-env
