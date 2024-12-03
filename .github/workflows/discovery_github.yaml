@@ -29,7 +29,8 @@ env:
   SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
   IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
-  SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+  # SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+  SCRIBE_TOKEN: ${{ vars.CLIENT_SECRET_AUTH}}
   AUTHOR_NAME: ALONA DODUKH
   AUTHOR_EMAIL: author@scribesecurity.com
   LABEL: github_cve
