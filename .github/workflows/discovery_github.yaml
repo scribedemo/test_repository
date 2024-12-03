@@ -81,10 +81,8 @@ jobs:
             --scope.organization=scribe-security
             --scope.repository *mongo* *scribe-training-vue-project
             --workflow.skip --commit.skip --scope.branch=main
-            --organization.mapping=scribe-security::${{env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
-            --repository.mapping=scribe-security*scribe-training-vue-project::${{env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
-            # --valint.scribe.client-secret c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOks4eU1wa1dTMUhkbkgzMXlqS1hmUE93am0yQkh4TVlGTmRHbzhmdFhmQ28zZmRBYVJFUlUxRExrWmZHSg==
-            # --valint.scribe.enable
+            --organization.mapping=scribe-security::test::${{env.SCRIBE_PRODUCT_VERSION}}
+            --repository.mapping=scribe-security*scribe-training-vue-project::test::${{env.SCRIBE_PRODUCT_VERSION}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
