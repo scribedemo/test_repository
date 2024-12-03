@@ -1,0 +1,67 @@
+name: discovery_github
+
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev-demo
+          - dev2_eks
+          - dev_eks
+          - ci_eks
+          - test_eks
+          - stg_eks
+          - prod_eks
+      product_version:
+         description: 'Put product version'
+         # required: true
+         default: 'v1.'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'discover_github'
+         
+env:
+  PRODUCT_NAME: ${{ github.event.inputs.product_name }}
+  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  IMAGE_NAME: ${{ github.event.inputs.image_name}}
+  SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  SCRIBE_LOGIN_URL: ${{ vars.SCRIBE_LOGIN_URL }}
+  AUTHOR_NAME: ALONA DODUKH
+  AUTHOR_EMAIL: author@scribesecurity.com
+  LABEL: github_cve
+  
+        
+jobs:
+  build:
+    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Discovery Publish Evidence Github
+        uses: scribe-security/action-platforms@SH-6474-merged-command
+        with:
+          command: discover
+          platform: github
+          evidence: true
+          args: >-
+            --scope.organization=scribe-security
+            --scope.repository *mongo* *scribe-training-vue-project
+            --workflow.skip --commit.skip --scope.branch=main
+            --organization.mapping=scribe-security::scribe-training-vue-project::${{ env.SCRIBE_PRODUCT_VERSION }}
+            --repository.mapping=scribe-security*scribe-training-vue-project::scribe-training-vue-project::${{ env.SCRIBE_PRODUCT_VERSION }}
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}   
