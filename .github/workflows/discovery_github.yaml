@@ -63,7 +63,6 @@ jobs:
             --repository.mapping=scribe-security*scribe-training-vue-project::scribe-training-vue-project::${{ env.SCRIBE_PRODUCT_VERSION }}
             --valint.scribe.client-secret c2NyaWJlLWh1Yi1zdGFnaW5nLXRlYW0yOks4eU1wa1dTMUhkbkgzMXlqS1hmUE93am0yQkh4TVlGTmRHbzhmdFhmQ28zZmRBYVJFUlUxRExrWmZHSg==
             --valint.scribe.enable
-            --VALINT_SCRIBE_URL=https://api.scribesecurity.com
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
