@@ -78,12 +78,12 @@ jobs:
           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
           args: >-
-            --scope.organization scribe-demo
+            --scope.organization' scribe-demo'
             --token ${{secrets.GH_TOKEN}}
-            --scope.repository scribedemo/test_repository
+            --scope.repository 'scribedemo/test_repository'
             --workflow.skip --commit.skip --scope.branch=main
-            --organization.mapping=scribe-security::test::${{env.SCRIBE_PRODUCT_VERSION}}
-            --repository.mapping=scribe-security*scribe-training-vue-project::test::${{env.SCRIBE_PRODUCT_VERSION}}
+            --organization.mapping '*::test::${{env.SCRIBE_PRODUCT_VERSION}}'
+            --repository.mapping '*::test::${{env.SCRIBE_PRODUCT_VERSION}}'
             # --scope.organization=scribe-security
             # --scope.repository *mongo* *scribe-training-vue-project
         env:
