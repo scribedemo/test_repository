@@ -79,7 +79,7 @@ jobs:
           scribe-url: ${{env.SCRIBE_URL}}
           args: >-
             --scope.organization=scribe-security
-            --token ${{secrets.GITHUB_TOKEN}}
+            --token ${{secrets.GH_TOKEN}}
             --scope.repository *mongo* *scribe-training-vue-project
             --workflow.skip --commit.skip --scope.branch=main
             --organization.mapping=scribe-security::test::${{env.SCRIBE_PRODUCT_VERSION}}
