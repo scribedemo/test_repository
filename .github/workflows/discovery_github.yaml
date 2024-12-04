@@ -82,7 +82,6 @@ jobs:
           sign: true
           args: >-
             --scope.organization=scribedemo
-            --token ${{secrets.GH_TOKEN}}
             --scope.repository 'scribedemo/test_repository'
             --workflow.skip --commit.skip --scope.branch=main
             --organization.mapping '*::${{ env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}'
@@ -90,4 +89,6 @@ jobs:
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}   
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
