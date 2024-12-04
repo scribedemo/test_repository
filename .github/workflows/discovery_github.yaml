@@ -26,8 +26,8 @@ on:
   pull_request:
          
 env:
-  PRODUCT_NAME: ${{ github.event.inputs.product_name || test_product }}
-  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version || v1 }}
+  PRODUCT_NAME: ${{ github.event.inputs.product_name || "test_product" }}
+  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version || "v1" }}
   # IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
