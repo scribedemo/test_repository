@@ -67,6 +67,8 @@ jobs:
       #       ATTEST_KEY: ${{secrets.ATTEST_KEY}}
       #       ATTEST_CERT: ${{secrets.ATTEST_CERT}}
       #       ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+                # --scope.organization=scribe-security
+            # --scope.repository *mongo* *scribe-training-vue-project
 
             
       - name: Discovery Publish Evidence Github
@@ -84,8 +86,6 @@ jobs:
             --workflow.skip --commit.skip --scope.branch=main
             --organization.mapping '*::test::${{env.SCRIBE_PRODUCT_VERSION}}'
             --repository.mapping '*::test::${{env.SCRIBE_PRODUCT_VERSION}}'
-            # --scope.organization=scribe-security
-            # --scope.repository *mongo* *scribe-training-vue-project
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
