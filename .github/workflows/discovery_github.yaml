@@ -78,7 +78,7 @@ jobs:
           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
           scribe-url: ${{env.SCRIBE_URL}}
           args: >-
-            --scope.organization' scribe-demo'
+            --scope.organization=scribedemo
             --token ${{secrets.GH_TOKEN}}
             --scope.repository 'scribedemo/test_repository'
             --workflow.skip --commit.skip --scope.branch=main
