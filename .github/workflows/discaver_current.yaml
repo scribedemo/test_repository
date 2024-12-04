@@ -1,4 +1,4 @@
-name: discovery_github
+name: discovery_github_current
 
 on: 
   workflow_dispatch:
