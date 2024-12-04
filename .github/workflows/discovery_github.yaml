@@ -98,3 +98,4 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             GITHUB_TOKEN: ${{ secrets.ALONA_GITHUB_PAT }}
 
+
