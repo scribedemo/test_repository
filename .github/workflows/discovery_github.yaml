@@ -26,10 +26,10 @@ on:
   pull_request:
          
 env:
-  DEFAULT_PRODUCT_NAME: "test_product"
-  DEFAULT_PRODUCT_VERSION: "v1"
-  PRODUCT_NAME: ${{ github.event.inputs.product_name || env.DEFAULT_PRODUCT_NAME }}
-  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version || env.DEFAULT_PRODUCT_VERSION }}
+  #PRODUCT_NAME: ${{ github.event.inputs.product_name}}
+  #SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
+  PRODUCT_NAME: "test_product"
+  SCRIBE_PRODUCT_VERSION: "v1"
   # IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
