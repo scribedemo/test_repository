@@ -151,7 +151,7 @@ jobs:
             # --workflow.skip --commit.skip --scope.branch=main
             --scope.commit.past_days=60
             --organization.mapping 
-            *::${{ env.PRODUCT_NAME}}::${{env.GL_PRODUCT_VERSION}
+            *::${{ env.PRODUCT_NAME}}::${{env.GL_PRODUCT_VERSION}}
             --project.mapping
             *::${{ env.PRODUCT_NAME}}::${{env.GL_PRODUCT_VERSION}}
         env:
