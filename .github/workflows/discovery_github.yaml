@@ -23,12 +23,16 @@ on:
          description: 'Put product name'
          required: true
          default: 'discover_github'
+  pull_request:
          
 env:
-  PRODUCT_NAME: ${{ github.event.inputs.product_name }}
-  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version }}
+  #PRODUCT_NAME: ${{ github.event.inputs.product_name}}
+  #SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
+  PRODUCT_NAME: "test_product"
+  SCRIBE_PRODUCT_VERSION: "v1"
   # IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
   AUTHOR_NAME: ALONA DODUKH
   AUTHOR_EMAIL: author@scribesecurity.com
@@ -70,6 +74,10 @@ jobs:
             #     --scope.organization=scribe-security
             # --scope.repository *mongo* *scribe-training-vue-project
 
+      - name: Info Product
+        run: |
+            echo "Product ${{ env.PRODUCT_NAME}}"
+            echo "Product Version ${{env.SCRIBE_PRODUCT_VERSION}}"
             
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
@@ -77,17 +85,19 @@ jobs:
           command: discover
           platform: github
           evidence: true
-          scribe-client-secret: ${{env.SCRIBE_TOKEN}}
-          scribe-url: ${{env.SCRIBE_URL}}
+          sign: true
           args: >-
             --scope.organization=scribedemo
-            --token ${{secrets.GH_TOKEN}}
-            --scope.repository 'scribedemo/test_repository'
+            --scope.repository scribedemo/test_repository
             --workflow.skip --commit.skip --scope.branch=main
-            --organization.mapping '*::${{ env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}'
-            --repository.mapping '*::${{ env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}'
-            --valint.scribe.enable
+            --organization.mapping 
+            *::${{ env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
+            --repository.mapping
+            *::${{ env.PRODUCT_NAME}}::${{env.SCRIBE_PRODUCT_VERSION}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}   
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            GITHUB_TOKEN: ${{ secrets.ALONA_GITHUB_PAT }}
+
+
