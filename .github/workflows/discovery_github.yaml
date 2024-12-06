@@ -99,5 +99,6 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             GITHUB_TOKEN: ${{ secrets.ALONA_GITHUB_PAT }}
+            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
 
