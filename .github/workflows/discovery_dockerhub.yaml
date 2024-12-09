@@ -88,17 +88,20 @@ jobs:
           evidence: true
           sign: true
           args: >-
-            --scope.repository=heyman --scope.past_days 30       
+            --scope.repository=heyman --scope.past_days 30    
+            --namespace.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
             --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
-            --password brownbag74! --username scribesecurity
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            --password ${{secrets.DOCHERHUB_PASSWORD}}
+            --username scribesecurity
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
-      - name: Generate signed docker SBOM for DockerHub cases4
+      - name: Generate signed docker SBOM for case2
         id: dockerhub_case2
         uses: scribe-security/action-bom@master
         with:
@@ -106,7 +109,7 @@ jobs:
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.DOCKERHUB2_PRODUCT_VERSION }}
+                product-version: ${{env.DOCKERHUB2_PRODUCT_VERSION2 }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
                 
@@ -127,10 +130,13 @@ jobs:
           platform: dockerhub
           sign: true
           args: >-
-            --scope.repository=heyman --scope.past_days 30       
+            --scope.repository=heyman --scope.past_days 30    
+            --namespace.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
             --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB2_PRODUCT_VERSION }}
-            --password brownbag74! --username scribesecurity
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            --password ${{secrets.DOCHERHUB_PASSWORD}}
+            --username scribesecurity
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
