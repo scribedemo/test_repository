@@ -91,7 +91,7 @@ jobs:
             --jf-repository.mapping
             *:flask-monorepo-project:${{env.PRODUCT_NAME}}
             --repository.mapping
-            *stub*:flask-monorepo-project:${{ env.JFROG_PRODUCT_VERSION }}
+            *stub*:${{env.PRODUCT_NAME}}:${{ env.JFROG_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
