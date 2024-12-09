@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@v4
 
 
-      - name: Generate version name for each cl
+      - name: Generate version name 
         run: |
          export GL_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-gitlab"
          echo "GL_PRODUCT_VERSION=$GL_PRODUCT_VERSION" >> $GITHUB_ENV
@@ -59,13 +59,17 @@ jobs:
         id: gilab_case
         uses: scribe-security/action-bom@master
         with:
-                target: busybox:latest
+                target: mongo-express:latest
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
                 product-version: ${{env.GL_PRODUCT_VERSION }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
+            #     --organization.mapping 
+            # *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            # --project.mapping
+            # *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
                 
         env:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
@@ -86,11 +90,15 @@ jobs:
           sign: true
           args: >-
             --scope.project Scribe-Test/integrations
-            --scope.commit.past_days=60
-            --organization.mapping 
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            --scope.commit.past_days 60
+            --scope.pipeline.past_days 60
+            --organization.mapping
+            *::flask-monorepo-project::${{ env.SCRIBE_PRODUCT_VERSION }}
+            *::dhs-vue-sample-proj::${{ env.SCRIBE_PRODUCT_VERSION }}
             --project.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            Scribe-Test*flask-monorepo-project::${{ env.GL_PRODUCT_VERSION }}
+            Scribe-Test*dhs-vue-sample-proj::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
