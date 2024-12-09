@@ -85,7 +85,6 @@ jobs:
         with:
           command: discover
           platform: dockerhub
-          evidence: true
           sign: true
           args: >-
             --scope.repository=heyman --scope.past_days 30    
@@ -105,11 +104,11 @@ jobs:
         id: dockerhub_case2
         uses: scribe-security/action-bom@master
         with:
-                target: busybox:latest
+                target: busybox:stable-glibc
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.DOCKERHUB2_PRODUCT_VERSION2 }}
+                product-version: ${{env.DOCKERHUB_PRODUCT_VERSION2 }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
                 
