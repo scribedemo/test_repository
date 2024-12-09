@@ -17,7 +17,6 @@ on:
           - prod_eks
       product_version:
          description: 'Put product version'
-         # required: true
          default: 'v.'
       product_name:
          description: 'Put product name'
@@ -26,12 +25,10 @@ on:
   pull_request:
          
 env:
-  #PRODUCT_NAME: ${{ github.event.inputs.product_name}}
-  #SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
   PRODUCT_NAME: "test_product"
   SCRIBE_PRODUCT_VERSION: "v1"
-  # IMAGE_NAME: ${{ github.event.inputs.image_name}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  JFROG_URL: ${{ vars.JFROG_URL }}
   VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
   AUTHOR_NAME: ALONA DODUKH
@@ -88,10 +85,10 @@ jobs:
           evidence: true
           sign: true
           args: >-
-            --scope.repository=heyman --scope.past_days 30       
+            --url ${{ env.JFROG_URL }}  
+            --token ${{ secrets.JFROG_TOKEN} }
             --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
-            --password brownbag74! --username scribesecurity
+            *stub_remote::${{ env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
