@@ -138,7 +138,7 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.GLPRODUCT_VERSION}}"
             
-      - name: Discovery Publish Evidence Github
+      - name: Discovery Publish Evidence GitLab
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
@@ -147,8 +147,6 @@ jobs:
           sign: true
           args: >-
             --scope.project Scribe-Test/integrations
-            # --scope.repository scribedemo/test_repository
-            # --workflow.skip --commit.skip --scope.branch=main
             --scope.commit.past_days=60
             --organization.mapping 
             *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
