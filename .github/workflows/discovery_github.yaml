@@ -59,70 +59,111 @@ jobs:
          echo "GH_PRODUCT_VERSION=$GH_PRODUCT_VERSION" >> $GITHUB_ENV
          export GL_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-gitlab"
          echo "GL_PRODUCT_VERSION=$GL_PRODUCT_VERSION" >> $GITHUB_ENV
-
-
+         export DOCKERHUB_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-dockerhub"
+         echo "DOCKERHUB_PRODUCT_VERSION=$DOCKERHUB_PRODUCT_VERSION" >> $GITHUB_ENV
+       
          
-      - name: Generate signed docker SBOM for docker mongo-express image
-        id: valint_attest_file
-        uses: scribe-security/action-bom@master
-        with:
-                # statement-cyclonedx-json, attest, 
-                # type: docker
-                target: busybox:latest
-                # scribe-enable: true
-                format: attest
-                attest-default: x509-env
-                product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{ env.GH_PRODUCT_VERSION }}
-                scribe-client-secret: ${{ env.SCRIBE_TOKEN }}
-                scribe-url: ${{env.SCRIBE_URL }}
+      # - name: Generate signed docker SBOM for docker mongo-express image
+      #   id: valint_attest_file
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           # statement-cyclonedx-json, attest, 
+      #           # type: docker
+      #           target: busybox:latest
+      #           # scribe-enable: true
+      #           format: attest
+      #           attest-default: x509-env
+      #           product-key: ${{ env.PRODUCT_NAME}}
+      #           product-version: ${{ env.GH_PRODUCT_VERSION }}
+      #           scribe-client-secret: ${{ env.SCRIBE_TOKEN }}
+      #           scribe-url: ${{env.SCRIBE_URL }}
                 
-        env:
-            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
-            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
-            #     --scope.organization=scribe-security
-            # --scope.repository *mongo* *scribe-training-vue-project
+      #   env:
+      #       ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+      #       ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+      #       #     --scope.organization=scribe-security
+      #       # --scope.repository *mongo* *scribe-training-vue-project
 
-      - name: Info Product
-        run: |
-            echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
+      # - name: Info Product
+      #   run: |
+      #       echo "Product ${{ env.PRODUCT_NAME}}"
+      #       echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
             
-      - name: Discovery Publish Evidence Github
-        uses: scribe-security/action-platforms@SH-6474-merged-command
-        with:
-          command: discover
-          platform: github
-          evidence: true
-          sign: true
-          args: >-
-            --scope.organization=scribedemo
-            --scope.repository scribedemo/test_repository
-            --workflow.skip --commit.skip --scope.branch=main
-            --organization.mapping 
-            *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION}}
-            --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION}}
-        env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-            GITHUB_TOKEN: ${{ secrets.ALONA_GITHUB_PAT }}
-            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+      # - name: Discovery Publish Evidence Github
+      #   uses: scribe-security/action-platforms@SH-6474-merged-command
+      #   with:
+      #     command: discover
+      #     platform: github
+      #     evidence: true
+      #     sign: true
+      #     args: >-
+      #       --scope.organization=scribedemo
+      #       --scope.repository scribedemo/test_repository
+      #       --workflow.skip --commit.skip --scope.branch=main
+      #       --organization.mapping 
+      #       *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION}}
+      #       --repository.mapping
+      #       *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION}}
+      #   env:
+      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+      #       GITHUB_TOKEN: ${{ secrets.ALONA_GITHUB_PAT }}
+      #       VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
-      - name: Generate signed docker SBOM for docker mongo-express image
-        id: gilab_case
+      # - name: Generate signed docker SBOM for docker mongo-express image
+      #   id: gilab_case
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           target: busybox:latest
+      #           format: attest
+      #           attest-default: x509-env
+      #           product-key: ${{ env.PRODUCT_NAME}}
+      #           product-version: ${{env.GL_PRODUCT_VERSION }}
+      #           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+      #           scribe-url: ${{env.SCRIBE_URL }}
+                
+      #   env:
+      #       ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+      #       ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+
+      # - name: Info Product
+      #   run: |
+      #       echo "Product ${{ env.PRODUCT_NAME}}"
+      #       echo "Product Version ${{env.GLPRODUCT_VERSION}}"
+            
+      # - name: Discovery Publish Evidence GitLab (Issue)
+      #   uses: scribe-security/action-platforms@SH-6474-merged-command
+      #   with:
+      #     command: discover
+      #     platform: gitlab
+      #     evidence: true
+      #     sign: true
+      #     args: >-
+      #       --scope.project Scribe-Test/integrations
+      #       --scope.commit.past_days=60
+      #       --organization.mapping 
+      #       *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+      #       --project.mapping
+      #       *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+      #   env:
+      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+      #       TOKEN: ${{ secrets.GL_TOKEN }}
+      #       VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+
+      - name: Generate signed docker SBOM for DockerHub cases
+        id: dockerhub_case
         uses: scribe-security/action-bom@master
         with:
-                # statement-cyclonedx-json, attest, 
-                # type: docker
                 target: busybox:latest
-                # scribe-enable: true
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.GL_PRODUCT_VERSION }}
+                product-version: ${{env.DOCKERHUB_PRODUCT_VERSION }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
                 
@@ -130,34 +171,31 @@ jobs:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
             ATTEST_CERT: ${{secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{secrets.ATTEST_CA}} 
-            #     --scope.organization=scribe-security
-            # --scope.repository *mongo* *scribe-training-vue-project
 
       - name: Info Product
         run: |
             echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.GLPRODUCT_VERSION}}"
+            echo "Product Version ${{env.DOCKERHUB_PRODUCT_VERSION}}"
             
       - name: Discovery Publish Evidence GitLab
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
-          platform: gitlab
+          platform: dockerhub
           evidence: true
           sign: true
           args: >-
-            --scope.project Scribe-Test/integrations
-            --scope.commit.past_days=60
-            --organization.mapping 
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
-            --project.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            --scope.repository=heyman --scope.past_days 30       
+            --repository.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
+            --password brownbag74! --username scribesecurity
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-            TOKEN: ${{ secrets.GL_TOKEN }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+
+
 
 
 
