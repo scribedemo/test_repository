@@ -86,7 +86,6 @@ jobs:
           command: discover
           platform: github
           evidence: true
-          export-evidence: true
           sign: true
           args: >-
             --scope.organization=scribedemo
