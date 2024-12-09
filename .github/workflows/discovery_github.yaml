@@ -177,7 +177,7 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.DOCKERHUB_PRODUCT_VERSION}}"
             
-      - name: Discovery Publish Evidence GitLab
+      - name: Discovery Publish Evidence DockerHub
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
