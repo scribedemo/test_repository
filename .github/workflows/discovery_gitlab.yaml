@@ -93,11 +93,9 @@ jobs:
             --scope.commit.past_days 60
             --scope.pipeline.past_days 60
             --organization.mapping
-            *::flask-monorepo-project::${{ env.SCRIBE_PRODUCT_VERSION }}
-            *::dhs-vue-sample-proj::${{ env.SCRIBE_PRODUCT_VERSION }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
             --project.mapping
-            Scribe-Test*flask-monorepo-project::${{ env.GL_PRODUCT_VERSION }}
-            Scribe-Test*dhs-vue-sample-proj::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
             
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
