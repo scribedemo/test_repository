@@ -85,7 +85,7 @@ jobs:
         with:
           command: discover
           platform: github
-          evidence: false
+          evidence: true
           sign: true
           args: >-
             --scope.organization=scribedemo
