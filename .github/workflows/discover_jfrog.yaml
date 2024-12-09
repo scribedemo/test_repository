@@ -89,9 +89,9 @@ jobs:
             --token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 --scope.jf-repository=*docker*
             --jf-repository.mapping
-            *::flask-monorepo-project::${{env.PRODUCT_NAME}}
+            *::flask-monorepo-project:${{env.PRODUCT_NAME}}
             --repository.mapping
-            *stub*::flask-monorepo-project::${{ env.JFROG_PRODUCT_VERSION }}
+            *stub*::flask-monorepo-project:${{ env.JFROG_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
