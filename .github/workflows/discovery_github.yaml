@@ -91,6 +91,7 @@ jobs:
             --scope.organization=scribedemo
             --scope.repository scribedemo/test_repository
             --workflow.skip --commit.skip --scope.branch=main
+            --export-evidence
             --organization.mapping 
             *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION}}
             --repository.mapping
