@@ -156,7 +156,7 @@ jobs:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-            TOKEN: glpat-C_iomXGsQDsBpRmCyqzx 
+            TOKEN: ${{ secrets.GL_TOKEN}}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
 
