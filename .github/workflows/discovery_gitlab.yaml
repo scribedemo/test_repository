@@ -26,8 +26,8 @@ on:
   pull_request:
          
 env:
-  PRODUCT_NAME: "test_product"
-  SCRIBE_PRODUCT_VERSION: "v1"
+  PRODUCT_NAME: ${{ github.event.inputs.product_name}}
+  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
   SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
   SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
