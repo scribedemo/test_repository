@@ -1,0 +1,103 @@
+name: discovery_jfrog
+
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev-demo
+          - dev2_eks
+          - dev_eks
+          - ci_eks
+          - test_eks
+          - stg_eks
+          - prod_eks
+      product_version:
+         description: 'Put product version'
+         # required: true
+         default: 'v.'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'discover_jfrog'
+  pull_request:
+         
+env:
+  #PRODUCT_NAME: ${{ github.event.inputs.product_name}}
+  #SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
+  PRODUCT_NAME: "test_product"
+  SCRIBE_PRODUCT_VERSION: "v1"
+  # IMAGE_NAME: ${{ github.event.inputs.image_name}}
+  SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
+  AUTHOR_NAME: ALONA DODUKH
+  AUTHOR_EMAIL: author@scribesecurity.com
+  
+        
+jobs:
+  build:
+    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Generate version name for each cl
+        run: |
+         export JFROG_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-jfrog"
+         echo "JFROG_PRODUCT_VERSION=$JFROG_PRODUCT_VERSION" >> $GITHUB_ENV
+       
+      - name: Generate signed docker SBOM for DockerHub cases
+        id: dockerhub_case
+        uses: scribe-security/action-bom@master
+        with:
+                target: busybox:latest
+                format: attest
+                attest-default: x509-env
+                product-key: ${{ env.PRODUCT_NAME}}
+                product-version: ${{env.JFROG_PRODUCT_VERSION }}
+                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+                scribe-url: ${{env.SCRIBE_URL }}
+                
+        env:
+            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+
+      - name: Info Product
+        run: |
+            echo "Product ${{ env.PRODUCT_NAME}}"
+            echo "Product Version ${{env.JFROG_PRODUCT_VERSION}}"
+            
+      - name: Discovery Publish Evidence DockerHub
+        uses: scribe-security/action-platforms@SH-6474-merged-command
+        with:
+          command: jfrog
+          platform: dockerhub
+          evidence: true
+          sign: true
+          args: >-
+            --scope.repository=heyman --scope.past_days 30       
+            --repository.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
+            --password brownbag74! --username scribesecurity
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+
+
+
+
