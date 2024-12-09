@@ -80,8 +80,8 @@ jobs:
       - name: Discovery Publish Evidence DockerHub
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
-          command: jfrog
-          platform: dockerhub
+          command: discover
+          platform: jfrog
           evidence: true
           sign: true
           args: >-
