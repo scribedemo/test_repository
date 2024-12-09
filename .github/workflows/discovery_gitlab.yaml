@@ -86,7 +86,6 @@ jobs:
         with:
           command: discover
           platform: gitlab
-          evidence: true
           sign: true
           args: >-
             --scope.project Scribe-Test/integrations
