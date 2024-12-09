@@ -86,7 +86,7 @@ jobs:
           sign: true
           args: >-
             --url ${{ env.JFROG_URL }}  
-            --token ${{ secrets.JFROG_TOKEN} }
+            --token ${{ secrets.JFROG_TOKEN }}
             --repository.mapping
             *stub_remote::${{ env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
