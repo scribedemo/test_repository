@@ -88,7 +88,7 @@ jobs:
             --url ${{ env.JFROG_URL }}  
             --token ${{ secrets.JFROG_TOKEN }}
             --repository.mapping
-            *stub_remote::${{ env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
+            "*stub_remote::${{ env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}"
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
