@@ -66,6 +66,8 @@ jobs:
                 product-version: ${{env.JFROG_PRODUCT_VERSION }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
+            #      --jf-repository.mapping
+            # *::${{ env.PRODUCT_NAME}}::${{env.PRODUCT_NAME}}
                 
         env:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
@@ -88,8 +90,6 @@ jobs:
             --url ${{ env.JFROG_URL }}  
             --token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 --scope.jf-repository=*docker*
-            --jf-repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{env.PRODUCT_NAME}}
             --repository.mapping
             *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
