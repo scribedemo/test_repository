@@ -103,7 +103,7 @@ jobs:
         id: dockerhub_case2
         uses: scribe-security/action-bom@master
         with:
-                target: hello-world:nanoserver-ltsc2022
+                target: hello-world
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
