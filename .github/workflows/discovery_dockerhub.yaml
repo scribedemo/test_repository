@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate version name for each cl
         run: |
-         export DOCKERHUB_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-dockerhub_no_evidence_published"
+         export DOCKERHUB_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-dockerhub"
          echo "DOCKERHUB_PRODUCT_VERSION=$DOCKERHUB_PRODUCT_VERSION" >> $GITHUB_ENV
          export DOCKERHUB_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-dockerhub_evidence_published"
          echo "DOCKERHUB_PRODUCT_VERSION2=$DOCKERHUB_PRODUCT_VERSION2" >> $GITHUB_ENV
@@ -86,6 +86,7 @@ jobs:
           command: discover
           platform: dockerhub
           sign: true
+          evidence: true
           args: >-
             --scope.repository=heyman --scope.past_days 30    
             --namespace.mapping
