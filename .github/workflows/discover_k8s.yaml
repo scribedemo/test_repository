@@ -84,7 +84,7 @@ jobs:
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
-          platform: github
+          platform: k8s
           evidence: true
           sign: true
           args: >-
@@ -126,7 +126,7 @@ jobs:
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
-          platform: github
+          platform: k8s
           evidence: true
           export-evidence: true
           sign: true
