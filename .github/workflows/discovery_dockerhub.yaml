@@ -90,9 +90,9 @@ jobs:
           args: >-
             --scope.repository=heyman --scope.past_days 30    
             --namespace.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
             --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION }}
             --password ${{secrets.DOCHERHUB_PASSWORD}}
             --username scribesecurity
         env:
