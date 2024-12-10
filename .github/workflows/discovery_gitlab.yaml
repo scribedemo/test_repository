@@ -66,10 +66,6 @@ jobs:
                 product-version: ${{env.GL_PRODUCT_VERSION }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
-            #     --organization.mapping 
-            # *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
-            # --project.mapping
-            # *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
                 
         env:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
@@ -87,7 +83,7 @@ jobs:
           command: discover
           platform: gitlab
           sign: true
-          evidence: true
+          evidence: false
           args: >-
             --scope.project Scribe-Test/integrations
             --scope.commit.past_days 60
