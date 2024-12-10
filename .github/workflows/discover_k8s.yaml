@@ -81,7 +81,7 @@ jobs:
             echo "Product Version ${{env.K8S_PRODUCT_VERSION}}"
             
       - name: Discovery Publish Evidence Github
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: k8s
