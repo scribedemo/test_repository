@@ -85,7 +85,7 @@ jobs:
         with:
           command: discover
           platform: k8s
-          evidence: true
+          evidence: false
           sign: true
           args: >-
             --url ${{secrets.K8S_URL}}
