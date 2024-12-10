@@ -103,7 +103,7 @@ jobs:
         id: dockerhub_case2
         uses: scribe-security/action-bom@master
         with:
-                target: hello-world
+                target: mongo-express:1-20-alpine3.19
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
