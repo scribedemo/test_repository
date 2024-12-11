@@ -53,9 +53,9 @@ jobs:
 
       - name: Generate version name for each cl
         run: |
-         export GH_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-github_evidence_published"
+         export GH_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-github_evidence_true"
          echo "GH_PRODUCT_VERSION=$GH_PRODUCT_VERSION" >> $GITHUB_ENV
-         export GH_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-github_evidence_nopublished"
+         export GH_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-github_evidence_false"
          echo "GH_PRODUCT_VERSION2=$GH_PRODUCT_VERSION2" >> $GITHUB_ENV
          
       - name: Generate signed docker SBOM for case1
@@ -86,7 +86,6 @@ jobs:
           command: discover
           platform: github
           evidence: true
-          # export-evidence: true
           sign: true
           args: >-
             --scope.organization=scribedemo
@@ -123,15 +122,14 @@ jobs:
       - name: Info Product
         run: |
             echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
+            echo "Product Version ${{env.GH_PRODUCT_VERSION2}}"
             
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
           platform: github
-          evidence: true
-          export-evidence: false
+          evidence: false
           sign: true
           args: >-
             --scope.organization=scribedemo
