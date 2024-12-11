@@ -90,15 +90,11 @@ jobs:
           evidence: true
           args: >-
             --scope.past_days 60
-            --token ${{ }}
-            --url 
-            --region
-            --user
-            --password
+            --token ${{secrets.ECR_TOKEN }}
+            --url ${{secrets.ECR_URL}}
             --repository.mapping
              *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
-           
-            
+             
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
