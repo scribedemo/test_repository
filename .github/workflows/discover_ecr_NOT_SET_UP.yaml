@@ -90,7 +90,6 @@ jobs:
           evidence: true
           args: >-
             --scope.past_days 60
-            --token ${{secrets.ECR_TOKEN }}
             --url ${{secrets.ECR_URL}}
             --repository.mapping
              *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION }}
@@ -100,5 +99,6 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+            ECR_LOGIN_TOKEN: ${{secrets.ECR_TOKEN }}
 
       
