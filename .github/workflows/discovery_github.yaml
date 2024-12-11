@@ -129,8 +129,8 @@ jobs:
         with:
           command: discover
           platform: github
-          evidence: true
-          export-evidence: true
+          # evidence: true
+          export-evidence: false
           sign: true
           args: >-
             --scope.organization=scribedemo
