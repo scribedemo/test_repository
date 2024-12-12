@@ -83,7 +83,6 @@ jobs:
           command: discover
           platform: gitlab
           sign: true
-          evidence: false
           args: >-
             --scope.project Scribe-Test/integrations
             --scope.commit.past_days 60
