@@ -84,7 +84,6 @@ jobs:
         with:
           command: discover
           platform: dockerhub
-          evidence: false
           sign: true
           args: >-
             --scope.repository=heyman --scope.past_days 30    
