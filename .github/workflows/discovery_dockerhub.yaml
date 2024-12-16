@@ -107,10 +107,15 @@ jobs:
                 target: mongo-express:1-20-alpine3.19
                 format: attest
                 attest-default: x509-env
-                product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.DOCKERHUB_PRODUCT_VERSION2 }}
+                produck-key: dockerhub
+                product-version: version2
+                # product-key: ${{ env.PRODUCT_NAME}}
+                # product-version: ${{env.DOCKERHUB_PRODUCT_VERSION2 }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
+            #      *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            # --repository.mapping
+            # *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
                 
         env:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
@@ -132,9 +137,9 @@ jobs:
           args: >-
             --scope.repository=heyman --scope.past_days 30    
             --namespace.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            *::dockerhub::version2
             --repository.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
+            *::dockerhub::version2
             --password ${{secrets.DOCHERHUB_PASSWORD}}
             --username scribesecurity
         env:
