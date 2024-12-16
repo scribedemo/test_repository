@@ -113,9 +113,6 @@ jobs:
                 # product-version: ${{env.DOCKERHUB_PRODUCT_VERSION2 }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
-            #      *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
-            # --repository.mapping
-            # *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
                 
         env:
             ATTEST_KEY: ${{secrets.ATTEST_KEY}}
@@ -137,9 +134,9 @@ jobs:
           args: >-
             --scope.repository=heyman --scope.past_days 30    
             --namespace.mapping
-            *::dockerhub::version2
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
             --repository.mapping
-            *::dockerhub::version2
+            *::${{ env.PRODUCT_NAME}}::${{ env.DOCKERHUB_PRODUCT_VERSION2 }}
             --password ${{secrets.DOCHERHUB_PASSWORD}}
             --username scribesecurity
         env:
