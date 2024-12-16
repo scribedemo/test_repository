@@ -52,8 +52,10 @@ jobs:
 
       - name: Generate version name 
         run: |
-         export GL_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-gitlab"
+         export GL_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-gitlab_evidence_false"
          echo "GL_PRODUCT_VERSION=$GL_PRODUCT_VERSION" >> $GITHUB_ENV
+         export GL_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-gitlab_evidence_true"
+         echo "GL_PRODUCT_VERSION2=$GL_PRODUCT_VERSION2" >> $GITHUB_ENV
          
       - name: Generate signed docker SBOM for docker mongo-express image
         id: gilab_case
@@ -77,7 +79,7 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.GL_PRODUCT_VERSION}}"
             
-      - name: Discovery Publish Evidence GitLab (Issue)
+      - name: Discovery Publish Evidence GitLab evidence-false
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
@@ -100,5 +102,51 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             # TOKEN: ${{ secrets.GL_TOKEN }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+   
+      - name: Generate signed docker SBOM for docker mongo-express image
+        id: gilab_case2
+        uses: scribe-security/action-bom@master
+        with:
+                target: mongo-express:latest
+                format: attest
+                attest-default: x509-env
+                product-key: ${{ env.PRODUCT_NAME}}
+                product-version: ${{env.GL_PRODUCT_VERSION2 }}
+                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+                scribe-url: ${{env.SCRIBE_URL }}
+                
+        env:
+            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+
+      - name: Info Product
+        run: |
+            echo "Product ${{ env.PRODUCT_NAME}}"
+            echo "Product Version ${{env.GL_PRODUCT_VERSION2}}"
+            
+      - name: Discovery Publish Evidence GitLab evidence-true
+        uses: scribe-security/action-platforms@SH-6474-merged-command
+        with:
+          command: discover
+          platform: gitlab
+          sign: true
+          evidence: true
+          args: >-
+            --scope.project Scribe-Test/integrations
+            --scope.commit.past_days 60
+            --scope.pipeline.past_days 60
+            --token ${{ secrets.GL_TOKEN }}
+            --organization.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSIONe }}
+            --project.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSIONe }}
+            
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            # TOKEN: ${{ secrets.GL_TOKEN }}
+            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}      
 
       
