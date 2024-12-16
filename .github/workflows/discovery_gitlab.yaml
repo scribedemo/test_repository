@@ -138,9 +138,9 @@ jobs:
             --scope.pipeline.past_days 60
             --token ${{ secrets.GL_TOKEN }}
             --organization.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSIONe }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION2 }}
             --project.mapping
-            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSIONe }}
+            *::${{ env.PRODUCT_NAME}}::${{ env.GL_PRODUCT_VERSION2 }}
             
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
