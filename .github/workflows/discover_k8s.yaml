@@ -120,7 +120,7 @@ jobs:
       - name: Info Product
         run: |
             echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
+            echo "Product Version ${{env.GH_PRODUCT_VERSION2}}"
             
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
