@@ -85,7 +85,6 @@ jobs:
         with:
           command: discover
           platform: k8s
-          evidence: false
           sign: true
           args: >-
             --url ${{secrets.K8S_URL}}
@@ -128,7 +127,6 @@ jobs:
           command: discover
           platform: k8s
           evidence: true
-          export-evidence: true
           sign: true
           args: >-
             --url ${{secrets.K8S_URL}}
