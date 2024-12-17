@@ -53,9 +53,8 @@ jobs:
 
       - name: Generate version name for each cl
         run: |
-         export K8S_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-k8s"
-         echo "K8S_PRODUCT_VERSION=$K8S_PRODUCT_VERSION" >> $GITHUB_ENV
-         
+          export K8S_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-k8s"
+          echo "K8S_PRODUCT_VERSION=$K8S_PRODUCT_VERSION" >> $GITHUB_ENV
 #      - name: Generate signed docker SBOM for case1
 #        id: valint_attest_file
 #        uses: scribe-security/action-bom@master
@@ -127,8 +126,8 @@ jobs:
           args: >-
             --url=${{secrets.K8S_URL}}
             --token=${{secrets.K8S_TOKEN}}
-            --namespace.mapping=*::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION2}}
-            --pod.mapping=*::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION2}}
+            --namespace.mapping=*::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
+            --pod.mapping=*::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
