@@ -78,22 +78,21 @@ jobs:
       - name: Info Product
         run: |
           echo "Product ${{ env.PRODUCT_NAME}}"
-          echo "Product Version ${{env.K8S_PRODUCT_VERSION}}"
+          echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
 
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
           platform: k8s
-          evidence: false
           sign: true
           args: >-
             --url 
               ${{secrets.K8S_URL}}
             --namespace.mapping 
-              *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
+              *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION}}
             --pod.mapping
-              *::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION}}
+              *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION}}
         env:
           ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
           ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -129,15 +128,14 @@ jobs:
           command: discover
           platform: k8s
           evidence: true
-          export-evidence: true
           sign: true
           args: >-
             --url 
               ${{secrets.K8S_URL}}
             --namespace.mapping 
-              *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION2}}
+              *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION2}}
             --pod.mapping
-              *::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION2}}
+              *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION2}}
         env:
           ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
           ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
