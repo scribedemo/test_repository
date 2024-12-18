@@ -79,19 +79,18 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.JFROG_PRODUCT_VERSION}}"
             
-      - name: Discovery Publish Evidence DockerHub
+      - name: Discovery Jfrog
         uses: scribe-security/action-platforms@SH-6474-merged-command
         with:
           command: discover
           platform: jfrog
           evidence: true
-          sign: true
           args: >-
-            --url ${{ env.JFROG_URL }}  
-            --jf_token ${{ secrets.JFROG_TOKEN }}
-            --scope.tag_limit=2 --scope.jf-repository=*docker*
+            --scope.tag_limit 2
+            --jf-repository.mapping
+            *::flask-monorepo-project::${{ env.SCRIBE_PRODUCT_VERSION }}
             --repository.mapping
-            '*stub*'::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
+            *stub*::flask-monorepo-project::${{ env.SCRIBE_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}

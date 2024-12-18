@@ -124,10 +124,10 @@ jobs:
           evidence: true
           sign: true
           args: >-
-            --url=${{secrets.K8S_URL}}
-            --token=${{secrets.K8S_TOKEN}}
-            --namespace.mapping=*::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
-            --pod.mapping=*::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION}}
+            --url ${{secrets.K8S_URL}}
+            --token ${{secrets.K8S_TOKEN}}
+            --namespace.mapping *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
+            --pod.mapping *::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
