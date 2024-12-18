@@ -89,7 +89,6 @@ jobs:
             --url ${{ env.JFROG_URL }}  
             --jf_token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 
-            --scope.jf-repository=*docker*
             --repository.mapping
             '*stub*'::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
