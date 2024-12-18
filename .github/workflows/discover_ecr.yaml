@@ -97,8 +97,8 @@ jobs:
             echo "ECR_LOGIN_TOKEN=$TOKEN" >> $GITHUB_ENV
         env:
             ECR_URL: https://975050347682.dkr.ecr.il-central-1.amazonaws.com
-            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_TEST_KEY_ID }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_TEST_ACCESS_KEY }}
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             AWS_REGION: "il-central-1"      
       
       - name: Discovery evidence false
