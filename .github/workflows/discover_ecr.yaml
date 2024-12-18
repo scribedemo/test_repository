@@ -107,14 +107,14 @@ jobs:
           command: discover
           platform: ecr
           sign: true
-          evidence: false
+          # evidence: false
           args: >-
             --scope.past_days 60
             --url ${{secrets.ECR_URL}}
             --aws-account.mapping 
             *::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION }}
             --repository.mapping
-             *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION }}
+            *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION }}
              
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
@@ -150,14 +150,14 @@ jobs:
           command: discover
           platform: ecr
           sign: true
-          evidence: false
+          evidence: true
           args: >-
             --scope.past_days 60
             --url ${{secrets.ECR_URL}}
             --aws-account.mapping 
             *::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION2 }}
             --repository.mapping
-             *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION2 }}
+            *scribe-service*::${{ env.PRODUCT_NAME}}::${{ env.ECR_PRODUCT_VERSION2 }}
              
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
