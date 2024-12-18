@@ -78,28 +78,28 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.ECR_PRODUCT_VERSION}}"
             
-      - name: Configure AWS CLI
-        run: |
-            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-            aws configure set region $AWS_REGION
-        env:
-            ECR_URL: https://975050347682.dkr.ecr.il-central-1.amazonaws.com
-            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            AWS_REGION: "il-central-1"
+      # - name: Configure AWS CLI
+      #   run: |
+      #       aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+      #       aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+      #       aws configure set region $AWS_REGION
+      #   env:
+      #       ECR_URL: https://975050347682.dkr.ecr.il-central-1.amazonaws.com
+      #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #       AWS_REGION: "il-central-1"
 
-      - name: Get ECR Login Token
-        run: |
-            TOKEN=$(aws ecr get-login-password --region $AWS_REGION)
-            echo $TOKEN | docker login --username AWS --password-stdin 975050347682.dkr.ecr.$AWS_REGION.amazonaws.com
-            echo $TOKEN
-            echo "ECR_LOGIN_TOKEN=$TOKEN" >> $GITHUB_ENV
-        env:
-            ECR_URL: https://975050347682.dkr.ecr.il-central-1.amazonaws.com
-            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            AWS_REGION: "il-central-1"      
+      # - name: Get ECR Login Token
+      #   run: |
+      #       TOKEN=$(aws ecr get-login-password --region $AWS_REGION)
+      #       echo $TOKEN | docker login --username AWS --password-stdin 975050347682.dkr.ecr.$AWS_REGION.amazonaws.com
+      #       echo $TOKEN
+      #       echo "ECR_LOGIN_TOKEN=$TOKEN" >> $GITHUB_ENV
+      #   env:
+      #       ECR_URL: https://975050347682.dkr.ecr.il-central-1.amazonaws.com
+      #       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #       AWS_REGION: "il-central-1"      
       
       - name: Discovery evidence false
         uses: scribe-security/action-platforms@SH-6474-merged-command
