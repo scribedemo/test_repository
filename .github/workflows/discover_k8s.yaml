@@ -67,7 +67,7 @@ jobs:
           format: attest
           attest-default: x509-env
           product-key: ${{ env.PRODUCT_NAME}}
-          product-version: ${{ env.GH_PRODUCT_VERSION }}
+          product-version: ${{ env.K8S_PRODUCT_VERSION }}
           scribe-client-secret: ${{ env.SCRIBE_TOKEN }}
           scribe-url: ${{env.SCRIBE_URL }}
         env:
@@ -78,7 +78,7 @@ jobs:
       - name: Info Product
         run: |
           echo "Product ${{ env.PRODUCT_NAME}}"
-          echo "Product Version ${{env.GH_PRODUCT_VERSION}}"
+          echo "Product Version ${{env.K8S_PRODUCT_VERSION}}"
 
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
@@ -90,14 +90,12 @@ jobs:
             --url 
               ${{secrets.K8S_URL}}
             --namespace.mapping 
-              *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION}}
-            --pod.mapping
-              *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION}}
+              *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
         env:
           ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
           ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
           ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-          TOKKEN: ${{ secrets.K8S_TOKEN }}
+          K8S_TOKEN: ${{ secrets.K8S_TOKEN }}
           VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
       - name: Generate signed docker SBOM for case2
@@ -120,7 +118,7 @@ jobs:
       - name: Info Product
         run: |
           echo "Product ${{ env.PRODUCT_NAME}}"
-          echo "Product Version ${{env.GH_PRODUCT_VERSION2}}"
+          echo "Product Version ${{env.K8S_PRODUCT_VERSION2}}"
 
       - name: Discovery Publish Evidence Github
         uses: scribe-security/action-platforms@SH-6474-merged-command
@@ -133,13 +131,13 @@ jobs:
             --url 
               ${{secrets.K8S_URL}}
             --namespace.mapping 
-              *::${{ env.PRODUCT_NAME}}::${{ env.GH_PRODUCT_VERSION2}}
+              *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION2}}
             --pod.mapping
-              *::${{ env.PRODUCT_NAME}}::${{env.GH_PRODUCT_VERSION2}}
+              *::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION2}}
         env:
           ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
           ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
           ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-          TOKKEN: ${{secrets.K8S_TOKEN}}
+          K8S_TOKEN: ${{secrets.K8S_TOKEN}}
           VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
