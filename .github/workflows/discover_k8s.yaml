@@ -85,7 +85,7 @@ jobs:
         with:
           command: discover
           platform: k8s
-          evidence: false
+          evidence: true
           sign: true
           args: >-
             --url ${{secrets.K8S_URL}}
@@ -93,11 +93,11 @@ jobs:
             *::${{ env.PRODUCT_NAME}}::${{ env.K8S_PRODUCT_VERSION}}
             --pod.mapping
             *::${{ env.PRODUCT_NAME}}::${{env.K8S_PRODUCT_VERSION}}
+            --token ${{ secrets.K8S_TOKEN }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-            TOKEN: ${{ secrets.K8S_TOKEN }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
 
       - name: Generate signed docker SBOM for case2
