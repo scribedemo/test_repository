@@ -91,7 +91,7 @@ jobs:
             --jf_token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 --scope.jf-repository=*docker*
             --repository.mapping
-            '*stub*'::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
+            *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -132,7 +132,7 @@ jobs:
             --jf_token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 --scope.jf-repository=*docker*
             --repository.mapping
-            '*stub*'::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION2 }}
+            *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION2 }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
