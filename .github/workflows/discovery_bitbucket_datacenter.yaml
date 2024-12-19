@@ -92,7 +92,7 @@ jobs:
             --project.mapping
             *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
             --repository.mapping
-            *integration*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
@@ -135,7 +135,7 @@ jobs:
             --project.mapping
             *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION2 }}
             --repository.mapping
-            *integration*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION2}}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION2}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
