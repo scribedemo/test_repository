@@ -91,9 +91,9 @@ jobs:
             --username ${{secrets.BB_USERNAME}}
             --app_password ${{secrets.BB_PASSWORD}}
             --project.mapping
-            *::${{ PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION }}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION }}
             --repository.mapping
-            *::${{ PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION}}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION}}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
