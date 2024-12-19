@@ -87,7 +87,7 @@ jobs:
           sign: true
           args: >-
             --url ${{secrets.BB_DATACENTER_URL}}
-            --username ${{secrets.BBB_DATACENTER_USERNAME}}
+            --username ${{secrets.BB_DATACENTER_USERNAME}}
             --app_password ${{secrets.BB_DATACENTER_PASSWORDD}}
             --project.mapping
             *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
@@ -130,7 +130,7 @@ jobs:
           sign: true
           args: >-
             --url ${{secrets.BB_DATACENTER_URL}}
-            --username ${{secrets.BBB_DATACENTER_USERNAME}}
+            --username ${{secrets.BB_DATACENTER_USERNAME}}
             --app_password ${{secrets.BB_DATACENTER_PASSWORDD}}
             --project.mapping
             *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION2 }}
