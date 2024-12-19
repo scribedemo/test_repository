@@ -88,7 +88,7 @@ jobs:
           args: >-
             --url ${{secrets.BB_DATACENTER_URL}}
             --username ${{secrets.BB_DATACENTER_USERNAME}}
-            --app_password ${{secrets.BB_DATACENTER_PASSWORDD}}
+            --app_password ${{secrets.BB_DATACENTER_PASSWORD}}
             --project.mapping
             *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
             --repository.mapping
