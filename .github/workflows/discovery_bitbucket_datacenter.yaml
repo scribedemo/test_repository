@@ -90,9 +90,9 @@ jobs:
             --username ${{secrets.BB_DATACENTER_USERNAME}}
             --app_password ${{secrets.BB_DATACENTER_PASSWORD}}
             --project.mapping
-            *test*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
             --repository.mapping
-            *test*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
+            *integration*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_DATACENTER_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
