@@ -102,7 +102,7 @@ jobs:
       #       AWS_REGION: "il-central-1"      
       
       - name: Discovery evidence false
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: ecr
@@ -145,7 +145,7 @@ jobs:
             echo "Product Version ${{env.ECR_PRODUCT_VERSION2}}"
             
       - name: Discovery ecr - evidence true
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: ecr
