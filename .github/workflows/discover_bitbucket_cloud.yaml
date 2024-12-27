@@ -80,7 +80,7 @@ jobs:
             echo "Product Version ${{env.DOCKERHUB_PRODUCT_VERSION}}"
             
       - name: Discovery Publish Evidence DockerHub
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: bitbucket
@@ -122,7 +122,7 @@ jobs:
             echo "Product Version ${{env.BITBUCKET_PRODUCT_VERSION2}}"
             
       - name: Discovery Publish Evidence DockerHub
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: bitbucket
