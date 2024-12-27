@@ -80,7 +80,7 @@ jobs:
             echo "Product Version ${{env.JFROG_PRODUCT_VERSION}}"
             
       - name: Discovery evidence false
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: jfrog
@@ -121,7 +121,7 @@ jobs:
             echo "Product Version ${{env.JFROG_PRODUCT_VERSION2}}"
             
       - name: Discovery Publish Evidence DockerHub
-        uses: scribe-security/action-platforms@SH-6474-merged-command
+        uses: scribe-security/action-platforms@dev
         with:
           command: discover
           platform: jfrog
