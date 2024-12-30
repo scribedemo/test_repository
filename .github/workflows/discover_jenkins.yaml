@@ -1,0 +1,149 @@
+name: IN_PROGRESS_discovery_jenkins
+
+on: 
+  workflow_dispatch:
+   inputs:
+      environment:
+        type: choice
+        description: Environment
+        required: true
+        options:
+          - dev-demo
+          - dev2_eks
+          - dev_eks
+          - ci_eks
+          - test_eks
+          - stg_eks
+          - prod_eks
+      product_version:
+         description: 'Put product version'
+         # required: true
+         default: 'v1.'
+      product_name:
+         description: 'Put product name'
+         required: true
+         default: 'discover_jenkins'
+  pull_request:
+         
+env:
+  PRODUCT_NAME: ${{ github.event.inputs.product_name}}
+  SCRIBE_PRODUCT_VERSION: ${{ github.event.inputs.product_version}}
+  SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  VALINT_SCRIBE_URL: ${{ vars.SCRIBE_URL }}
+  SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
+  AUTHOR_NAME: ALONA DODUKH
+  AUTHOR_EMAIL: author@scribesecurity.com
+  
+        
+jobs:
+  build:
+    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Generate version name 
+        run: |
+         export JENKINS_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-jenkins_evidence_false"
+         echo "JENKINS_PRODUCT_VERSION=$GL_PRODUCT_VERSION" >> $GITHUB_ENV
+         export JENKINS_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-jenkins_evidence_true"
+         echo "JENKINS_PRODUCT_VERSION2=$JENKINS_PRODUCT_VERSION2" >> $GITHUB_ENV
+         
+      # - name: Generate signed docker SBOM for docker mongo-express image
+      #   id: gilab_case
+      #   uses: scribe-security/action-bom@master
+      #   with:
+      #           target: mongo-express:latest
+      #           format: attest
+      #           attest-default: x509-env
+      #           product-key: ${{ env.PRODUCT_NAME}}
+      #           product-version: ${{env.JENKINS_PRODUCT_VERSION }}
+      #           scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+      #           scribe-url: ${{env.SCRIBE_URL }}
+                
+      #   env:
+      #       ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+      #       ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+
+      # - name: Info Product
+      #   run: |
+      #       echo "Product ${{ env.PRODUCT_NAME}}"
+      #       echo "Product Version ${{env.JENKINS_PRODUCT_VERSION}}"
+            
+      # - name: Discovery Publish Evidence GitLab evidence-false
+      #   uses: scribe-security/action-platforms@dev
+      #   with:
+      #     command: discover
+      #     platform: jenkins
+      #     sign: true
+      #     evidence: false
+      #     args: >-
+      #       --scope.project Scribe-Test/integrations
+      #       --scope.commit.past_days 60
+      #       --scope.pipeline.past_days 60
+      #       --token ${{ secrets.GL_TOKEN }}
+      #       --organization.mapping
+      #       *::${{ env.PRODUCT_NAME}}::${{ env.JENKINS_PRODUCT_VERSION }}
+      #       --project.mapping
+      #       *::${{ env.PRODUCT_NAME}}::${{ env.JENKINS_PRODUCT_VERSION }}
+            
+      #   env:
+      #       ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+      #       ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+      #       ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+      #       VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+   
+      - name: Generate signed docker SBOM for docker mongo-express image
+        id: gilab_case2
+        uses: scribe-security/action-bom@master
+        with:
+                target: mongo-express:latest
+                format: attest
+                attest-default: x509-env
+                product-key: ${{ env.PRODUCT_NAME}}
+                product-version: ${{env.JENKINS_PRODUCT_VERSION2 }}
+                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
+                scribe-url: ${{env.SCRIBE_URL }}
+                
+        env:
+            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
+            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
+
+      - name: Info Product
+        run: |
+            echo "Product ${{ env.PRODUCT_NAME}}"
+            echo "Product Version ${{env.JENKINS_PRODUCT_VERSION2}}"
+            
+      - name: Discovery Publish Evidence GitLab evidence-true
+        uses: scribe-security/action-platforms@dev
+        with:
+          command: discover
+          platform: jenkins
+          sign: true
+          evidence: true
+          args: >-
+            --folder.mapping
+            *::${{ env.PRODUCT_NAME}}::${{ env.JENKINS_PRODUCT_VERSION2 }}
+            --instance-mapping 
+            *::${{ env.PRODUCT_NAME}}::${{ env.JENKINS_PRODUCT_VERSION2 }}
+            
+        env:
+            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
+            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
+            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
+            JENKINS_USERNAME: arsenii
+            JENKINS_PASSWORD: 110e88a51e139b2eafb855ece5bb187306
+            JENKINS_URL: https://jenkins.dev.scribesecurity.com/
+
+      
