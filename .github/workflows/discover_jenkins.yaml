@@ -142,8 +142,8 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
-            JENKINS_USERNAME: arsenii
-            JENKINS_PASSWORD: 110e88a51e139b2eafb855ece5bb187306
+            JENKINS_USERNAME: alona
+            JENKINS_PASSWORD: Aa123456
             JENKINS_URL: https://jenkins.dev.scribesecurity.com/
 
       
