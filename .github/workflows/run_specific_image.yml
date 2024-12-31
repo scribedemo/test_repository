@@ -73,7 +73,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{ env.SCRIBE_URL}}
-                # label: ${{env.LABEL}}
+                label: ${{env.LABEL}}
                 gate: github_alona
                 
         env:
@@ -129,7 +129,7 @@ jobs:
                 product-version: ${{env.PRODUCT_VERSION}}
                 scribe-client-secret: ${{ env.SCRIBE_TOKEN}}
                 scribe-url: ${{ env.SCRIBE_URL}}
-                # label: ${{env.LABEL}}
+                label: ${{env.LABEL}}
                 gate: github_alona
     
      
