@@ -63,7 +63,7 @@ jobs:
 
       - name: Generate signed docker SBOM for docker mongo-express image
         id: valint_attest_file
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
                 target: ${{env.IMAGE_NAME}}
                 scribe-enable: true
@@ -83,7 +83,7 @@ jobs:
 
       
       - name: Create sign slsa for image1
-        uses: scribe-security/action-slsa@master
+        uses: scribe-security/action-slsa@dev
         with:
                target: ${{env.IMAGE_NAME}}
                product-key: ${{env.PRODUCT_NAME}}
@@ -96,7 +96,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
       
       - name: Verify Image1 (both slsa levels are passed)
-        uses: scribe-security/action-verify@master
+        uses: scribe-security/action-verify@dev
         with:
                target: ${{env.IMAGE_NAME}}
                scribe-enable: true
@@ -119,7 +119,7 @@ jobs:
             
       - name: Generate signed docker SBOM for busybox:uclibc 
         id: valint_second_attest
-        uses: scribe-security/action-bom@master
+        uses: scribe-security/action-bom@dev
         with:
               
                 target: busybox:uclibc
@@ -134,7 +134,7 @@ jobs:
     
      
       - name: Create sign slsa for image2
-        uses: scribe-security/action-slsa@master
+        uses: scribe-security/action-slsa@dev
         with:
                target:  busybox:uclibc
                product-key: ${{env.PRODUCT_NAME}}
@@ -147,7 +147,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }} 
             
       - name: Verify Image2 (level 2 is failed, level 1 is passed)
-        uses: scribe-security/action-verify@master
+        uses: scribe-security/action-verify@dev
         with:
                target: busybox:uclibc
                scribe-enable: true
