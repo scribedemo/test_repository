@@ -130,7 +130,7 @@ jobs:
           command: discover
           platform: jenkins
           sign: true
-          # evidence: true
+          evidence: true
           args: >-
             --folder.mapping
             *::${{ env.PRODUCT_NAME}}::${{ env.JENKINS_PRODUCT_VERSION2 }}
