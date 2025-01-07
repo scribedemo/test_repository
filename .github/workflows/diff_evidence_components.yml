@@ -2,11 +2,9 @@ name:  different_evidence_component
 
 env:
   LOGICAL_APP_NAME: dev_new_last_version # The app name all these SBOMs will be assosiated with
-  # SBOM Author meta data - Optional
   AUTHOR_NAME: Alona Dodukh
   AUTHOR_EMAIL: alona@thiscompany.com 
   AUTHOR_PHONE: 11-00-999
-  # SBOM Supplier meta data - Optional
   SUPPLIER_NAME: Scribe-Security 
   SUPPLIER_URL: www.scribesecurity.com 
   SUPPLIER_EMAIL: info@scribesecurity.com
@@ -57,7 +55,6 @@ jobs:
       - name: Generate signed git SBOM for repo content
         uses: scribe-security/action-bom@master
         with:
-        #   target: 'https://github.com/mongo-express/mongo-express.git'
          target: 'git:.'
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
          format: attest
@@ -70,24 +67,9 @@ jobs:
          deliverable: true
          gate: github_action
 
-      # - name: Generate signed git for scribe-public/sample-policies
-      #   uses: scribe-security/action-bom@master
-      #   with:
-      #   #   target: 'https://github.com/mongo-express/mongo-express.git'
-      #    target: 'scribe-public/sample-policies.git'
-      #   # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
-      #    format: attest
-      #    # scribe.disable: false
-      #    product-key: ${{env.PRODUCT_NAME}}
-      #    product-version: ${{env.PRODUCT_VERSION}}
-      #    scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-      #    scribe-url: ${{env.SCRIBE_URL}}
-      #    components: packages,files,dep
-      #    # deliverable: true
-      #    gate: github_action
 
       - name: Scm generate dir bom, upload to scribe
-        # id: valint_bom_scm
+        id: valint_bom_dir
         uses: scribe-security/action-bom@master
         with:
         # format: statement-cyclonedx-json, attest-cyclonedx-json, statement-generic	
@@ -107,6 +89,7 @@ jobs:
             docker build -t my-image:latest .   
      
       - name: Generate signed docker SBOM for docker image
+        id: valint_bom_docker
         uses: scribe-security/action-bom@master
         with:
                 # statement-cyclonedx-json, attest, 
@@ -125,7 +108,7 @@ jobs:
 
           
       - name: Scm generate registry:busybox:latest bom, upload to scribe
-        # id: valint_bom_scm
+        id: valint_bom_regestry
         uses: scribe-security/action-bom@master
         with:
           type: registry
@@ -145,7 +128,7 @@ jobs:
           gate: github_action
       
       - name: Scm generate file sbom, upload to scribe
-        # id: valint_bom_scm
+        id: valint_bom_file
         uses: scribe-security/action-bom@master
         with:
           type: file
