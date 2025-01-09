@@ -154,12 +154,13 @@ jobs:
             ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
         
-        - name: run dojo for snyk.sarif.json with attest
+        - name: run dojo for snyk.json with attest
           # uses: scribe-security/action-bom@master
           uses: scribe-security/action-evidence@master
           with:
                 # type: file
-                target: './snyk.sarif.json'
+                # target: './snyk.sarif.json'
+                target: './snyk_many_vulns.json'
                 scribe-enable: true
                 parser: snyk
                 tool: snyk
