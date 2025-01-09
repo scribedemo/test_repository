@@ -121,8 +121,8 @@ jobs:
           with:
                 # type: file
                 target: './multiple_findings_osa_sh_5666.json'
-                parser: checkmarx
-                tool: checkmarx
+                parser: checkmarxosa
+                tool: checkmarxosa
                 tool-version: 1.0.1
                 scribe-enable: true
                 product-key: ${{env.PRODUCT_NAME}}
