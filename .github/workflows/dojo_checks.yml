@@ -176,28 +176,28 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA}}
                 
 
-        - name: run dojo for snyk.cdx.json with attest
-          # uses: scribe-security/action-bom@master
-          uses: scribe-security/action-evidence@master
-          with:
-                # type: file
-                target: './snyk.cdx.json'
-                parser: snyk
-                tool: snyk
-                tool-version: 1.0.1
-                # predicate-type: https://cyclonedx.org/bom
-                format: attest
-                attest-default: x509-env
-                scribe-enable: true
-                product-key: ${{env.PRODUCT_NAME}}
-                product-version: ${{env.PRODUCT_VERSION}}
-                scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
-                scribe-url: ${{env.SCRIBE_URL}}
-                gate: github_action
-          env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
+        # - name: run dojo for snyk.cdx.json with attest DOJO suport only json format
+        #   # uses: scribe-security/action-bom@master
+        #   uses: scribe-security/action-evidence@master
+        #   with:
+        #         # type: file
+        #         target: './snyk.cdx.json'
+        #         parser: snyk
+        #         tool: snyk
+        #         tool-version: 1.0.1
+        #         # predicate-type: https://cyclonedx.org/bom
+        #         format: attest
+        #         attest-default: x509-env
+        #         scribe-enable: true
+        #         product-key: ${{env.PRODUCT_NAME}}
+        #         product-version: ${{env.PRODUCT_VERSION}}
+        #         scribe-client-secret: ${{ secrets.CLIENT_SECRET_AUTH}}
+        #         scribe-url: ${{env.SCRIBE_URL}}
+        #         gate: github_action
+        #   env:
+        #     ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
+        #     ATTEST_CERT: ${{ secrets.ATTEST_CERT }}
+        #     ATTEST_CA:  ${{ secrets.ATTEST_CA}} 
 
             
         - name: run dojo for trivy.json with attest
