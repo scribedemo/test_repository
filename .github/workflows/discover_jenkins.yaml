@@ -125,7 +125,7 @@ jobs:
             echo "Product Version ${{env.JENKINS_PRODUCT_VERSION2}}"
             
       - name: Discovery Publish Evidence GitLab evidence-true
-        uses: scribe-security/action-platforms@dev
+        uses: scribe-security/action-platforms@master
         with:
           command: discover
           platform: jenkins
