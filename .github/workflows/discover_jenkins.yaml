@@ -1,4 +1,5 @@
 name: IN_PROGRESS_discovery_jenkins
+# Password should be only token, with password it doesn't work because it doesn't have enought pernissions to get assets
 
 on: 
   workflow_dispatch:
