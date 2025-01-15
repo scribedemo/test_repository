@@ -52,19 +52,19 @@ jobs:
 
       - name: Generate version name for each cl
         run: |
-         export BITBUCKET_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-bitbucket_evidence_true"
-         echo "BITBUCKET_PRODUCT_VERSION2=$BITBUCKET_PRODUCT_VERSION2" >> $GITHUB_ENV
+         export BITBUCKET_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-bitbucket_evidence_true"
+         echo "BITBUCKET_PRODUCT_VERSION=$BITBUCKET_PRODUCT_VERSION" >> $GITHUB_ENV
        
 
-      - name: Generate signed docker SBOM for case2
-        id: dockerhub_case2
+      - name: Generate signed docker SBOM for case1
+        id: dockerhub_case1
         uses: scribe-security/action-bom@master
         with:
                 target: mongo-express:1-20-alpine3.19
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.BITBUCKET_PRODUCT_VERSION2 }}
+                product-version: ${{env.BITBUCKET_PRODUCT_VERSION }}
                 scribe-client-secret: ${{env.SCRIBE_TOKEN}}
                 scribe-url: ${{env.SCRIBE_URL }}
                 
@@ -76,10 +76,10 @@ jobs:
       - name: Info Product
         run: |
             echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.BITBUCKET_PRODUCT_VERSION2}}"
+            echo "Product Version ${{env.BITBUCKET_PRODUCT_VERSION}}"
             
       - name: Discovery Publish Evidence DockerHub
-        uses: scribe-security/action-platforms@dev
+        uses: scribe-security/action-platforms@master
         with:
           command: discover
           platform: bitbucket
@@ -90,9 +90,9 @@ jobs:
             --username ${{secrets.BB_USERNAME}}
             --app_password ${{secrets.BB_PASSWORD}}
             --project.mapping
-            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION2 }}
+            *::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION }}
             --repository.mapping
-            *integrations*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION2 }}
+            *integrations*::${{ env.PRODUCT_NAME }}::${{ env.BITBUCKET_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
