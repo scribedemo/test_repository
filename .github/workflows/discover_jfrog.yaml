@@ -52,16 +52,14 @@ jobs:
 
       - name: Generate version name for each cl
         run: |
-         export JFROG_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-jfrog_evidence_false"
+         export JFROG_PRODUCT_VERSION="${{ env.SCRIBE_PRODUCT_VERSION }}-jfrog_evidence_true"
          echo "JFROG_PRODUCT_VERSION=$JFROG_PRODUCT_VERSION" >> $GITHUB_ENV
-         export JFROG_PRODUCT_VERSION2="${{ env.SCRIBE_PRODUCT_VERSION }}-jfrog_evidence_true"
-         echo "JFROG_PRODUCT_VERSION2=$JFROG_PRODUCT_VERSION2" >> $GITHUB_ENV
        
-      - name: Generate signed docker SBOM for JFrog case1
-        id: dockerhub_case
+      - name: Generate signed docker SBOM JFrog case1
+        id: dockerhub_case2
         uses: scribe-security/action-bom@master
         with:
-                target: busybox:latest
+                target: mongo-express:latest
                 format: attest
                 attest-default: x509-env
                 product-key: ${{ env.PRODUCT_NAME}}
@@ -79,49 +77,8 @@ jobs:
             echo "Product ${{ env.PRODUCT_NAME}}"
             echo "Product Version ${{env.JFROG_PRODUCT_VERSION}}"
             
-      - name: Discovery evidence false
-        uses: scribe-security/action-platforms@dev
-        with:
-          command: discover
-          platform: jfrog
-          evidence: false
-          sign: true
-          args: >-
-            --url ${{ env.JFROG_URL }}  
-            --jf_token ${{ secrets.JFROG_TOKEN }}
-            --scope.tag_limit=2 --scope.jf-repository=*docker*
-            --repository.mapping
-            *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
-        env:
-            ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
-            ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{ secrets.ATTEST_CA }}
-            VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
-
-      - name: Generate signed docker SBOM JFrog case2
-        id: dockerhub_case2
-        uses: scribe-security/action-bom@master
-        with:
-                target: mongo-express:latest
-                format: attest
-                attest-default: x509-env
-                product-key: ${{ env.PRODUCT_NAME}}
-                product-version: ${{env.JFROG_PRODUCT_VERSION2 }}
-                scribe-client-secret: ${{env.SCRIBE_TOKEN}}
-                scribe-url: ${{env.SCRIBE_URL }}
-                
-        env:
-            ATTEST_KEY: ${{secrets.ATTEST_KEY}}
-            ATTEST_CERT: ${{secrets.ATTEST_CERT}}
-            ATTEST_CA:  ${{secrets.ATTEST_CA}} 
-
-      - name: Info Product
-        run: |
-            echo "Product ${{ env.PRODUCT_NAME}}"
-            echo "Product Version ${{env.JFROG_PRODUCT_VERSION2}}"
-            
       - name: Discovery Publish Evidence DockerHub
-        uses: scribe-security/action-platforms@dev
+        uses: scribe-security/action-platforms@master
         with:
           command: discover
           platform: jfrog
@@ -132,7 +89,7 @@ jobs:
             --jf_token ${{ secrets.JFROG_TOKEN }}
             --scope.tag_limit=2 --scope.jf-repository=*docker*
             --repository.mapping
-            *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION2 }}
+            *stub*::${{env.PRODUCT_NAME}}::${{ env.JFROG_PRODUCT_VERSION }}
         env:
             ATTEST_KEY: ${{ secrets.ATTEST_KEY }}
             ATTEST_CERT: ${{ secrets.ATTEST_CERT}}
