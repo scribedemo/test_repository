@@ -137,6 +137,7 @@ jobs:
         uses: scribe-security/action-slsa@master
         with:
                target:  busybox:uclibc
+               base-image: busybox:stable-glibc
                product-key: ${{env.PRODUCT_NAME}}
                product-version: ${{env.PRODUCT_VERSION}}
                format: attest
