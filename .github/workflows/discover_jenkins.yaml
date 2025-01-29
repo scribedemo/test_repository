@@ -99,6 +99,6 @@ jobs:
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
             JENKINS_USERNAME: alona
             JENKINS_PASSWORD: ${{secrets.JENKINS_TOKEN}}
-            JENKINS_URL: ${{secrets.JENKINS_URL}}
+            JENKINS_URL: ${{env.JENKINS_URL}}
 
       
