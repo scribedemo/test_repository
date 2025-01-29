@@ -34,6 +34,7 @@ env:
   SCRIBE_TOKEN: ${{ secrets.CLIENT_SECRET_AUTH }}
   AUTHOR_NAME: ALONA DODUKH
   AUTHOR_EMAIL: author@scribesecurity.com
+  JENKINS_TOKEN: ${{secrets.JENKINS_TOKEN}}
   
         
 jobs:
@@ -98,7 +99,7 @@ jobs:
             ATTEST_CA:  ${{ secrets.ATTEST_CA }}
             VALINT_SCRIBE_URL: ${{env.SCRIBE_URL}}
             JENKINS_USERNAME: alona
-            JENKINS_PASSWORD: ${{secrets.JENKINS_TOKEN}}
+            JENKINS_PASSWORD: ${{env.JENKINS_TOKEN}}
             JENKINS_URL: ${{env.JENKINS_URL}}
 
       
